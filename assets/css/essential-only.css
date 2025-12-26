@@ -89,25 +89,6 @@ section[id] {
   }
 }
 
-/* Hero section particle animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) translateX(0px);
-    opacity: 0.7;
-  }
-  25% {
-    transform: translateY(-10px) translateX(5px);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-5px) translateX(-5px);
-    opacity: 0.8;
-  }
-  75% {
-    transform: translateY(-15px) translateX(3px);
-    opacity: 0.9;
-  }
-}
 
 /* ===========================================
    MINIMAL TEAM PHOTO HOVER EFFECTS
@@ -353,32 +334,12 @@ section[id] {
   filter: blur(0);
 }
 
-/* Accessibility Improvements */
-/* Focus Indicators */
-*:focus {
-  outline: 2px solid #27ae60 !important;
-  outline-offset: 2px !important;
-}
-
+/* Focus Indicators for buttons and links (higher specificity than generic *:focus) */
 button:focus,
 a:focus {
   outline: 2px solid #27ae60 !important;
   outline-offset: 2px !important;
   box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.3) !important;
-}
-
-/* Skip Link Focus */
-.skip-nav:focus {
-  position: fixed !important;
-  top: 20px !important;
-  left: 20px !important;
-  z-index: 10000 !important;
-  padding: 12px 20px !important;
-  background: #27ae60 !important;
-  color: white !important;
-  text-decoration: none !important;
-  border-radius: 4px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Screen Reader Only Text */
