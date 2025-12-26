@@ -76,6 +76,18 @@
   .mobile-menu-close-btn {
     flex: 0 0 auto !important;
     margin-left: auto !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    font-size: 1.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
   }
 
   .mobile-menu-close-btn:hover {
@@ -322,8 +334,19 @@
   }
 }
 
-/* Fix 3: Hero buttons spacing on mobile */
 @media (max-width: 768px) {
+  .display-table {
+    min-height: 50vh !important;
+  }
+
+  #home .btn-primary {
+    padding: 12px 24px !important;
+    font-size: 1rem !important;
+    max-width: 220px !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
   .mt-5[role="group"] {
     display: flex !important;
     flex-wrap: wrap !important;

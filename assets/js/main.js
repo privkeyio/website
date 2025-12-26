@@ -7,22 +7,22 @@
         MAX_SUBMISSIONS: 3
     });
 
-    const formState = { submissions: [], blocked: false };
+    const formState = { submissions: [], blocked: false, rateLimited: false, retryAfter: null };
 
     const DATA = {
         services: [
-            { icon: "pe-7s-rocket", title: "Software Development", desc: "Full-cycle development from ideation to production. We build secure, scalable applications for enterprises—web, mobile, and infrastructure.", features: ["Full-Stack Development", "Security-First Architecture", "Open Source Contributions", "API & Protocol Implementation"], expandedContent: "Since 2018, we've delivered custom software for enterprises across industries—from high-throughput systems to user-facing applications.", useCases: ["Enterprise applications", "Bitcoin & Lightning tooling", "Web & mobile development", "Custom integrations"] },
+            { icon: "pe-7s-rocket", title: "Software Development", desc: "Full-cycle development from ideation to production. We build secure, scalable applications for enterprises: web, mobile, and infrastructure.", features: ["Full-Stack Development", "Security-First Architecture", "Open Source Contributions", "API & Protocol Implementation"], expandedContent: "Since 2018, we've delivered custom software for enterprises across industries, from high-throughput systems to user-facing applications.", useCases: ["Enterprise applications", "Bitcoin & Lightning tooling", "Web & mobile development", "Custom integrations"] },
             { icon: "pe-7s-lock", title: "Key Management & Custody", desc: "Self-sovereign key infrastructure with FROST threshold signing, TEE enclave protection, and hidden volumes for plausible deniability.", features: ["FROST Threshold Signatures", "TEE Enclave Security", "Hidden Volumes", "NIP-46 Remote Signing"], expandedContent: "Our Keep signing stack is the only open-source solution combining FROST + Enclave + Nostr + Hidden Volumes.", useCases: ["Enterprise self-custody setup", "Multi-party signing infrastructure", "AI agent key constraints", "Institutional wallet architecture"] },
-            { icon: "pe-7s-gleam", title: "Lightning Infrastructure", desc: "Enterprise Lightning Network deployment, node security, channel management, and payment routing optimization.", features: ["Node Deployment & Hardening", "Channel Security", "Liquidity Management", "Payment Routing"], expandedContent: "We help enterprises run Lightning infrastructure that scales—securely and reliably.", useCases: ["Institutional Lightning nodes", "Payment processing infrastructure", "Cross-border settlement", "Liquidity provisioning"] },
-            { icon: "pe-7s-note2", title: "Security Auditing", desc: "Comprehensive audits for Bitcoin infrastructure, key management systems, Lightning nodes, and custody operations.", features: ["Key Management Audits", "Node Security Assessment", "Penetration Testing", "Compliance Review"], expandedContent: "We audit what matters—keys, signing infrastructure, and custody operations. 30+ years combined experience.", useCases: ["Custody infrastructure audits", "Lightning node security review", "Key management assessment", "Pre-deployment security review"] },
+            { icon: "pe-7s-gleam", title: "Lightning Infrastructure", desc: "Enterprise Lightning Network deployment, node security, channel management, and payment routing optimization.", features: ["Node Deployment & Hardening", "Channel Security", "Liquidity Management", "Payment Routing"], expandedContent: "We help enterprises run Lightning infrastructure that scales, securely and reliably.", useCases: ["Institutional Lightning nodes", "Payment processing infrastructure", "Cross-border settlement", "Liquidity provisioning"] },
+            { icon: "pe-7s-note2", title: "Security Auditing", desc: "Comprehensive audits for Bitcoin infrastructure, key management systems, Lightning nodes, and custody operations.", features: ["Key Management Audits", "Node Security Assessment", "Penetration Testing", "Compliance Review"], expandedContent: "We audit what matters: keys, signing infrastructure, and custody operations. 30+ years combined experience.", useCases: ["Custody infrastructure audits", "Lightning node security review", "Key management assessment", "Pre-deployment security review"] },
             { icon: "pe-7s-plugin", title: "Nostr Infrastructure", desc: "High-performance relay deployment, NIP implementations, and decentralized identity solutions built on Nostr.", features: ["Relay Deployment (Wisp)", "NIP Implementation", "Blossom Media Storage", "Decentralized Identity"], expandedContent: "Wisp is 4x faster than competitors. We build and deploy Nostr infrastructure that scales.", useCases: ["Enterprise relay deployment", "Private communication infrastructure", "Decentralized identity systems", "Lightning-integrated Nostr apps"] },
-            { icon: "pe-7s-safe", title: "Consulting", desc: "Strategic guidance for Bitcoin adoption, self-custody implementation, and sovereign infrastructure planning.", features: ["Self-Custody Strategy", "Infrastructure Architecture", "Regulatory Guidance", "Technology Selection"], expandedContent: "We help enterprises own their infrastructure—from treasury strategy to full-stack deployment.", useCases: ["Bitcoin treasury planning", "Self-custody roadmap", "Infrastructure architecture", "Vendor-free sovereignty"] }
+            { icon: "pe-7s-safe", title: "Consulting", desc: "Strategic guidance for Bitcoin adoption, self-custody implementation, and sovereign infrastructure planning.", features: ["Self-Custody Strategy", "Infrastructure Architecture", "Regulatory Guidance", "Technology Selection"], expandedContent: "We help enterprises own their infrastructure, from treasury strategy to full-stack deployment.", useCases: ["Bitcoin treasury planning", "Self-custody roadmap", "Infrastructure architecture", "Vendor-free sovereignty"] }
         ],
         highlights: [
-            { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and Bitcoin infrastructure" },
-            { icon: "pe-7s-lock", title: "Self-Sovereign Security", description: "FROST threshold signing with TEE enclave protection" },
-            { icon: "pe-7s-network", title: "Full Stack", description: "Relay → Signing → Policy → Payments → Oracles" },
-            { icon: "pe-7s-rocket", title: "Zig + Rust", description: "Zig for speed (4x throughput), Rust for security (memory-safe crypto)" }
+            { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and Bitcoin infrastructure." },
+            { icon: "pe-7s-lock", title: "Open Source First", description: "Trust through transparency. Core infrastructure you can audit and self-host." },
+            { icon: "pe-7s-science", title: "Performance + Security", description: "Zig for speed, Rust for security. We don't compromise on either." },
+            { icon: "pe-7s-rocket", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
         ],
         products: [
             { name: "Keep", description: "Self-custodial key management for Nostr and Bitcoin.", language: "Rust", url: "https://github.com/privkeyio/keep" },
@@ -200,6 +200,20 @@
             </div>`).join('');
     }
 
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    function sanitizeUrl(url) {
+        try {
+            const parsed = new URL(url);
+            if (parsed.protocol === 'https:' || parsed.protocol === 'http:') return parsed.href;
+        } catch {}
+        return '#';
+    }
+
     async function renderResources() {
         const grid = document.getElementById('resources-grid');
         grid.innerHTML = '<div class="col-12 text-center"><p class="text-white-50">Loading articles...</p></div>';
@@ -210,14 +224,17 @@
                 const articles = data.items.slice(0, 6);
                 grid.innerHTML = articles.map((r, i) => {
                     const date = new Date(r.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-                    const desc = r.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...';
+                    const rawDesc = r.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...';
+                    const safeTitle = escapeHtml(r.title);
+                    const safeDesc = escapeHtml(rawDesc);
+                    const safeUrl = sanitizeUrl(r.link);
                     return `
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card resource-card h-100 border-0 shadow-sm" data-url="${r.link}" style="cursor:pointer">
+                        <div class="card resource-card h-100 border-0 shadow-sm" data-url="${safeUrl}" style="cursor:pointer">
                             <div class="card-body p-4 d-flex flex-column">
                                 <div class="resource-header mb-3"><small class="text-white-50">${date}</small></div>
-                                <h5 class="resource-title mb-3 text-white">${r.title}</h5>
-                                <p class="resource-description text-white-50 mb-3 flex-grow-1">${desc}</p>
+                                <h5 class="resource-title mb-3 text-white">${safeTitle}</h5>
+                                <p class="resource-description text-white-50 mb-3 flex-grow-1">${safeDesc}</p>
                             </div>
                         </div>
                     </div>`;
@@ -334,9 +351,19 @@
             try {
                 const response = await fetch(CONFIG.FORM_ENDPOINT, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
                 if (response.ok) { status.innerHTML = '<div class="alert alert-success"><i class="mdi mdi-check-circle me-2"></i>Thank you! Your message has been sent.</div>'; status.style.display = 'block'; form.reset(); setTimeout(() => status.style.display = 'none', 5000); }
+                else if (response.status === 429) {
+                    formState.rateLimited = true;
+                    const retryAfter = parseInt(response.headers.get('Retry-After'), 10) || 60;
+                    formState.retryAfter = Date.now() + retryAfter * 1000;
+                    submitBtn.disabled = true;
+                    status.innerHTML = `<div class="alert alert-warning"><i class="mdi mdi-clock me-2"></i>Server rate limit reached. Please wait ${retryAfter} seconds.</div>`;
+                    status.style.display = 'block';
+                    setTimeout(() => { formState.rateLimited = false; formState.retryAfter = null; submitBtn.disabled = false; submitBtn.innerHTML = 'Send Message'; }, retryAfter * 1000);
+                    return;
+                }
                 else throw new Error('Network error');
             } catch { status.innerHTML = '<div class="alert alert-danger"><i class="mdi mdi-alert-circle me-2"></i>Sorry, there was an error. Please try again.</div>'; status.style.display = 'block'; }
-            finally { submitBtn.disabled = false; submitBtn.innerHTML = 'Send Message'; }
+            finally { if (!formState.rateLimited) { submitBtn.disabled = false; submitBtn.innerHTML = 'Send Message'; } }
         });
     }
 

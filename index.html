@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://cdn.jsdelivr.net https://api.rss2json.com; base-uri 'self'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>PrivKey - Self-Sovereign Bitcoin & Nostr Infrastructure</title>
-    <meta name="description" content="Protect your Bitcoin. Own your infrastructure. Software development, key management, security auditing, and Nostr infrastructure—built in Zig and Rust.">
+    <meta name="description" content="Protect your Bitcoin. Own your infrastructure. Software development, key management, security auditing, and Nostr infrastructure built in Zig and Rust.">
     <meta name="keywords" content="bitcoin self-custody, nostr infrastructure, lightning network, FROST threshold, bitcoin security, nostr relay, sovereign bitcoin, enterprise custody">
     <meta name="author" content="PrivKey LLC">
 
@@ -76,6 +76,7 @@
                     <li class="nav-item active" role="menuitem"><a class="nav-link navbar-text-large-font" href="#home">Home</a></li>
                     <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="#services">Services</a></li>
                     <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="#who-we-are">About</a></li>
+                    <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="#technology">Products</a></li>
                     <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="#team">Team</a></li>
                     <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="#resources">Resources</a></li>
                     <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="#contact">Contact</a></li>
@@ -85,16 +86,18 @@
                         <div class="mobile-menu-logo">
                             <img alt="PrivKey logo" src="assets/images/LOGO_Green_new_transparent_White.png" class="img-fluid rounded resize-media-qry logo-class" style="max-height:60px;width:auto">
                         </div>
-                        <button class="mobile-menu-close-btn" aria-label="Close navigation menu">✕</button>
+                        <button class="mobile-menu-close-btn" aria-label="Close navigation menu"><i class="mdi mdi-close"></i></button>
                     </div>
                     <div class="mobile-menu-items">
                         <a href="#home" class="mobile-nav-link">Home</a>
                         <a href="#services" class="mobile-nav-link">Services</a>
-                        <a href="#resources" class="mobile-nav-link">Resources</a>
                         <a href="#who-we-are" class="mobile-nav-link">About</a>
+                        <a href="#technology" class="mobile-nav-link">Products</a>
+                        <a href="#team" class="mobile-nav-link">Team</a>
+                        <a href="#resources" class="mobile-nav-link">Resources</a>
                         <a href="#contact" class="mobile-nav-link">Contact</a>
                         <div style="margin-top:2rem;width:100%;display:flex;justify-content:center">
-                            <a href="https://calendly.com/privkey" target="_blank" rel="noopener noreferrer" class="mobile-menu-consultation-btn">Book a Consultation</a>
+                            <a href="https://privkey.setmore.com" target="_blank" rel="noopener noreferrer" class="mobile-menu-consultation-btn">Book a Consultation</a>
                         </div>
                     </div>
                 </div>
@@ -104,11 +107,10 @@
 
     <div class="homepage-bg">
         <main id="main-content">
-            <section class="section bg-home hero-section-enhanced" id="home" style="min-height:70vh;padding:120px 0 60px 0">
+            <section class="section bg-home hero-section-enhanced" id="home" style="min-height:70vh;padding:90px 0">
                 <div class="bg-overlay"></div>
                 <div class="hero-particles"></div>
-                <div class="display-table">
-                    <div class="display-table-cell">
+                <div class="display-table" style="display:flex;align-items:center;justify-content:center;min-height:calc(70vh - 180px)">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-1 text-white text-center">
@@ -123,7 +125,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </section>
 
@@ -132,10 +133,10 @@
                     <div class="fade-in-up">
                         <div class="row">
                             <div class="col-lg-8 offset-lg-2">
-                                <h1 class="section-title text-center">Our Services</h1>
+                                <h2 class="section-title text-center">Our Services</h2>
                                 <div class="section-title-border mt-3"></div>
                                 <div class="section-subtitle text-center pt-4 font-secondary" style="color:#B3B3B3">
-                                    Software development, key management, auditing, and infrastructure—since 2018.
+                                    Software development, key management, auditing, and infrastructure since 2018.
                                 </div>
                             </div>
                         </div>
@@ -149,11 +150,11 @@
             <section class="section" id="who-we-are" style="background:linear-gradient(135deg,#1a1a1a 0%,#0d1117 50%,#161b22 100%);padding:60px 0">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8 text-center">
+                        <div class="col-lg-10 text-center">
                             <h2 class="section-title text-white">Who We Are</h2>
-                            <div class="section-title-border mt-3 mx-auto" style="width:60px;height:3px;background-color:#27ae60"></div>
-                            <p class="section-subtitle text-center pt-4 mb-5">
-                                Founded by cybersecurity veterans with 30+ years of combined experience. We build privacy-first Bitcoin, Lightning, and Nostr infrastructure—so you never have to trust a third party with your keys.
+                            <div class="section-title-border mt-3"></div>
+                            <p class="section-subtitle text-center pt-4 mb-5" style="max-width:900px;margin-left:auto;margin-right:auto">
+                                Founded by cybersecurity veterans with 30+ years of combined experience. We build privacy-first, high-performance infrastructure for Bitcoin, Lightning, and Nostr. Open source. Self-hostable. No vendor lock-in.
                             </p>
                         </div>
                     </div>
@@ -165,10 +166,8 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8 text-center">
-                            <h2 class="section-title text-white">Open Source</h2>
-                            <p class="section-subtitle text-white-50 mx-auto mb-4 text-center">
-                                Bitcoin, Lightning, and Nostr infrastructure.
-                            </p>
+                            <h2 class="section-title text-white">Our Products</h2>
+                            <div class="section-title-border mt-3"></div>
                         </div>
                     </div>
                     <div class="row mt-4 justify-content-center" id="products-grid"></div>
@@ -185,7 +184,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2">
-                            <h1 class="section-title text-center">Meet Our Team</h1>
+                            <h2 class="section-title text-center">Meet Our Team</h2>
                             <div class="section-title-border mt-3"></div>
                         </div>
                     </div>
@@ -198,8 +197,9 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8 text-center">
-                            <h2 class="section-title">Resources & Insights</h2>
-                            <p class="section-subtitle mx-auto" style="color:#B3B3B3">
+                            <h2 class="section-title text-white">Resources & Insights</h2>
+                            <div class="section-title-border mt-3"></div>
+                            <p class="section-subtitle mx-auto mt-3" style="color:#B3B3B3">
                                 Stay ahead with our latest research, white papers, and industry insights.
                             </p>
                         </div>
@@ -224,7 +224,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2">
-                            <h1 class="section-title text-center">Get In Touch</h1>
+                            <h2 class="section-title text-center">Get In Touch</h2>
                             <div class="section-title-border mt-3"></div>
                             <div class="section-subtitle text-center pt-4 font-secondary" style="color:#B3B3B3">
                                 Schedule a consultation to discuss your security requirements.
