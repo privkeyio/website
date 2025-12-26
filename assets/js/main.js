@@ -11,12 +11,12 @@
 
     const DATA = {
         services: [
-            { icon: "pe-7s-rocket", title: "Custom Software Development", desc: "Full-cycle software development from ideation to production. Since 2018, we've been building custom enterprise solutions tailored to your unique business needs.", features: ["End-to-End Development", "Agile Methodology", "Cloud-Native Architecture", "Continuous Integration/Deployment"], expandedContent: "With years of experience since 2018, we've delivered custom software solutions for various companies across industries.", useCases: ["Enterprise application development", "SaaS platform creation", "Mobile and web application development", "Legacy system modernization"] },
-            { icon: "pe-7s-lock", title: "Cybersecurity Services", desc: "Comprehensive cybersecurity solutions including threat intelligence, penetration testing, incident response, and security consulting.", features: ["24/7 Security Operations Center", "AI-Powered Threat Detection", "Incident Response Team", "Vulnerability Management"], expandedContent: "Our cybersecurity services leverage 30+ years of combined expertise to deliver enterprise-grade protection.", useCases: ["Enterprise network security hardening", "Regulatory compliance implementation", "Security incident investigation", "Employee security awareness training"] },
-            { icon: "pe-7s-gleam", title: "Lightning Security", desc: "Enterprise security solutions for Bitcoin Lightning Network including node management, channel security, and payment routing protection.", features: ["CCSS-Compliant Infrastructure", "Automated Channel Management", "Multi-Signature Protection", "Real-time Transaction Monitoring"], expandedContent: "PrivKey pioneered the industry's first comprehensive Lightning security framework.", useCases: ["Institutional Lightning node deployment", "Payment channel security optimization", "High-volume transaction processing", "Cross-border payment infrastructure"] },
-            { icon: "pe-7s-safe", title: "Bitcoin & Digital Asset Consulting", desc: "Strategic consulting for Bitcoin infrastructure, institutional custody, and regulatory compliance.", features: ["Custody Solution Architecture", "Regulatory Compliance Guidance", "Key Management Best Practices", "Multi-Signature Configurations"], expandedContent: "Our consulting services help enterprises navigate Bitcoin adoption and institutional-grade custody.", useCases: ["Enterprise Bitcoin treasury strategy", "Institutional custody implementation", "Nostr protocol infrastructure", "Self-custody solutions for organizations"] },
-            { icon: "pe-7s-note2", title: "Security Auditing & Compliance", desc: "Professional security audits for Bitcoin infrastructure and Lightning Network nodes.", features: ["Node Security Assessment", "Key Management Auditing", "Compliance Assessments", "Penetration Testing"], expandedContent: "Our audit services combine automated scanning with manual expert review of Bitcoin infrastructure.", useCases: ["Lightning node security audits", "Custody infrastructure review", "Regulatory readiness assessments", "Bitcoin operational security audits"] },
-            { icon: "pe-7s-plugin", title: "Nostr & Protocol Development", desc: "Nostr relay infrastructure, NIP implementations, and decentralized identity solutions.", features: ["Relay Deployment & Scaling", "NIP Implementation", "Nostr Application Development", "Decentralized Identity"], expandedContent: "We build and secure Nostr infrastructure for enterprises adopting censorship-resistant communication.", useCases: ["Enterprise Nostr relay deployment", "Custom NIP implementations", "Nostr-based application development", "Lightning-integrated Nostr solutions"] }
+            { icon: "pe-7s-rocket", title: "Software Development", desc: "Full-cycle development from ideation to production. We build secure, scalable applications for enterprises—web, mobile, and infrastructure.", features: ["Full-Stack Development", "Security-First Architecture", "Open Source Contributions", "API & Protocol Implementation"], expandedContent: "Since 2018, we've delivered custom software for enterprises across industries—from high-throughput systems to user-facing applications.", useCases: ["Enterprise applications", "Bitcoin & Lightning tooling", "Web & mobile development", "Custom integrations"] },
+            { icon: "pe-7s-lock", title: "Key Management & Custody", desc: "Self-sovereign key infrastructure with FROST threshold signing, TEE enclave protection, and hidden volumes for plausible deniability.", features: ["FROST Threshold Signatures", "TEE Enclave Security", "Hidden Volumes", "NIP-46 Remote Signing"], expandedContent: "Our Keep signing stack is the only open-source solution combining FROST + Enclave + Nostr + Hidden Volumes.", useCases: ["Enterprise self-custody setup", "Multi-party signing infrastructure", "AI agent key constraints", "Institutional wallet architecture"] },
+            { icon: "pe-7s-gleam", title: "Lightning Infrastructure", desc: "Enterprise Lightning Network deployment, node security, channel management, and payment routing optimization.", features: ["Node Deployment & Hardening", "Channel Security", "Liquidity Management", "Payment Routing"], expandedContent: "We help enterprises run Lightning infrastructure that scales—securely and reliably.", useCases: ["Institutional Lightning nodes", "Payment processing infrastructure", "Cross-border settlement", "Liquidity provisioning"] },
+            { icon: "pe-7s-note2", title: "Security Auditing", desc: "Comprehensive audits for Bitcoin infrastructure, key management systems, Lightning nodes, and custody operations.", features: ["Key Management Audits", "Node Security Assessment", "Penetration Testing", "Compliance Review"], expandedContent: "We audit what matters—keys, signing infrastructure, and custody operations. 30+ years combined experience.", useCases: ["Custody infrastructure audits", "Lightning node security review", "Key management assessment", "Pre-deployment security review"] },
+            { icon: "pe-7s-plugin", title: "Nostr Infrastructure", desc: "High-performance relay deployment, NIP implementations, and decentralized identity solutions built on Nostr.", features: ["Relay Deployment (Wisp)", "NIP Implementation", "Blossom Media Storage", "Decentralized Identity"], expandedContent: "Wisp is 4x faster than competitors. We build and deploy Nostr infrastructure that scales.", useCases: ["Enterprise relay deployment", "Private communication infrastructure", "Decentralized identity systems", "Lightning-integrated Nostr apps"] },
+            { icon: "pe-7s-safe", title: "Consulting", desc: "Strategic guidance for Bitcoin adoption, self-custody implementation, and sovereign infrastructure planning.", features: ["Self-Custody Strategy", "Infrastructure Architecture", "Regulatory Guidance", "Technology Selection"], expandedContent: "We help enterprises own their infrastructure—from treasury strategy to full-stack deployment.", useCases: ["Bitcoin treasury planning", "Self-custody roadmap", "Infrastructure architecture", "Vendor-free sovereignty"] }
         ],
         highlights: [
             { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and Bitcoin infrastructure" },
@@ -83,11 +83,7 @@
             { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30-year cybersecurity veteran who pioneered institutional Bitcoin infrastructure since 2011. Led enterprise Bitcoin implementations for Fortune 500 clients. BS in Management Information Systems from the University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
             { image: "assets/images/kyle_profile.png", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Over a decade of cryptocurrency, software engineering, and cybersecurity expertise since 2011. BS & MS in Cybersecurity from the University of South Florida. Led integrations for Chainlink Labs and scaled institutional digital asset platforms.", mobileBio: ["10+ years crypto & cybersecurity", "BS & MS in Cybersecurity, USF", "Full stack development for 7+ years"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
         ],
-        resources: [
-            { title: "Stablecoins on Bitcoin: A New Era", readTime: "15 min read", description: "Exploring the revolutionary potential of stablecoins built on the Bitcoin network.", link: "https://privkey.substack.com/p/stablecoins-on-bitcoin-a-new-era" },
-            { title: "Building a Bridge to Taproot Assets", readTime: "12 min read", description: "Understanding how Taproot Assets are creating new possibilities for Bitcoin-based applications.", link: "https://privkey.substack.com/p/building-a-bridge-to-taproot-assets" },
-            { title: "PrivKey LLC: Pioneering Cybersecurity", readTime: "10 min read", description: "An in-depth look at PrivKey's approach to cybersecurity and blockchain technology solutions.", link: "https://privkey.substack.com/p/privkey-llc-pioneering-cybersecurity" }
-        ]
+        resources: []
     };
 
     let state = { activeSection: 'home', isNavigating: false, isSticky: false, mobileMenuOpen: false };
@@ -204,19 +200,33 @@
             </div>`).join('');
     }
 
-    function renderResources() {
+    async function renderResources() {
         const grid = document.getElementById('resources-grid');
-        grid.innerHTML = DATA.resources.map((r, i) => `
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card resource-card h-100 border-0 shadow-sm" data-resource="${i}" style="cursor:pointer">
-                    <div class="card-body p-4 d-flex flex-column">
-                        <div class="resource-header mb-3"><small class="text-white-50">${r.readTime}</small></div>
-                        <h5 class="resource-title mb-3 text-white">${r.title}</h5>
-                        <p class="resource-description text-white-50 mb-3 flex-grow-1">${r.description}</p>
-                    </div>
-                </div>
-            </div>`).join('');
-        grid.querySelectorAll('.resource-card').forEach(card => card.addEventListener('click', () => window.open(DATA.resources[card.dataset.resource].link, '_blank', 'noopener,noreferrer')));
+        grid.innerHTML = '<div class="col-12 text-center"><p class="text-white-50">Loading articles...</p></div>';
+        try {
+            const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://privkey.substack.com/feed');
+            const data = await res.json();
+            if (data.status === 'ok' && data.items) {
+                const articles = data.items.slice(0, 6);
+                grid.innerHTML = articles.map((r, i) => {
+                    const date = new Date(r.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    const desc = r.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...';
+                    return `
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card resource-card h-100 border-0 shadow-sm" data-url="${r.link}" style="cursor:pointer">
+                            <div class="card-body p-4 d-flex flex-column">
+                                <div class="resource-header mb-3"><small class="text-white-50">${date}</small></div>
+                                <h5 class="resource-title mb-3 text-white">${r.title}</h5>
+                                <p class="resource-description text-white-50 mb-3 flex-grow-1">${desc}</p>
+                            </div>
+                        </div>
+                    </div>`;
+                }).join('');
+                grid.querySelectorAll('.resource-card').forEach(card => card.addEventListener('click', () => window.open(card.dataset.url, '_blank', 'noopener,noreferrer')));
+            }
+        } catch (e) {
+            grid.innerHTML = '<div class="col-12 text-center"><a href="https://privkey.substack.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">View Articles on Substack</a></div>';
+        }
     }
 
     function initNavbar() {
