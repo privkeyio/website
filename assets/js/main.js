@@ -1,30 +1,36 @@
 (function() {
     'use strict';
 
+    const CONFIG = Object.freeze({
+        FORM_ENDPOINT: 'https://formspree.io/f/mwkwqwkl',
+        RATE_LIMIT_MS: 60000,
+        MAX_SUBMISSIONS: 3
+    });
+
+    const formState = { submissions: [], blocked: false, rateLimited: false, retryAfter: null };
+
     const DATA = {
         services: [
-            { icon: "pe-7s-rocket", title: "Custom Software Development", desc: "Full-cycle software development from ideation to production. Since 2018, we've been building custom enterprise solutions tailored to your unique business needs.", features: ["End-to-End Development", "Agile Methodology", "Cloud-Native Architecture", "Continuous Integration/Deployment"], expandedContent: "With years of experience since 2018, we've delivered custom software solutions for various companies across industries.", useCases: ["Enterprise application development", "SaaS platform creation", "Mobile and web application development", "Legacy system modernization"] },
-            { icon: "pe-7s-lock", title: "Cybersecurity Services", desc: "Comprehensive cybersecurity solutions including threat intelligence, penetration testing, incident response, and security consulting.", features: ["24/7 Security Operations Center", "AI-Powered Threat Detection", "Incident Response Team", "Vulnerability Management"], expandedContent: "Our cybersecurity services leverage 30+ years of combined expertise to deliver enterprise-grade protection.", useCases: ["Enterprise network security hardening", "Regulatory compliance implementation", "Security incident investigation", "Employee security awareness training"] },
-            { icon: "pe-7s-gleam", title: "Lightning Security", desc: "Enterprise security solutions for Bitcoin Lightning Network including node management, channel security, and payment routing protection.", features: ["CCSS-Compliant Infrastructure", "Automated Channel Management", "Multi-Signature Protection", "Real-time Transaction Monitoring"], expandedContent: "PrivKey pioneered the industry's first comprehensive Lightning security framework.", useCases: ["Institutional Lightning node deployment", "Payment channel security optimization", "High-volume transaction processing", "Cross-border payment infrastructure"] },
-            { icon: "pe-7s-safe", title: "Blockchain & Digital Asset Consulting", desc: "Strategic consulting for blockchain implementation, digital asset security, and regulatory compliance.", features: ["Custody Solution Architecture", "Regulatory Compliance Guidance", "Security Best Practices", "Technology Stack Selection"], expandedContent: "Our blockchain consulting services help enterprises navigate the complexities of digital asset adoption.", useCases: ["Enterprise blockchain strategy development", "Digital asset custody implementation", "DeFi protocol security assessment", "Nostr protocol implementation"] },
-            { icon: "pe-7s-note2", title: "Security Auditing & Certification", desc: "Professional security audits and compliance certification services for enterprises.", features: ["Security Assessment", "Smart Contract Auditing", "Compliance Assessments", "Security Gap Analysis"], expandedContent: "Our audit services combine automated scanning tools with manual expert review.", useCases: ["Pre-deployment smart contract audits", "Annual security compliance reviews", "Regulatory readiness assessments", "Third-party vendor security audits"] },
-            { icon: "pe-7s-plugin", title: "Smart Contract Development", desc: "Secure smart contract development and auditing across multiple blockchain platforms.", features: ["Multi-Chain Development", "Security-First Architecture", "Gas Optimization", "Formal Verification"], expandedContent: "We develop smart contracts with security as the primary focus.", useCases: ["DeFi protocol development", "NFT marketplace contracts", "Enterprise tokenization solutions", "Cross-chain bridge implementation"] }
+            { icon: "pe-7s-rocket", title: "Software Development", desc: "Full-cycle development from ideation to production. We build secure, scalable applications for enterprises: web, mobile, and infrastructure.", features: ["Full-Stack Development", "Security-First Architecture", "Open Source Contributions", "API & Protocol Implementation"], expandedContent: "Since 2018, we've delivered custom software for enterprises across industries, from high-throughput systems to user-facing applications.", useCases: ["Enterprise applications", "Bitcoin & Lightning tooling", "Web & mobile development", "Custom integrations"] },
+            { icon: "pe-7s-lock", title: "Key Management & Custody", desc: "Self-sovereign key infrastructure with FROST threshold signing, TEE enclave protection, and hidden volumes for plausible deniability.", features: ["FROST Threshold Signatures", "TEE Enclave Security", "Hidden Volumes", "NIP-46 Remote Signing"], expandedContent: "Our Keep signing stack is the only open-source solution combining FROST + Enclave + Nostr + Hidden Volumes.", useCases: ["Enterprise self-custody setup", "Multi-party signing infrastructure", "AI agent key constraints", "Institutional wallet architecture"] },
+            { icon: "pe-7s-gleam", title: "Lightning Infrastructure", desc: "Enterprise Lightning Network deployment, node security, channel management, and payment routing optimization.", features: ["Node Deployment & Hardening", "Channel Security", "Liquidity Management", "Payment Routing"], expandedContent: "We help enterprises run Lightning infrastructure that scales, securely and reliably.", useCases: ["Institutional Lightning nodes", "Payment processing infrastructure", "Cross-border settlement", "Liquidity provisioning"] },
+            { icon: "pe-7s-note2", title: "Security Auditing", desc: "Comprehensive audits for Bitcoin infrastructure, key management systems, Lightning nodes, and custody operations.", features: ["Key Management Audits", "Node Security Assessment", "Penetration Testing", "Compliance Review"], expandedContent: "We audit what matters: keys, signing infrastructure, and custody operations. 30+ years combined experience.", useCases: ["Custody infrastructure audits", "Lightning node security review", "Key management assessment", "Pre-deployment security review"] },
+            { icon: "pe-7s-plugin", title: "Nostr Infrastructure", desc: "High-performance relay deployment, NIP implementations, and decentralized identity solutions built on Nostr.", features: ["Relay Deployment (Wisp)", "NIP Implementation", "Blossom Media Storage", "Decentralized Identity"], expandedContent: "Wisp is 4x faster than competitors. We build and deploy Nostr infrastructure that scales.", useCases: ["Enterprise relay deployment", "Private communication infrastructure", "Decentralized identity systems", "Lightning-integrated Nostr apps"] },
+            { icon: "pe-7s-safe", title: "Consulting", desc: "Strategic guidance for Bitcoin adoption, self-custody implementation, and sovereign infrastructure planning.", features: ["Self-Custody Strategy", "Infrastructure Architecture", "Regulatory Guidance", "Technology Selection"], expandedContent: "We help enterprises own their infrastructure, from treasury strategy to full-stack deployment.", useCases: ["Bitcoin treasury planning", "Self-custody roadmap", "Infrastructure architecture", "Vendor-free sovereignty"] }
         ],
         highlights: [
-            { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and blockchain technology" },
-            { icon: "pe-7s-lock", title: "Enterprise Security", description: "Protecting networks, systems, and digital assets from evolving cyber threats" },
-            { icon: "pe-7s-network", title: "Blockchain Specialists", description: "Expert consulting, smart contracts, and cryptocurrency wallet security solutions" },
-            { icon: "pe-7s-check", title: "Compliance Ready", description: "AML/KYC guidance and regulatory compliance for all digital asset operations" }
+            { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and Bitcoin infrastructure." },
+            { icon: "pe-7s-lock", title: "Open Source First", description: "Trust through transparency. Core infrastructure you can audit and self-host." },
+            { icon: "pe-7s-science", title: "Performance + Security", description: "Zig for speed, Rust for security. We don't compromise on either." },
+            { icon: "pe-7s-rocket", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
         ],
-        techModules: [
-            { icon: "https://cdn-icons-png.flaticon.com/512/159/159478.png", alt: "Security Lock", title: "FROST Lightning Multisig", desc: "Industry-first 2-of-3 threshold signatures for Lightning channels", features: ["MuSig2/FROST protocols", "No single point of failure", "Sub-2 second signing"] },
-            { icon: "https://cdn-icons-png.flaticon.com/512/15552/15552192.png", alt: "Attestation", title: "TAP Authorization Layer", desc: "Advanced transaction policies beyond basic velocity limits", features: ["Risk scoring engine", "Multi-tier approvals", "Miniscript-aware rules"] },
-            { icon: "https://cdn-icons-png.flaticon.com/512/5172/5172584.png", alt: "Tokens", title: "Taproot Assets Module", desc: "Issue and manage stablecoins on Bitcoin's Lightning Network", features: ["Stablecoin issuance", "Lightning-fast transfers", "EVM bridge ready"] },
-            { icon: "https://cdn-icons-png.flaticon.com/512/4252/4252491.png", alt: "Compliant", title: "Compliance Suite", desc: "Full Version 8.1 compliance with audit trails", features: ["Automated compliance", "Audit trail generation", "Regulatory reporting"] }
-        ],
-        openSourceProjects: [
-            { name: "Taproot Assets REST Gateway", description: "A lightweight REST proxy that makes Lightning Labs' Taproot Assets daemon accessible to web applications.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
-            { name: "libnostr-c", description: "A lightweight, portable C library for the Nostr protocol with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" }
+        products: [
+            { name: "Keep", description: "Self-custodial key management for Nostr and Bitcoin.", language: "Rust", url: "https://github.com/privkeyio/keep" },
+            { name: "Warden", description: "Policy engine for Bitcoin custody operations.", language: "Rust", url: "https://github.com/privkeyio/warden" },
+            { name: "Wisp", description: "Fast, lightweight Nostr relay.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
+            { name: "Taproot Assets Gateway", description: "REST proxy for Lightning Labs' Taproot Assets daemon with CORS support.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
+            { name: "libnostr-z", description: "Zig library for the Nostr protocol.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
+            { name: "libnostr-c", description: "Lightweight, portable C library for Nostr with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" }
         ],
         contributions: {
             "Bitcoin & Lightning Network": [
@@ -33,13 +39,26 @@
                 { name: "Core Lightning - Handle NULL Short Channel ID", url: "https://github.com/ElementsProject/lightning/pull/8435" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
                 { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
-                { name: "Bitcoin Knots - Export GUI Policy Options", url: "https://github.com/bitcoinknots/bitcoin/pull/154" }
+                { name: "Bitcoin Knots - Export GUI Policy Options", url: "https://github.com/bitcoinknots/bitcoin/pull/154" },
+                { name: "Bitcoin Knots - Windows Taskbar Progress", url: "https://github.com/bitcoinknots/bitcoin/pull/215" },
+                { name: "Bitcoin Knots - Clear History Command", url: "https://github.com/bitcoinknots/bitcoin/pull/214" },
+                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
+                { name: "OCEAN - Job Coordination for Fallback Shares", url: "https://github.com/OCEAN-xyz/datum_gateway/pull/156" },
+                { name: "DTails - Add Knots Support", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52" },
+                { name: "Alby Hub - Spelling Fix", url: "https://github.com/getAlby/hub/pull/1847" }
             ],
             "Nostr Protocol": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
                 { name: "Routstr Core - Integration Tests", url: "https://github.com/Routstr/routstr-core/pull/78" },
                 { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
-                { name: "Orly - Relay Performance Benchmark", url: "https://github.com/mleku/orly/pull/4" }
+                { name: "Routstr Chat - AI Extended Reasoning Display", url: "https://github.com/Routstr/routstr-chat/pull/46" },
+                { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" },
+                { name: "Routstr Chat - Test Suite Infrastructure", url: "https://github.com/Routstr/routstr-chat/pull/72" },
+                { name: "Sixty Nuts - NIP-60 State Transitions", url: "https://github.com/Routstr/sixty-nuts/pull/32" },
+                { name: "Orly - Relay Performance Benchmark", url: "https://github.com/mleku/orly/pull/4" },
+                { name: "Orly - Public Relay Blacklist Support", url: "https://github.com/mleku/orly/pull/5" },
+                { name: "Orly - Nostr Relay Benchmark Suite", url: "https://github.com/mleku/orly/pull/8" },
+                { name: "Orly - Dockerize Benchmark Suite", url: "https://github.com/mleku/orly/pull/10" }
             ],
             "Developer Tools & AI": [
                 { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" },
@@ -61,15 +80,10 @@
             ]
         },
         team: [
-            { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30-year cybersecurity veteran who pioneered institutional Bitcoin infrastructure since 2011. Led enterprise blockchain implementations for Fortune 500 clients. BS in Management Information Systems from the University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 blockchain leader"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
+            { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30-year cybersecurity veteran who pioneered institutional Bitcoin infrastructure since 2011. Led enterprise Bitcoin implementations for Fortune 500 clients. BS in Management Information Systems from the University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
             { image: "assets/images/kyle_profile.png", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Over a decade of cryptocurrency, software engineering, and cybersecurity expertise since 2011. BS & MS in Cybersecurity from the University of South Florida. Led integrations for Chainlink Labs and scaled institutional digital asset platforms.", mobileBio: ["10+ years crypto & cybersecurity", "BS & MS in Cybersecurity, USF", "Full stack development for 7+ years"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
         ],
-        resources: [
-            { title: "Stablecoins on Bitcoin: A New Era", readTime: "15 min read", description: "Exploring the revolutionary potential of stablecoins built on the Bitcoin network.", link: "https://privkey.substack.com/p/stablecoins-on-bitcoin-a-new-era" },
-            { title: "Building a Bridge to Taproot Assets", readTime: "12 min read", description: "Understanding how Taproot Assets are creating new possibilities for Bitcoin-based applications.", link: "https://privkey.substack.com/p/building-a-bridge-to-taproot-assets" },
-            { title: "PrivKey LLC: Pioneering Cybersecurity", readTime: "10 min read", description: "An in-depth look at PrivKey's approach to cybersecurity and blockchain technology solutions.", link: "https://privkey.substack.com/p/privkey-llc-pioneering-cybersecurity" }
-        ],
-        typingTexts: ["enterprise cybersecurity and Lightning Network solutions", "robust security for Lightning Network operations", "blockchain and digital asset protection expertise", "30+ years of cybersecurity experience"]
+        resources: []
     };
 
     let state = { activeSection: 'home', isNavigating: false, isSticky: false, mobileMenuOpen: false };
@@ -77,13 +91,11 @@
     function init() {
         renderServices();
         renderHighlights();
-        renderTechModules();
-        renderOpenSourceProjects();
+        renderProducts();
         renderContributions();
         renderTeam();
         renderResources();
         initNavbar();
-        initTypingEffect();
         initCounters();
         initContactForm();
         initMobileMenu();
@@ -98,7 +110,7 @@
                     <div class="mb-3"><i class="${s.icon} text-primary" style="font-size:3rem"></i></div>
                     <h5 class="mb-3 text-white">${s.title}</h5>
                     <p class="text-white flex-grow-1">${s.desc}</p>
-                    <div class="mt-auto pt-3"><button class="btn btn-sm service-learn-more-btn" data-service="${i}">Learn More</button></div>
+                    <div class="mt-auto pt-3 text-center"><button class="btn service-learn-more-btn" data-service="${i}" style="padding:10px 24px">Learn More</button></div>
                 </div>
             </div>`).join('');
         grid.querySelectorAll('.service-learn-more-btn').forEach(btn => btn.addEventListener('click', () => openServiceModal(parseInt(btn.dataset.service))));
@@ -128,28 +140,20 @@
             </div>`).join('');
     }
 
-    function renderTechModules() {
-        document.getElementById('tech-modules-grid').innerHTML = DATA.techModules.map(m => `
-            <div class="technology-module technology-module-custom">
-                <div style="width:60px;height:60px;display:flex;align-items:center;justify-content:center;margin-bottom:15px">
-                    <img src="${m.icon}" alt="${m.alt}" style="width:60px;height:60px;object-fit:contain;filter:brightness(0) saturate(100%) invert(67%) sepia(14%) saturate(1816%) hue-rotate(99deg) brightness(96%) contrast(87%) drop-shadow(0 0 10px rgba(39,174,96,0.6))">
+    function renderProducts() {
+        document.getElementById('products-grid').innerHTML = `
+            <div class="col-lg-10">
+                <div class="opensource-list">
+                    ${DATA.products.map(p => `
+                        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">
+                            <div class="opensource-item-header">
+                                <span class="opensource-name">${p.name}</span>
+                                <span class="opensource-lang">${p.language}</span>
+                            </div>
+                            <span class="opensource-desc">${p.description}</span>
+                        </a>`).join('')}
                 </div>
-                <h3 class="technology-module-title">${m.title}</h3>
-                <p class="technology-module-description">${m.desc}</p>
-                <ul class="technology-module-features">${m.features.map(f => `<li>${f}</li>`).join('')}</ul>
-            </div>`).join('');
-    }
-
-    function renderOpenSourceProjects() {
-        document.getElementById('opensource-projects').innerHTML = DATA.openSourceProjects.map(p => `
-            <div class="col-lg-5 col-md-6 mb-4">
-                <div class="project-card p-4 text-center rounded shadow-sm h-100" onclick="window.open('${p.url}','_blank')">
-                    <div class="project-header mb-3"><i class="mdi mdi-github-box" style="font-size:3rem;color:#27ae60"></i></div>
-                    <h5 class="project-name mb-3 text-white">${p.name}</h5>
-                    <p class="project-description text-white-50 mb-3">${p.description}</p>
-                    <span class="language-badge">${p.language}</span>
-                </div>
-            </div>`).join('');
+            </div>`;
     }
 
     function renderContributions() {
@@ -188,25 +192,58 @@
                     </div></div>
                     <div class="row"><h4 class="team-name">${t.title}</h4></div>
                     <div class="row margin-social-icon"><span class="text-uppercase team-designation">${t.desc}</span></div>
-                    <div class="outer-flex-div-team-box"><div class="inner-flex-div-team-box">
-                        ${t.linkedIn ? `<a href="${t.linkedIn}" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="mdi mdi-linkedin"></i></a>` : ''}
-                        ${t.twitter ? `<a href="${t.twitter}" class="social-icon" target="_blank" rel="noopener noreferrer"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>` : ''}
-                    </div></div>
+                    <ul class="social-icons-list">
+                        ${t.linkedIn ? `<li class="list-inline-item"><a href="${t.linkedIn}" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="mdi mdi-linkedin"></i></a></li>` : ''}
+                        ${t.twitter ? `<li class="list-inline-item"><a href="${t.twitter}" class="social-icon" target="_blank" rel="noopener noreferrer"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>` : ''}
+                    </ul>
                 </div>
             </div>`).join('');
     }
 
-    function renderResources() {
-        document.getElementById('resources-grid').innerHTML = DATA.resources.map(r => `
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card resource-card h-100 border-0 shadow-sm" onclick="window.open('${r.link}','_blank')">
-                    <div class="card-body p-4 d-flex flex-column">
-                        <div class="resource-header mb-3"><small class="text-white-50">${r.readTime}</small></div>
-                        <h5 class="resource-title mb-3 text-white">${r.title}</h5>
-                        <p class="resource-description text-white-50 mb-3 flex-grow-1">${r.description}</p>
-                    </div>
-                </div>
-            </div>`).join('');
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    function sanitizeUrl(url) {
+        try {
+            const parsed = new URL(url);
+            if (parsed.protocol === 'https:' || parsed.protocol === 'http:') return parsed.href;
+        } catch {}
+        return '#';
+    }
+
+    async function renderResources() {
+        const grid = document.getElementById('resources-grid');
+        grid.innerHTML = '<div class="col-12 text-center"><p class="text-white-50">Loading articles...</p></div>';
+        try {
+            const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://privkey.substack.com/feed');
+            const data = await res.json();
+            if (data.status === 'ok' && data.items) {
+                const articles = data.items.slice(0, 6);
+                grid.innerHTML = articles.map((r, i) => {
+                    const date = new Date(r.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    const rawDesc = r.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...';
+                    const safeTitle = escapeHtml(r.title);
+                    const safeDesc = escapeHtml(rawDesc);
+                    const safeUrl = sanitizeUrl(r.link);
+                    return `
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card resource-card h-100 border-0 shadow-sm" data-url="${safeUrl}" style="cursor:pointer">
+                            <div class="card-body p-4 d-flex flex-column">
+                                <div class="resource-header mb-3"><small class="text-white-50">${date}</small></div>
+                                <h5 class="resource-title mb-3 text-white">${safeTitle}</h5>
+                                <p class="resource-description text-white-50 mb-3 flex-grow-1">${safeDesc}</p>
+                            </div>
+                        </div>
+                    </div>`;
+                }).join('');
+                grid.querySelectorAll('.resource-card').forEach(card => card.addEventListener('click', () => window.open(card.dataset.url, '_blank', 'noopener,noreferrer')));
+            }
+        } catch (e) {
+            grid.innerHTML = '<div class="col-12 text-center"><a href="https://privkey.substack.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">View Articles on Substack</a></div>';
+        }
     }
 
     function initNavbar() {
@@ -261,23 +298,6 @@
 
     function closeMobileMenu() { state.mobileMenuOpen = false; document.getElementById('navbarCollapse').classList.remove('show'); document.querySelector('.navbar-toggler').setAttribute('aria-expanded', 'false'); }
 
-    function initTypingEffect() {
-        const typedEl = document.querySelector('.typed-text');
-        const cursor = document.querySelector('.cursor');
-        const texts = DATA.typingTexts;
-        let textIndex = 0, charIndex = 0, isDeleting = false;
-        function type() {
-            const current = texts[textIndex];
-            typedEl.textContent = current.substring(0, isDeleting ? --charIndex : ++charIndex);
-            let delay = isDeleting ? 30 : 50;
-            if (!isDeleting && charIndex === current.length) { delay = 3000; isDeleting = true; }
-            else if (isDeleting && charIndex === 0) { isDeleting = false; textIndex = (textIndex + 1) % texts.length; delay = 500; }
-            setTimeout(type, delay);
-        }
-        setInterval(() => cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0', 500);
-        setTimeout(type, 1000);
-    }
-
     function initCounters() {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -308,8 +328,19 @@
             });
             return Object.keys(errors).length === 0;
         }
+        function checkRateLimit() {
+            const now = Date.now();
+            formState.submissions = formState.submissions.filter(t => now - t < CONFIG.RATE_LIMIT_MS);
+            if (formState.submissions.length >= CONFIG.MAX_SUBMISSIONS) { formState.blocked = true; return false; }
+            formState.submissions.push(now);
+            return true;
+        }
+
         form.addEventListener('submit', async e => {
             e.preventDefault();
+            const honeypot = form.querySelector('input[name="_gotcha"]');
+            if (honeypot && honeypot.value) return;
+            if (!checkRateLimit()) { status.innerHTML = '<div class="alert alert-warning"><i class="mdi mdi-clock me-2"></i>Too many requests. Please wait a moment.</div>'; status.style.display = 'block'; return; }
             if (!validate()) return;
             submitBtn.disabled = true; submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
             const formData = new FormData();
@@ -318,11 +349,21 @@
             formData.append('Referral', sanitize(form.referral.value.trim()));
             formData.append('comments', sanitize(form.comments.value.trim()));
             try {
-                const response = await fetch('https://formspree.io/f/mwkwqwkl', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+                const response = await fetch(CONFIG.FORM_ENDPOINT, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
                 if (response.ok) { status.innerHTML = '<div class="alert alert-success"><i class="mdi mdi-check-circle me-2"></i>Thank you! Your message has been sent.</div>'; status.style.display = 'block'; form.reset(); setTimeout(() => status.style.display = 'none', 5000); }
+                else if (response.status === 429) {
+                    formState.rateLimited = true;
+                    const retryAfter = parseInt(response.headers.get('Retry-After'), 10) || 60;
+                    formState.retryAfter = Date.now() + retryAfter * 1000;
+                    submitBtn.disabled = true;
+                    status.innerHTML = `<div class="alert alert-warning"><i class="mdi mdi-clock me-2"></i>Server rate limit reached. Please wait ${retryAfter} seconds.</div>`;
+                    status.style.display = 'block';
+                    setTimeout(() => { formState.rateLimited = false; formState.retryAfter = null; submitBtn.disabled = false; submitBtn.innerHTML = 'Send Message'; }, retryAfter * 1000);
+                    return;
+                }
                 else throw new Error('Network error');
             } catch { status.innerHTML = '<div class="alert alert-danger"><i class="mdi mdi-alert-circle me-2"></i>Sorry, there was an error. Please try again.</div>'; status.style.display = 'block'; }
-            finally { submitBtn.disabled = false; submitBtn.innerHTML = 'Send Message'; }
+            finally { if (!formState.rateLimited) { submitBtn.disabled = false; submitBtn.innerHTML = 'Send Message'; } }
         });
     }
 

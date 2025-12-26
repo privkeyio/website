@@ -76,6 +76,18 @@
   .mobile-menu-close-btn {
     flex: 0 0 auto !important;
     margin-left: auto !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    font-size: 1.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
   }
 
   .mobile-menu-close-btn:hover {
@@ -322,38 +334,66 @@
   }
 }
 
-/* Fix 3: Hero buttons spacing on mobile */
 @media (max-width: 768px) {
+  .display-table {
+    min-height: 50vh !important;
+  }
+
+  #home .btn-primary {
+    padding: 12px 24px !important;
+    font-size: 1rem !important;
+    max-width: 220px !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
   .mt-5[role="group"] {
     display: flex !important;
-    flex-direction: column !important;
-    gap: 1rem !important;
-    align-items: stretch !important;
+    flex-wrap: wrap !important;
+    gap: 0.75rem !important;
+    justify-content: center !important;
     padding: 0 1rem !important;
   }
-  
+
   .mt-5[role="group"] .btn {
     margin: 0 !important;
-    width: 100% !important;
-    padding: 16px 30px !important;
-    font-size: 1.1rem !important;
+    width: auto !important;
+    padding: 12px 20px !important;
+    font-size: 0.95rem !important;
   }
-  
+
   .mt-5[role="group"] .me-3 {
     margin-right: 0 !important;
+  }
+
+  .hero-tagline {
+    font-size: 1.2rem !important;
+  }
+
+  .mt-4[role="group"] .btn-outline-light {
+    display: none !important;
   }
 }
 
 /* Additional mobile improvements */
 @media (max-width: 768px) {
-  /* Hero section text container */
   .hero-text-container {
     padding: 12px 18px !important;
     margin: 0 1rem !important;
     max-width: calc(100% - 2rem) !important;
-    min-height: 80px !important;
+    min-height: 100px !important;
+    height: 100px !important;
+    line-height: 1.6 !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    transition: none !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-  
+
   .hero-text-container > div {
     font-size: 1.1rem !important;
     white-space: normal !important;
@@ -361,21 +401,32 @@
     overflow-wrap: break-word !important;
     hyphens: auto !important;
   }
-  
-  /* Hero title */
-  .home-title {
-    font-size: 1.75rem !important;
-    line-height: 1.3 !important;
-    margin-bottom: 1rem !important;
+
+  .custom-typing-wrapper {
+    min-height: 3em !important;
+    display: block !important;
   }
-  
-  /* Container padding */
+
+  .home-title {
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .typing-container {
+    font-size: 0.95rem !important;
+  }
+
+  .static-text,
+  .typed-text {
+    font-size: 0.95rem !important;
+  }
+
   .container {
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
-  
-  /* Section padding */
+
   .section {
     padding-top: 60px !important;
     padding-bottom: 60px !important;
@@ -383,25 +434,26 @@
 }
 
 @media (max-width: 480px) {
-  /* Even smaller screens - increase padding significantly */
   .home-title {
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
   }
-  
-  .hero-text-container {
+
+  .hero-tagline {
+    font-size: 1.1rem !important;
+  }
+
+  .mt-5[role="group"] .btn {
     padding: 10px 16px !important;
-    font-size: 1rem !important;
-    min-height: 90px !important;
-    height: 90px !important;
+    font-size: 0.85rem !important;
   }
-  
+
   .section.bg-home {
     min-height: auto !important;
     padding: 100px 0 40px 0 !important;
   }
-  
+
   .hero-section-enhanced {
-    padding-top: 200px !important;
+    padding-top: 160px !important;
   }
 }
 
@@ -439,34 +491,16 @@
   z-index: 1;
 }
 
-/* Mobile text container adjustments */
-@media (max-width: 768px) {
-  /* Fixed height container to prevent layout shift */
-  .hero-text-container {
-    min-height: 100px !important;
-    height: 100px !important;
-    line-height: 1.6 !important;
-    white-space: normal !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    transition: none !important;
-    overflow: hidden !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  
-  /* Prevent layout shift during typing animation */
-  .custom-typing-wrapper {
-    min-height: 3em !important;
-    display: block !important;
-  }
-}
 
-/* Fix for very small screens */
 @media (max-width: 375px) {
   .home-title {
-    font-size: 1.3rem !important;
+    font-size: 1.5rem !important;
+  }
+
+  .typing-container,
+  .static-text,
+  .typed-text {
+    font-size: 0.8rem !important;
   }
   
   .hero-text-container {
@@ -647,6 +681,44 @@
     display: none !important;
   }
 }
+/* Fix: Social icons in footer Follow Us box */
+.social-icons-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.15rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.social-icons-list .list-inline-item {
+  margin: 0;
+}
+
+.social-icons-list .social-icon {
+  width: 32px;
+  height: 32px;
+  background: none !important;
+  border: none !important;
+}
+
+.social-icons-list .social-icon:hover {
+  background: none !important;
+  border: none !important;
+}
+
+.social-icons-list .social-icon svg {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.social-icons-list .social-icon i {
+  font-size: 20px;
+}
+
 /* Ensure smooth scrolling behavior */
 html {
   scroll-behavior: smooth;
@@ -678,17 +750,13 @@ html {
 @media (max-width: 768px) {
   .team-bio-overlay.team-bio-mobile {
     display: flex !important;
+    padding: 1rem 1.25rem !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .team-bio-overlay.team-bio-desktop {
     display: none !important;
-  }
-
-  .team-bio-overlay.team-bio-mobile {
-    padding: 1rem 1.25rem !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
   }
 
   .team-bio-content {
