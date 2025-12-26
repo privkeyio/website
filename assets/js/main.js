@@ -14,31 +14,23 @@
             { icon: "pe-7s-rocket", title: "Custom Software Development", desc: "Full-cycle software development from ideation to production. Since 2018, we've been building custom enterprise solutions tailored to your unique business needs.", features: ["End-to-End Development", "Agile Methodology", "Cloud-Native Architecture", "Continuous Integration/Deployment"], expandedContent: "With years of experience since 2018, we've delivered custom software solutions for various companies across industries.", useCases: ["Enterprise application development", "SaaS platform creation", "Mobile and web application development", "Legacy system modernization"] },
             { icon: "pe-7s-lock", title: "Cybersecurity Services", desc: "Comprehensive cybersecurity solutions including threat intelligence, penetration testing, incident response, and security consulting.", features: ["24/7 Security Operations Center", "AI-Powered Threat Detection", "Incident Response Team", "Vulnerability Management"], expandedContent: "Our cybersecurity services leverage 30+ years of combined expertise to deliver enterprise-grade protection.", useCases: ["Enterprise network security hardening", "Regulatory compliance implementation", "Security incident investigation", "Employee security awareness training"] },
             { icon: "pe-7s-gleam", title: "Lightning Security", desc: "Enterprise security solutions for Bitcoin Lightning Network including node management, channel security, and payment routing protection.", features: ["CCSS-Compliant Infrastructure", "Automated Channel Management", "Multi-Signature Protection", "Real-time Transaction Monitoring"], expandedContent: "PrivKey pioneered the industry's first comprehensive Lightning security framework.", useCases: ["Institutional Lightning node deployment", "Payment channel security optimization", "High-volume transaction processing", "Cross-border payment infrastructure"] },
-            { icon: "pe-7s-safe", title: "Blockchain & Digital Asset Consulting", desc: "Strategic consulting for blockchain implementation, digital asset security, and regulatory compliance.", features: ["Custody Solution Architecture", "Regulatory Compliance Guidance", "Security Best Practices", "Technology Stack Selection"], expandedContent: "Our blockchain consulting services help enterprises navigate the complexities of digital asset adoption.", useCases: ["Enterprise blockchain strategy development", "Digital asset custody implementation", "DeFi protocol security assessment", "Nostr protocol implementation"] },
-            { icon: "pe-7s-note2", title: "Security Auditing & Certification", desc: "Professional security audits and compliance certification services for enterprises.", features: ["Security Assessment", "Smart Contract Auditing", "Compliance Assessments", "Security Gap Analysis"], expandedContent: "Our audit services combine automated scanning tools with manual expert review.", useCases: ["Pre-deployment smart contract audits", "Annual security compliance reviews", "Regulatory readiness assessments", "Third-party vendor security audits"] },
-            { icon: "pe-7s-plugin", title: "Smart Contract Development", desc: "Secure smart contract development and auditing across multiple blockchain platforms.", features: ["Multi-Chain Development", "Security-First Architecture", "Gas Optimization", "Formal Verification"], expandedContent: "We develop smart contracts with security as the primary focus.", useCases: ["DeFi protocol development", "NFT marketplace contracts", "Enterprise tokenization solutions", "Cross-chain bridge implementation"] }
+            { icon: "pe-7s-safe", title: "Bitcoin & Digital Asset Consulting", desc: "Strategic consulting for Bitcoin infrastructure, institutional custody, and regulatory compliance.", features: ["Custody Solution Architecture", "Regulatory Compliance Guidance", "Key Management Best Practices", "Multi-Signature Configurations"], expandedContent: "Our consulting services help enterprises navigate Bitcoin adoption and institutional-grade custody.", useCases: ["Enterprise Bitcoin treasury strategy", "Institutional custody implementation", "Nostr protocol infrastructure", "Self-custody solutions for organizations"] },
+            { icon: "pe-7s-note2", title: "Security Auditing & Compliance", desc: "Professional security audits for Bitcoin infrastructure and Lightning Network nodes.", features: ["Node Security Assessment", "Key Management Auditing", "Compliance Assessments", "Penetration Testing"], expandedContent: "Our audit services combine automated scanning with manual expert review of Bitcoin infrastructure.", useCases: ["Lightning node security audits", "Custody infrastructure review", "Regulatory readiness assessments", "Bitcoin operational security audits"] },
+            { icon: "pe-7s-plugin", title: "Nostr & Protocol Development", desc: "Nostr relay infrastructure, NIP implementations, and decentralized identity solutions.", features: ["Relay Deployment & Scaling", "NIP Implementation", "Nostr Application Development", "Decentralized Identity"], expandedContent: "We build and secure Nostr infrastructure for enterprises adopting censorship-resistant communication.", useCases: ["Enterprise Nostr relay deployment", "Custom NIP implementations", "Nostr-based application development", "Lightning-integrated Nostr solutions"] }
         ],
         highlights: [
-            { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and blockchain technology" },
-            { icon: "pe-7s-lock", title: "Enterprise Security", description: "Protecting networks, systems, and digital assets from evolving cyber threats" },
-            { icon: "pe-7s-network", title: "Blockchain Specialists", description: "Expert consulting, smart contracts, and cryptocurrency wallet security solutions" },
-            { icon: "pe-7s-check", title: "Compliance Ready", description: "AML/KYC guidance and regulatory compliance for all digital asset operations" }
+            { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and Bitcoin infrastructure" },
+            { icon: "pe-7s-lock", title: "Self-Sovereign Security", description: "FROST threshold signing with TEE enclave protection" },
+            { icon: "pe-7s-network", title: "Full Stack", description: "Relay → Signing → Policy → Payments → Oracles" },
+            { icon: "pe-7s-rocket", title: "Zig + Rust", description: "Zig for speed (4x throughput), Rust for security (memory-safe crypto)" }
         ],
-        techModules: [
-            { icon: "https://cdn-icons-png.flaticon.com/512/159/159478.png", alt: "Security Lock", title: "FROST Lightning Multisig", desc: "Industry-first 2-of-3 threshold signatures for Lightning channels", features: ["MuSig2/FROST protocols", "No single point of failure", "Sub-2 second signing"] },
-            { icon: "https://cdn-icons-png.flaticon.com/512/15552/15552192.png", alt: "Attestation", title: "TAP Authorization Layer", desc: "Advanced transaction policies beyond basic velocity limits", features: ["Risk scoring engine", "Multi-tier approvals", "Miniscript-aware rules"] },
-            { icon: "https://cdn-icons-png.flaticon.com/512/5172/5172584.png", alt: "Tokens", title: "Taproot Assets Module", desc: "Issue and manage stablecoins on Bitcoin's Lightning Network", features: ["Stablecoin issuance", "Lightning-fast transfers", "EVM bridge ready"] },
-            { icon: "https://cdn-icons-png.flaticon.com/512/4252/4252491.png", alt: "Compliant", title: "Compliance Suite", desc: "Full Version 8.1 compliance with audit trails", features: ["Automated compliance", "Audit trail generation", "Regulatory reporting"] }
-        ],
-        openSourceProjects: [
-            { name: "Taproot Assets Gateway", description: "A lightweight REST proxy that makes Lightning Labs' Taproot Assets daemon accessible to web applications.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
-            { name: "libnostr-c", description: "A lightweight, portable C library for the Nostr protocol with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" },
-            { name: "Keep", description: "Self-custodial key management for Nostr and Bitcoin with encrypted key storage and signing operations.", language: "Rust", url: "https://github.com/privkeyio/keep" },
+        products: [
+            { name: "Keep", description: "Self-custodial key management for Nostr and Bitcoin.", language: "Rust", url: "https://github.com/privkeyio/keep" },
             { name: "Warden", description: "Policy engine for Bitcoin custody operations.", language: "Rust", url: "https://github.com/privkeyio/warden" },
-            { name: "libnostr-z", description: "A Zig library for the Nostr protocol.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
-            { name: "Wisp", description: "A fast, lightweight Nostr relay written in Zig with 2x higher throughput and minimal resource usage.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
-            { name: "nostr-bench", description: "Nostr relay benchmark tool for performance testing with configurable parameters.", language: "Zig", url: "https://github.com/privkeyio/nostr-bench" },
-            { name: "Puck", description: "Nostr Wallet Connect (NIP-47) server in Zig with LNbits backend.", language: "Zig", url: "https://github.com/privkeyio/puck" }
+            { name: "Wisp", description: "Fast, lightweight Nostr relay.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
+            { name: "Taproot Assets Gateway", description: "REST proxy for Lightning Labs' Taproot Assets daemon with CORS support.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
+            { name: "libnostr-z", description: "Zig library for the Nostr protocol.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
+            { name: "libnostr-c", description: "Lightweight, portable C library for Nostr with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" }
         ],
         contributions: {
             "Bitcoin & Lightning Network": [
@@ -88,15 +80,14 @@
             ]
         },
         team: [
-            { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30-year cybersecurity veteran who pioneered institutional Bitcoin infrastructure since 2011. Led enterprise blockchain implementations for Fortune 500 clients. BS in Management Information Systems from the University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 blockchain leader"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
+            { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30-year cybersecurity veteran who pioneered institutional Bitcoin infrastructure since 2011. Led enterprise Bitcoin implementations for Fortune 500 clients. BS in Management Information Systems from the University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
             { image: "assets/images/kyle_profile.png", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Over a decade of cryptocurrency, software engineering, and cybersecurity expertise since 2011. BS & MS in Cybersecurity from the University of South Florida. Led integrations for Chainlink Labs and scaled institutional digital asset platforms.", mobileBio: ["10+ years crypto & cybersecurity", "BS & MS in Cybersecurity, USF", "Full stack development for 7+ years"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
         ],
         resources: [
             { title: "Stablecoins on Bitcoin: A New Era", readTime: "15 min read", description: "Exploring the revolutionary potential of stablecoins built on the Bitcoin network.", link: "https://privkey.substack.com/p/stablecoins-on-bitcoin-a-new-era" },
             { title: "Building a Bridge to Taproot Assets", readTime: "12 min read", description: "Understanding how Taproot Assets are creating new possibilities for Bitcoin-based applications.", link: "https://privkey.substack.com/p/building-a-bridge-to-taproot-assets" },
             { title: "PrivKey LLC: Pioneering Cybersecurity", readTime: "10 min read", description: "An in-depth look at PrivKey's approach to cybersecurity and blockchain technology solutions.", link: "https://privkey.substack.com/p/privkey-llc-pioneering-cybersecurity" }
-        ],
-        typingTexts: ["enterprise cybersecurity and Lightning Network solutions", "robust security for Lightning Network operations", "blockchain and digital asset protection expertise", "30+ years of cybersecurity experience"]
+        ]
     };
 
     let state = { activeSection: 'home', isNavigating: false, isSticky: false, mobileMenuOpen: false };
@@ -104,13 +95,11 @@
     function init() {
         renderServices();
         renderHighlights();
-        renderTechModules();
-        renderOpenSourceProjects();
+        renderProducts();
         renderContributions();
         renderTeam();
         renderResources();
         initNavbar();
-        initTypingEffect();
         initCounters();
         initContactForm();
         initMobileMenu();
@@ -125,7 +114,7 @@
                     <div class="mb-3"><i class="${s.icon} text-primary" style="font-size:3rem"></i></div>
                     <h5 class="mb-3 text-white">${s.title}</h5>
                     <p class="text-white flex-grow-1">${s.desc}</p>
-                    <div class="mt-auto pt-3"><button class="btn btn-sm service-learn-more-btn" data-service="${i}">Learn More</button></div>
+                    <div class="mt-auto pt-3 text-center"><button class="btn service-learn-more-btn" data-service="${i}" style="padding:10px 24px">Learn More</button></div>
                 </div>
             </div>`).join('');
         grid.querySelectorAll('.service-learn-more-btn').forEach(btn => btn.addEventListener('click', () => openServiceModal(parseInt(btn.dataset.service))));
@@ -155,23 +144,11 @@
             </div>`).join('');
     }
 
-    function renderTechModules() {
-        document.getElementById('tech-modules-grid').innerHTML = DATA.techModules.map(m => `
-            <div class="technology-module technology-module-custom">
-                <div style="width:60px;height:60px;display:flex;align-items:center;justify-content:center;margin-bottom:15px">
-                    <img src="${m.icon}" alt="${m.alt}" style="width:60px;height:60px;object-fit:contain;filter:brightness(0) saturate(100%) invert(67%) sepia(14%) saturate(1816%) hue-rotate(99deg) brightness(96%) contrast(87%) drop-shadow(0 0 10px rgba(39,174,96,0.6))">
-                </div>
-                <h3 class="technology-module-title">${m.title}</h3>
-                <p class="technology-module-description">${m.desc}</p>
-                <ul class="technology-module-features">${m.features.map(f => `<li>${f}</li>`).join('')}</ul>
-            </div>`).join('');
-    }
-
-    function renderOpenSourceProjects() {
-        document.getElementById('opensource-projects').innerHTML = `
+    function renderProducts() {
+        document.getElementById('products-grid').innerHTML = `
             <div class="col-lg-10">
                 <div class="opensource-list">
-                    ${DATA.openSourceProjects.map(p => `
+                    ${DATA.products.map(p => `
                         <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">
                             <div class="opensource-item-header">
                                 <span class="opensource-name">${p.name}</span>
@@ -228,9 +205,10 @@
     }
 
     function renderResources() {
-        document.getElementById('resources-grid').innerHTML = DATA.resources.map(r => `
+        const grid = document.getElementById('resources-grid');
+        grid.innerHTML = DATA.resources.map((r, i) => `
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card resource-card h-100 border-0 shadow-sm" onclick="window.open('${r.link}','_blank','noopener,noreferrer')">
+                <div class="card resource-card h-100 border-0 shadow-sm" data-resource="${i}" style="cursor:pointer">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="resource-header mb-3"><small class="text-white-50">${r.readTime}</small></div>
                         <h5 class="resource-title mb-3 text-white">${r.title}</h5>
@@ -238,6 +216,7 @@
                     </div>
                 </div>
             </div>`).join('');
+        grid.querySelectorAll('.resource-card').forEach(card => card.addEventListener('click', () => window.open(DATA.resources[card.dataset.resource].link, '_blank', 'noopener,noreferrer')));
     }
 
     function initNavbar() {
@@ -291,23 +270,6 @@
     }
 
     function closeMobileMenu() { state.mobileMenuOpen = false; document.getElementById('navbarCollapse').classList.remove('show'); document.querySelector('.navbar-toggler').setAttribute('aria-expanded', 'false'); }
-
-    function initTypingEffect() {
-        const typedEl = document.querySelector('.typed-text');
-        const cursor = document.querySelector('.cursor');
-        const texts = DATA.typingTexts;
-        let textIndex = 0, charIndex = 0, isDeleting = false;
-        function type() {
-            const current = texts[textIndex];
-            typedEl.textContent = current.substring(0, isDeleting ? --charIndex : ++charIndex);
-            let delay = isDeleting ? 30 : 50;
-            if (!isDeleting && charIndex === current.length) { delay = 3000; isDeleting = true; }
-            else if (isDeleting && charIndex === 0) { isDeleting = false; textIndex = (textIndex + 1) % texts.length; delay = 500; }
-            setTimeout(type, delay);
-        }
-        setInterval(() => cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0', 500);
-        setTimeout(type, 1000);
-    }
 
     function initCounters() {
         const observer = new IntersectionObserver(entries => {
