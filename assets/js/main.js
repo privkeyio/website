@@ -2,8 +2,12 @@
     'use strict';
 
     const CONFIG = Object.freeze({
-        FORM_ENDPOINT: 'https://formspree.io/f/mwkwqwkl'
+        FORM_ENDPOINT: 'https://formspree.io/f/mwkwqwkl',
+        RATE_LIMIT_MS: 60000,
+        MAX_SUBMISSIONS: 3
     });
+
+    const formState = { submissions: [], blocked: false };
 
     const DATA = {
         services: [
@@ -27,8 +31,14 @@
             { icon: "https://cdn-icons-png.flaticon.com/512/4252/4252491.png", alt: "Compliant", title: "Compliance Suite", desc: "Full Version 8.1 compliance with audit trails", features: ["Automated compliance", "Audit trail generation", "Regulatory reporting"] }
         ],
         openSourceProjects: [
-            { name: "Taproot Assets REST Gateway", description: "A lightweight REST proxy that makes Lightning Labs' Taproot Assets daemon accessible to web applications.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
-            { name: "libnostr-c", description: "A lightweight, portable C library for the Nostr protocol with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" }
+            { name: "Taproot Assets Gateway", description: "A lightweight REST proxy that makes Lightning Labs' Taproot Assets daemon accessible to web applications.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
+            { name: "libnostr-c", description: "A lightweight, portable C library for the Nostr protocol with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" },
+            { name: "Keep", description: "Self-custodial key management for Nostr and Bitcoin with encrypted key storage and signing operations.", language: "Rust", url: "https://github.com/privkeyio/keep" },
+            { name: "Warden", description: "Policy engine for Bitcoin custody operations.", language: "Rust", url: "https://github.com/privkeyio/warden" },
+            { name: "libnostr-z", description: "A Zig library for the Nostr protocol.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
+            { name: "Wisp", description: "A fast, lightweight Nostr relay written in Zig with 2x higher throughput and minimal resource usage.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
+            { name: "nostr-bench", description: "Nostr relay benchmark tool for performance testing with configurable parameters.", language: "Zig", url: "https://github.com/privkeyio/nostr-bench" },
+            { name: "Puck", description: "Nostr Wallet Connect (NIP-47) server in Zig with LNbits backend.", language: "Zig", url: "https://github.com/privkeyio/puck" }
         ],
         contributions: {
             "Bitcoin & Lightning Network": [
@@ -37,13 +47,26 @@
                 { name: "Core Lightning - Handle NULL Short Channel ID", url: "https://github.com/ElementsProject/lightning/pull/8435" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
                 { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
-                { name: "Bitcoin Knots - Export GUI Policy Options", url: "https://github.com/bitcoinknots/bitcoin/pull/154" }
+                { name: "Bitcoin Knots - Export GUI Policy Options", url: "https://github.com/bitcoinknots/bitcoin/pull/154" },
+                { name: "Bitcoin Knots - Windows Taskbar Progress", url: "https://github.com/bitcoinknots/bitcoin/pull/215" },
+                { name: "Bitcoin Knots - Clear History Command", url: "https://github.com/bitcoinknots/bitcoin/pull/214" },
+                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
+                { name: "OCEAN - Job Coordination for Fallback Shares", url: "https://github.com/OCEAN-xyz/datum_gateway/pull/156" },
+                { name: "DTails - Add Knots Support", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52" },
+                { name: "Alby Hub - Spelling Fix", url: "https://github.com/getAlby/hub/pull/1847" }
             ],
             "Nostr Protocol": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
                 { name: "Routstr Core - Integration Tests", url: "https://github.com/Routstr/routstr-core/pull/78" },
                 { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
-                { name: "Orly - Relay Performance Benchmark", url: "https://github.com/mleku/orly/pull/4" }
+                { name: "Routstr Chat - AI Extended Reasoning Display", url: "https://github.com/Routstr/routstr-chat/pull/46" },
+                { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" },
+                { name: "Routstr Chat - Test Suite Infrastructure", url: "https://github.com/Routstr/routstr-chat/pull/72" },
+                { name: "Sixty Nuts - NIP-60 State Transitions", url: "https://github.com/Routstr/sixty-nuts/pull/32" },
+                { name: "Orly - Relay Performance Benchmark", url: "https://github.com/mleku/orly/pull/4" },
+                { name: "Orly - Public Relay Blacklist Support", url: "https://github.com/mleku/orly/pull/5" },
+                { name: "Orly - Nostr Relay Benchmark Suite", url: "https://github.com/mleku/orly/pull/8" },
+                { name: "Orly - Dockerize Benchmark Suite", url: "https://github.com/mleku/orly/pull/10" }
             ],
             "Developer Tools & AI": [
                 { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" },
@@ -145,15 +168,19 @@
     }
 
     function renderOpenSourceProjects() {
-        document.getElementById('opensource-projects').innerHTML = DATA.openSourceProjects.map(p => `
-            <div class="col-lg-5 col-md-6 mb-4">
-                <div class="project-card p-4 text-center rounded shadow-sm h-100" onclick="window.open('${p.url}','_blank')">
-                    <div class="project-header mb-3"><i class="mdi mdi-github-box" style="font-size:3rem;color:#27ae60"></i></div>
-                    <h5 class="project-name mb-3 text-white">${p.name}</h5>
-                    <p class="project-description text-white-50 mb-3">${p.description}</p>
-                    <span class="language-badge">${p.language}</span>
+        document.getElementById('opensource-projects').innerHTML = `
+            <div class="col-lg-10">
+                <div class="opensource-list">
+                    ${DATA.openSourceProjects.map(p => `
+                        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">
+                            <div class="opensource-item-header">
+                                <span class="opensource-name">${p.name}</span>
+                                <span class="opensource-lang">${p.language}</span>
+                            </div>
+                            <span class="opensource-desc">${p.description}</span>
+                        </a>`).join('')}
                 </div>
-            </div>`).join('');
+            </div>`;
     }
 
     function renderContributions() {
@@ -192,10 +219,10 @@
                     </div></div>
                     <div class="row"><h4 class="team-name">${t.title}</h4></div>
                     <div class="row margin-social-icon"><span class="text-uppercase team-designation">${t.desc}</span></div>
-                    <div class="outer-flex-div-team-box"><div class="inner-flex-div-team-box">
-                        ${t.linkedIn ? `<a href="${t.linkedIn}" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="mdi mdi-linkedin"></i></a>` : ''}
-                        ${t.twitter ? `<a href="${t.twitter}" class="social-icon" target="_blank" rel="noopener noreferrer"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>` : ''}
-                    </div></div>
+                    <ul class="social-icons-list">
+                        ${t.linkedIn ? `<li class="list-inline-item"><a href="${t.linkedIn}" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="mdi mdi-linkedin"></i></a></li>` : ''}
+                        ${t.twitter ? `<li class="list-inline-item"><a href="${t.twitter}" class="social-icon" target="_blank" rel="noopener noreferrer"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>` : ''}
+                    </ul>
                 </div>
             </div>`).join('');
     }
@@ -203,7 +230,7 @@
     function renderResources() {
         document.getElementById('resources-grid').innerHTML = DATA.resources.map(r => `
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card resource-card h-100 border-0 shadow-sm" onclick="window.open('${r.link}','_blank')">
+                <div class="card resource-card h-100 border-0 shadow-sm" onclick="window.open('${r.link}','_blank','noopener,noreferrer')">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="resource-header mb-3"><small class="text-white-50">${r.readTime}</small></div>
                         <h5 class="resource-title mb-3 text-white">${r.title}</h5>
@@ -312,8 +339,19 @@
             });
             return Object.keys(errors).length === 0;
         }
+        function checkRateLimit() {
+            const now = Date.now();
+            formState.submissions = formState.submissions.filter(t => now - t < CONFIG.RATE_LIMIT_MS);
+            if (formState.submissions.length >= CONFIG.MAX_SUBMISSIONS) { formState.blocked = true; return false; }
+            formState.submissions.push(now);
+            return true;
+        }
+
         form.addEventListener('submit', async e => {
             e.preventDefault();
+            const honeypot = form.querySelector('input[name="_gotcha"]');
+            if (honeypot && honeypot.value) return;
+            if (!checkRateLimit()) { status.innerHTML = '<div class="alert alert-warning"><i class="mdi mdi-clock me-2"></i>Too many requests. Please wait a moment.</div>'; status.style.display = 'block'; return; }
             if (!validate()) return;
             submitBtn.disabled = true; submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
             const formData = new FormData();
