@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-    const CONFIG = {
+    const CONFIG = Object.freeze({
         FORM_ENDPOINT: 'https://formspree.io/f/mwkwqwkl'
-    };
+    });
 
     const DATA = {
         services: [
