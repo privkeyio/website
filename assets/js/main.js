@@ -1,6 +1,10 @@
 (function() {
     'use strict';
 
+    const CONFIG = {
+        FORM_ENDPOINT: 'https://formspree.io/f/mwkwqwkl'
+    };
+
     const DATA = {
         services: [
             { icon: "pe-7s-rocket", title: "Custom Software Development", desc: "Full-cycle software development from ideation to production. Since 2018, we've been building custom enterprise solutions tailored to your unique business needs.", features: ["End-to-End Development", "Agile Methodology", "Cloud-Native Architecture", "Continuous Integration/Deployment"], expandedContent: "With years of experience since 2018, we've delivered custom software solutions for various companies across industries.", useCases: ["Enterprise application development", "SaaS platform creation", "Mobile and web application development", "Legacy system modernization"] },
@@ -318,7 +322,7 @@
             formData.append('Referral', sanitize(form.referral.value.trim()));
             formData.append('comments', sanitize(form.comments.value.trim()));
             try {
-                const response = await fetch('https://formspree.io/f/mwkwqwkl', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+                const response = await fetch(CONFIG.FORM_ENDPOINT, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
                 if (response.ok) { status.innerHTML = '<div class="alert alert-success"><i class="mdi mdi-check-circle me-2"></i>Thank you! Your message has been sent.</div>'; status.style.display = 'block'; form.reset(); setTimeout(() => status.style.display = 'none', 5000); }
                 else throw new Error('Network error');
             } catch { status.innerHTML = '<div class="alert alert-danger"><i class="mdi mdi-alert-circle me-2"></i>Sorry, there was an error. Please try again.</div>'; status.style.display = 'block'; }
