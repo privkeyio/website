@@ -1,0 +1,142 @@
+// ==========================================================================
+// iOS and WebKit Browser Fixes
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// iOS Device Detection
+// --------------------------------------------------------------------------
+
+@supports ((-webkit-touch-callout: none) or (-webkit-overflow-scrolling: touch)) {
+
+  .hero-section-enhanced::before {
+    display: none;
+  }
+
+  .bg-home,
+  .hero-section-enhanced {
+    background-attachment: scroll;
+    @include ios-scroll-fix;
+    will-change: transform;
+  }
+
+  .navbar-custom {
+    background-attachment: scroll;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .bg-footer-img,
+  .header-footer-img,
+  .contact-social,
+  section.contact-social,
+  section.bg-footer-img {
+    background-attachment: scroll;
+    @include ios-scroll-fix;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  .bg-footer-img::before,
+  .bg-footer-img::after,
+  .header-footer-img::before,
+  .header-footer-img::after,
+  .contact-social::before,
+  .contact-social::after,
+  section.contact-social::before,
+  section.contact-social::after,
+  section.bg-footer-img::before,
+  section.bg-footer-img::after {
+    display: none;
+    content: none;
+    visibility: hidden;
+  }
+
+  .bg-footer-img,
+  section.bg-footer-img.contact-social {
+    background-image: linear-gradient($overlay-dark, $overlay-dark), url(../images/new-york-city.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: auto;
+  }
+
+  .header-footer-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/new-york-city.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: auto;
+  }
+
+  .stat-item,
+  .hero-text-container,
+  .service-box,
+  .team-box,
+  .certification-badge,
+  .btn-outline-light,
+  .error-boundary-content,
+  .navbar-collapse {
+    @include disable-backdrop-filter;
+  }
+
+  .stat-item {
+    background-color: rgba($color-primary, 0.25);
+  }
+
+  .hero-text-container {
+    background-color: $overlay-dark;
+  }
+
+  .service-box,
+  .team-box,
+  .certification-badge {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-outline-light {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+// --------------------------------------------------------------------------
+// WebKit Pixel Ratio Fallback
+// --------------------------------------------------------------------------
+
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+  .hero-section-enhanced::before {
+    display: none;
+  }
+
+  .bg-home {
+    background-attachment: scroll;
+  }
+
+  .bg-footer-img,
+  .header-footer-img,
+  .contact-social,
+  section.contact-social,
+  section.bg-footer-img {
+    background-attachment: scroll;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .bg-footer-img::before,
+  .bg-footer-img::after,
+  .header-footer-img::before,
+  .header-footer-img::after,
+  .contact-social::before,
+  .contact-social::after {
+    display: none;
+  }
+}

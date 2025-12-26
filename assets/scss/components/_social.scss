@@ -1,0 +1,124 @@
+// ==========================================================================
+// Social Icons Component
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// Social Icon Base
+// --------------------------------------------------------------------------
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $touch-target-min;
+  height: $touch-target-min;
+  border-radius: $radius-circle;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: $color-white;
+  font-size: 24px;
+  padding: 0;
+  @include transition;
+
+  &:hover {
+    color: $color-primary;
+    transform: translateY(-3px) scale(1.1);
+    background: $color-primary-20;
+    border-color: rgba($color-primary, 0.4);
+  }
+
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  i {
+    font-size: 24px;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Team Social Icons (larger)
+// --------------------------------------------------------------------------
+
+.team-box .social-icon {
+  display: inline-block;
+  color: $color-primary;
+  margin: 0 $spacing-4;
+  @include transition;
+  text-decoration: none;
+  font-size: 2rem;
+
+  i {
+    font-size: 2rem;
+  }
+
+  &:hover {
+    color: $color-white;
+    transform: translateY(-2px) scale(1.1);
+  }
+}
+
+// --------------------------------------------------------------------------
+// Social Icons List (Footer)
+// --------------------------------------------------------------------------
+
+.social-icons-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.15rem;
+  @include reset-list;
+  margin: 0 0 $spacing-4 0;
+
+  .list-inline-item {
+    margin: 0;
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+
+    &:hover {
+      background: none;
+      border: none;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      min-height: 20px;
+    }
+
+    i {
+      font-size: 20px;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Mail & Phone Links
+// --------------------------------------------------------------------------
+
+.mail-cellphone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: $color-white;
+  font-size: 1.1rem;
+  text-decoration: none;
+  @include transition(color);
+
+  &:hover {
+    color: $color-primary;
+  }
+}

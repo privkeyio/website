@@ -1,0 +1,108 @@
+// ==========================================================================
+// Accessibility Styles
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// Focus Indicators
+// --------------------------------------------------------------------------
+
+*:focus {
+  @include focus-visible;
+}
+
+button:focus,
+a:focus {
+  @include focus-visible;
+}
+
+// --------------------------------------------------------------------------
+// Skip Navigation
+// --------------------------------------------------------------------------
+
+.skip-nav {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 8px 16px;
+  background: $color-primary;
+  color: $color-white;
+  text-decoration: none;
+  border-radius: $radius-sm;
+
+  &:focus {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 9999;
+    padding: 12px 16px;
+    background: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    border-radius: $radius-base;
+    font-weight: $font-weight-medium;
+    box-shadow: $shadow-md;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Screen Reader Only
+// --------------------------------------------------------------------------
+
+.sr-only {
+  @include sr-only;
+}
+
+// --------------------------------------------------------------------------
+// High Contrast Mode
+// --------------------------------------------------------------------------
+
+@media (prefers-contrast: high) {
+  .text-muted {
+    color: $gray-700;
+  }
+
+  .btn-primary,
+  .btn-success {
+    border: 2px solid currentColor;
+  }
+
+  .navbar-nav .nav-link {
+    border: 1px solid transparent;
+
+    &:focus {
+      border-color: $color-primary;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Reduced Motion Support
+// --------------------------------------------------------------------------
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Dark Mode Preparation
+// --------------------------------------------------------------------------
+
+@media (prefers-color-scheme: dark) {
+  .bg-white {
+    background-color: $gray-800;
+    color: $color-white;
+  }
+}

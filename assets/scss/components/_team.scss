@@ -1,0 +1,230 @@
+// ==========================================================================
+// Team Component
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// Team Box
+// --------------------------------------------------------------------------
+
+.team-box {
+  @include transition;
+  text-align: center;
+  padding: $spacing-6;
+  margin-bottom: $spacing-7;
+  @include flex-column;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+
+    .team-name {
+      color: $color-primary;
+      transform: translateY(-2px);
+    }
+
+    .team-designation {
+      color: $color-primary;
+      transform: translateY(-2px);
+    }
+
+    .team-bio-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Team Member Photo
+// --------------------------------------------------------------------------
+
+.team-member {
+  position: relative;
+  margin-bottom: $spacing-6;
+}
+
+.team-profile-img {
+  @include transition;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: $radius-base;
+}
+
+// --------------------------------------------------------------------------
+// Team Bio Overlay
+// --------------------------------------------------------------------------
+
+.team-bio-overlay {
+  @include full-cover;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  @include transition(opacity);
+  @include flex-center;
+  padding: $spacing-7;
+  border-radius: $radius-base;
+}
+
+.team-bio-content {
+  text-align: center;
+  color: $color-white;
+
+  p {
+    font-size: 1.1rem;
+    line-height: $line-height-base;
+    margin: 0;
+    color: $color-white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: $font-weight-normal;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Team Member Info
+// --------------------------------------------------------------------------
+
+.team-name {
+  color: $color-white;
+  font-weight: $font-weight-semibold;
+  font-size: 1.25rem;
+  margin-top: $spacing-4;
+  margin-bottom: $spacing-2;
+  @include transition;
+  letter-spacing: $letter-spacing-wider;
+}
+
+.team-designation {
+  color: $gray-400;
+  font-size: 0.9rem;
+  font-weight: $font-weight-medium;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: $spacing-4;
+  @include transition;
+  white-space: nowrap;
+}
+
+// --------------------------------------------------------------------------
+// Team Social Icons
+// --------------------------------------------------------------------------
+
+.outer-flex-div-team-box {
+  margin-top: $spacing-5;
+  @include flex-center;
+}
+
+.inner-flex-div-team-box {
+  @include flex-center;
+}
+
+// --------------------------------------------------------------------------
+// Mobile Team Bio Toggle
+// --------------------------------------------------------------------------
+
+.team-bio-overlay.team-bio-mobile {
+  display: none;
+}
+
+.team-bio-overlay.team-bio-desktop {
+  display: flex;
+}
+
+// --------------------------------------------------------------------------
+// Mobile Styles
+// --------------------------------------------------------------------------
+
+@include mobile {
+  .team-bio-content {
+    overflow: visible;
+    max-height: none;
+
+    p {
+      overflow-y: visible;
+      max-height: none;
+    }
+  }
+
+  .team-profile-img {
+    height: 300px;
+  }
+
+  .team-box {
+    padding: $spacing-6;
+    margin-bottom: $spacing-7;
+    @include flex-column;
+    height: 100%;
+  }
+
+  // Mobile Bio Toggle
+  .team-bio-overlay.team-bio-mobile {
+    display: flex;
+    padding: $spacing-4 $spacing-5;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-bio-overlay.team-bio-desktop {
+    display: none;
+  }
+
+  .team-bio-content {
+    width: 100%;
+    @include flex-center;
+  }
+
+  .team-bio-bullets {
+    @include reset-list;
+    margin: 0 auto;
+    text-align: left;
+    width: 100%;
+    max-width: 90%;
+
+    li {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: $color-white;
+      margin-bottom: $spacing-3;
+      padding-left: $spacing-6;
+      position: relative;
+
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: $color-primary;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@include small-mobile {
+  .team-bio-overlay {
+    padding: $spacing-3 $spacing-4;
+  }
+
+  .team-bio-bullets {
+    max-width: 95%;
+
+    li {
+      font-size: 0.85rem;
+      line-height: 1.45;
+      margin-bottom: $spacing-2;
+      padding-left: $spacing-5;
+
+      &::before {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

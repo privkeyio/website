@@ -1,0 +1,44 @@
+// ==========================================================================
+// Footer Layout
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// Footer Content Wrapper
+// --------------------------------------------------------------------------
+
+.footer-content-wrapper,
+.contact-info-wrapper {
+  @include mobile {
+    margin-bottom: $spacing-6;
+    padding: $spacing-6;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Mobile Footer Adjustments
+// --------------------------------------------------------------------------
+
+@include mobile {
+  .stats-bar {
+    gap: $spacing-4;
+    padding: $spacing-4 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    .stat-item {
+      min-width: 100px;
+      padding: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+    }
+  }
+}

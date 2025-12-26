@@ -1,0 +1,58 @@
+// ==========================================================================
+// Reset & Base Styles
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $navbar-height;
+  overflow-y: auto;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing-base;
+  overflow-x: hidden;
+  position: relative;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+hr {
+  border-top: 1px solid $gray-200;
+}
+
+::selection {
+  background-color: $color-dark;
+  color: $color-white;
+}
+
+section[id] {
+  scroll-margin-top: $navbar-height;
+}
+
+.row > * {
+  position: relative;
+}

@@ -1,0 +1,67 @@
+// ==========================================================================
+// SCSS Functions
+// ==========================================================================
+
+@use 'sass:math';
+@use 'sass:color';
+@use 'variables' as *;
+
+// --------------------------------------------------------------------------
+// Color Functions
+// --------------------------------------------------------------------------
+
+@function tint($color, $percentage) {
+  @return color.mix($color-white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return color.mix($color-black, $color, $percentage);
+}
+
+@function alpha($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+// --------------------------------------------------------------------------
+// Spacing Functions
+// --------------------------------------------------------------------------
+
+@function spacing($multiplier) {
+  @return $multiplier * $spacing-4;
+}
+
+// --------------------------------------------------------------------------
+// Typography Functions
+// --------------------------------------------------------------------------
+
+@function rem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
+}
+
+@function em($pixels, $context: 16) {
+  @return math.div($pixels, $context) * 1em;
+}
+
+// --------------------------------------------------------------------------
+// Z-Index Function
+// --------------------------------------------------------------------------
+
+$z-layers: (
+  'base': 1,
+  'dropdown': 100,
+  'sticky': 500,
+  'fixed': 1000,
+  'modal-backdrop': 1040,
+  'modal': 1050,
+  'popover': 1060,
+  'tooltip': 1070,
+  'mobile-menu': 999999
+);
+
+@function z($layer) {
+  @if map-has-key($z-layers, $layer) {
+    @return map-get($z-layers, $layer);
+  }
+  @warn "Unknown z-index layer: #{$layer}";
+  @return 1;
+}

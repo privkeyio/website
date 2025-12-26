@@ -1,0 +1,333 @@
+// ==========================================================================
+// Navbar Component
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// Navbar Base
+// --------------------------------------------------------------------------
+
+.navbar-custom {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  position: fixed;
+  top: 0;
+  z-index: $z-fixed;
+  width: 100%;
+}
+
+// --------------------------------------------------------------------------
+// Mobile Navbar (below 992px)
+// --------------------------------------------------------------------------
+
+@include respond-below($breakpoint-lg - 1) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.98);
+    z-index: $z-mobile-menu;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    display: none;
+    flex-direction: column;
+    transform: translateY(-100vh);
+    opacity: 0;
+    overflow: hidden;
+
+    &.show {
+      display: flex;
+      animation: slideDownFullScreen 0.4s ease-out;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    &:not(.show) .mobile-menu-nav {
+      display: none;
+    }
+  }
+
+  .navbar-center.d-none.d-lg-flex {
+    display: none;
+  }
+
+  // Mobile Menu Header
+  .mobile-menu-header {
+    position: relative;
+    height: $navbar-height;
+    @include flex-between;
+    padding: 0 $spacing-4;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 10001;
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobile-menu-logo {
+    flex: 0 0 auto;
+    @include flex-center;
+  }
+
+  // Mobile Menu Close Button
+  .mobile-menu-close-btn {
+    flex: 0 0 auto;
+    margin-left: auto;
+    width: $touch-target-min;
+    height: $touch-target-min;
+    border-radius: $radius-circle;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: $color-white;
+    font-size: 1.5rem;
+    @include flex-center;
+    cursor: pointer;
+    @include transition(all, $transition-fast);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.6);
+      color: $color-white;
+      transform: scale(1.1);
+    }
+  }
+
+  // Mobile Menu Items Container
+  .mobile-menu-items {
+    flex: 1;
+    @include flex-column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: $spacing-7;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    .nav-item {
+      width: 100%;
+      margin: $spacing-2 0;
+      @include flex-center;
+    }
+  }
+
+  // Mobile Nav Links
+  .mobile-nav-link {
+    padding: $spacing-4 $spacing-6;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: $font-weight-semibold;
+    color: rgba(255, 255, 255, 0.95);
+    border-radius: $radius-lg;
+    margin: 0;
+    @include transition;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    letter-spacing: $letter-spacing-widest;
+    text-transform: uppercase;
+    text-decoration: none;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+
+    &:hover,
+    &:focus {
+      background: rgba(255, 255, 255, 0.1);
+      color: $color-white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px $color-primary-30;
+      border: 2px solid rgba($color-primary, 0.4);
+      text-decoration: none;
+    }
+  }
+
+  // Mobile Consultation Button
+  .mobile-menu-consultation-btn {
+    margin-top: $spacing-4;
+    padding: $spacing-4 $spacing-7;
+    background: linear-gradient(135deg, $color-primary, $color-primary-light);
+    color: $color-white;
+    border: none;
+    border-radius: $radius-base;
+    font-size: 1rem;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-wider;
+    text-transform: uppercase;
+    @include transition;
+    cursor: pointer;
+    width: 100%;
+    max-width: 280px;
+    text-decoration: none;
+    @include flex-center;
+    box-shadow: 0 4px 15px $color-primary-30;
+    height: 60px;
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(135deg, $color-primary-light, $color-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba($color-primary, 0.4);
+      color: $color-white;
+      text-decoration: none;
+    }
+  }
+
+  // Mobile Navbar Toggle
+  .navbar-toggler {
+    padding: 0.6rem 0.8rem;
+    font-size: 1.8rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: $radius-base;
+    background-color: rgba(255, 255, 255, 0.1);
+    @include transition;
+    min-width: 48px;
+    min-height: 48px;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: scale(1.05);
+      box-shadow: $shadow-md;
+    }
+
+    .mdi-menu {
+      color: $color-white;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Desktop Navbar (992px and above)
+// --------------------------------------------------------------------------
+
+@include desktop {
+  .navbar-collapse {
+    background: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    border: none;
+    position: static;
+    width: auto;
+    height: auto;
+    transform: none;
+    opacity: 1;
+    display: block;
+  }
+
+  .navbar-center,
+  .navbar-center.d-none.d-lg-flex {
+    display: flex;
+  }
+
+  .navbar-nav .nav-link {
+    padding: $spacing-2 $spacing-4;
+    text-align: center;
+    border-bottom: none;
+    width: auto;
+    margin: 0;
+    border-left: none;
+    transform: none;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    height: auto;
+    letter-spacing: normal;
+    text-transform: none;
+
+    &.navbar-text-large-font {
+      font-size: 1.5rem;
+      font-weight: $font-weight-medium;
+    }
+
+    &:hover,
+    &:focus {
+      transform: none;
+      border-left: none;
+      background: none;
+      box-shadow: none;
+      border: none;
+    }
+  }
+
+  .navbar-nav .nav-item.active .nav-link {
+    border-left: none;
+    transform: none;
+    background: none;
+    border: none;
+  }
+
+  .mobile-menu-nav,
+  .mobile-menu-header,
+  .mobile-menu-items {
+    display: none;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Mobile Navbar Styles (additional)
+// --------------------------------------------------------------------------
+
+@include mobile {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: $radius-xl;
+    margin-top: 15px;
+    padding: $spacing-5;
+  }
+
+  .navbar-nav {
+    text-align: center;
+
+    .nav-item {
+      margin: $spacing-2 0;
+    }
+
+    .nav-link {
+      color: $color-white;
+      font-size: $font-size-lg;
+      padding: 15px 20px;
+      border-radius: $radius-base;
+      @include transition;
+      @include touch-target;
+      @include flex-center;
+
+      &:hover,
+      &:focus {
+        background: rgba($color-primary, 0.2);
+        color: $color-primary;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    padding: 8px 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: $radius-base;
+    @include touch-target;
+
+    &:focus {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 2px $color-primary-30;
+    }
+  }
+}

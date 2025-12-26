@@ -1,0 +1,314 @@
+// ==========================================================================
+// Button Components
+// ==========================================================================
+
+@use 'sass:color';
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// Base Button
+// --------------------------------------------------------------------------
+
+.btn {
+  @include btn-base;
+}
+
+.btn-sm {
+  padding: $btn-padding-sm-y $btn-padding-sm-x;
+  font-size: $font-size-sm;
+}
+
+.btn-rounded {
+  border-radius: $radius-rounded;
+}
+
+// --------------------------------------------------------------------------
+// Primary Button (Green Theme)
+// --------------------------------------------------------------------------
+
+.btn-primary {
+  @include btn-variant($color-primary, $color-primary, $color-primary-dark);
+}
+
+.btn-outline-primary {
+  @include btn-outline($color-primary);
+}
+
+.btn-soft-primary {
+  background-color: $color-primary-25;
+  color: $color-primary;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $color-primary-dark;
+    color: $color-white;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Success Button
+// --------------------------------------------------------------------------
+
+.btn-success {
+  @include btn-variant($color-success, $color-success, $color-success-dark);
+}
+
+.btn-outline-success {
+  @include btn-outline($color-success);
+}
+
+.btn-soft-success {
+  background-color: rgba($color-success, 0.25);
+  color: $color-success;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $color-success-dark;
+    color: $color-white;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Info Button
+// --------------------------------------------------------------------------
+
+.btn-info {
+  @include btn-variant($color-info, $color-info, $color-info-dark);
+}
+
+.btn-outline-info {
+  @include btn-outline($color-info);
+}
+
+.btn-soft-info {
+  background-color: rgba($color-info, 0.25);
+  color: $color-info;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $color-info-dark;
+    color: $color-white;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Warning Button
+// --------------------------------------------------------------------------
+
+.btn-warning {
+  @include btn-variant($color-warning, $color-warning, $color-warning-dark);
+}
+
+.btn-outline-warning {
+  @include btn-outline($color-warning);
+}
+
+.btn-soft-warning {
+  background-color: rgba($color-warning, 0.25);
+  color: $color-warning;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $color-warning-dark;
+    color: $color-white;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Danger Button
+// --------------------------------------------------------------------------
+
+.btn-danger {
+  @include btn-variant($color-danger, $color-danger, $color-danger-dark);
+}
+
+.btn-outline-danger {
+  @include btn-outline($color-danger);
+}
+
+.btn-soft-danger {
+  background-color: rgba($color-danger, 0.25);
+  color: $color-danger;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $color-danger-dark;
+    color: $color-white;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Dark Button
+// --------------------------------------------------------------------------
+
+.btn-dark {
+  @include btn-variant($color-dark, $color-dark, $color-dark-alt);
+}
+
+.btn-outline-dark {
+  @include btn-outline($color-dark);
+}
+
+.btn-soft-dark {
+  background-color: rgba($color-dark, 0.25);
+  color: $color-dark;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $color-dark-alt;
+    color: $color-white;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Light / White Button
+// --------------------------------------------------------------------------
+
+.btn-light {
+  @include btn-variant($gray-100, $gray-100, color.adjust($gray-100, $lightness: -5%));
+  color: $color-dark;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-dark;
+  }
+}
+
+.btn-white {
+  @include btn-variant($color-white, $color-white, $gray-50);
+  color: $color-dark;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-dark;
+  }
+}
+
+.btn-outline-light {
+  @include btn-outline($color-white);
+}
+
+.btn-outline-white {
+  @include btn-outline($color-white);
+}
+
+.btn-soft-light {
+  background-color: rgba($gray-100, 0.25);
+  color: $gray-100;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: color.adjust($gray-100, $lightness: -5%);
+    color: $color-dark;
+  }
+}
+
+.btn-soft-white {
+  background-color: rgba($color-white, 0.25);
+  color: $color-white;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $gray-50;
+    color: $color-dark;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Accent Color Buttons
+// --------------------------------------------------------------------------
+
+@each $name, $color, $hover in (
+  ('purple', $color-purple, $color-purple-dark),
+  ('pink', $color-pink, $color-pink-dark),
+  ('orange', $color-orange, $color-orange-dark),
+  ('blue', $color-blue, $color-blue-dark),
+  ('cyan', $color-cyan, $color-cyan-dark),
+  ('muted', $gray-500, $gray-600)
+) {
+  .btn-#{$name} {
+    @include btn-variant($color, $color, $hover);
+  }
+
+  .btn-outline-#{$name} {
+    @include btn-outline($color);
+  }
+
+  .btn-soft-#{$name} {
+    background-color: rgba($color, 0.25);
+    color: $color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $hover;
+      color: $color-white;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Service Learn More Button
+// --------------------------------------------------------------------------
+
+.service-learn-more-btn {
+  background: transparent;
+  border: 2px solid $color-primary;
+  color: $color-primary;
+  padding: $spacing-2 $spacing-6;
+  border-radius: $radius-md;
+  font-weight: $font-weight-medium;
+  transition: transform $transition-fast, background-color $transition-fast, color $transition-fast;
+  will-change: transform;
+
+  &:hover {
+    background: $color-primary;
+    color: $color-white;
+    border-color: $color-primary;
+    transform: translateY(-2px);
+  }
+}
+
+// --------------------------------------------------------------------------
+// Loading Button State
+// --------------------------------------------------------------------------
+
+.btn-loading {
+  opacity: 0.8;
+  cursor: not-allowed;
+
+  .spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 2px;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Mobile Button Adjustments
+// --------------------------------------------------------------------------
+
+@include mobile {
+  .btn {
+    @include touch-target;
+    padding: 12px 16px;
+    @include flex-center;
+  }
+}
+
+@include tiny-mobile {
+  .btn {
+    font-size: 1rem;
+    padding: 14px 24px;
+  }
+}

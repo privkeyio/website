@@ -1,0 +1,92 @@
+// ==========================================================================
+// Form Components
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// Form Control Base
+// --------------------------------------------------------------------------
+
+.form-control {
+  @include input-base;
+}
+
+.contact-form-input {
+  margin-bottom: $spacing-5;
+}
+
+// --------------------------------------------------------------------------
+// Form Validation States
+// --------------------------------------------------------------------------
+
+.is-invalid {
+  border-color: $color-danger;
+  box-shadow: 0 0 0 2px rgba($color-danger, 0.2);
+}
+
+.invalid-feedback {
+  font-size: $font-size-md;
+  margin-top: $spacing-2;
+  font-weight: $font-weight-medium;
+}
+
+// --------------------------------------------------------------------------
+// Form Loading Overlay
+// --------------------------------------------------------------------------
+
+.form-loading-overlay {
+  @include full-cover;
+  background: rgba(0, 0, 0, 0.7);
+  @include flex-center;
+  z-index: $z-dropdown;
+  border-radius: $radius-base;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3em;
+}
+
+// --------------------------------------------------------------------------
+// Contact Status Message
+// --------------------------------------------------------------------------
+
+.contact-status-message {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 1.5s ease-out;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Mobile Form Improvements
+// --------------------------------------------------------------------------
+
+@include mobile {
+  .form-control {
+    min-height: $input-height;
+    font-size: $font-size-base;
+    padding: $input-padding;
+    border-radius: $radius-base;
+  }
+
+  .contact-form-input {
+    margin-bottom: $spacing-5;
+  }
+
+  .custom-form .row .col-lg-6,
+  .custom-form .row .col-md-6 {
+    margin-bottom: $spacing-5;
+  }
+}

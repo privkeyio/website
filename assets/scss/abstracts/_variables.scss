@@ -1,0 +1,221 @@
+// ==========================================================================
+// Design Tokens - Single Source of Truth
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+// Color System
+// --------------------------------------------------------------------------
+
+// Brand Colors
+$color-primary: #27ae60;
+$color-primary-light: #2ecc71;
+$color-primary-dark: #229954;
+
+// Semantic Colors
+$color-success: #1bbc9d;
+$color-success-dark: #18aa8e;
+
+$color-info: #10a6ba;
+$color-info-dark: #0e95a7;
+
+$color-warning: #f6cb42;
+$color-warning-dark: #f5c62f;
+
+$color-danger: #fb3e3e;
+$color-danger-dark: #fb2a2a;
+
+// Accent Colors
+$color-purple: #704fff;
+$color-purple-dark: #5f3bff;
+
+$color-pink: #f85f89;
+$color-pink-dark: #f74b7b;
+
+$color-orange: #f09105;
+$color-orange-dark: #dc8505;
+
+$color-blue: #2762da;
+$color-blue-dark: #235aca;
+
+$color-cyan: #00e6e6;
+$color-cyan-dark: #00d2d2;
+
+// Neutral Colors
+$color-white: #ffffff;
+$color-black: #000000;
+$color-dark: #272a33;
+$color-dark-alt: #1e2027;
+
+// Gray Scale
+$gray-50: #f5f5f5;
+$gray-100: #f8fbff;
+$gray-200: #e7ebf3;
+$gray-300: #b8b8b8;
+$gray-400: #b3b3b3;
+$gray-500: #95a0ab;
+$gray-600: #8a8a8a;
+$gray-700: #666666;
+$gray-800: #1a1a1a;
+$gray-900: #161b22;
+$gray-950: #0d1117;
+
+// Overlay Colors
+$overlay-dark: rgba(0, 0, 0, 0.7);
+$overlay-darker: rgba(0, 0, 0, 0.9);
+$overlay-light: rgba(255, 255, 255, 0.1);
+$overlay-glass: rgba(255, 255, 255, 0.05);
+
+// Primary Color Variations (for hover states, borders, etc.)
+$color-primary-10: rgba($color-primary, 0.1);
+$color-primary-15: rgba($color-primary, 0.15);
+$color-primary-20: rgba($color-primary, 0.2);
+$color-primary-25: rgba($color-primary, 0.25);
+$color-primary-30: rgba($color-primary, 0.3);
+
+// --------------------------------------------------------------------------
+// Typography
+// --------------------------------------------------------------------------
+
+$font-family-base: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// Font Sizes
+$font-size-base: 16px;
+$font-size-xs: 10px;
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+
+// Heading Sizes
+$h1-size: 36px;
+$h2-size: 30px;
+$h3-size: 24px;
+$h4-size: 18px;
+$h5-size: 14px;
+$h6-size: 12px;
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Line Heights
+$line-height-base: 1.6;
+$line-height-sm: 1.4;
+$line-height-lg: 1.8;
+
+// Letter Spacing
+$letter-spacing-tight: -0.02em;
+$letter-spacing-base: -0.01em;
+$letter-spacing-wide: 0.02em;
+$letter-spacing-wider: 0.5px;
+$letter-spacing-widest: 1px;
+
+// --------------------------------------------------------------------------
+// Spacing Scale
+// --------------------------------------------------------------------------
+
+$spacing-0: 0;
+$spacing-1: 0.25rem;   // 4px
+$spacing-2: 0.5rem;    // 8px
+$spacing-3: 0.75rem;   // 12px
+$spacing-4: 1rem;      // 16px
+$spacing-5: 1.25rem;   // 20px
+$spacing-6: 1.5rem;    // 24px
+$spacing-7: 2rem;      // 32px
+$spacing-8: 2.5rem;    // 40px
+$spacing-9: 3rem;      // 48px
+$spacing-10: 4rem;     // 64px
+
+// Section Spacing
+$section-padding: 80px;
+$section-padding-lg: 100px;
+$section-padding-mobile: 60px;
+
+// --------------------------------------------------------------------------
+// Breakpoints
+// --------------------------------------------------------------------------
+
+$breakpoint-xs: 375px;
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1024px;
+$breakpoint-xxl: 1200px;
+
+// --------------------------------------------------------------------------
+// Border Radius
+// --------------------------------------------------------------------------
+
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-base: 8px;
+$radius-lg: 10px;
+$radius-xl: 12px;
+$radius-rounded: 30px;
+$radius-circle: 50%;
+
+// --------------------------------------------------------------------------
+// Shadows
+// --------------------------------------------------------------------------
+
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-base: 0 3px 6px 1px rgba(38, 107, 193, 0.08);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 10px 30px rgba($color-primary, 0.15);
+$shadow-xl: 0 20px 40px rgba($color-primary, 0.3);
+$shadow-focus: 0 0 0 3px $color-primary-30;
+
+// --------------------------------------------------------------------------
+// Transitions
+// --------------------------------------------------------------------------
+
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.4s ease;
+$transition-smooth: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+$transition-all: all 0.3s ease;
+
+// --------------------------------------------------------------------------
+// Z-Index Scale
+// --------------------------------------------------------------------------
+
+$z-dropdown: 100;
+$z-sticky: 500;
+$z-fixed: 1000;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
+$z-mobile-menu: 999999;
+
+// --------------------------------------------------------------------------
+// Component-Specific Tokens
+// --------------------------------------------------------------------------
+
+// Navbar
+$navbar-height: 80px;
+$navbar-bg: transparent;
+$navbar-scroll-bg: $color-dark;
+
+// Buttons
+$btn-padding-x: 20px;
+$btn-padding-y: 10px;
+$btn-padding-sm-x: 12px;
+$btn-padding-sm-y: 8px;
+
+// Form Controls
+$input-height: 50px;
+$input-padding: 15px;
+$input-border-color: $gray-200;
+$input-focus-border: $color-primary;
+
+// Cards
+$card-bg: $overlay-glass;
+$card-border: rgba(255, 255, 255, 0.1);
+$card-hover-border: rgba($color-primary, 0.5);
+
+// Touch Targets (WCAG)
+$touch-target-min: 44px;

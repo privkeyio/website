@@ -1,0 +1,111 @@
+// ==========================================================================
+// Utility Classes
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// Color Utilities
+// --------------------------------------------------------------------------
+
+// Background Colors
+.bg-primary { background-color: $color-primary; }
+.bg-success { background-color: $color-success; }
+.bg-info { background-color: $color-info; }
+.bg-warning { background-color: $color-warning; }
+.bg-danger { background-color: $color-danger; }
+.bg-dark { background-color: $color-dark; }
+.bg-purple { background-color: $color-purple; }
+.bg-pink { background-color: $color-pink; }
+.bg-orange { background-color: $color-orange; }
+.bg-blue { background-color: $color-blue; }
+.bg-cyan { background-color: $color-cyan; }
+.bg-muted { background-color: $gray-500; }
+
+// Soft Background Colors
+.bg-soft-primary { background-color: $color-primary-10; }
+.bg-soft-success { background-color: rgba($color-success, 0.1); }
+.bg-soft-info { background-color: rgba($color-info, 0.1); }
+.bg-soft-warning { background-color: rgba($color-warning, 0.1); }
+.bg-soft-danger { background-color: rgba($color-danger, 0.1); }
+.bg-soft-dark { background-color: rgba($color-dark, 0.1); }
+.bg-soft-purple { background-color: rgba($color-purple, 0.1); }
+.bg-soft-pink { background-color: rgba($color-pink, 0.1); }
+.bg-soft-orange { background-color: rgba($color-orange, 0.1); }
+.bg-soft-blue { background-color: rgba($color-blue, 0.1); }
+.bg-soft-cyan { background-color: rgba($color-cyan, 0.1); }
+.bg-soft-muted { background-color: rgba($gray-500, 0.1); }
+.bg-soft-white { background-color: rgba($color-white, 0.1); }
+.bg-soft-light { background-color: rgba($gray-100, 0.1); }
+
+// Text Colors
+.text-primary { color: $color-primary; }
+.text-success { color: $color-success; }
+.text-info { color: $color-info; }
+.text-warning { color: $color-warning; }
+.text-danger { color: $color-danger; }
+.text-dark { color: $color-dark; }
+.text-purple { color: $color-purple; }
+.text-pink { color: $color-pink; }
+.text-orange { color: $color-orange; }
+.text-blue { color: $color-blue; }
+.text-cyan { color: $color-cyan; }
+.text-muted { color: $gray-300; }
+.text-white { color: $color-white; }
+.text-light { color: $gray-100; }
+.text-black { color: $color-black; }
+.text-white-50 { color: rgba(255, 255, 255, 0.75); }
+
+// Border Colors
+.border-primary { border-color: $color-primary; }
+.border-success { border-color: $color-success; }
+.border-info { border-color: $color-info; }
+.border-warning { border-color: $color-warning; }
+.border-danger { border-color: $color-danger; }
+.border-dark { border-color: $color-dark; }
+.border-purple { border-color: $color-purple; }
+.border-pink { border-color: $color-pink; }
+.border-orange { border-color: $color-orange; }
+.border-blue { border-color: $color-blue; }
+.border-cyan { border-color: $color-cyan; }
+.border-muted { border-color: $gray-500; }
+.border-white { border-color: $color-white; }
+.border-light { border-color: $gray-100; }
+
+// --------------------------------------------------------------------------
+// Icon Dual Colors
+// --------------------------------------------------------------------------
+
+@each $name, $color in (
+  'primary': $color-primary,
+  'success': $color-success,
+  'info': $color-info,
+  'warning': $color-warning,
+  'danger': $color-danger,
+  'dark': $color-dark,
+  'purple': $color-purple,
+  'pink': $color-pink,
+  'orange': $color-orange,
+  'blue': $color-blue,
+  'cyan': $color-cyan,
+  'muted': $gray-500,
+  'white': $color-white,
+  'light': $gray-100
+) {
+  .icon-dual-#{$name} {
+    color: $color;
+    fill: rgba($color, 0.2);
+  }
+}
+
+// --------------------------------------------------------------------------
+// Section-Specific Overrides
+// --------------------------------------------------------------------------
+
+#who-we-are .text-muted {
+  color: $color-black;
+}
+
+#services .value-prop-box:hover i {
+  color: $color-white;
+}

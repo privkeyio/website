@@ -1,0 +1,160 @@
+// ==========================================================================
+// Section Layout Styles
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// Base Section
+// --------------------------------------------------------------------------
+
+.section {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
+  position: relative;
+}
+
+.section-lg {
+  padding: $section-padding-lg 0;
+}
+
+// --------------------------------------------------------------------------
+// Vertical Content
+// --------------------------------------------------------------------------
+
+.vertical-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+// --------------------------------------------------------------------------
+// Display Table
+// --------------------------------------------------------------------------
+
+.display-table {
+  display: table;
+  width: 100%;
+  height: 100%;
+
+  @include mobile {
+    min-height: 50vh;
+  }
+}
+
+.display-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+// --------------------------------------------------------------------------
+// Full Height
+// --------------------------------------------------------------------------
+
+.vh-100 {
+  height: 100vh;
+}
+
+// --------------------------------------------------------------------------
+// Backgrounds
+// --------------------------------------------------------------------------
+
+.bg-back {
+  background: $color-black;
+  background-color: $color-black;
+}
+
+.bg-overlay {
+  background: linear-gradient($overlay-dark, $overlay-dark);
+  opacity: 0.9;
+  @include full-cover;
+}
+
+.bg-light {
+  background-color: $gray-100;
+}
+
+.bg-white {
+  background-color: $color-white;
+}
+
+.bg-footer-img {
+  background-image: linear-gradient($overlay-dark, $overlay-dark), url(../images/new-york-city.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.header-footer-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/new-york-city.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+// --------------------------------------------------------------------------
+// SVG Pattern
+// --------------------------------------------------------------------------
+
+.svg-pattern {
+  width: 100%;
+  position: relative;
+}
+
+// --------------------------------------------------------------------------
+// Box Shadow Utility
+// --------------------------------------------------------------------------
+
+.box-shadow,
+.shadow {
+  box-shadow: $shadow-base;
+}
+
+// --------------------------------------------------------------------------
+// Mobile Section Adjustments
+// --------------------------------------------------------------------------
+
+@include mobile {
+  .section {
+    padding-top: $section-padding-mobile;
+    padding-bottom: $section-padding-mobile;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@include tablet {
+  .section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Prevent Horizontal Scroll
+// --------------------------------------------------------------------------
+
+@include respond-below($breakpoint-lg - 1) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

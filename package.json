@@ -5,6 +5,12 @@
   "description": "PrivKey - Enterprise Cybersecurity & Blockchain Solutions",
   "scripts": {
     "serve": "npx serve .",
-    "start": "npx serve ."
+    "start": "npx serve .",
+    "scss:build": "sass assets/scss/main.scss assets/css/main.css --style=compressed --no-source-map",
+    "scss:watch": "sass assets/scss/main.scss assets/css/main.css --watch",
+    "scss:dev": "sass assets/scss/main.scss assets/css/main.css --style=expanded"
+  },
+  "devDependencies": {
+    "sass": "^1.71.0"
   }
 }

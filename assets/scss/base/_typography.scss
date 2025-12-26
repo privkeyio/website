@@ -1,0 +1,147 @@
+// ==========================================================================
+// Typography Styles
+// ==========================================================================
+
+@use '../abstracts' as *;
+
+// --------------------------------------------------------------------------
+// Font Import
+// --------------------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+// --------------------------------------------------------------------------
+// Headings
+// --------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-family-base;
+  font-weight: $font-weight-semibold;
+  letter-spacing: $letter-spacing-tight;
+}
+
+h1, .h1 { font-size: $h1-size; }
+h2, .h2 { font-size: $h2-size; }
+h3, .h3 { font-size: $h3-size; }
+h4, .h4 { font-size: $h4-size; }
+h5, .h5 { font-size: $h5-size; }
+h6, .h6 { font-size: $h6-size; }
+
+// --------------------------------------------------------------------------
+// Body Text
+// --------------------------------------------------------------------------
+
+p {
+  font-size: 14.4px;
+  line-height: 24px;
+}
+
+b {
+  font-weight: $font-weight-medium;
+}
+
+// --------------------------------------------------------------------------
+// Font Size Utilities
+// --------------------------------------------------------------------------
+
+.f-10 { font-size: $font-size-xs; }
+.f-12 { font-size: $font-size-sm; }
+.f-13 { font-size: 13px; }
+.f-14 { font-size: $font-size-md; }
+.f-15 { font-size: 15px; }
+.f-16 { font-size: $font-size-base; }
+.f-18 { font-size: $font-size-lg; }
+.f-19 { font-size: 19px; }
+.f-20 { font-size: $font-size-xl; }
+
+// --------------------------------------------------------------------------
+// Line Height Utilities
+// --------------------------------------------------------------------------
+
+.line-height_1_4 { line-height: $line-height-sm; }
+.line-height_1_6 { line-height: $line-height-base; }
+.line-height_1_8 { line-height: $line-height-lg; }
+
+// --------------------------------------------------------------------------
+// Font Weight Utilities
+// --------------------------------------------------------------------------
+
+.font-weight-500 { font-weight: $font-weight-medium; }
+.font-weight-600 { font-weight: $font-weight-semibold; }
+
+// --------------------------------------------------------------------------
+// Section Titles
+// --------------------------------------------------------------------------
+
+.section-title {
+  text-transform: none;
+  letter-spacing: $letter-spacing-widest;
+  margin-bottom: 0;
+  padding-bottom: $spacing-4;
+  line-height: 1;
+  font-size: 1.75rem;
+  font-weight: $font-weight-medium;
+}
+
+.section-title-white {
+  color: $color-white;
+}
+
+.section-black {
+  color: $color-black;
+}
+
+.section-title-alt {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+  padding-bottom: $spacing-4;
+  line-height: 1;
+  font-size: 1.75rem;
+  font-weight: $font-weight-medium;
+  color: $color-black;
+}
+
+.section-title-border {
+  width: 50px;
+  height: 2px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: $color-primary;
+}
+
+.section-subtitle {
+  letter-spacing: $letter-spacing-wide;
+}
+
+// --------------------------------------------------------------------------
+// Mobile Typography
+// --------------------------------------------------------------------------
+
+@include mobile {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+
+  p {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+  }
+}
+
+@include tablet {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.75rem; }
+}
