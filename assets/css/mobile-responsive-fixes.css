@@ -1,0 +1,752 @@
+/* Mobile Responsive Fixes for PrivKey ReactApp */
+
+/* Fix 1: Navbar covering hero section on mobile */
+@media (max-width: 991px) {
+  .hero-section-enhanced {
+    padding-top: 180px !important;
+  }
+  
+  .section.bg-home {
+    padding-top: 140px !important;
+  }
+  
+  /* Full-screen overlay hamburger menu for mobile */
+  .navbar-collapse {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.98) !important;
+    z-index: 999999 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: none !important;
+    flex-direction: column !important;
+    transform: translateY(-100vh) !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Hide desktop navigation items on mobile */
+  .navbar-center.d-none.d-lg-flex {
+    display: none !important;
+  }
+  
+  /* Only show mobile menu structure when navbar is open */
+  .navbar-collapse:not(.show) .mobile-menu-nav {
+    display: none !important;
+  }
+
+  /* Show menu when open */
+  .navbar-collapse.show {
+    display: flex !important;
+    animation: slideDownFullScreen 0.4s ease-out !important;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+
+  /* Full-screen menu header with logo and close button */
+  .mobile-menu-header {
+    position: relative !important;
+    height: 80px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 1rem !important;
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    z-index: 10001 !important;
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-menu-logo {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .mobile-menu-close-btn {
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+  }
+
+  .mobile-menu-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    color: #ffffff !important;
+    transform: scale(1.1) !important;
+  }
+
+  /* Navigation items area */
+  .mobile-menu-items {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    padding: 2rem !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-menu-items .nav-item {
+    width: 100% !important;
+    margin: 0.5rem 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Mobile nav links */
+  .mobile-nav-link {
+    padding: 1rem 1.5rem !important;
+    text-align: center !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 10px !important;
+    margin: 0 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex !important;
+    width: 100% !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    height: 60px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3) !important;
+    border: 2px solid rgba(39, 174, 96, 0.4) !important;
+    text-decoration: none !important;
+  }
+
+  /* Book a Consultation button */
+  .mobile-menu-consultation-btn {
+    margin-top: 1rem !important;
+    padding: 1rem 2rem !important;
+    background: linear-gradient(135deg, #27ae60, #2ecc71) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3) !important;
+    height: 60px !important;
+  }
+
+  .mobile-menu-consultation-btn:hover,
+  .mobile-menu-consultation-btn:focus {
+    background: linear-gradient(135deg, #2ecc71, #27ae60) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 25px rgba(39, 174, 96, 0.4) !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+  
+  /* Enhanced mobile navbar toggle button */
+  .navbar-toggler {
+    padding: 0.6rem 0.8rem !important;
+    font-size: 1.8rem !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 8px !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+  }
+  
+  .navbar-toggler:hover,
+  .navbar-toggler:focus {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  .navbar-toggler .mdi-menu {
+    color: #ffffff !important;
+    font-size: 1.8rem !important;
+  }
+}
+
+/* Desktop navbar - clean and simple */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    display: block !important;
+  }
+  
+  /* Force desktop navbar to show and work normally */
+  .navbar-center,
+  .navbar-center.d-none.d-lg-flex {
+    display: flex !important;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem !important;
+    text-align: center !important;
+    border-bottom: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    border-left: none !important;
+    transform: none !important;
+    background: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    height: auto !important;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+  }
+  
+  /* Ensure navbar-text-large-font class works on desktop */
+  .navbar-nav .nav-link.navbar-text-large-font {
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+  }
+  
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus {
+    transform: none !important;
+    border-left: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  .navbar-nav .nav-item.active .nav-link {
+    border-left: none !important;
+    transform: none !important;
+    background: none !important;
+    border: none !important;
+  }
+
+  /* Hide mobile elements on desktop */
+  .mobile-menu-nav,
+  .mobile-menu-header,
+  .mobile-menu-items {
+    display: none !important;
+  }
+}
+
+/* Full-screen mobile navbar animations */
+@keyframes slideDownFullScreen {
+  0% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fix 2: Hero green boxes horizontal scroll issue */
+@media (max-width: 768px) {
+  .hero-stats {
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+  
+  .stat-item {
+    min-width: calc(50% - 0.5rem) !important;
+    flex: 0 0 calc(50% - 0.5rem) !important;
+    padding: 0.75rem 1rem !important;
+  }
+  
+  .stat-item > div:first-child {
+    font-size: 2rem !important;
+  }
+  
+  .stat-item > div:last-child {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+  }
+  
+  .stat-item {
+    min-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/* Fix 3: Hero buttons spacing on mobile */
+@media (max-width: 768px) {
+  .mt-5[role="group"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: stretch !important;
+    padding: 0 1rem !important;
+  }
+  
+  .mt-5[role="group"] .btn {
+    margin: 0 !important;
+    width: 100% !important;
+    padding: 16px 30px !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .mt-5[role="group"] .me-3 {
+    margin-right: 0 !important;
+  }
+}
+
+/* Additional mobile improvements */
+@media (max-width: 768px) {
+  /* Hero section text container */
+  .hero-text-container {
+    padding: 12px 18px !important;
+    margin: 0 1rem !important;
+    max-width: calc(100% - 2rem) !important;
+    min-height: 80px !important;
+  }
+  
+  .hero-text-container > div {
+    font-size: 1.1rem !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  /* Hero title */
+  .home-title {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Container padding */
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  /* Section padding */
+  .section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even smaller screens - increase padding significantly */
+  .home-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .hero-text-container {
+    padding: 10px 16px !important;
+    font-size: 1rem !important;
+    min-height: 90px !important;
+    height: 90px !important;
+  }
+  
+  .section.bg-home {
+    min-height: auto !important;
+    padding: 100px 0 40px 0 !important;
+  }
+  
+  .hero-section-enhanced {
+    padding-top: 200px !important;
+  }
+}
+
+/* Ensure no horizontal scroll */
+@media (max-width: 991px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+/* Fix gradient text on mobile */
+@media (max-width: 768px) {
+  .gradient-text {
+    display: inline !important;
+  }
+}
+
+/* Ensure proper z-index layering */
+.navbar-custom {
+  z-index: 1030 !important;
+}
+
+.hero-section-enhanced {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile text container adjustments */
+@media (max-width: 768px) {
+  /* Fixed height container to prevent layout shift */
+  .hero-text-container {
+    min-height: 100px !important;
+    height: 100px !important;
+    line-height: 1.6 !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    transition: none !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Prevent layout shift during typing animation */
+  .custom-typing-wrapper {
+    min-height: 3em !important;
+    display: block !important;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 375px) {
+  .home-title {
+    font-size: 1.3rem !important;
+  }
+  
+  .hero-text-container {
+    min-height: 70px !important;
+    padding: 8px 14px !important;
+  }
+  
+  .btn {
+    font-size: 1rem !important;
+    padding: 14px 24px !important;
+  }
+  
+  .stat-item {
+    padding: 0.5rem 0.75rem !important;
+  }
+  
+  .stat-item > div:first-child {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* iOS device and WebKit browsers (Safari, Chrome, Brave, etc.) specific fixes for blurry backgrounds */
+@supports (-webkit-touch-callout: none), 
+         (-webkit-overflow-scrolling: touch) {
+  /* This targets all iOS browsers and devices using WebKit engine (Safari, Chrome, Brave, Firefox, etc.) */
+  
+  /* COMPLETELY DISABLE the problematic pseudo-element on iOS */
+  .hero-section-enhanced::before {
+    display: none !important;
+  }
+  
+  /* Force simple background approach on iOS */
+  .bg-home,
+  .hero-section-enhanced {
+    background-attachment: scroll !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    will-change: transform !important;
+    /* Force hardware acceleration */
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    -webkit-perspective: 1000px !important;
+    perspective: 1000px !important;
+  }
+  
+  /* Ensure navbar uses scroll attachment */
+  .navbar-custom {
+    background-attachment: scroll !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+  
+  /* Footer backgrounds - COMPLETELY OVERRIDE for iOS */
+  .bg-footer-img,
+  .header-footer-img,
+  .contact-social,
+  section.contact-social,
+  section.bg-footer-img {
+    background-attachment: scroll !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    /* Force hardware acceleration */
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    -webkit-perspective: 1000px !important;
+    perspective: 1000px !important;
+    /* Force crisp rendering */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+  }
+  
+  /* COMPLETELY REMOVE any pseudo-elements that might cause footer blur */
+  .bg-footer-img::before,
+  .bg-footer-img::after,
+  .header-footer-img::before,  
+  .header-footer-img::after,
+  .contact-social::before,
+  .contact-social::after,
+  section.contact-social::before,
+  section.contact-social::after,
+  section.bg-footer-img::before,
+  section.bg-footer-img::after {
+    display: none !important;
+    content: none !important;
+    visibility: hidden !important;
+  }
+  
+  /* Force footer background to be exactly like hero - crisp and clear */
+  .bg-footer-img,
+  section.bg-footer-img.contact-social {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/new-york-city.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: scroll !important;
+    /* Additional iOS-specific overrides */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    will-change: auto !important;
+  }
+  
+  .header-footer-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/new-york-city.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: scroll !important;
+    /* Additional iOS-specific overrides */
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    will-change: auto !important;
+  }
+  
+  /* Completely remove backdrop filters on iOS as they compound blur issues */
+  .stat-item,
+  .hero-text-container,
+  .service-box,
+  .team-box,
+  .certification-badge,
+  .btn-outline-light,
+  .error-boundary-content,
+  .navbar-collapse {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  /* Add more opaque backgrounds instead of blur for readability */
+  .stat-item {
+    background-color: rgba(39, 174, 96, 0.25) !important;
+  }
+  
+  .hero-text-container {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+  }
+  
+  .service-box,
+  .team-box,
+  .certification-badge {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+  }
+  
+  .btn-outline-light {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+  }
+}
+
+/* Additional fallback for iOS using user-agent detection approach */
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+  /* This catches all iOS devices */
+  .hero-section-enhanced::before {
+    display: none !important;
+  }
+  
+  .bg-home {
+    background-attachment: scroll !important;
+  }
+  
+  /* Force footer backgrounds to scroll attachment on ALL iOS devices */
+  .bg-footer-img,
+  .header-footer-img,
+  .contact-social,
+  section.contact-social,
+  section.bg-footer-img {
+    background-attachment: scroll !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+  }
+  
+  /* Remove any pseudo-elements that might be causing footer blur */
+  .bg-footer-img::before,
+  .bg-footer-img::after,
+  .header-footer-img::before,
+  .header-footer-img::after,
+  .contact-social::before,
+  .contact-social::after {
+    display: none !important;
+  }
+}
+/* Ensure smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent text overflow on mobile */
+@media (max-width: 768px) {
+  * {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word !important;
+  }
+}
+
+/* Team bio mobile/desktop toggle */
+/* Hide mobile version by default, show desktop */
+.team-bio-overlay.team-bio-mobile {
+  display: none !important;
+}
+
+.team-bio-overlay.team-bio-desktop {
+  display: flex !important;
+}
+
+/* Mobile: show bullet points, hide full bio */
+@media (max-width: 768px) {
+  .team-bio-overlay.team-bio-mobile {
+    display: flex !important;
+  }
+
+  .team-bio-overlay.team-bio-desktop {
+    display: none !important;
+  }
+
+  .team-bio-overlay.team-bio-mobile {
+    padding: 1rem 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .team-bio-content {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .team-bio-bullets {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 90% !important;
+  }
+
+  .team-bio-bullets li {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    color: white !important;
+    margin-bottom: 0.6rem !important;
+    padding-left: 1.5rem !important;
+    position: relative !important;
+  }
+
+  .team-bio-bullets li:before {
+    content: "✓" !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: #27ae60 !important;
+    font-weight: bold !important;
+    font-size: 1rem !important;
+  }
+
+  .team-bio-bullets li:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-bio-overlay {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .team-bio-bullets {
+    max-width: 95% !important;
+  }
+
+  .team-bio-bullets li {
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.5rem !important;
+    padding-left: 1.25rem !important;
+  }
+
+  .team-bio-bullets li:before {
+    font-size: 0.9rem !important;
+  }
+}

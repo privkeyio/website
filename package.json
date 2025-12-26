@@ -1,0 +1,10 @@
+{
+  "name": "privkey-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PrivKey - Enterprise Cybersecurity & Blockchain Solutions",
+  "scripts": {
+    "serve": "npx serve .",
+    "start": "npx serve ."
+  }
+}

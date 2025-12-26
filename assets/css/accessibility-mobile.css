@@ -1,0 +1,260 @@
+/* PrivKey Accessibility and Mobile Enhancement Styles */
+
+/* ===========================================
+   ACCESSIBILITY IMPROVEMENTS
+   =========================================== */
+
+/* Focus indicators for better keyboard navigation */
+*:focus {
+  outline: 2px solid #28a745 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2) !important;
+}
+
+/* Skip navigation link */
+.skip-nav:focus {
+  position: fixed !important;
+  left: 20px !important;
+  top: 20px !important;
+  z-index: 9999 !important;
+  padding: 12px 16px !important;
+  background: #28a745 !important;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Improved contrast for text */
+.text-muted {
+  color: #8a8a8a !important; /* Better contrast than default */
+}
+
+/* Better button focus states */
+.btn:focus,
+.btn:active:focus {
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3) !important;
+}
+
+/* ===========================================
+   MOBILE ENHANCEMENTS
+   =========================================== */
+
+/* Touch-friendly interactions */
+@media (max-width: 768px) {
+  /* Larger touch targets */
+  .btn,
+  .nav-link,
+  .navbar-nav .nav-link {
+    min-height: 44px !important;
+    padding: 12px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Better mobile navbar */
+  .navbar-toggler {
+    padding: 8px 12px !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 8px !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  .navbar-toggler:focus {
+    border-color: #28a745 !important;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.3) !important;
+  }
+
+  /* Mobile form improvements */
+  .form-control {
+    min-height: 50px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    padding: 15px !important;
+    border-radius: 8px !important;
+  }
+
+  .contact-form-input {
+    margin-bottom: 20px !important;
+  }
+
+  /* Mobile typography */
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.75rem !important; }
+  h3 { font-size: 1.5rem !important; }
+  h4 { font-size: 1.25rem !important; }
+  
+  p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Better spacing on mobile */
+  .section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Mobile image optimization */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Team cards mobile */
+  .team-box {
+    margin-bottom: 30px !important;
+  }
+
+  /* Contact form mobile */
+  .custom-form .row .col-lg-6,
+  .custom-form .row .col-md-6 {
+    margin-bottom: 20px !important;
+  }
+
+  /* Better mobile menu */
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.95) !important;
+    border-radius: 12px !important;
+    margin-top: 15px !important;
+    padding: 20px !important;
+  }
+
+  .navbar-nav {
+    text-align: center !important;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 8px 0 !important;
+  }
+
+  .navbar-nav .nav-link {
+    color: white !important;
+    font-size: 18px !important;
+    padding: 15px 20px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus {
+    background: rgba(40, 167, 69, 0.2) !important;
+    color: #28a745 !important;
+  }
+}
+
+/* ===========================================
+   TABLET ENHANCEMENTS
+   =========================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+
+  .section {
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+  }
+
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 2rem !important; }
+  h3 { font-size: 1.75rem !important; }
+}
+
+/* ===========================================
+   LOADING AND INTERACTION STATES
+   =========================================== */
+
+/* Loading button enhancement */
+.btn-loading {
+  opacity: 0.8 !important;
+  cursor: not-allowed !important;
+}
+
+.btn-loading .spinner-border-sm {
+  width: 1rem !important;
+  height: 1rem !important;
+  border-width: 2px !important;
+}
+
+/* Form validation states */
+.is-invalid {
+  border-color: #ff6b6b !important;
+  box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2) !important;
+}
+
+.invalid-feedback {
+  font-size: 14px !important;
+  margin-top: 8px !important;
+  font-weight: 500 !important;
+}
+
+/* Success and error alerts */
+.alert {
+  font-weight: 500 !important;
+  border: none !important;
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #28a745, #20c997) !important;
+  color: white !important;
+}
+
+.alert-danger {
+  background: linear-gradient(135deg, #dc3545, #fd7e14) !important;
+  color: white !important;
+}
+
+/* ===========================================
+   HIGH CONTRAST MODE SUPPORT
+   =========================================== */
+
+@media (prefers-contrast: high) {
+  .text-muted {
+    color: #666 !important;
+  }
+
+  .btn-primary {
+    border: 2px solid #000 !important;
+  }
+
+  .navbar-nav .nav-link {
+    border: 1px solid transparent !important;
+  }
+
+  .navbar-nav .nav-link:focus {
+    border-color: #28a745 !important;
+  }
+}
+
+/* ===========================================
+   REDUCED MOTION SUPPORT
+   =========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========================================
+   DARK MODE PREPARATION
+   =========================================== */
+
+@media (prefers-color-scheme: dark) {
+  /* Ensure text remains readable in dark mode */
+  .bg-white {
+    background-color: #1a1a1a !important;
+    color: white !important;
+  }
+}
