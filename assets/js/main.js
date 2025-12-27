@@ -19,9 +19,9 @@
             { icon: "pe-7s-safe", title: "Consulting", desc: "Strategic guidance for Bitcoin adoption, self-custody implementation, and sovereign infrastructure planning.", features: ["Self-Custody Strategy", "Infrastructure Architecture", "Regulatory Guidance", "Technology Selection"], expandedContent: "We help enterprises own their infrastructure, from treasury strategy to full-stack deployment.", useCases: ["Bitcoin treasury planning", "Self-custody roadmap", "Infrastructure architecture", "Vendor-free sovereignty"] }
         ],
         highlights: [
-            { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and Bitcoin infrastructure." },
-            { icon: "pe-7s-look", title: "Open Source First", description: "Trust through transparency. Core infrastructure you can audit and self-host." },
-            { icon: "pe-7s-config", title: "AI + Policy", description: "AI agents need guardrails. We build signing with enforceable constraints." },
+            { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and Bitcoin." },
+            { icon: "pe-7s-look", title: "Open Source First", description: "Trust through transparency. Audit and self-host our core tools." },
+            { icon: "pe-7s-config", title: "AI + Policy", description: "AI agents need guardrails. We build signing with policy controls." },
             { icon: "pe-7s-key", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
         ],
         products: [
