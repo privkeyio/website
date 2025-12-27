@@ -1492,9 +1492,12 @@ iframe {
 }
 
 .nav-sticky.navbar-custom .navbar-nav li.active a,
-.nav-sticky.navbar-custom .navbar-nav li a:hover,
 .nav-sticky.navbar-custom .navbar-nav li a:active {
   color: #ffffff !important;
+}
+
+.nav-sticky.navbar-custom .navbar-nav li a:hover {
+  color: #27ae60 !important;
 }
 
 .nav-sticky.navbar-custom .navbar-toggles {

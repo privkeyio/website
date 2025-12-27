@@ -7,7 +7,7 @@
         MAX_SUBMISSIONS: 3
     });
 
-    const formState = { submissions: [], blocked: false, rateLimited: false, retryAfter: null };
+    const formState = { submissions: [], rateLimited: false, retryAfter: null };
 
     const DATA = {
         services: [
@@ -20,9 +20,9 @@
         ],
         highlights: [
             { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and Bitcoin infrastructure." },
-            { icon: "pe-7s-lock", title: "Open Source First", description: "Trust through transparency. Core infrastructure you can audit and self-host." },
-            { icon: "pe-7s-science", title: "Performance + Security", description: "Zig for speed, Rust for security. We don't compromise on either." },
-            { icon: "pe-7s-rocket", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
+            { icon: "pe-7s-look", title: "Open Source First", description: "Trust through transparency. Core infrastructure you can audit and self-host." },
+            { icon: "pe-7s-config", title: "AI + Policy", description: "AI agents need guardrails. We build signing with enforceable constraints." },
+            { icon: "pe-7s-key", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
         ],
         products: [
             { name: "Keep", description: "Self-custodial key management for Nostr and Bitcoin.", language: "Rust", url: "https://github.com/privkeyio/keep" },
@@ -249,7 +249,7 @@
     function initNavbar() {
         const navbar = document.getElementById('navbar');
         const navItems = document.querySelectorAll('.navbar-nav .nav-item');
-        const sections = ['home', 'services', 'who-we-are', 'team', 'resources', 'contact'];
+        const sections = ['home', 'services', 'who-we-are', 'technology', 'team', 'resources', 'contact'];
 
         function updateActiveSection() {
             if (state.isNavigating) return;
@@ -282,6 +282,7 @@
                 if (state.mobileMenuOpen) closeMobileMenu();
                 if (id === 'home') { window.scrollTo({ top: 0, behavior: 'smooth' }); }
                 else { const el = document.getElementById(id); if (el) window.scrollTo({ top: el.offsetTop - navbar.offsetHeight - (window.innerWidth < 992 ? 40 : 0), behavior: 'smooth' }); }
+                navItems.forEach(item => { const link = item.querySelector('a'); item.classList.toggle('active', link && link.getAttribute('href') === '#' + id); });
                 setTimeout(() => { state.isNavigating = false; }, 1000);
             });
         });
@@ -331,7 +332,7 @@
         function checkRateLimit() {
             const now = Date.now();
             formState.submissions = formState.submissions.filter(t => now - t < CONFIG.RATE_LIMIT_MS);
-            if (formState.submissions.length >= CONFIG.MAX_SUBMISSIONS) { formState.blocked = true; return false; }
+            if (formState.submissions.length >= CONFIG.MAX_SUBMISSIONS) { return false; }
             formState.submissions.push(now);
             return true;
         }
