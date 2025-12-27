@@ -3540,6 +3540,12 @@ h5 {
   transform: scaleX(1);
 }
 
+.highlight-card .text-white-50 {
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
 /* Apply same hover effects to Trusted By cards */
 .trusted-client-card {
   position: relative;
