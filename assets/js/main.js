@@ -25,59 +25,43 @@
             { icon: "pe-7s-key", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
         ],
         products: [
-            { name: "Keep", description: "Self-custodial key management for Nostr and Bitcoin.", language: "Rust", url: "https://github.com/privkeyio/keep" },
-            { name: "Warden", description: "Policy engine for Bitcoin custody operations.", language: "Rust", url: "https://github.com/privkeyio/warden" },
-            { name: "Wisp", description: "Fast, lightweight Nostr relay.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
-            { name: "Taproot Assets Gateway", description: "REST proxy for Lightning Labs' Taproot Assets daemon with CORS support.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
-            { name: "libnostr-z", description: "Zig library for the Nostr protocol.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
-            { name: "libnostr-c", description: "Lightweight, portable C library for Nostr with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" }
+            { name: "libnostr-c", description: "Lightweight, portable C library for the Nostr protocol with native Lightning Network integration.", language: "C", license: "MIT", url: "https://github.com/privkeyio/libnostr-c" },
+            { name: "Taproot Assets Gateway", description: "REST proxy for Taproot Assets.", language: "Rust", license: "MIT", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
+            { name: "libnostr-z", description: "Zig library for the Nostr protocol.", language: "Zig", license: "MIT", url: "https://github.com/privkeyio/libnostr-z" },
+            { name: "Keep", description: "Sovereign key management for Nostr and Bitcoin.", language: "Rust", license: "AGPL-3.0", url: "https://github.com/privkeyio/keep" },
+            { name: "Warden", description: "Policy engine for Bitcoin custody.", language: "Rust", license: "AGPL-3.0", url: "https://github.com/privkeyio/warden" },
+            { name: "Keep ESP32", description: "ESP32-S3 air-gapped FROST threshold signing device for Nostr and Bitcoin.", language: "C", license: "AGPL-3.0", url: "https://github.com/privkeyio/keep-esp32" }
         ],
         contributions: {
             "Bitcoin & Lightning Network": [
-                { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
                 { name: "LND - Multi-Path Payment Records", url: "https://github.com/lightningnetwork/lnd/pull/10091" },
                 { name: "Core Lightning - Handle NULL Short Channel ID", url: "https://github.com/ElementsProject/lightning/pull/8435" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
-                { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
+                { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
+                { name: "Bitcoin Knots - Upgrade Depends to Qt6", url: "https://github.com/bitcoinknots/bitcoin/pull/231" },
+                { name: "Bitcoin Knots - Pass Critical Build Flags", url: "https://github.com/bitcoinknots/bitcoin/pull/237" },
                 { name: "Bitcoin Knots - Export GUI Policy Options", url: "https://github.com/bitcoinknots/bitcoin/pull/154" },
-                { name: "Bitcoin Knots - Windows Taskbar Progress", url: "https://github.com/bitcoinknots/bitcoin/pull/215" },
-                { name: "Bitcoin Knots - Clear History Command", url: "https://github.com/bitcoinknots/bitcoin/pull/214" },
                 { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
-                { name: "OCEAN - Job Coordination for Fallback Shares", url: "https://github.com/OCEAN-xyz/datum_gateway/pull/156" },
-                { name: "DTails - Add Knots Support", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52" },
-                { name: "Alby Hub - Spelling Fix", url: "https://github.com/getAlby/hub/pull/1847" }
+                { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
+                { name: "OCEAN - Job Coordination for Fallback Shares", url: "https://github.com/OCEAN-xyz/datum_gateway/pull/156" }
             ],
             "Nostr Protocol": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
-                { name: "Routstr Core - Integration Tests", url: "https://github.com/Routstr/routstr-core/pull/78" },
                 { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
-                { name: "Routstr Chat - AI Extended Reasoning Display", url: "https://github.com/Routstr/routstr-chat/pull/46" },
-                { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" },
-                { name: "Routstr Chat - Test Suite Infrastructure", url: "https://github.com/Routstr/routstr-chat/pull/72" },
-                { name: "Sixty Nuts - NIP-60 State Transitions", url: "https://github.com/Routstr/sixty-nuts/pull/32" },
-                { name: "Orly - Relay Performance Benchmark", url: "https://github.com/mleku/orly/pull/4" },
-                { name: "Orly - Public Relay Blacklist Support", url: "https://github.com/mleku/orly/pull/5" },
-                { name: "Orly - Nostr Relay Benchmark Suite", url: "https://github.com/mleku/orly/pull/8" },
-                { name: "Orly - Dockerize Benchmark Suite", url: "https://github.com/mleku/orly/pull/10" }
+                { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" }
             ],
             "Developer Tools & AI": [
                 { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" },
                 { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" },
                 { name: "Goose - Middle-Out Message Compression", url: "https://github.com/block/goose/pull/3907" }
             ],
-            "Mobile Applications": [
+            "Wallets & SDKs": [
                 { name: "Zeus - Disable Express Graph Sync by Default", url: "https://github.com/ZeusLN/zeus/pull/3154" },
-                { name: "BitChat Android - Password-Protected Channel Discovery", url: "https://github.com/permissionlesstech/bitchat-android/pull/178" },
-                { name: "Bull Bitcoin - Hide Exchange Features", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" }
-            ],
-            "Bitcoin Development Kits": [
+                { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
+                { name: "Bull Bitcoin - Hide Exchange Features", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" },
                 { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
                 { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" }
             ],
-            "Web3 & Blockchain": [
-                { name: "Chainlink Rust Contracts", url: "https://github.com/kwsantiago/Chainlink-Rust-Contracts" },
-                { name: "Ethereum.org - Chainlink Price Feeds Tutorial", url: "https://github.com/ethereum/ethereum-org-website/pull/3134" }
-            ]
         },
         team: [
             { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30-year cybersecurity veteran who pioneered institutional Bitcoin infrastructure since 2011. Led enterprise Bitcoin implementations for Fortune 500 clients. BS in Management Information Systems from the University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
@@ -148,7 +132,7 @@
                         <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">
                             <div class="opensource-item-header">
                                 <span class="opensource-name">${p.name}</span>
-                                <span class="opensource-lang">${p.language}</span>
+                                <span class="opensource-lang">${p.license}</span>
                             </div>
                             <span class="opensource-desc">${p.description}</span>
                         </a>`).join('')}
