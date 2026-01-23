@@ -719,6 +719,56 @@
   font-size: 20px;
 }
 
+/* Mobile fix for social icons fitting in footer card */
+@media (max-width: 768px) {
+  .contact-social .container {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    max-width: 100% !important;
+  }
+
+  .contact-social .row.align-items-stretch {
+    margin: 0 !important;
+    gap: 1rem !important;
+  }
+
+  .contact-social .col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .footer-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1rem 0.75rem !important;
+  }
+
+  .social-icons-list {
+    gap: 0.25rem !important;
+  }
+
+  .social-icons-list .list-inline-item {
+    margin: 0 !important;
+  }
+}
+
+/* iPhone-specific (narrower screens) */
+@media (max-width: 430px) {
+  .social-icons-list {
+    gap: 0 !important;
+  }
+
+  .footer-card {
+    padding: 1rem 0.5rem !important;
+  }
+
+  .footer-card .copy-rights {
+    font-size: 0.85rem !important;
+    white-space: nowrap !important;
+  }
+}
+
 /* Ensure smooth scrolling behavior */
 html {
   scroll-behavior: smooth;
