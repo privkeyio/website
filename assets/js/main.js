@@ -191,13 +191,15 @@
     }
 
     function sanitizeUrl(url, allowedDomains = null) {
+        let parsed;
         try {
-            const parsed = new URL(url);
-            if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') return '#';
-            if (allowedDomains && !allowedDomains.some(d => parsed.hostname === d || parsed.hostname.endsWith('.' + d))) return '#';
-            return parsed.href;
-        } catch {}
-        return '#';
+            parsed = new URL(url);
+        } catch {
+            return '#';
+        }
+        if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') return '#';
+        if (allowedDomains && !allowedDomains.some(d => parsed.hostname === d || parsed.hostname.endsWith('.' + d))) return '#';
+        return parsed.href;
     }
 
     async function renderResources() {
