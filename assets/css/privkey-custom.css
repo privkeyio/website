@@ -80,16 +80,17 @@
   transform: translateY(-1px);
 }
 
-/* Remove focus outline from navbar links */
-.navbar-custom .navbar-nav li a:focus {
-  outline: none !important;
-  box-shadow: none !important;
+/* Accessible focus styles for navbar - visible for keyboard, hidden for mouse */
+.navbar-custom .navbar-nav li a:focus-visible {
+  outline: 2px solid #27ae60;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
-/* Remove focus outline from navbar brand/logo */
-.navbar-custom .navbar-brand:focus {
-  outline: none !important;
-  box-shadow: none !important;
+.navbar-custom .navbar-brand:focus-visible {
+  outline: 2px solid #27ae60;
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 /* Prevent awkward word wrapping in content */
