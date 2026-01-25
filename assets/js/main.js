@@ -64,7 +64,7 @@
             ],
         },
         team: [
-            { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30-year cybersecurity veteran who pioneered institutional Bitcoin infrastructure since 2011. Led enterprise Bitcoin implementations for Fortune 500 clients. BS in Management Information Systems from the University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
+            { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30+ years in cybersecurity. Pioneered institutional Bitcoin infrastructure starting in 2011. Directed enterprise Bitcoin deployments for large corporations. BS in Management Information Systems – University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
             { image: "assets/images/kyle_profile.png", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Over a decade of cryptocurrency, software engineering, and cybersecurity expertise since 2011. BS & MS in Cybersecurity from the University of South Florida. Led integrations for Chainlink Labs and scaled institutional digital asset platforms.", mobileBio: ["10+ years crypto & cybersecurity", "BS & MS in Cybersecurity, USF", "Full stack development for 7+ years"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
         ],
         resources: []
@@ -190,12 +190,16 @@
         return div.innerHTML;
     }
 
-    function sanitizeUrl(url) {
+    function sanitizeUrl(url, allowedDomains = null) {
+        let parsed;
         try {
-            const parsed = new URL(url);
-            if (parsed.protocol === 'https:' || parsed.protocol === 'http:') return parsed.href;
-        } catch {}
-        return '#';
+            parsed = new URL(url);
+        } catch {
+            return '#';
+        }
+        if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') return '#';
+        if (allowedDomains && !allowedDomains.some(d => parsed.hostname === d || parsed.hostname.endsWith('.' + d))) return '#';
+        return parsed.href;
     }
 
     async function renderResources() {
@@ -211,7 +215,7 @@
                     const rawDesc = r.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...';
                     const safeTitle = escapeHtml(r.title);
                     const safeDesc = escapeHtml(rawDesc);
-                    const safeUrl = sanitizeUrl(r.link);
+                    const safeUrl = sanitizeUrl(r.link, ['substack.com']);
                     return `
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card resource-card h-100 border-0 shadow-sm" data-url="${safeUrl}" style="cursor:pointer">
