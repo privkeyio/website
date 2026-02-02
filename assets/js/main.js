@@ -34,10 +34,8 @@
         ],
         contributions: {
             "Bitcoin & Lightning Network": [
-                { name: "LND - Multi-Path Payment Records", url: "https://github.com/lightningnetwork/lnd/pull/10091" },
-                { name: "Core Lightning - Handle NULL Short Channel ID", url: "https://github.com/ElementsProject/lightning/pull/8435" },
-                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
+                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
                 { name: "Bitcoin Knots - Upgrade Depends to Qt6", url: "https://github.com/bitcoinknots/bitcoin/pull/231" },
                 { name: "Bitcoin Knots - Pass Critical Build Flags", url: "https://github.com/bitcoinknots/bitcoin/pull/237" },
                 { name: "Bitcoin Knots - Export GUI Policy Options", url: "https://github.com/bitcoinknots/bitcoin/pull/154" },
