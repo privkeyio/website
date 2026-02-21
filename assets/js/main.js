@@ -29,8 +29,8 @@
             { name: "Taproot Assets Gateway", description: "REST proxy for Taproot Assets.", language: "Rust", license: "MIT", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
             { name: "libnostr-z", description: "Zig library for the Nostr protocol.", language: "Zig", license: "MIT", url: "https://github.com/privkeyio/libnostr-z" },
             { name: "Keep", description: "Sovereign key management for Nostr and Bitcoin.", language: "Rust", license: "AGPL-3.0", url: "https://github.com/privkeyio/keep" },
-            { name: "Warden", description: "Policy engine for Bitcoin custody.", language: "Rust", license: "AGPL-3.0", url: "https://github.com/privkeyio/warden" },
-            { name: "Keep ESP32", description: "ESP32-S3 air-gapped FROST threshold signing device for Nostr and Bitcoin.", language: "C", license: "AGPL-3.0", url: "https://github.com/privkeyio/keep-esp32" }
+            { name: "Keep ESP32", description: "ESP32-S3 air-gapped FROST threshold signing device for Nostr and Bitcoin.", language: "C", license: "AGPL-3.0", url: "https://github.com/privkeyio/keep-esp32" },
+            { name: "Keep Android", description: "Android app for FROST threshold signing with NIP-55 support.", language: "Kotlin", license: "AGPL-3.0", url: "https://github.com/privkeyio/keep-android" }
         ],
         contributions: {
             "Bitcoin & Lightning Network": [
