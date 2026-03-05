@@ -25,12 +25,12 @@
             { icon: "pe-7s-key", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
         ],
         products: [
-            { name: "libnostr-c", description: "Lightweight, portable C library for the Nostr protocol with native Lightning Network integration.", language: "C", license: "MIT", url: "https://github.com/privkeyio/libnostr-c" },
-            { name: "Taproot Assets Gateway", description: "REST proxy for Taproot Assets.", language: "Rust", license: "MIT", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
-            { name: "libnostr-z", description: "Zig library for the Nostr protocol.", language: "Zig", license: "MIT", url: "https://github.com/privkeyio/libnostr-z" },
-            { name: "Keep", description: "Sovereign key management for Nostr and Bitcoin.", language: "Rust", license: "AGPL-3.0", url: "https://github.com/privkeyio/keep" },
-            { name: "Keep ESP32", description: "ESP32-S3 air-gapped FROST threshold signing device for Nostr and Bitcoin.", language: "C", license: "AGPL-3.0", url: "https://github.com/privkeyio/keep-esp32" },
-            { name: "Keep Android", description: "Android app for FROST threshold signing with NIP-55 support.", language: "Kotlin", license: "AGPL-3.0", url: "https://github.com/privkeyio/keep-android" }
+            { name: "libnostr-c", description: "Lightweight, portable C library for the Nostr protocol with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" },
+            { name: "Taproot Assets Gateway", description: "REST proxy for Taproot Assets.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
+            { name: "libnostr-z", description: "Zig library for the Nostr protocol.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
+            { name: "Keep", description: "Sovereign key management for Nostr and Bitcoin.", language: "Rust", url: "https://github.com/privkeyio/keep" },
+            { name: "Keep ESP32", description: "ESP32-S3 air-gapped FROST threshold signing device for Nostr and Bitcoin.", language: "C", url: "https://github.com/privkeyio/keep-esp32" },
+            { name: "Keep Android", description: "Android app for FROST threshold signing with NIP-55 support.", language: "Kotlin", url: "https://github.com/privkeyio/keep-android" }
         ],
         contributions: {
             "Bitcoin & Lightning Network": [
@@ -130,7 +130,7 @@
                         <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">
                             <div class="opensource-item-header">
                                 <span class="opensource-name">${p.name}</span>
-                                <span class="opensource-lang">${p.license}</span>
+                                <span class="opensource-lang">${p.language}</span>
                             </div>
                             <span class="opensource-desc">${p.description}</span>
                         </a>`).join('')}
