@@ -34,11 +34,12 @@
         ],
         contributions: {
             "Bitcoin & Lightning Network": [
+                { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
-                { name: "Bitcoin Knots - Upgrade Depends to Qt6", url: "https://github.com/bitcoinknots/bitcoin/pull/231" },
-                { name: "Bitcoin Knots - Pass Critical Build Flags", url: "https://github.com/bitcoinknots/bitcoin/pull/237" },
-                { name: "Bitcoin Knots - Export GUI Policy Options", url: "https://github.com/bitcoinknots/bitcoin/pull/154" },
+                { name: "Bitcoin Knots - Port Windows Taskbar Progress to COM", url: "https://github.com/bitcoinknots/bitcoin/pull/215" },
+                { name: "Bitcoin Knots - Fix Vsize for Sigops/Datacarriercost", url: "https://github.com/bitcoinknots/bitcoin/pull/263" },
+                { name: "Bitcoin Knots - Rework Memory Pressure System", url: "https://github.com/bitcoinknots/bitcoin/pull/261" },
                 { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
                 { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
                 { name: "OCEAN - Job Coordination for Fallback Shares", url: "https://github.com/OCEAN-xyz/datum_gateway/pull/156" }
@@ -54,7 +55,6 @@
                 { name: "Goose - Middle-Out Message Compression", url: "https://github.com/block/goose/pull/3907" }
             ],
             "Wallets & SDKs": [
-                { name: "Zeus - Disable Express Graph Sync by Default", url: "https://github.com/ZeusLN/zeus/pull/3154" },
                 { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
                 { name: "Bull Bitcoin - Hide Exchange Features", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" },
                 { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
