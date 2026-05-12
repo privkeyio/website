@@ -34,12 +34,10 @@
         ],
         contributions: {
             "Bitcoin & Lightning Network": [
+                { name: "Bitcoin Knots - v29.3.knots20260508 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" },
                 { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
-                { name: "Bitcoin Knots - Port Windows Taskbar Progress to COM", url: "https://github.com/bitcoinknots/bitcoin/pull/215" },
-                { name: "Bitcoin Knots - Fix Vsize for Sigops/Datacarriercost", url: "https://github.com/bitcoinknots/bitcoin/pull/263" },
-                { name: "Bitcoin Knots - Rework Memory Pressure System", url: "https://github.com/bitcoinknots/bitcoin/pull/261" },
                 { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
                 { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
                 { name: "OCEAN - Job Coordination for Fallback Shares", url: "https://github.com/OCEAN-xyz/datum_gateway/pull/156" }
