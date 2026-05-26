@@ -24,39 +24,55 @@
             { icon: "pe-7s-config", title: "AI + Policy", description: "AI agents need guardrails. We build signing with policy controls." },
             { icon: "pe-7s-key", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
         ],
-        products: [
-            { name: "libnostr-c", description: "Lightweight, portable C library for the Nostr protocol with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" },
-            { name: "Taproot Assets Gateway", description: "REST proxy for Taproot Assets.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
-            { name: "libnostr-z", description: "Zig library for the Nostr protocol.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
-            { name: "Keep", description: "Sovereign key management for Nostr and Bitcoin.", language: "Rust", url: "https://github.com/privkeyio/keep" },
-            { name: "Keep ESP32", description: "ESP32-S3 air-gapped FROST threshold signing device for Nostr and Bitcoin.", language: "C", url: "https://github.com/privkeyio/keep-esp32" },
-            { name: "Keep Android", description: "Android app for FROST threshold signing with NIP-55 support.", language: "Kotlin", url: "https://github.com/privkeyio/keep-android" }
+        ecosystems: [
+            {
+                name: "Keep Ecosystem",
+                description: "Self-custodial key management for Nostr and Bitcoin. An encrypted vault with FROST threshold signing and NIP-46 remote signing, spanning CLI, desktop, mobile, hardware, and cloud enclaves so no single device ever holds the whole key.",
+                url: "https://github.com/privkeyio/keep",
+                components: [
+                    { name: "Keep", role: "Encrypted vault: CLI, desktop app & Nitro Enclave signing", language: "Rust", url: "https://github.com/privkeyio/keep" },
+                    { name: "Keep Android", role: "FROST mobile signer with NIP-55 and NIP-46", language: "Kotlin", url: "https://github.com/privkeyio/keep-android" },
+                    { name: "Keep ESP32", role: "Air-gapped ESP32-S3 hardware signer", language: "C", url: "https://github.com/privkeyio/keep-esp32" },
+                    { name: "Keep StartOS", role: "Always-on FROST co-signer node", language: "TypeScript", url: "https://github.com/privkeyio/keep-startos" }
+                ]
+            }
         ],
-        contributions: {
-            "Bitcoin & Lightning Network": [
-                { name: "Bitcoin Knots - v29.3.knots20260508 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" },
-                { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
-                { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
-                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
-                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
-                { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
-                { name: "OCEAN - Job Coordination for Fallback Shares", url: "https://github.com/OCEAN-xyz/datum_gateway/pull/156" }
+        products: {
+            "Libraries": [
+                { name: "libnostr-c", description: "Portable C library for Nostr with NIP-44 encryption, Lightning zaps, and full relay-side support for embedded systems.", language: "C", url: "https://github.com/privkeyio/libnostr-c" },
+                { name: "libnostr-z", description: "Zig library for the Nostr protocol with broad NIP coverage, from events and relays to NIP-46 signing and NWC.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" }
             ],
-            "Nostr Protocol": [
+            "Apps & Tools": [
+                { name: "wisp", description: "Fast, lightweight self-hostable Nostr relay with spider mode that syncs notes from people you follow.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
+                { name: "puck", description: "Nostr Wallet Connect (NIP-47) server with an LNbits backend for invoices and payments.", language: "Zig", url: "https://github.com/privkeyio/puck" },
+                { name: "whisper", description: "Encrypted Nostr DM pipe (NIP-17 + NIP-44) with a Unix-style CLI and TUI.", language: "C", url: "https://github.com/privkeyio/whisper" },
+                { name: "Taproot Assets Gateway", description: "REST proxy that makes Lightning Labs' tapd usable from web apps with CORS and simplified macaroon auth.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" }
+            ]
+        },
+        contributions: {
+            "Bitcoin Wallets": [
+                { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
+                { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
+                { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" }
+            ],
+            "Bitcoin Infrastructure": [
+                { name: "Bitcoin Knots - v29.3.knots20260508 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" },
+                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
+                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" }
+            ],
+            "Bitcoin Libraries": [
+                { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
+                { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
+                { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" }
+            ],
+            "Nostr Apps": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
                 { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
                 { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" }
             ],
-            "Developer Tools & AI": [
+            "AI Developer Tools": [
                 { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" },
-                { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" },
-                { name: "Goose - Middle-Out Message Compression", url: "https://github.com/block/goose/pull/3907" }
-            ],
-            "Wallets & SDKs": [
-                { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
-                { name: "Bull Bitcoin - Hide Exchange Features", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" },
-                { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
-                { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" }
+                { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" }
             ],
         },
         team: [
@@ -123,20 +139,47 @@
     function renderProducts() {
         document.getElementById('products-grid').innerHTML = `
             <div class="col-lg-10">
-                <div class="opensource-list">
-                    ${DATA.products.map(p => `
-                        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">
-                            <div class="opensource-item-header">
-                                <span class="opensource-name">${p.name}</span>
-                                <span class="opensource-lang">${p.language}</span>
-                            </div>
-                            <span class="opensource-desc">${p.description}</span>
-                        </a>`).join('')}
+                ${DATA.ecosystems.map(e => `
+                    <div class="ecosystem-block">
+                        <div class="ecosystem-header">
+                            <a href="${e.url}" target="_blank" rel="noopener noreferrer" class="ecosystem-title">${e.name}</a>
+                            <span class="opensource-lang">Ecosystem</span>
+                        </div>
+                        <p class="ecosystem-desc">${e.description}</p>
+                        <div class="ecosystem-components">
+                            ${e.components.map(c => `
+                                <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="ecosystem-component">
+                                    <div class="opensource-item-header">
+                                        <span class="opensource-name">${c.name}</span>
+                                        <span class="opensource-lang">${c.language}</span>
+                                    </div>
+                                    <span class="opensource-desc">${c.role}</span>
+                                </a>`).join('')}
+                        </div>
+                    </div>`).join('')}
+                ${Object.entries(DATA.products).map(([group, items]) => `
+                    <h4 class="product-group-label">${group}</h4>
+                    <div class="opensource-list">
+                        ${items.map(p => `
+                            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">
+                                <div class="opensource-item-header">
+                                    <span class="opensource-name">${p.name}</span>
+                                    <span class="opensource-lang">${p.language}</span>
+                                </div>
+                                <span class="opensource-desc">${p.description}</span>
+                            </a>`).join('')}
+                    </div>`).join('')}
+                <div class="text-center mt-4">
+                    <a href="https://github.com/privkeyio" target="_blank" rel="noopener noreferrer" class="products-cta">Explore all our open source work <i class="mdi mdi-arrow-right"></i></a>
                 </div>
             </div>`;
     }
 
     function renderContributions() {
+        const all = Object.values(DATA.contributions).flat();
+        const projects = new Set(all.map(c => c.name.split(' - ')[0]));
+        document.getElementById('contributions-stat').textContent =
+            `${all.length} merged contributions across ${projects.size} open-source projects`;
         const container = document.getElementById('contributions-accordion');
         container.innerHTML = Object.entries(DATA.contributions).map(([category, items]) => `
             <div style="margin-bottom:1rem">
