@@ -65,12 +65,12 @@
                 { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
                 { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" }
             ],
-            "Nostr Protocol": [
+            "Nostr Apps": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
                 { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
                 { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" }
             ],
-            "Developer Tools & AI": [
+            "AI Developer Tools": [
                 { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" },
                 { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" }
             ],
