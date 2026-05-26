@@ -24,13 +24,26 @@
             { icon: "pe-7s-config", title: "AI + Policy", description: "AI agents need guardrails. We build signing with policy controls." },
             { icon: "pe-7s-key", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
         ],
+        ecosystems: [
+            {
+                name: "Keep Ecosystem",
+                description: "Self-custodial key management for Nostr and Bitcoin, built on FROST threshold signing across every form factor.",
+                url: "https://github.com/privkeyio/keep",
+                components: [
+                    { name: "Keep", role: "Core signing daemon", language: "Rust", url: "https://github.com/privkeyio/keep" },
+                    { name: "Keep Android", role: "NIP-55 mobile signer", language: "Kotlin", url: "https://github.com/privkeyio/keep-android" },
+                    { name: "Keep ESP32", role: "Air-gapped signing device", language: "C", url: "https://github.com/privkeyio/keep-esp32" },
+                    { name: "Keep StartOS", role: "Self-hosted node package", language: "TypeScript", url: "https://github.com/privkeyio/keep-startos" }
+                ]
+            }
+        ],
         products: [
             { name: "libnostr-c", description: "Lightweight, portable C library for the Nostr protocol with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" },
-            { name: "Taproot Assets Gateway", description: "REST proxy for Taproot Assets.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
             { name: "libnostr-z", description: "Zig library for the Nostr protocol.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
-            { name: "Keep", description: "Sovereign key management for Nostr and Bitcoin.", language: "Rust", url: "https://github.com/privkeyio/keep" },
-            { name: "Keep ESP32", description: "ESP32-S3 air-gapped FROST threshold signing device for Nostr and Bitcoin.", language: "C", url: "https://github.com/privkeyio/keep-esp32" },
-            { name: "Keep Android", description: "Android app for FROST threshold signing with NIP-55 support.", language: "Kotlin", url: "https://github.com/privkeyio/keep-android" }
+            { name: "wisp", description: "A lightweight Nostr relay you can self-host.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
+            { name: "puck", description: "Nostr Wallet Connect server for linking wallets to apps.", language: "Zig", url: "https://github.com/privkeyio/puck" },
+            { name: "whisper", description: "Encrypted Nostr DM pipe for secure messaging transport.", language: "C", url: "https://github.com/privkeyio/whisper" },
+            { name: "Taproot Assets Gateway", description: "REST proxy for Taproot Assets.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" }
         ],
         contributions: {
             "Bitcoin & Lightning Network": [
@@ -123,6 +136,24 @@
     function renderProducts() {
         document.getElementById('products-grid').innerHTML = `
             <div class="col-lg-10">
+                ${DATA.ecosystems.map(e => `
+                    <div class="ecosystem-block">
+                        <div class="ecosystem-header">
+                            <a href="${e.url}" target="_blank" rel="noopener noreferrer" class="ecosystem-title">${e.name}</a>
+                            <span class="opensource-lang">Ecosystem</span>
+                        </div>
+                        <p class="ecosystem-desc">${e.description}</p>
+                        <div class="ecosystem-components">
+                            ${e.components.map(c => `
+                                <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="ecosystem-component">
+                                    <div class="opensource-item-header">
+                                        <span class="opensource-name">${c.name}</span>
+                                        <span class="opensource-lang">${c.language}</span>
+                                    </div>
+                                    <span class="opensource-desc">${c.role}</span>
+                                </a>`).join('')}
+                        </div>
+                    </div>`).join('')}
                 <div class="opensource-list">
                     ${DATA.products.map(p => `
                         <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">
