@@ -37,14 +37,18 @@
                 ]
             }
         ],
-        products: [
-            { name: "libnostr-c", description: "Portable C library for Nostr with NIP-44 encryption, Lightning zaps, and full relay-side support for embedded systems.", language: "C", url: "https://github.com/privkeyio/libnostr-c" },
-            { name: "libnostr-z", description: "Zig library for the Nostr protocol with broad NIP coverage, from events and relays to NIP-46 signing and NWC.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
-            { name: "wisp", description: "Fast, lightweight self-hostable Nostr relay with spider mode that syncs notes from people you follow.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
-            { name: "puck", description: "Nostr Wallet Connect (NIP-47) server with an LNbits backend for invoices and payments.", language: "Zig", url: "https://github.com/privkeyio/puck" },
-            { name: "whisper", description: "Encrypted Nostr DM pipe (NIP-17 + NIP-44) with a Unix-style CLI and TUI.", language: "C", url: "https://github.com/privkeyio/whisper" },
-            { name: "Taproot Assets Gateway", description: "REST proxy that makes Lightning Labs' tapd usable from web apps with CORS and simplified macaroon auth.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" }
-        ],
+        products: {
+            "Libraries": [
+                { name: "libnostr-c", description: "Portable C library for Nostr with NIP-44 encryption, Lightning zaps, and full relay-side support for embedded systems.", language: "C", url: "https://github.com/privkeyio/libnostr-c" },
+                { name: "libnostr-z", description: "Zig library for the Nostr protocol with broad NIP coverage, from events and relays to NIP-46 signing and NWC.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" }
+            ],
+            "Apps & Tools": [
+                { name: "wisp", description: "Fast, lightweight self-hostable Nostr relay with spider mode that syncs notes from people you follow.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
+                { name: "puck", description: "Nostr Wallet Connect (NIP-47) server with an LNbits backend for invoices and payments.", language: "Zig", url: "https://github.com/privkeyio/puck" },
+                { name: "whisper", description: "Encrypted Nostr DM pipe (NIP-17 + NIP-44) with a Unix-style CLI and TUI.", language: "C", url: "https://github.com/privkeyio/whisper" },
+                { name: "Taproot Assets Gateway", description: "REST proxy that makes Lightning Labs' tapd usable from web apps with CORS and simplified macaroon auth.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" }
+            ]
+        },
         contributions: {
             "Bitcoin Wallets": [
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
@@ -56,7 +60,7 @@
                 { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" }
             ],
-            "SDKs & Libraries": [
+            "Bitcoin Libraries": [
                 { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
                 { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
                 { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" }
@@ -153,20 +157,29 @@
                                 </a>`).join('')}
                         </div>
                     </div>`).join('')}
-                <div class="opensource-list">
-                    ${DATA.products.map(p => `
-                        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">
-                            <div class="opensource-item-header">
-                                <span class="opensource-name">${p.name}</span>
-                                <span class="opensource-lang">${p.language}</span>
-                            </div>
-                            <span class="opensource-desc">${p.description}</span>
-                        </a>`).join('')}
+                ${Object.entries(DATA.products).map(([group, items]) => `
+                    <h4 class="product-group-label">${group}</h4>
+                    <div class="opensource-list">
+                        ${items.map(p => `
+                            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">
+                                <div class="opensource-item-header">
+                                    <span class="opensource-name">${p.name}</span>
+                                    <span class="opensource-lang">${p.language}</span>
+                                </div>
+                                <span class="opensource-desc">${p.description}</span>
+                            </a>`).join('')}
+                    </div>`).join('')}
+                <div class="text-center mt-4">
+                    <a href="https://github.com/privkeyio" target="_blank" rel="noopener noreferrer" class="products-cta">Explore all our open source work <i class="mdi mdi-arrow-right"></i></a>
                 </div>
             </div>`;
     }
 
     function renderContributions() {
+        const all = Object.values(DATA.contributions).flat();
+        const projects = new Set(all.map(c => c.name.split(' - ')[0]));
+        document.getElementById('contributions-stat').textContent =
+            `${all.length} merged contributions across ${projects.size} open-source projects`;
         const container = document.getElementById('contributions-accordion');
         container.innerHTML = Object.entries(DATA.contributions).map(([category, items]) => `
             <div style="margin-bottom:1rem">
