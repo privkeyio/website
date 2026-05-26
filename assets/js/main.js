@@ -27,23 +27,23 @@
         ecosystems: [
             {
                 name: "Keep Ecosystem",
-                description: "Self-custodial key management for Nostr and Bitcoin, built on FROST threshold signing across every form factor.",
+                description: "Self-custodial key management for Nostr and Bitcoin. An encrypted vault with FROST threshold signing and NIP-46 remote signing, spanning CLI, desktop, mobile, hardware, and cloud enclaves so no single device ever holds the whole key.",
                 url: "https://github.com/privkeyio/keep",
                 components: [
-                    { name: "Keep", role: "Core signing daemon", language: "Rust", url: "https://github.com/privkeyio/keep" },
-                    { name: "Keep Android", role: "NIP-55 mobile signer", language: "Kotlin", url: "https://github.com/privkeyio/keep-android" },
-                    { name: "Keep ESP32", role: "Air-gapped signing device", language: "C", url: "https://github.com/privkeyio/keep-esp32" },
-                    { name: "Keep StartOS", role: "Self-hosted node package", language: "TypeScript", url: "https://github.com/privkeyio/keep-startos" }
+                    { name: "Keep", role: "Encrypted vault: CLI, desktop app & Nitro Enclave signing", language: "Rust", url: "https://github.com/privkeyio/keep" },
+                    { name: "Keep Android", role: "FROST mobile signer with NIP-55 and NIP-46", language: "Kotlin", url: "https://github.com/privkeyio/keep-android" },
+                    { name: "Keep ESP32", role: "Air-gapped ESP32-S3 hardware signer", language: "C", url: "https://github.com/privkeyio/keep-esp32" },
+                    { name: "Keep StartOS", role: "Always-on FROST co-signer node", language: "TypeScript", url: "https://github.com/privkeyio/keep-startos" }
                 ]
             }
         ],
         products: [
-            { name: "libnostr-c", description: "Lightweight, portable C library for the Nostr protocol with native Lightning Network integration.", language: "C", url: "https://github.com/privkeyio/libnostr-c" },
-            { name: "libnostr-z", description: "Zig library for the Nostr protocol.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
-            { name: "wisp", description: "A lightweight Nostr relay you can self-host.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
-            { name: "puck", description: "Nostr Wallet Connect server for linking wallets to apps.", language: "Zig", url: "https://github.com/privkeyio/puck" },
-            { name: "whisper", description: "Encrypted Nostr DM pipe for secure messaging transport.", language: "C", url: "https://github.com/privkeyio/whisper" },
-            { name: "Taproot Assets Gateway", description: "REST proxy for Taproot Assets.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" }
+            { name: "libnostr-c", description: "Portable C library for Nostr with NIP-44 encryption, Lightning zaps, and full relay-side support for embedded systems.", language: "C", url: "https://github.com/privkeyio/libnostr-c" },
+            { name: "libnostr-z", description: "Zig library for the Nostr protocol with broad NIP coverage, from events and relays to NIP-46 signing and NWC.", language: "Zig", url: "https://github.com/privkeyio/libnostr-z" },
+            { name: "wisp", description: "Fast, lightweight self-hostable Nostr relay with spider mode that syncs notes from people you follow.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
+            { name: "puck", description: "Nostr Wallet Connect (NIP-47) server with an LNbits backend for invoices and payments.", language: "Zig", url: "https://github.com/privkeyio/puck" },
+            { name: "whisper", description: "Encrypted Nostr DM pipe (NIP-17 + NIP-44) with a Unix-style CLI and TUI.", language: "C", url: "https://github.com/privkeyio/whisper" },
+            { name: "Taproot Assets Gateway", description: "REST proxy that makes Lightning Labs' tapd usable from web apps with CORS and simplified macaroon auth.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" }
         ],
         contributions: {
             "Bitcoin Wallets": [
