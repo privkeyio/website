@@ -4,9 +4,9 @@
   "description": "Leading cybersecurity and blockchain consulting firm with 30+ years experience.",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.png",
+      "sizes": "256x256",
+      "type": "image/png"
     },
     {
       "src": "assets/images/LOGO_Green_new_transparent.png",
