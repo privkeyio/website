@@ -46,14 +46,22 @@
             { name: "Taproot Assets Gateway", description: "REST proxy for Taproot Assets.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" }
         ],
         contributions: {
-            "Bitcoin & Lightning Network": [
-                { name: "Bitcoin Knots - v29.3.knots20260508 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" },
-                { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
+            "Bitcoin Wallets": [
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
-                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
-                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
                 { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
-                { name: "OCEAN - Job Coordination for Fallback Shares", url: "https://github.com/OCEAN-xyz/datum_gateway/pull/156" }
+                { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
+                { name: "Bull Bitcoin - Hide Exchange Features", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" }
+            ],
+            "Bitcoin Infrastructure": [
+                { name: "Bitcoin Knots - v29.3.knots20260508 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" },
+                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
+                { name: "OCEAN - Job Coordination for Fallback Shares", url: "https://github.com/OCEAN-xyz/datum_gateway/pull/156" },
+                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" }
+            ],
+            "SDKs & Libraries": [
+                { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
+                { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
+                { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" }
             ],
             "Nostr Protocol": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
@@ -64,12 +72,6 @@
                 { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" },
                 { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" },
                 { name: "Goose - Middle-Out Message Compression", url: "https://github.com/block/goose/pull/3907" }
-            ],
-            "Wallets & SDKs": [
-                { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
-                { name: "Bull Bitcoin - Hide Exchange Features", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" },
-                { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
-                { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" }
             ],
         },
         team: [
