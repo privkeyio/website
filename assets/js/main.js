@@ -33,7 +33,7 @@
                     { name: "Keep", role: "Encrypted vault: CLI, desktop app & Nitro Enclave signing", language: "Rust", url: "https://github.com/privkeyio/keep" },
                     { name: "Keep Android", role: "FROST mobile signer with NIP-55 and NIP-46", language: "Kotlin", url: "https://github.com/privkeyio/keep-android" },
                     { name: "Keep ESP32", role: "Air-gapped ESP32-S3 hardware signer", language: "C", url: "https://github.com/privkeyio/keep-esp32" },
-                    { name: "Keep StartOS", role: "Always-on FROST co-signer node", language: "TypeScript", url: "https://github.com/privkeyio/keep-startos" }
+                    { name: "Keep StartOS", role: "Always-on FROST co-signer node", language: "TypeScript", url: "https://github.com/start9-community/keep-startos" }
                 ]
             }
         ],
