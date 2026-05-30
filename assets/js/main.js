@@ -50,20 +50,32 @@
             ]
         },
         contributions: {
-            "Bitcoin Wallets": [
-                { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
-                { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
-                { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" }
-            ],
             "Bitcoin Infrastructure": [
-                { name: "Bitcoin Knots - v29.3.knots20260508 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" },
-                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
-                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" }
+                { name: "Bitcoin Knots - v29.3.knots20260508 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508", subItems: [
+                    { name: "Policy: Penalize effective fee for sub-dust outputs", url: "https://github.com/bitcoinknots/bitcoin/pull/272" },
+                    { name: "rpc: add segwit and taproot support to sweepprivkeys", url: "https://github.com/bitcoinknots/bitcoin/pull/296" },
+                    { name: "qt: Add sweep private key dialog", url: "https://github.com/bitcoinknots/bitcoin/pull/297" },
+                    { name: "codex32: early return on validation error to prevent OOB read", url: "https://github.com/bitcoinknots/bitcoin/pull/267" },
+                    { name: "blockstorage: fix unsigned underflow in GetBlockFileInfo bounds check", url: "https://github.com/bitcoinknots/bitcoin/pull/294" },
+                    { name: "Saturate CalculateExtraTxWeight and cap GUI datacarriercost to 1024", url: "https://github.com/bitcoinknots/bitcoin/pull/268" },
+                    { name: "external_signer: validate fingerprint is hex before shell command use", url: "https://github.com/bitcoinknots/bitcoin/pull/266" },
+                    { name: "feat(qt): add /clearhistory command", url: "https://github.com/bitcoinknots/bitcoin/pull/214" },
+                    { name: "qt: warn when script threads exceed CPU cores", url: "https://github.com/bitcoinknots/bitcoin/pull/287" },
+                    { name: "GUI: Port Windows taskbar progress to COM", url: "https://github.com/bitcoinknots/bitcoin/pull/215" },
+                    { name: "init: improve error message when index needs pruned block data", url: "https://github.com/bitcoinknots/bitcoin/pull/262" }
+                ] },
+                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
+                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" }
             ],
             "Bitcoin Libraries": [
                 { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
-                { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
-                { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" }
+                { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" },
+                { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" }
+            ],
+            "Bitcoin Wallets": [
+                { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
+                { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
+                { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" }
             ],
             "Nostr Apps": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
@@ -71,8 +83,8 @@
                 { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" }
             ],
             "AI Developer Tools": [
-                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" },
-                { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" }
+                { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" },
+                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" }
             ],
         },
         team: [
@@ -179,7 +191,7 @@
         const all = Object.values(DATA.contributions).flat();
         const projects = new Set(all.map(c => c.name.split(' - ')[0]));
         document.getElementById('contributions-stat').textContent =
-            `${all.length} merged contributions across ${projects.size} open-source projects`;
+            `${all.length} contributions shipped across ${projects.size} open-source projects`;
         const container = document.getElementById('contributions-accordion');
         container.innerHTML = Object.entries(DATA.contributions).map(([category, items]) => `
             <div style="margin-bottom:1rem">
@@ -188,7 +200,17 @@
                     <i class="mdi mdi-chevron-down" style="color:#27ae60;font-size:1.5rem"></i>
                 </div>
                 <div class="contribution-items" data-category="${category}" style="display:none">
-                    ${items.map(c => `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`).join('')}
+                    ${items.map(c => c.subItems ? `<div class="contribution-subgroup">
+                        <div class="contribution-link contribution-subtoggle" data-sub="${category}">
+                            <i class="mdi mdi-github" style="margin-right:0.5rem"></i>
+                            <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-subname">${c.name}</a>
+                            <small class="text-white-50" style="margin-left:auto;margin-right:0.5rem">${c.subItems.length} PRs</small>
+                            <i class="mdi mdi-chevron-down sub-chevron"></i>
+                        </div>
+                        <div class="contribution-subitems" data-sub="${category}" style="display:none">
+                            ${c.subItems.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="contribution-link contribution-sublink"><i class="mdi mdi-source-pull" style="margin-right:0.5rem"></i><span>${s.name}</span></a>`).join('')}
+                        </div>
+                    </div>` : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`).join('')}
                 </div>
             </div>`).join('');
         container.querySelectorAll('.contribution-header').forEach(header => {
@@ -200,6 +222,18 @@
                 container.querySelectorAll('.contribution-items').forEach(el => el.style.display = 'none');
                 container.querySelectorAll('.contribution-header i').forEach(el => el.className = 'mdi mdi-chevron-down');
                 if (!isOpen) { items.style.display = 'grid'; icon.className = 'mdi mdi-chevron-up'; }
+            });
+        });
+        container.querySelectorAll('.contribution-subname').forEach(link => {
+            link.addEventListener('click', e => e.stopPropagation());
+        });
+        container.querySelectorAll('.contribution-subtoggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const sub = toggle.parentElement.querySelector('.contribution-subitems');
+                const chevron = toggle.querySelector('.sub-chevron');
+                const isOpen = sub.style.display !== 'none';
+                sub.style.display = isOpen ? 'none' : 'grid';
+                chevron.className = isOpen ? 'mdi mdi-chevron-down sub-chevron' : 'mdi mdi-chevron-up sub-chevron';
             });
         });
     }
