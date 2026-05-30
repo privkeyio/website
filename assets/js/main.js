@@ -51,7 +51,7 @@
         },
         contributions: {
             "Bitcoin Infrastructure": [
-                { name: "Bitcoin Knots - v29.3.knots20260508 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508", subItems: [
+                { name: "Bitcoin Knots - v29.3 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508", subItems: [
                     { name: "Policy: Penalize effective fee for sub-dust outputs", url: "https://github.com/bitcoinknots/bitcoin/pull/272" },
                     { name: "rpc: add segwit and taproot support to sweepprivkeys", url: "https://github.com/bitcoinknots/bitcoin/pull/296" },
                     { name: "qt: Add sweep private key dialog", url: "https://github.com/bitcoinknots/bitcoin/pull/297" },
@@ -200,17 +200,18 @@
                     <i class="mdi mdi-chevron-down" style="color:#27ae60;font-size:1.5rem"></i>
                 </div>
                 <div class="contribution-items" data-category="${category}" style="display:none">
-                    ${items.map(c => c.subItems ? `<div class="contribution-subgroup">
-                        <div class="contribution-link contribution-subtoggle" data-sub="${category}">
+                    ${items.map((c, i) => c.subItems ? `<div class="contribution-link contribution-subtoggle" data-sub="${category}::${i}">
                             <i class="mdi mdi-github" style="margin-right:0.5rem"></i>
                             <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-subname">${c.name}</a>
-                            <small class="text-white-50" style="margin-left:auto;margin-right:0.5rem">${c.subItems.length} PRs</small>
+                            <span class="sub-count">${c.subItems.length} PRs</span>
                             <i class="mdi mdi-chevron-down sub-chevron"></i>
-                        </div>
-                        <div class="contribution-subitems" data-sub="${category}" style="display:none">
-                            ${c.subItems.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="contribution-link contribution-sublink"><i class="mdi mdi-source-pull" style="margin-right:0.5rem"></i><span>${s.name}</span></a>`).join('')}
-                        </div>
-                    </div>` : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`).join('')}
+                        </div>` : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`).join('')}
+                    ${items.map((c, i) => c.subItems ? `<div class="contribution-subpanel" data-sub="${category}::${i}" style="display:none">
+                            <div class="contribution-subpanel-title">${c.subItems.length} PRs in Bitcoin Knots ${c.url.split('/').pop()}</div>
+                            <div class="contribution-subpanel-grid">
+                                ${c.subItems.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="contribution-link contribution-sublink"><i class="mdi mdi-source-pull" style="margin-right:0.5rem"></i><span>${s.name}</span></a>`).join('')}
+                            </div>
+                        </div>` : '').join('')}
                 </div>
             </div>`).join('');
         container.querySelectorAll('.contribution-header').forEach(header => {
@@ -229,10 +230,11 @@
         });
         container.querySelectorAll('.contribution-subtoggle').forEach(toggle => {
             toggle.addEventListener('click', () => {
-                const sub = toggle.parentElement.querySelector('.contribution-subitems');
+                const key = toggle.dataset.sub;
+                const panel = container.querySelector(`.contribution-subpanel[data-sub="${key}"]`);
                 const chevron = toggle.querySelector('.sub-chevron');
-                const isOpen = sub.style.display !== 'none';
-                sub.style.display = isOpen ? 'none' : 'grid';
+                const isOpen = panel.style.display !== 'none';
+                panel.style.display = isOpen ? 'none' : 'block';
                 chevron.className = isOpen ? 'mdi mdi-chevron-down sub-chevron' : 'mdi mdi-chevron-up sub-chevron';
             });
         });
