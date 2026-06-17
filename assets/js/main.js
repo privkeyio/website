@@ -82,9 +82,10 @@
                 { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
                 { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" }
             ],
-            "AI Developer Tools": [
+            "Developer Tools": [
                 { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" },
-                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" }
+                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" },
+                { name: "http.zig - Fix Lost Websocket Read on Re-arm", url: "https://github.com/karlseguin/http.zig/pull/212" }
             ],
         },
         team: [
