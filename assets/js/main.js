@@ -74,6 +74,7 @@
             ],
             "Bitcoin Wallets": [
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
+                { name: "Bull Bitcoin - Hide Exchange Features for Restricted Regions", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" },
                 { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
                 { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" }
             ],
@@ -83,9 +84,12 @@
                 { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" }
             ],
             "Developer Tools": [
+                { name: "http.zig - Fix Event Loop Use-After-Free on Connection Close", url: "https://github.com/karlseguin/http.zig/pull/216" },
+                { name: "http.zig - Fix Recv/Disown Use-After-Free Race", url: "https://github.com/karlseguin/http.zig/pull/214" },
+                { name: "http.zig - Fix Lost Websocket Read on Re-arm", url: "https://github.com/karlseguin/http.zig/pull/212" },
+                { name: "websocket.zig - Fix TLS Client Read-Timeout Panic", url: "https://github.com/karlseguin/websocket.zig/pull/103" },
                 { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" },
-                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" },
-                { name: "http.zig - Fix Lost Websocket Read on Re-arm", url: "https://github.com/karlseguin/http.zig/pull/212" }
+                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" }
             ],
         },
         team: [
