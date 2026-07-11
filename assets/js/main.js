@@ -215,13 +215,13 @@
                             <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-subname">${c.name}</a>
                             <span class="sub-count">${c.subItems.length} PRs</span>
                             <i class="mdi mdi-chevron-down sub-chevron"></i>
-                        </div>` : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`).join('')}
-                    ${items.map((c, i) => c.subItems ? `<div class="contribution-subpanel" data-sub="${category}::${i}" style="display:none">
+                        </div>
+                        <div class="contribution-subpanel" data-sub="${category}::${i}" style="display:none">
                             <div class="contribution-subpanel-title">${c.subTitle || (c.subItems.length + ' PRs in Bitcoin Knots ' + c.url.split('/').pop())}</div>
                             <div class="contribution-subpanel-grid">
                                 ${c.subItems.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="contribution-link contribution-sublink"><i class="mdi mdi-source-pull" style="margin-right:0.5rem"></i><span>${s.name}</span></a>`).join('')}
                             </div>
-                        </div>` : '').join('')}
+                        </div>` : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`).join('')}
                 </div>
             </div>`).join('');
         container.querySelectorAll('.contribution-header').forEach(header => {
@@ -244,8 +244,9 @@
                 const panel = container.querySelector(`.contribution-subpanel[data-sub="${key}"]`);
                 const chevron = toggle.querySelector('.sub-chevron');
                 const isOpen = panel.style.display !== 'none';
-                panel.style.display = isOpen ? 'none' : 'block';
-                chevron.className = isOpen ? 'mdi mdi-chevron-down sub-chevron' : 'mdi mdi-chevron-up sub-chevron';
+                container.querySelectorAll('.contribution-subpanel').forEach(el => el.style.display = 'none');
+                container.querySelectorAll('.sub-chevron').forEach(el => el.className = 'mdi mdi-chevron-down sub-chevron');
+                if (!isOpen) { panel.style.display = 'block'; chevron.className = 'mdi mdi-chevron-up sub-chevron'; }
             });
         });
     }
