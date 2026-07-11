@@ -84,10 +84,15 @@
                 { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" }
             ],
             "Developer Tools": [
-                { name: "http.zig - Fix Event Loop Use-After-Free on Connection Close", url: "https://github.com/karlseguin/http.zig/pull/216" },
-                { name: "http.zig - Fix Recv/Disown Use-After-Free Race", url: "https://github.com/karlseguin/http.zig/pull/214" },
-                { name: "http.zig - Fix Lost Websocket Read on Re-arm", url: "https://github.com/karlseguin/http.zig/pull/212" },
-                { name: "websocket.zig - Fix TLS Client Read-Timeout Panic", url: "https://github.com/karlseguin/websocket.zig/pull/103" },
+                { name: "http.zig - Memory-Safety & Reliability Fixes", url: "https://github.com/karlseguin/http.zig", subTitle: "3 merged PRs in karlseguin/http.zig", subItems: [
+                    { name: "Fix Event Loop Use-After-Free on Connection Close", url: "https://github.com/karlseguin/http.zig/pull/216" },
+                    { name: "Fix Recv/Disown Use-After-Free Race", url: "https://github.com/karlseguin/http.zig/pull/214" },
+                    { name: "Fix Lost Websocket Read on Re-arm", url: "https://github.com/karlseguin/http.zig/pull/212" }
+                ] },
+                { name: "websocket.zig - Client Timeout & Safety Fixes", url: "https://github.com/karlseguin/websocket.zig", subTitle: "2 merged PRs in karlseguin/websocket.zig", subItems: [
+                    { name: "Bounded Connect & TLS Handshake Timeout", url: "https://github.com/karlseguin/websocket.zig/pull/108" },
+                    { name: "Fix TLS Client Read-Timeout Panic", url: "https://github.com/karlseguin/websocket.zig/pull/103" }
+                ] },
                 { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" },
                 { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" }
             ],
@@ -210,13 +215,13 @@
                             <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-subname">${c.name}</a>
                             <span class="sub-count">${c.subItems.length} PRs</span>
                             <i class="mdi mdi-chevron-down sub-chevron"></i>
-                        </div>` : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`).join('')}
-                    ${items.map((c, i) => c.subItems ? `<div class="contribution-subpanel" data-sub="${category}::${i}" style="display:none">
-                            <div class="contribution-subpanel-title">${c.subItems.length} PRs in Bitcoin Knots ${c.url.split('/').pop()}</div>
+                        </div>
+                        <div class="contribution-subpanel" data-sub="${category}::${i}" style="display:none">
+                            <div class="contribution-subpanel-title">${c.subTitle || (c.subItems.length + ' PRs in Bitcoin Knots ' + c.url.split('/').pop())}</div>
                             <div class="contribution-subpanel-grid">
                                 ${c.subItems.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="contribution-link contribution-sublink"><i class="mdi mdi-source-pull" style="margin-right:0.5rem"></i><span>${s.name}</span></a>`).join('')}
                             </div>
-                        </div>` : '').join('')}
+                        </div>` : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`).join('')}
                 </div>
             </div>`).join('');
         container.querySelectorAll('.contribution-header').forEach(header => {
@@ -239,8 +244,9 @@
                 const panel = container.querySelector(`.contribution-subpanel[data-sub="${key}"]`);
                 const chevron = toggle.querySelector('.sub-chevron');
                 const isOpen = panel.style.display !== 'none';
-                panel.style.display = isOpen ? 'none' : 'block';
-                chevron.className = isOpen ? 'mdi mdi-chevron-down sub-chevron' : 'mdi mdi-chevron-up sub-chevron';
+                container.querySelectorAll('.contribution-subpanel').forEach(el => el.style.display = 'none');
+                container.querySelectorAll('.sub-chevron').forEach(el => el.className = 'mdi mdi-chevron-down sub-chevron');
+                if (!isOpen) { panel.style.display = 'block'; chevron.className = 'mdi mdi-chevron-up sub-chevron'; }
             });
         });
     }
