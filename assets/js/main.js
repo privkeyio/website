@@ -64,6 +64,7 @@
                     { name: "GUI: Port Windows taskbar progress to COM", url: "https://github.com/bitcoinknots/bitcoin/pull/215" },
                     { name: "init: improve error message when index needs pruned block data", url: "https://github.com/bitcoinknots/bitcoin/pull/262" }
                 ] },
+                { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
                 { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" }
             ],
