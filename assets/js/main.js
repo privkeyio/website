@@ -71,7 +71,8 @@
             "Bitcoin Libraries": [
                 { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
                 { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" },
-                { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" }
+                { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
+                { name: "BDK - RPC Emitter Documentation Examples", url: "https://github.com/bitcoindevkit/bdk/pull/2210" }
             ],
             "Bitcoin Wallets": [
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
