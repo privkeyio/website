@@ -51,8 +51,7 @@
             ],
             "Developer Tools": [
                 { name: "bosun", description: "Tracks PR review and triage status across Bitcoin forks. Live at bosun.privkey.io.", language: "Python", url: "https://github.com/privkeyio/bosun" },
-                { name: "nostr-bench", description: "Benchmarking tool for measuring Nostr relay throughput and latency.", language: "Zig", url: "https://github.com/privkeyio/nostr-bench" },
-                { name: "evolve-mcp", description: "MCP server for agent self-improvement, evolving prompts with genetic algorithms and safety validation.", language: "Python", url: "https://github.com/privkeyio/evolve-mcp" }
+                { name: "nostr-bench", description: "Benchmarking tool for measuring Nostr relay throughput and latency.", language: "Zig", url: "https://github.com/privkeyio/nostr-bench" }
             ]
         },
         contributions: {
