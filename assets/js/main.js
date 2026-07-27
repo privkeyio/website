@@ -44,9 +44,11 @@
             ],
             "Apps & Tools": [
                 { name: "wisp", description: "Fast, lightweight self-hostable Nostr relay with spider mode that syncs notes from people you follow.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
-                { name: "puck", description: "Nostr Wallet Connect (NIP-47) server with an LNbits backend for invoices and payments.", language: "Zig", url: "https://github.com/privkeyio/puck" },
-                { name: "whisper", description: "Encrypted Nostr DM pipe (NIP-17 + NIP-44) with a Unix-style CLI and TUI.", language: "C", url: "https://github.com/privkeyio/whisper" },
-                { name: "Taproot Assets Gateway", description: "REST proxy that makes Lightning Labs' tapd usable from web apps with CORS and simplified macaroon auth.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" }
+                { name: "Taproot Assets Gateway", description: "REST proxy that makes Lightning Labs' tapd usable from web apps with CORS and simplified macaroon auth.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
+                { name: "noz", description: "Small, fast Nostr command-line tool for signing, publishing, querying, and decoding NIP-19 entities.", language: "Zig", url: "https://github.com/privkeyio/noz" }
+            ],
+            "Developer Tools": [
+                { name: "bosun", description: "Tracks PR review and triage status across Bitcoin forks. Live at bosun.privkey.io.", language: "Python", url: "https://github.com/privkeyio/bosun" }
             ]
         },
         contributions: {
@@ -101,7 +103,7 @@
         },
         team: [
             { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30+ years in cybersecurity. Pioneered institutional Bitcoin infrastructure starting in 2011. Directed enterprise Bitcoin deployments for large corporations. BS in Management Information Systems – University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
-            { image: "assets/images/kyle_profile.png", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Over a decade of cryptocurrency, software engineering, and cybersecurity expertise since 2011. BS & MS in Cybersecurity from the University of South Florida. Led integrations for Chainlink Labs and scaled institutional digital asset platforms.", mobileBio: ["10+ years crypto & cybersecurity", "BS & MS in Cybersecurity, USF", "Full stack development for 7+ years"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
+            { image: "assets/images/kyle_profile.png", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Open-source systems engineer building in Rust, Zig, and C. Contributor to Bitcoin Core, Bitcoin Knots, BDK, and rust-miniscript, and author of PrivKey's Keep signing stack, Wisp relay, and Nostr protocol libraries. BS & MS in Cybersecurity from the University of South Florida.", mobileBio: ["Bitcoin Core & Knots contributor", "Systems work in Rust, Zig, and C", "BS & MS in Cybersecurity, USF"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
         ],
         resources: []
     };
