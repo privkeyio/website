@@ -68,13 +68,19 @@
                 ] },
                 { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
-                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" }
+                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
+                { name: "DTails - Add Bitcoin Knots Support", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52" }
             ],
             "Bitcoin Libraries": [
                 { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
                 { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" },
                 { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
-                { name: "BDK - RPC Emitter Documentation Examples", url: "https://github.com/bitcoindevkit/bdk/pull/2210" }
+                { name: "BDK - RPC Emitter Documentation Examples", url: "https://github.com/bitcoindevkit/bdk/pull/2210" },
+                { name: "DLC Dev Kit - Remove Hardcoded Database Credentials", url: "https://github.com/bennyhodl/dlcdevkit/pull/143" }
+            ],
+            "Cryptography & Privacy": [
+                { name: "ZF FROST - ZeroizeOnDrop for Signing Nonces", url: "https://github.com/ZcashFoundation/frost/pull/987" },
+                { name: "Negentropy - Fix Off-by-One Heap Buffer Overflow", url: "https://github.com/hoytech/negentropy/pull/17" }
             ],
             "Bitcoin Wallets": [
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
@@ -85,20 +91,27 @@
             "Nostr Apps": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
                 { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
-                { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" }
+                { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" },
+                { name: "Sonar - Hostile-Peer Hardening for Mesh Identity", url: "https://github.com/hedwig-corp/bitchat-to-sonar", subTitle: "2 merged PRs in hedwig-corp/bitchat-to-sonar", subItems: [
+                    { name: "Bind Join Requests to the Gift-Wrap Seal Author", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/411" },
+                    { name: "Harden Mesh Identity & Broadcast Against Forgery and Flooding", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/422" }
+                ] }
             ],
             "Developer Tools": [
-                { name: "http.zig - Memory-Safety & Reliability Fixes", url: "https://github.com/karlseguin/http.zig", subTitle: "3 merged PRs in karlseguin/http.zig", subItems: [
+                { name: "http.zig - Memory-Safety & Reliability Fixes", url: "https://github.com/karlseguin/http.zig", subTitle: "5 merged PRs in karlseguin/http.zig", subItems: [
                     { name: "Fix Event Loop Use-After-Free on Connection Close", url: "https://github.com/karlseguin/http.zig/pull/216" },
                     { name: "Fix Recv/Disown Use-After-Free Race", url: "https://github.com/karlseguin/http.zig/pull/214" },
-                    { name: "Fix Lost Websocket Read on Re-arm", url: "https://github.com/karlseguin/http.zig/pull/212" }
+                    { name: "Fix Lost Websocket Read on Re-arm", url: "https://github.com/karlseguin/http.zig/pull/212" },
+                    { name: "Stop Thread Pool Before Deinit to Fix Shutdown Use-After-Free", url: "https://github.com/karlseguin/http.zig/pull/215" },
+                    { name: "Join Thread Pool Before Freeing Connection Buffers", url: "https://github.com/karlseguin/http.zig/pull/217" }
                 ] },
-                { name: "websocket.zig - Client Timeout & Safety Fixes", url: "https://github.com/karlseguin/websocket.zig", subTitle: "2 merged PRs in karlseguin/websocket.zig", subItems: [
+                { name: "websocket.zig - Client Timeout & Safety Fixes", url: "https://github.com/karlseguin/websocket.zig", subTitle: "3 merged PRs in karlseguin/websocket.zig", subItems: [
                     { name: "Bounded Connect & TLS Handshake Timeout", url: "https://github.com/karlseguin/websocket.zig/pull/108" },
-                    { name: "Fix TLS Client Read-Timeout Panic", url: "https://github.com/karlseguin/websocket.zig/pull/103" }
+                    { name: "Fix TLS Client Read-Timeout Panic", url: "https://github.com/karlseguin/websocket.zig/pull/103" },
+                    { name: "Clamp Read Timeout to INT_MAX Before Passing to poll", url: "https://github.com/karlseguin/websocket.zig/pull/110" }
                 ] },
-                { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" },
-                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" }
+                { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/aaif-goose/goose/pull/3635" },
+                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/aaif-goose/goose/pull/3378" }
             ],
         },
         team: [
@@ -204,8 +217,9 @@
     function renderContributions() {
         const all = Object.values(DATA.contributions).flat();
         const projects = new Set(all.map(c => c.name.split(' - ')[0]));
+        const total = all.reduce((n, c) => n + (c.subItems ? c.subItems.length : 1), 0);
         document.getElementById('contributions-stat').textContent =
-            `${all.length} contributions shipped across ${projects.size} open-source projects`;
+            `${total} contributions shipped across ${projects.size} open-source projects`;
         const container = document.getElementById('contributions-accordion');
         container.innerHTML = Object.entries(DATA.contributions).map(([category, items]) => `
             <div style="margin-bottom:1rem">
