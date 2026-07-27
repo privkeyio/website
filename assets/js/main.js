@@ -117,8 +117,8 @@
             ],
         },
         team: [
-            { image: "assets/images/william_profile.jpg", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30+ years in cybersecurity. Pioneered institutional Bitcoin infrastructure starting in 2011. Directed enterprise Bitcoin deployments for large corporations. BS in Management Information Systems, University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
-            { image: "assets/images/kyle_profile.jpg", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Open-source systems engineer building in Rust, Zig, and C. Contributor to Bitcoin Core, Bitcoin Knots, BDK, and rust-miniscript, and author of PrivKey's Keep signing stack, Wisp relay, and Nostr protocol libraries. BS & MS in Cybersecurity from the University of South Florida.", mobileBio: ["Bitcoin Core & Knots contributor", "Systems work in Rust, Zig, and C", "BS & MS in Cybersecurity, USF"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
+            { image: "assets/images/william_profile.jpg", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30+ years in cybersecurity. Pioneered institutional Bitcoin infrastructure starting in 2011. Directed enterprise Bitcoin deployments for large corporations. BS in Management Information Systems, University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago", github: "https://github.com/wksantiago" },
+            { image: "assets/images/kyle_profile.jpg", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Open-source systems engineer building in Rust, Zig, and C. Contributor to Bitcoin Core, Bitcoin Knots, BDK, and rust-miniscript, and author of PrivKey's Keep signing stack, Wisp relay, and Nostr protocol libraries. BS & MS in Cybersecurity from the University of South Florida.", mobileBio: ["Bitcoin Core & Knots contributor", "Systems work in Rust, Zig, and C", "BS & MS in Cybersecurity, USF"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago", github: "https://github.com/kwsantiago" }
         ],
         resources: []
     };
@@ -283,6 +283,7 @@
                     <div class="row"><h4 class="team-name">${t.title}</h4></div>
                     <div class="row margin-social-icon"><span class="text-uppercase team-designation">${t.desc}</span></div>
                     <ul class="social-icons-list">
+                        ${t.github ? `<li class="list-inline-item"><a href="${t.github}" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="${t.title} on GitHub"><i class="mdi mdi-github-circle"></i></a></li>` : ''}
                         ${t.linkedIn ? `<li class="list-inline-item"><a href="${t.linkedIn}" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="mdi mdi-linkedin"></i></a></li>` : ''}
                         ${t.twitter ? `<li class="list-inline-item"><a href="${t.twitter}" class="social-icon" target="_blank" rel="noopener noreferrer"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>` : ''}
                     </ul>
