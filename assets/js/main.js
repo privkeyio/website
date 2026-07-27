@@ -115,8 +115,8 @@
             ],
         },
         team: [
-            { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30+ years in cybersecurity. Pioneered institutional Bitcoin infrastructure starting in 2011. Directed enterprise Bitcoin deployments for large corporations. BS in Management Information Systems – University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
-            { image: "assets/images/kyle_profile.png", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Open-source systems engineer building in Rust, Zig, and C. Contributor to Bitcoin Core, Bitcoin Knots, BDK, and rust-miniscript, and author of PrivKey's Keep signing stack, Wisp relay, and Nostr protocol libraries. BS & MS in Cybersecurity from the University of South Florida.", mobileBio: ["Bitcoin Core & Knots contributor", "Systems work in Rust, Zig, and C", "BS & MS in Cybersecurity, USF"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
+            { image: "assets/images/william_profile.jpg", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30+ years in cybersecurity. Pioneered institutional Bitcoin infrastructure starting in 2011. Directed enterprise Bitcoin deployments for large corporations. BS in Management Information Systems – University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
+            { image: "assets/images/kyle_profile.jpg", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Open-source systems engineer building in Rust, Zig, and C. Contributor to Bitcoin Core, Bitcoin Knots, BDK, and rust-miniscript, and author of PrivKey's Keep signing stack, Wisp relay, and Nostr protocol libraries. BS & MS in Cybersecurity from the University of South Florida.", mobileBio: ["Bitcoin Core & Knots contributor", "Systems work in Rust, Zig, and C", "BS & MS in Cybersecurity, USF"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
         ],
         resources: []
     };
@@ -274,7 +274,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="team-box text-center">
                     <div class="team-wrapper"><div class="team-member">
-                        <img alt="${t.title} - ${t.desc}" src="${t.image}" class="img-fluid rounded team-profile-img ${t.desc === 'FOUNDER & CEO' ? 'ceo-image' : 'cto-image'}" loading="lazy">
+                        <img alt="${t.title} - ${t.desc}" src="${t.image}" width="800" height="843" class="img-fluid rounded team-profile-img ${t.desc === 'FOUNDER & CEO' ? 'ceo-image' : 'cto-image'}" loading="lazy">
                         <div class="team-bio-overlay team-bio-desktop"><div class="team-bio-content"><p>${t.bio}</p></div></div>
                         <div class="team-bio-overlay team-bio-mobile"><div class="team-bio-content"><ul class="team-bio-bullets">${t.mobileBio.map(p => `<li>${p}</li>`).join('')}</ul></div></div>
                     </div></div>
