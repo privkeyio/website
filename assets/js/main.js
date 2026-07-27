@@ -64,7 +64,9 @@
                     { name: "feat(qt): add /clearhistory command", url: "https://github.com/bitcoinknots/bitcoin/pull/214" },
                     { name: "qt: warn when script threads exceed CPU cores", url: "https://github.com/bitcoinknots/bitcoin/pull/287" },
                     { name: "GUI: Port Windows taskbar progress to COM", url: "https://github.com/bitcoinknots/bitcoin/pull/215" },
-                    { name: "init: improve error message when index needs pruned block data", url: "https://github.com/bitcoinknots/bitcoin/pull/262" }
+                    { name: "init: improve error message when index needs pruned block data", url: "https://github.com/bitcoinknots/bitcoin/pull/262" },
+                    { name: "wallet: fix null deref in AvailableCoins when segwit_inputs_only is set", url: "https://github.com/bitcoinknots/bitcoin/commit/2a09a34129bb9f5713158c1836d2320f079a4554" },
+                    { name: "init: clamp -lowmem to non-negative before assigning to size_t", url: "https://github.com/bitcoinknots/bitcoin/commit/f9f7587b5995bc47fe3d46cf9919f8ba5b69b868" }
                 ] },
                 { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
