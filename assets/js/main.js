@@ -11,15 +11,15 @@
 
     const DATA = {
         services: [
-            { icon: "pe-7s-rocket", title: "Software Development", desc: "Full-cycle development from ideation to production. We build secure, scalable applications for enterprises: web, mobile, and infrastructure.", features: ["Full-Stack Development", "Security-First Architecture", "Open Source Contributions", "API & Protocol Implementation"], expandedContent: "Since 2018, we've delivered custom software for enterprises across industries, from high-throughput systems to user-facing applications.", useCases: ["Enterprise applications", "Bitcoin & Lightning tooling", "Web & mobile development", "Custom integrations"] },
-            { icon: "pe-7s-lock", title: "Key Management & Custody", desc: "Self-sovereign key infrastructure with FROST threshold signing, TEE enclave protection, and hidden volumes for plausible deniability.", features: ["FROST Threshold Signatures", "TEE Enclave Security", "Hidden Volumes", "NIP-46 Remote Signing"], expandedContent: "Our Keep signing stack is the only open-source solution combining FROST + Enclave + Nostr + Hidden Volumes.", useCases: ["Enterprise self-custody setup", "Multi-party signing infrastructure", "AI agent key constraints", "Institutional wallet architecture"] },
-            { icon: "pe-7s-gleam", title: "Lightning Infrastructure", desc: "Enterprise Lightning Network deployment, node security, channel management, and payment routing optimization.", features: ["Node Deployment & Hardening", "Channel Security", "Liquidity Management", "Payment Routing"], expandedContent: "We help enterprises run Lightning infrastructure that scales, securely and reliably.", useCases: ["Institutional Lightning nodes", "Payment processing infrastructure", "Cross-border settlement", "Liquidity provisioning"] },
-            { icon: "pe-7s-note2", title: "Security Auditing", desc: "Comprehensive audits for Bitcoin infrastructure, key management systems, Lightning nodes, and custody operations.", features: ["Key Management Audits", "Node Security Assessment", "Penetration Testing", "Compliance Review"], expandedContent: "We audit what matters: keys, signing infrastructure, and custody operations. 30+ years combined experience.", useCases: ["Custody infrastructure audits", "Lightning node security review", "Key management assessment", "Pre-deployment security review"] },
-            { icon: "pe-7s-plugin", title: "Nostr Infrastructure", desc: "High-performance relay deployment, NIP implementations, and decentralized identity solutions built on Nostr.", features: ["Relay Deployment (Wisp)", "NIP Implementation", "Blossom Media Storage", "Decentralized Identity"], expandedContent: "Wisp is 4x faster than competitors. We build and deploy Nostr infrastructure that scales.", useCases: ["Enterprise relay deployment", "Private communication infrastructure", "Decentralized identity systems", "Lightning-integrated Nostr apps"] },
-            { icon: "pe-7s-safe", title: "Consulting", desc: "Strategic guidance for Bitcoin adoption, self-custody implementation, and sovereign infrastructure planning.", features: ["Self-Custody Strategy", "Infrastructure Architecture", "Regulatory Guidance", "Technology Selection"], expandedContent: "We help enterprises own their infrastructure, from treasury strategy to full-stack deployment.", useCases: ["Bitcoin treasury planning", "Self-custody roadmap", "Infrastructure architecture", "Vendor-free sovereignty"] }
+            { icon: "pe-7s-rocket", title: "Software Development", desc: "Full-cycle development from design to production. Systems work in Rust, Zig, and C, plus the web and mobile layers on top of it.", features: ["Full-Stack Development", "Security-First Architecture", "Open Source Contributions", "API & Protocol Implementation"], expandedContent: "Building since 2018, from high-throughput systems to the apps in front of them.", useCases: ["Enterprise applications", "Bitcoin & Lightning tooling", "Web & mobile development", "Custom integrations"] },
+            { icon: "pe-7s-lock", title: "Key Management & Custody", desc: "Self-sovereign key infrastructure with FROST threshold signing, TEE enclave protection, and hidden volumes for plausible deniability.", features: ["FROST Threshold Signatures", "TEE Enclave Security", "Hidden Volumes", "NIP-46 Remote Signing"], expandedContent: "Keep combines FROST threshold signing, TEE enclave protection, NIP-46 remote signing, and hidden volumes in one open-source stack.", useCases: ["Enterprise self-custody setup", "Multi-party signing infrastructure", "AI agent key constraints", "Institutional wallet architecture"] },
+            { icon: "pe-7s-gleam", title: "Lightning Infrastructure", desc: "Lightning Network deployment, node hardening, channel management, and payment routing.", features: ["Node Deployment & Hardening", "Channel Security", "Liquidity Management", "Payment Routing"], expandedContent: "We run Lightning infrastructure in production and help you do the same.", useCases: ["Institutional Lightning nodes", "Payment processing infrastructure", "Cross-border settlement", "Liquidity provisioning"] },
+            { icon: "pe-7s-note2", title: "Security Auditing", desc: "Audits for Bitcoin infrastructure, key management, Lightning nodes, and custody operations.", features: ["Key Management Audits", "Node Security Assessment", "Penetration Testing", "Compliance Review"], expandedContent: "We audit what matters: keys, signing infrastructure, and custody operations.", useCases: ["Custody infrastructure audits", "Lightning node security review", "Key management assessment", "Pre-deployment security review"] },
+            { icon: "pe-7s-plugin", title: "Nostr Infrastructure", desc: "Relay deployment, NIP implementations, and decentralized identity built on Nostr.", features: ["Relay Deployment (Wisp)", "NIP Implementation", "Blossom Media Storage", "Decentralized Identity"], expandedContent: "Wisp is our Zig relay, built for high throughput on modest hardware and self-hostable in one binary.", useCases: ["Enterprise relay deployment", "Private communication infrastructure", "Decentralized identity systems", "Lightning-integrated Nostr apps"] },
+            { icon: "pe-7s-safe", title: "Consulting", desc: "Strategic guidance for Bitcoin adoption, self-custody implementation, and sovereign infrastructure planning.", features: ["Self-Custody Strategy", "Infrastructure Architecture", "Regulatory Guidance", "Technology Selection"], expandedContent: "We help you own your infrastructure, from treasury strategy to full-stack deployment.", useCases: ["Bitcoin treasury planning", "Self-custody roadmap", "Infrastructure architecture", "Vendor-free sovereignty"] }
         ],
         highlights: [
-            { icon: "pe-7s-medal", title: "30+ Years Experience", description: "Decades of expertise in networking, cybersecurity, and Bitcoin." },
+            { icon: "pe-7s-medal", title: "Shipped Upstream", description: "Merged fixes in Bitcoin Core, Bitcoin Knots, BDK, and ZF FROST." },
             { icon: "pe-7s-look", title: "Open Source First", description: "Trust through transparency. Audit and self-host our core tools." },
             { icon: "pe-7s-config", title: "AI + Policy", description: "AI agents need guardrails. We build signing with policy controls." },
             { icon: "pe-7s-key", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
@@ -68,13 +68,19 @@
                 ] },
                 { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
-                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" }
+                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
+                { name: "DTails - Add Bitcoin Knots Support", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52" }
             ],
             "Bitcoin Libraries": [
                 { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
                 { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" },
                 { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
-                { name: "BDK - RPC Emitter Documentation Examples", url: "https://github.com/bitcoindevkit/bdk/pull/2210" }
+                { name: "BDK - RPC Emitter Documentation Examples", url: "https://github.com/bitcoindevkit/bdk/pull/2210" },
+                { name: "DLC Dev Kit - Remove Hardcoded Database Credentials", url: "https://github.com/bennyhodl/dlcdevkit/pull/143" }
+            ],
+            "Cryptography & Protocols": [
+                { name: "ZF FROST - ZeroizeOnDrop for Signing Nonces", url: "https://github.com/ZcashFoundation/frost/pull/987" },
+                { name: "Negentropy - Fix Off-by-One Heap Buffer Overflow", url: "https://github.com/hoytech/negentropy/pull/17" }
             ],
             "Bitcoin Wallets": [
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
@@ -85,25 +91,32 @@
             "Nostr Apps": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
                 { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
-                { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" }
+                { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" },
+                { name: "Sonar - Hostile-Peer Hardening for Mesh Identity", url: "https://github.com/hedwig-corp/bitchat-to-sonar", subTitle: "2 merged PRs in hedwig-corp/bitchat-to-sonar", subItems: [
+                    { name: "Bind Join Requests to the Gift-Wrap Seal Author", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/411" },
+                    { name: "Harden Mesh Identity & Broadcast Against Forgery and Flooding", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/422" }
+                ] }
             ],
             "Developer Tools": [
-                { name: "http.zig - Memory-Safety & Reliability Fixes", url: "https://github.com/karlseguin/http.zig", subTitle: "3 merged PRs in karlseguin/http.zig", subItems: [
+                { name: "http.zig - Memory-Safety & Reliability Fixes", url: "https://github.com/karlseguin/http.zig", subTitle: "5 merged PRs in karlseguin/http.zig", subItems: [
                     { name: "Fix Event Loop Use-After-Free on Connection Close", url: "https://github.com/karlseguin/http.zig/pull/216" },
                     { name: "Fix Recv/Disown Use-After-Free Race", url: "https://github.com/karlseguin/http.zig/pull/214" },
-                    { name: "Fix Lost Websocket Read on Re-arm", url: "https://github.com/karlseguin/http.zig/pull/212" }
+                    { name: "Fix Lost Websocket Read on Re-arm", url: "https://github.com/karlseguin/http.zig/pull/212" },
+                    { name: "Stop Thread Pool Before Deinit to Fix Shutdown Use-After-Free", url: "https://github.com/karlseguin/http.zig/pull/215" },
+                    { name: "Join Thread Pool Before Freeing Connection Buffers", url: "https://github.com/karlseguin/http.zig/pull/217" }
                 ] },
-                { name: "websocket.zig - Client Timeout & Safety Fixes", url: "https://github.com/karlseguin/websocket.zig", subTitle: "2 merged PRs in karlseguin/websocket.zig", subItems: [
+                { name: "websocket.zig - Client Timeout & Safety Fixes", url: "https://github.com/karlseguin/websocket.zig", subTitle: "3 merged PRs in karlseguin/websocket.zig", subItems: [
                     { name: "Bounded Connect & TLS Handshake Timeout", url: "https://github.com/karlseguin/websocket.zig/pull/108" },
-                    { name: "Fix TLS Client Read-Timeout Panic", url: "https://github.com/karlseguin/websocket.zig/pull/103" }
+                    { name: "Fix TLS Client Read-Timeout Panic", url: "https://github.com/karlseguin/websocket.zig/pull/103" },
+                    { name: "Clamp Read Timeout to INT_MAX Before Passing to poll", url: "https://github.com/karlseguin/websocket.zig/pull/110" }
                 ] },
-                { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/block/goose/pull/3635" },
-                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/block/goose/pull/3378" }
+                { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/aaif-goose/goose/pull/3635" },
+                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/aaif-goose/goose/pull/3378" }
             ],
         },
         team: [
-            { image: "assets/images/william_profile.png", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30+ years in cybersecurity. Pioneered institutional Bitcoin infrastructure starting in 2011. Directed enterprise Bitcoin deployments for large corporations. BS in Management Information Systems – University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
-            { image: "assets/images/kyle_profile.png", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Open-source systems engineer building in Rust, Zig, and C. Contributor to Bitcoin Core, Bitcoin Knots, BDK, and rust-miniscript, and author of PrivKey's Keep signing stack, Wisp relay, and Nostr protocol libraries. BS & MS in Cybersecurity from the University of South Florida.", mobileBio: ["Bitcoin Core & Knots contributor", "Systems work in Rust, Zig, and C", "BS & MS in Cybersecurity, USF"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
+            { image: "assets/images/william_profile.jpg", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30+ years in cybersecurity. Pioneered institutional Bitcoin infrastructure starting in 2011. Directed enterprise Bitcoin deployments for large corporations. BS in Management Information Systems, University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago" },
+            { image: "assets/images/kyle_profile.jpg", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Open-source systems engineer building in Rust, Zig, and C. Contributor to Bitcoin Core, Bitcoin Knots, BDK, and rust-miniscript, and author of PrivKey's Keep signing stack, Wisp relay, and Nostr protocol libraries. BS & MS in Cybersecurity from the University of South Florida.", mobileBio: ["Bitcoin Core & Knots contributor", "Systems work in Rust, Zig, and C", "BS & MS in Cybersecurity, USF"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago" }
         ],
         resources: []
     };
@@ -204,8 +217,9 @@
     function renderContributions() {
         const all = Object.values(DATA.contributions).flat();
         const projects = new Set(all.map(c => c.name.split(' - ')[0]));
+        const total = all.reduce((n, c) => n + (c.subItems ? c.subItems.length : 1), 0);
         document.getElementById('contributions-stat').textContent =
-            `${all.length} contributions shipped across ${projects.size} open-source projects`;
+            `${total} contributions shipped across ${projects.size} open-source projects`;
         const container = document.getElementById('contributions-accordion');
         container.innerHTML = Object.entries(DATA.contributions).map(([category, items]) => `
             <div style="margin-bottom:1rem">
@@ -260,7 +274,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="team-box text-center">
                     <div class="team-wrapper"><div class="team-member">
-                        <img alt="${t.title} - ${t.desc}" src="${t.image}" class="img-fluid rounded team-profile-img ${t.desc === 'FOUNDER & CEO' ? 'ceo-image' : 'cto-image'}" loading="lazy">
+                        <img alt="${t.title} - ${t.desc}" src="${t.image}" width="800" height="843" class="img-fluid rounded team-profile-img ${t.desc === 'FOUNDER & CEO' ? 'ceo-image' : 'cto-image'}" loading="lazy">
                         <div class="team-bio-overlay team-bio-desktop"><div class="team-bio-content"><p>${t.bio}</p></div></div>
                         <div class="team-bio-overlay team-bio-mobile"><div class="team-bio-content"><ul class="team-bio-bullets">${t.mobileBio.map(p => `<li>${p}</li>`).join('')}</ul></div></div>
                     </div></div>

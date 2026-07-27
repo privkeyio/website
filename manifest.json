@@ -1,7 +1,7 @@
 {
   "short_name": "PrivKey",
-  "name": "PrivKey - Enterprise Cybersecurity & Blockchain Solutions",
-  "description": "Leading cybersecurity and blockchain consulting firm with 30+ years experience.",
+  "name": "PrivKey - Open-Source Bitcoin, Lightning & Nostr Infrastructure",
+  "description": "Open-source Bitcoin, Lightning, and Nostr infrastructure in Rust, Zig, and C. FROST threshold signing, self-custodial key management, and high-performance relays.",
   "icons": [
     {
       "src": "favicon.png",
@@ -26,7 +26,11 @@
   "orientation": "portrait-primary",
   "theme_color": "#27ae60",
   "background_color": "#0a0a0a",
-  "categories": ["business", "finance", "productivity"],
+  "categories": [
+    "business",
+    "developer",
+    "productivity"
+  ],
   "lang": "en-US",
   "scope": "/",
   "id": "privkey-webapp"
