@@ -119,7 +119,7 @@ We may publish anonymized, aggregated statistics and generalized threat research
 
 **9.1 PrivKey background IP.** We retain all right, title, and interest in our pre-existing and independently developed materials — methodologies, frameworks, templates, checklists, tooling, scripts, know-how, training curricula, and the Site and its content. Nothing transfers ownership of these to you.
 
-**9.1.1 Open-source carve-out.** This Section does not revoke, narrow, or condition any license we have already granted publicly. The privkey.io source code and site content are published under the MIT license in our public website repository, and everything that license permits remains permitted, including copying, modification, redistribution, and commercial use. Section 9.1 reserves our rights in the materials that are **not** covered by that license, and in our trademarks, name, and logo, which no open-source license conveys.
+**9.1.1 Open-source carve-out.** This Section does not revoke, narrow, or condition any license we have already granted publicly. The source code of privkey.io is published under the MIT license in our public website repository, and everything that license permits remains permitted, including copying, modification, redistribution, and commercial use, to the extent of our rights in the licensed material. The MIT license covers what we own in that repository; it does not extend to third-party components included in it (which carry their own licenses), to our trademarks, name, or logo (which no open-source license conveys), or to materials we publish outside the repository. Section 9.1 reserves our rights in everything the license does not reach.
 
 **9.2 Deliverables.** Upon full payment, we grant you a perpetual, worldwide, non-exclusive, non-transferable license to use the deliverables for your internal business purposes. Where a SOW expressly assigns ownership of custom-developed work product to you, that assignment takes effect upon full payment and is subject to our retained rights in background IP embedded in it.
 
@@ -197,7 +197,7 @@ You may not: access the Site by automated means except as permitted by robots.tx
 
 **Security research.** The restriction on probing, scanning, or testing the Site's security is subject to our coordinated disclosure process in `SECURITY.md`. Research conducted in good faith and in accordance with that process is authorized, and we will not treat it as a breach of these Terms or pursue legal action over it. Testing outside that process still requires our prior written authorization.
 
-**Content reuse.** The Site's source code and content are published under the MIT license (Section 9.1.1), and reuse within that license, including commercial reuse, is permitted. This Section does not restrict it. What remains prohibited is use of our name, logo, or trademarks to imply endorsement or affiliation, and any reuse that misrepresents the source of the content.
+**Content reuse.** The Site's source code is published under the MIT license (Section 9.1.1), and reuse within that license, including commercial reuse, is permitted. This Section does not restrict it. The license does not cover third-party components, our trademarks, or materials published outside the repository, and what remains prohibited is use of our name, logo, or trademarks to imply endorsement or affiliation, and any reuse that misrepresents the source of the content.
 
 We may investigate suspected violations and suspend or block access at our discretion.
 
@@ -217,7 +217,7 @@ These Terms apply while you use the Site and for the duration of any engagement.
 
 **17.4 Effect.** On termination, we will deliver work product completed through the termination date for which payment has been received, and each party will return or destroy the other's Confidential Information on written request, subject to legal retention requirements and routine backup archival.
 
-**17.5 Survival.** Sections 4, 5.1, 6 (indemnity), 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17.4, 17.5, 18, and 19 survive termination. Section 15 survives because it governs anyone who continues to use the Site after an engagement ends.
+**17.5 Survival.** Sections 4, 5.1, the indemnification obligation in Section 6, and Sections 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17.4, 17.5, 18, and 19 survive termination. Section 15 survives because it governs anyone who continues to use the Site after an engagement ends.
 
 ## 18. Governing Law and Dispute Resolution
 

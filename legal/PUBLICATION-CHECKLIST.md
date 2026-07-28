@@ -13,7 +13,7 @@ Nothing here is legal advice. Items marked **counsel** need attorney sign-off; i
 | 1 | counsel | Full attorney review of both documents, with every remaining `[bracketed]` item resolved or struck |
 | 2 | ops | Set the effective date and last-updated date on publication, and remove the DRAFT banner only at that point |
 | 3 | ops | Confirm state of formation and registered agent; add the full street address and ZIP to both contact blocks |
-| 4 | ops | Create and monitor `privacy@privkey.io` and `legal@privkey.io`, or substitute `information@privkey.io` throughout. A rights request landing in an unmonitored alias burns a 45-day statutory clock silently |
+| 4 | ops | Create and monitor `privacy@privkey.io` and `legal@privkey.io`, or substitute `information@privkey.io` throughout. A rights request landing in an unmonitored alias silently burns the statutory response clock for its jurisdiction (45 days under U.S. state laws, one month under GDPR; see the Section 11.3 table) |
 | 5 | ops | Convert both to HTML pages at `/privacy/` and `/terms/`, link them in the footer, and add both URLs to `sitemap.xml`. Markdown under `legal/` does not render as a page on a static host and must not be linked as though it does |
 | 6 | ops | Confirm the principal place of business is Tampa. Both documents and `index.html` JSON-LD now say Tampa, and arbitration is seated in Hillsborough County. If the real PPB is elsewhere, all three change together |
 
@@ -49,7 +49,7 @@ Nothing here is legal advice. Items marked **counsel** need attorney sign-off; i
 | 27 | ops | Build the security-testing Rules of Engagement template that Section 6 says we will not start work without |
 | 28 | counsel | Confirm the bracketed cure periods, notice periods, payment terms, interest rate, and survival period |
 | 29 | ops | Add click-to-accept or scroll-to-accept on the Site. Browsewrap acceptance by mere access is weakly enforceable, and Section 1 currently relies on it |
-| 30 | ops | Confirm the MIT carve-out in Section 9.1.1 reflects the intent. The repository is MIT-licensed today, so the Site's source and content are already publicly reusable including commercially. If the intent is to reserve those rights, the license changes rather than the Terms |
+| 30 | ops | Confirm the MIT carve-out in Section 9.1.1 reflects the intent. The repository is MIT-licensed today, so the Site's source code, to the extent PrivKey owns it, is already publicly reusable including commercially. The license does not cover third-party theme assets, fonts, or images in the repo, or trademarks; inventory which repo contents are actually PrivKey's before relying on the carve-out, and if the intent is to reserve rights in the code, the license changes rather than the Terms |
 
 ## Cross-document consistency
 
