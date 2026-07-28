@@ -68,7 +68,7 @@ We do not intentionally collect special category data (health, biometrics, race,
 | Invoicing, payment collection, accounting | Contract; legal obligation |
 | KYC, sanctions screening, AML compliance | Legal obligation; legitimate interests in preventing financial crime |
 | Site security, fraud prevention, abuse detection, logging | Legitimate interests in securing our systems |
-| Improve the Site and our services | Legitimate interests; consent for non-essential analytics cookies |
+| Improve the Site and our services | Legitimate interests (the Site uses no analytics; see Section 7) |
 | Marketing emails and newsletters | Consent, or legitimate interests for existing B2B clients on comparable services, always with opt-out |
 | Establish, exercise, or defend legal claims | Legitimate interests; legal obligation |
 | Recruiting | Pre-contractual steps; legitimate interests |
@@ -235,7 +235,7 @@ Our obligations depend on which role we hold over the affected data, and the two
 
 **13.3 Contents.** Notifications will describe what happened, the information involved, steps taken, and recommended actions.
 
-**13.4 Reporting to us.** To report a vulnerability or suspected incident involving PrivKey, contact **[security@privkey.io]**. Our coordinated disclosure process, including the safe harbor for good-faith research, is published in `SECURITY.md` in our public website repository, and the Terms of Service acceptable-use section is subject to it. We will not pursue legal action against researchers who follow that process.
+**13.4 Reporting to us.** To report a vulnerability or suspected incident involving PrivKey, contact **security@privkey.io**. Our coordinated disclosure process, including the safe harbor for good-faith research, is published in `SECURITY.md` in our public website repository, and the Terms of Service acceptable-use section is subject to it. We will not pursue legal action against researchers who follow that process.
 
 ## 14. Children's Privacy
 

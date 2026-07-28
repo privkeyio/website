@@ -45,7 +45,7 @@ Nothing here is legal advice. Items marked **counsel** need attorney sign-off; i
 | 23 | ops | Strike every Section 3 service not currently offered. Each line creates obligations elsewhere, and the training and compliance bullets in particular commit the Privacy Policy to operating training accounts, certification records, KYC collection, and sanctions screening |
 | 24 | counsel | Confirm the Section 18 arbitration clause and class waiver are enforceable against consumer or individual training customers, and decide the 18.7 consumer opt-out |
 | 25 | counsel | Confirm E&O and cyber liability coverage against the Section 12.2 cap and the Section 12.3 exceptions |
-| 26 | decision | Confirm whether digital asset payments are actually accepted; delete Section 8.6 if not |
+| 26 | done | Confirmed 2026-07-27 by the business owner: digital asset payments are accepted, so ToS 8.6 stays, and the Privacy Policy's blockchain payment sections (3.1 billing row, Section 10) stay with it |
 | 27 | ops | Build the security-testing Rules of Engagement template that Section 6 says we will not start work without |
 | 28 | counsel | Confirm the bracketed cure periods, notice periods, payment terms, interest rate, and survival period |
 | 29 | ops | Add click-to-accept or scroll-to-accept on the Site. Browsewrap acceptance by mere access is weakly enforceable, and Section 1 currently relies on it |

@@ -193,7 +193,7 @@ You will not use the Services or deliverables in violation of U.S. export contro
 
 ## 15. Acceptable Use of the Site
 
-You may not: access the Site by automated means except as permitted by robots.txt; interfere with the Site's operation; misrepresent your identity or affiliation; upload malware; or use the Site to violate any law.
+You may not: access the Site by automated means except as permitted by robots.txt; probe, scan, or test the Site's security except as authorized under the security research provision below; interfere with the Site's operation; misrepresent your identity or affiliation; upload malware; or use the Site to violate any law.
 
 **Security research.** The restriction on probing, scanning, or testing the Site's security is subject to our coordinated disclosure process in `SECURITY.md`. Research conducted in good faith and in accordance with that process is authorized, and we will not treat it as a breach of these Terms or pursue legal action over it. Testing outside that process still requires our prior written authorization.
 
