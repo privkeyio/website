@@ -11,7 +11,7 @@
 
 ## 1. Agreement to Terms
 
-These Terms of Service ("Terms") are a binding agreement between you ("Client," "you") and PrivKey LLC, a [Florida] limited liability company with its principal place of business in Miami, Florida ("PrivKey," "we," "us").
+These Terms of Service ("Terms") are a binding agreement between you ("Client," "you") and PrivKey LLC, a [Florida] limited liability company with its principal place of business in Tampa, Florida ("PrivKey," "we," "us").
 
 These Terms govern your access to and use of the website located at privkey.io (the "Site"), our educational and training materials, and any consulting, security, development, or advisory services we provide (collectively, the "Services").
 
@@ -34,8 +34,8 @@ These Terms govern all matters not addressed in a signed agreement, and govern S
 PrivKey provides professional cybersecurity, blockchain, and digital asset security services, which may include:
 
 - **Cryptocurrency Security Standard (CCSS) auditing and certification advisory**
-- **Multisig Concierge Services** — advisory and configuration assistance for multi-signature wallet architectures, key generation ceremonies, key splitting and distribution, cold storage design, and recovery planning
-- **Private key management advisory**, including MPC-based architectures and geographically decentralized key management design
+- **Multisig Concierge Services** — advisory and configuration assistance for multi-signature wallet architectures, key generation ceremonies, key splitting and distribution, cold storage design, and recovery planning. **Advisory only: you generate, hold, split, and distribute your own key material, and we neither receive nor hold a key, a key share, or any credential capable of moving your assets, whether alone or in combination with others.** Where we assist at a key generation ceremony, we advise on procedure while you perform every operation that touches key material.
+- **Private key management advisory**, including MPC-based architectures and geographically decentralized key management design. **Design and advisory only: we do not operate, host, or hold a share in any MPC deployment or signing quorum for you.**
 - **Self-custody consulting** for individuals and institutions
 - **Penetration testing, threat intelligence, and incident response**
 - **Smart contract development and auditing** across EVM and non-EVM chains
@@ -44,7 +44,11 @@ PrivKey provides professional cybersecurity, blockchain, and digital asset secur
 - **Compliance and regulatory support**, including AML/KYC program advisory and readiness work for SOC 2, ISO 27001, PCI-DSS, and similar frameworks
 - **Training programs and educational resources** at beginner through advanced levels
 
+Nothing in this Section is an offer to perform any service in a manner inconsistent with Section 4.1. Where a client requirement would place key material, a key share, or asset-moving authority in our hands, we decline the requirement or refer it to a licensed custodian.
+
 The specific scope, deliverables, milestones, assumptions, and exclusions of any engagement are defined solely in the applicable SOW. **Any task not expressly described in a SOW is out of scope.**
+
+> **[Publication gate. Strike every line above that PrivKey does not currently offer. Each one carries obligations elsewhere: the training bullet commits the Privacy Policy to operating training accounts, credentials, and certification records; the compliance bullet commits it to KYC document collection and sanctions screening; and each retains data on the Section 8 schedule and answers rights requests. The Site currently markets software development, key management, auditing, and infrastructure, which is a narrower list than this one.]**
 
 ## 4. What PrivKey Is Not
 
@@ -71,7 +75,7 @@ You agree to:
 - Retain sole responsibility for the security of your operating environment, personnel, and physical facilities
 - Comply with all laws applicable to your business, including AML/KYC, sanctions, securities, and data protection laws
 
-**5.1 Key material.** You are solely responsible for generating, recording, backing up, and safeguarding your own seed phrases, private keys, key shares, passphrases, and recovery material. **PrivKey cannot recover lost keys or seed phrases. Loss of key material generally results in permanent, irreversible loss of assets.** Do not transmit private keys, seed phrases, or key shares to us by any means. If you do so, we may delete them immediately and are not responsible for any resulting loss.
+**5.1 Key material.** You are solely responsible for generating, recording, backing up, and safeguarding your own seed phrases, private keys, key shares, passphrases, and recovery material. **PrivKey cannot recover lost keys or seed phrases. Loss of key material generally results in permanent, irreversible loss of assets.** Do not transmit private keys, seed phrases, key shares, wallet passphrases, or recovery material to us by any means. Consistent with Section 2 of our Privacy Policy, if you do so we will delete the material promptly and tell you to rotate or regenerate the affected keys. We do not retain it, we do not use it, and we are not responsible for any loss arising from your having transmitted it.
 
 **5.2 Delays.** Timelines assume your timely cooperation. Delays attributable to you may result in schedule extensions and additional fees at our then-current rates.
 
@@ -115,6 +119,8 @@ We may publish anonymized, aggregated statistics and generalized threat research
 
 **9.1 PrivKey background IP.** We retain all right, title, and interest in our pre-existing and independently developed materials — methodologies, frameworks, templates, checklists, tooling, scripts, know-how, training curricula, and the Site and its content. Nothing transfers ownership of these to you.
 
+**9.1.1 Open-source carve-out.** This Section does not revoke, narrow, or condition any license we have already granted publicly. The privkey.io source code and site content are published under the MIT license in our public website repository, and everything that license permits remains permitted, including copying, modification, redistribution, and commercial use. Section 9.1 reserves our rights in the materials that are **not** covered by that license, and in our trademarks, name, and logo, which no open-source license conveys.
+
 **9.2 Deliverables.** Upon full payment, we grant you a perpetual, worldwide, non-exclusive, non-transferable license to use the deliverables for your internal business purposes. Where a SOW expressly assigns ownership of custom-developed work product to you, that assignment takes effect upon full payment and is subject to our retained rights in background IP embedded in it.
 
 **9.3 Residual knowledge.** We may use the general skills, knowledge, and experience retained in the unaided memory of our personnel, provided this does not involve use or disclosure of your Confidential Information.
@@ -155,6 +161,14 @@ These obligations survive for [five (5)] years after termination, and indefinite
 
 **12.3 Exceptions.** The cap does not apply to: your payment obligations; your indemnification obligations under Sections 6 and 13; either party's breach of confidentiality; or liability that cannot be limited by law, including fraud, willful misconduct, and gross negligence.
 
+> **[Decision required before publication. As drafted, "either party's breach of confidentiality" leaves PrivKey's own exposure uncapped, and the gross negligence carve-out does the same for a client asset-loss claim pleaded that way. A confidentiality breach is the most likely and most expensive claim brought against a firm holding client key management architecture, unremediated vulnerabilities, and exploitation evidence, so this exception governs the risk that actually materializes. Pick one of the two:**
+>
+> **(a) Keep as drafted. Unlimited exposure on the confidentiality path, deliberately accepted.**
+>
+> **(b) Substitute a super-cap: "The cap does not apply to: your payment obligations; your indemnification obligations under Sections 6 and 13; or liability that cannot be limited by law, including fraud and willful misconduct. For either party's breach of Section 10 (Confidentiality), the cap in Section 12.2 is replaced by a cap of [three (3)] times the total fees paid under the applicable SOW."**
+>
+> **Take this to the insurer, not only to counsel: the coverage question is not whether the policy limit matches the 12.2 cap, it is whether the policy responds at all to the uncapped exceptions.]**
+
 **12.4 Allocation of risk.** You acknowledge that these limitations are a material and bargained-for basis of our pricing, and that fees would be substantially higher absent them.
 
 **12.5 Time limit.** Any claim must be brought within **[one (1)] year** after the cause of action accrues, or it is permanently barred, except where a longer period is legally required.
@@ -179,7 +193,11 @@ You will not use the Services or deliverables in violation of U.S. export contro
 
 ## 15. Acceptable Use of the Site
 
-You may not: access the Site by automated means except as permitted by robots.txt; probe, scan, or test the Site's security without our prior written authorization; interfere with the Site's operation; misrepresent your identity or affiliation; scrape or reproduce content for commercial purposes; upload malware; or use the Site to violate any law.
+You may not: access the Site by automated means except as permitted by robots.txt; interfere with the Site's operation; misrepresent your identity or affiliation; upload malware; or use the Site to violate any law.
+
+**Security research.** The restriction on probing, scanning, or testing the Site's security is subject to our coordinated disclosure process in `SECURITY.md`. Research conducted in good faith and in accordance with that process is authorized, and we will not treat it as a breach of these Terms or pursue legal action over it. Testing outside that process still requires our prior written authorization.
+
+**Content reuse.** The Site's source code and content are published under the MIT license (Section 9.1.1), and reuse within that license, including commercial reuse, is permitted. This Section does not restrict it. What remains prohibited is use of our name, logo, or trademarks to imply endorsement or affiliation, and any reuse that misrepresents the source of the content.
 
 We may investigate suspected violations and suspend or block access at our discretion.
 
@@ -199,7 +217,7 @@ These Terms apply while you use the Site and for the duration of any engagement.
 
 **17.4 Effect.** On termination, we will deliver work product completed through the termination date for which payment has been received, and each party will return or destroy the other's Confidential Information on written request, subject to legal retention requirements and routine backup archival.
 
-**17.5 Survival.** Sections 4, 5.1, 6 (indemnity), 7, 8, 9, 10, 11, 12, 13, 14, 17.5, 18, 19, and 20 survive termination.
+**17.5 Survival.** Sections 4, 5.1, 6 (indemnity), 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17.4, 17.5, 18, and 19 survive termination. Section 15 survives because it governs anyone who continues to use the Site after an engagement ends.
 
 ## 18. Governing Law and Dispute Resolution
 
@@ -207,7 +225,7 @@ These Terms apply while you use the Site and for the duration of any engagement.
 
 **18.2 Informal resolution.** Before initiating formal proceedings, the parties will attempt in good faith to resolve the dispute through senior-level discussion for at least [30] days after written notice describing the dispute.
 
-**18.3 Binding arbitration.** Any dispute not resolved informally will be resolved by final and binding arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules, before [one (1)] arbitrator, seated in **Miami-Dade County, Florida**, conducted in English. Judgment on the award may be entered in any court of competent jurisdiction. The arbitration and award are confidential.
+**18.3 Binding arbitration.** Any dispute not resolved informally will be resolved by final and binding arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules, before [one (1)] arbitrator, seated in **Hillsborough County, Florida**, conducted in English. Judgment on the award may be entered in any court of competent jurisdiction. The arbitration and award are confidential.
 
 **18.4 Exceptions.** Either party may seek injunctive or other equitable relief in a court of competent jurisdiction to protect its intellectual property or Confidential Information, and either party may bring a claim in small claims court.
 
@@ -247,24 +265,9 @@ These Terms apply while you use the Site and for the duration of any engagement.
 
 **PrivKey LLC**
 [Street Address]
-Miami, Florida [ZIP], United States
+Tampa, Florida [ZIP], United States
 
-General: [hello@privkey.io]
-Legal: [legal@privkey.io]
-Security: [security@privkey.io]
+General: information@privkey.io
+Legal: [legal@privkey.io: create and monitor this alias, or substitute information@privkey.io, before publishing]
+Security: security@privkey.io
 Web: https://privkey.io
-
----
-
-### Reviewer Checklist — Resolve Before Publication
-
-| # | Item |
-|---|---|
-| 1 | Confirm state of formation and registered agent; add full mailing address |
-| 2 | Confirm no offering involves custody, key shares, or asset control — if any does, obtain a money transmission licensing analysis before publishing |
-| 3 | Have counsel confirm the Section 18 arbitration and class waiver are enforceable against any consumer/individual training customers |
-| 4 | Confirm E&O / cyber liability coverage limits are consistent with the Section 12.2 cap |
-| 5 | Confirm whether digital asset payments are actually accepted; delete Section 8.6 if not |
-| 6 | Establish the security-testing Rules of Engagement template referenced in Section 6 |
-| 7 | Confirm bracketed cure periods, notice periods, and payment terms |
-| 8 | Add a click-to-accept or scroll-to-accept mechanism on the Site to strengthen enforceability |

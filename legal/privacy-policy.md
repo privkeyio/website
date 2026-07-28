@@ -11,7 +11,7 @@
 
 ## 1. Overview
 
-PrivKey LLC ("PrivKey," "we," "us") provides cybersecurity, blockchain, and digital asset security services from Miami, Florida. Privacy and operational security are the substance of our work, and we hold ourselves to the practices we recommend to clients.
+PrivKey LLC ("PrivKey," "we," "us") provides cybersecurity, blockchain, and digital asset security services from Tampa, Florida. Privacy and operational security are the substance of our work, and we hold ourselves to the practices we recommend to clients.
 
 This Policy explains what personal information we collect, why, who we share it with, how long we keep it, and the rights you have. It covers privkey.io (the "Site"), our services, training programs, and our sales, marketing, and recruiting activities.
 
@@ -23,8 +23,8 @@ We commit to the following, and these are enforceable statements, not aspiration
 
 - **We never ask for and never want your private keys, seed phrases, key shares, wallet passphrases, or recovery material.** We do not collect them. If you send them to us, we will delete them and tell you to rotate.
 - **We do not sell personal information**, and we do not share it for cross-context behavioral advertising, as those terms are defined under U.S. state privacy laws.
-- **We do not use client engagement data to train third-party AI models**, and we do not input client confidential information into third-party AI tools except under a contract that prohibits training on that input. [Confirm against actual tooling practice.]
-- We collect the minimum necessary and delete on a defined schedule.
+- **We do not use client engagement data to train third-party AI models**, and we do not input client confidential information into third-party AI tools except under a contract that prohibits training on that input. [Confirm against actual tooling and vendor terms before publication; soften or remove if not evidenced.]
+- We collect the minimum necessary and delete on a defined schedule. [Confirm the Section 8 schedule reflects real deletion practice before publication.]
 
 ## 3. Information We Collect
 
@@ -42,7 +42,14 @@ We commit to the following, and these are enforceable statements, not aspiration
 
 ### 3.2 Information collected automatically
 
-IP address, approximate location derived from IP (city/country level), browser and device type, operating system, referring URL, pages viewed, time on page, and interaction events. Collected via cookies and similar technologies (Section 7).
+**The Site does not use cookies, analytics, or any behavioral tracking.** We do not measure pages viewed, time on page, scroll depth, or interaction events, and we do not build visitor profiles.
+
+What is still collected as a technical consequence of serving the Site:
+
+- **Server access logs** kept by our hosting provider: IP address, timestamp, requested URL, referring URL, and user agent string. Used for security, abuse detection, and troubleshooting, and retained per Section 8.
+- **Third-party requests your browser makes to load the Site.** Certain assets are served by third parties, and your browser discloses your IP address and user agent to them when it fetches those assets. These providers are listed in Section 5.1. We do not control their logging.
+
+[Confirm the hosting provider's log fields and retention period, and update this list if any third-party asset is added or removed.]
 
 ### 3.3 Information from third parties
 
@@ -74,19 +81,32 @@ We disclose personal information only as follows:
 
 **5.1 Service providers (processors).** Bound by written contracts limiting use to our instructions, requiring confidentiality and appropriate security. Current categories:
 
-| Category | Purpose | [Provider — confirm] |
+The following providers receive data through the Site itself:
+
+| Category | Purpose | Data involved | Provider |
+|---|---|---|---|
+| Contact form processing | Deliver messages sent through the form on privkey.io | Name, email, referral source, message text | Formspree |
+| Appointment scheduling | Booking consultations | Name, email, meeting details you enter | Setmore |
+| Content delivery network | Serving front-end libraries | IP address and user agent, disclosed by your browser | jsDelivr |
+| Web fonts | Typeface delivery | IP address and user agent, disclosed by your browser | Google Fonts |
+| Feed retrieval | Rendering our newsletter feed on the Site | IP address and user agent, disclosed by your browser | rss2json |
+| Site hosting | Serving privkey.io, access logs | IP address, request metadata | [ ] |
+
+The following support our business operations rather than the Site:
+
+| Category | Purpose | Provider |
 |---|---|---|
-| Cloud hosting and storage | Site and data hosting | [ ] |
 | Email and productivity | Business communications | [ ] |
-| CRM | Sales pipeline and client records | [HubSpot?] |
-| Accounting and invoicing | Billing, bookkeeping | [Xero?] |
+| CRM | Sales pipeline and client records | [ ] |
+| Accounting and invoicing | Billing, bookkeeping | [ ] |
 | Payment processing | Card and bank payments | [ ] |
-| Web analytics | Traffic measurement | [ ] |
 | Video conferencing | Client meetings | [ ] |
 | Secure file transfer | Encrypted deliverable exchange | [ ] |
 | KYC / sanctions screening | Compliance | [ ] |
 
-*We maintain a current subprocessor list at [privkey.io/subprocessors] and will notify contracted clients of material changes.*
+**We use no web analytics provider.**
+
+*[Publish a maintained subprocessor list at privkey.io/subprocessors before referencing it here.] We will notify contracted clients of material changes.*
 
 **5.2 Subcontractors.** Where an engagement requires specialist personnel, under equivalent confidentiality and data protection obligations.
 
@@ -108,18 +128,17 @@ For such transfers we rely on the European Commission's **Standard Contractual C
 
 ## 7. Cookies and Tracking
 
-**7.1 Categories used.**
-- **Strictly necessary** — security, load balancing, session integrity, form submission. Cannot be disabled.
-- **Analytics** — aggregate traffic and usage measurement. [Set only with consent.]
-- **Functional** — remembering preferences such as language.
+**7.1 The Site sets no cookies.** privkey.io is a static site. It does not set cookies of any kind, does not use browser local or session storage, and carries no analytics, advertising, retargeting, or conversion tags. There is nothing to consent to and nothing to opt out of, so we do not present a cookie banner.
 
-**We do not use advertising or cross-site tracking cookies.** [Confirm — remove this sentence if any ad pixel, retargeting tag, or conversion pixel is deployed.]
+Your browser still discloses your IP address and user agent to the third parties that serve fonts, front-end libraries, and our newsletter feed, as described in Sections 3.2 and 5.1. That is a property of loading those assets, not a tracking technology we deploy.
 
-**7.2 Your controls.** [A consent banner allows you to accept or reject non-essential cookies and change your choice at any time via "Cookie Settings."] Browser settings can block or delete cookies, though strictly necessary cookies are required for the Site to function.
+**7.2 If this changes.** We will not deploy analytics or any non-essential cookie without first implementing a consent mechanism that meets the requirements of the laws applicable to the visitor, and updating this Section before the technology goes live.
 
-**7.3 Global Privacy Control.** We honor the Global Privacy Control (GPC) signal as a valid opt-out request where required by applicable law.
+**7.3 Global Privacy Control.** We do not sell or share personal information, so there is no sale or sharing to opt out of. Should that ever change, we will honor the Global Privacy Control (GPC) signal as a valid opt-out request where applicable law requires.
 
-**7.4 Do Not Track.** Browser DNT signals lack a common standard; we do not respond to them, but we honor GPC as described above.
+**7.4 Do Not Track.** Browser DNT signals lack a common standard. Because we perform no tracking, there is no tracking for a DNT signal to disable.
+
+[Re-verify this section against the deployed Site on every publication of this Policy. It is written to match privkey.io as currently built, and it becomes false the moment a tag is added.]
 
 ## 8. Data Retention
 
@@ -177,14 +196,24 @@ Consider this before choosing on-chain payment. We are happy to invoice conventi
 
 **11.2 How to exercise.** Email **[privacy@privkey.io]** with your request and enough information to locate your records. We will verify your identity proportionately to the sensitivity of the request; we may ask you to confirm from the email address on file or provide additional verification for sensitive data. We do not require you to create an account to make a request.
 
-**11.3 Timing.** We respond within **45 days** (U.S. state law) or **one month** (GDPR/UK GDPR), extendable once by an additional 45 days or two months for complex requests, with notice to you. Requests are free unless manifestly unfounded or excessive.
+**11.3 Timing.** Deadlines differ by jurisdiction, and we apply whichever governs your request:
+
+| Jurisdiction | Our deadline | Extension |
+|---|---|---|
+| California (CCPA/CPRA) | Confirm receipt within 10 business days; substantive response within 45 calendar days of receipt | Once, by a further 45 days, with notice and an explanation given inside the first 45 days |
+| Other U.S. state privacy laws | 45 calendar days of receipt | Once, by a further 45 days, with notice inside the first 45 days |
+| EEA / UK / Switzerland (GDPR, UK GDPR) | Without undue delay, and at the latest one month from receipt | Up to two further months where the request is complex or numerous, with notice and reasons given inside the first month |
+
+Requests are free unless manifestly unfounded or excessive.
 
 **11.4 Authorized agents.** You may use an authorized agent where state law permits; we will require proof of authorization and may require you to verify your identity directly.
 
-**11.5 Appeals and complaints.** If we deny your request, you may appeal by replying to our decision with "Privacy Appeal" in the subject line. We will respond within [45] days. You may also lodge a complaint with your supervisory authority: your **EU/EEA Data Protection Authority**, the **UK Information Commissioner's Office** (ico.org.uk), or your **state Attorney General** — for Florida residents, the Florida Attorney General.
+**11.5 Appeals and complaints.** Several U.S. state privacy laws, including Florida's, give you a right to appeal a denial. Whether or not your state requires it, we offer the same route to everyone: if we deny your request, reply to our decision with "Privacy Appeal" in the subject line, and we will respond in writing with our reasoning within **45 days**, which is the deadline those statutes set.
+
+If the appeal is denied you may also complain to a regulator: your **EU/EEA Data Protection Authority**, the **UK Information Commissioner's Office** (ico.org.uk), or your **state Attorney General**. For Florida residents that is the Florida Attorney General, whose contact details we will include in any denial notice.
 
 **11.6 Region-specific.**
-- **California (CCPA/CPRA):** You have the rights above regarding the categories in Section 3, collected for the purposes in Section 4 and disclosed to the recipients in Section 5. We do not sell or share personal information for cross-context behavioral advertising, and do not knowingly process the personal information of anyone under 16.
+- **California (CCPA/CPRA):** You have the rights above regarding the categories in Section 3, collected for the purposes in Section 4 and disclosed to the recipients in Section 5. We do not sell or share personal information for cross-context behavioral advertising. The CCPA sets 16 as the age below which selling or sharing requires opt-in consent; since we do neither at any age, that provision does not apply to us. Our own minimum age is 18, as stated in Section 14.
 - **Florida (FDBR):** Florida residents may have rights under the Florida Digital Bill of Rights; we honor the rights in Section 11.1 for Florida residents regardless of whether we meet the statutory applicability threshold.
 - **EEA/UK/Switzerland:** Rights under GDPR/UK GDPR as described, including the right to lodge a complaint with a supervisory authority. [Appoint an Article 27 representative if you offer services to EU individuals without an EU establishment.]
 
@@ -192,15 +221,21 @@ Consider this before choosing on-chain payment. We are happy to invoice conventi
 
 We apply controls proportionate to the sensitivity of what we hold, including: encryption in transit (TLS 1.2+) and at rest; multi-factor authentication on all internal systems; least-privilege and role-based access control; hardware security keys for privileged accounts; endpoint protection and full-disk encryption; centralized, monitored logging; segregated client data environments; background checks and confidentiality agreements for personnel; annual security awareness training; documented incident response with defined roles; and vendor security review before onboarding.
 
+> **[Publication gate. Every control named above is a representation, and Section 2 states these are enforceable rather than aspirational. Confirm each one individually against current practice and strike any that is not fully in place. An unmet control here is a deceptive-practices exposure under FTC Act Section 5 and, for a security firm, the first line opposing counsel will read back. Attest per control, not for the list as a whole.]**
+
 **No system is perfectly secure.** We do not guarantee absolute security, and you transmit information to us at your own risk. Use the encrypted channels we provide for sensitive material.
 
 ## 13. Breach Notification
 
-If we experience a security incident affecting your personal information, we will notify affected individuals and applicable regulators without undue delay and within the timeframes required by law — including **72 hours to the relevant supervisory authority under GDPR** where the breach is likely to result in a risk to individuals.
+Our obligations depend on which role we hold over the affected data, and the two are different.
 
-Notifications will describe what happened, the information involved, steps taken, and recommended actions. For business clients, incident notification terms in your MSA or DPA govern and may be shorter.
+**13.1 Data we control.** For personal information we hold in our own right, such as inquiries, billing records, recruiting, and Site logs, we notify affected individuals and the applicable regulators ourselves, without undue delay and within the timeframes the law sets. Where GDPR or UK GDPR applies and the breach is likely to result in a risk to individuals, that means **notification to the supervisory authority within 72 hours** of becoming aware.
 
-**To report a vulnerability or suspected incident involving PrivKey, contact [security@privkey.io].** [PGP key: privkey.io/pgp] We operate a coordinated disclosure policy and will not pursue legal action against good-faith researchers who follow it.
+**13.2 Data we process for a client.** For personal data we handle on a client's instructions during an engagement, the client is the controller and we are the processor. Our obligation runs to the client, not to the regulator or the individual: we notify the client **without undue delay** after becoming aware, and support their own assessment and notification. We do not notify regulators or individuals directly on a controller's behalf unless the client instructs us to. Notification terms in your MSA or DPA govern and may be shorter than anything stated here.
+
+**13.3 Contents.** Notifications will describe what happened, the information involved, steps taken, and recommended actions.
+
+**13.4 Reporting to us.** To report a vulnerability or suspected incident involving PrivKey, contact **[security@privkey.io]**. Our coordinated disclosure process, including the safe harbor for good-faith research, is published in `SECURITY.md` in our public website repository, and the Terms of Service acceptable-use section is subject to it. We will not pursue legal action against researchers who follow that process.
 
 ## 14. Children's Privacy
 
@@ -218,30 +253,13 @@ We may update this Policy. Material changes will be posted here with a revised "
 
 **PrivKey LLC**
 [Street Address]
-Miami, Florida [ZIP], United States
+Tampa, Florida [ZIP], United States
 
-Privacy inquiries and rights requests: **[privacy@privkey.io]**
-Security reports: **[security@privkey.io]**
-General: [hello@privkey.io]
+Privacy inquiries and rights requests: **[privacy@privkey.io: create and monitor this alias, or substitute information@privkey.io, before publishing]**
+Security reports: **security@privkey.io**
+General: information@privkey.io
 Web: https://privkey.io
 
 [Data Protection Officer / Privacy Lead: [NAME], [EMAIL]]
 [EU Representative (GDPR Art. 27): [NAME AND ADDRESS]]
 [UK Representative (UK GDPR Art. 27): [NAME AND ADDRESS]]
-
----
-
-### Reviewer Checklist — Resolve Before Publication
-
-| # | Item |
-|---|---|
-| 1 | Complete the Section 5.1 subprocessor table with actual vendors; publish and maintain the subprocessor page |
-| 2 | Audit the Site for analytics tags and pixels; the "no advertising cookies" statement must be factually true or removed |
-| 3 | Deploy a consent banner if serving EEA/UK visitors, and confirm GPC handling is actually implemented |
-| 4 | Verify the Section 8 retention schedule matches real practice — a published schedule you don't follow is worse than none |
-| 5 | Confirm the 30-day engagement-data destruction window in Section 9 is operationally achievable, and build the certificate-of-destruction template |
-| 6 | Confirm the AI-tooling commitment in Section 2 against actual tool usage and vendor terms |
-| 7 | Determine whether EU/UK Article 27 representatives are required |
-| 8 | Prepare the standing DPA and SCC package referenced in Sections 6 and 9 |
-| 9 | Assign a named privacy owner and a documented rights-request intake workflow before publishing the address |
-| 10 | Set up security@privkey.io with a published PGP key, or remove the reference |
