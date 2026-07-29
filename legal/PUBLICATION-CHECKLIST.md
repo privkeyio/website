@@ -6,13 +6,70 @@ Tracks what must be resolved before `privacy-policy.md` and `terms-of-service.md
 
 Nothing here is legal advice. Items marked **counsel** need attorney sign-off; items marked **ops** are ours to resolve and do not need a lawyer; items marked **decision** need a business owner to pick an option.
 
+## Who answers the brackets
+
+Short version: **most of the brackets are ours, not the attorney's.** An attorney cannot invent how long we keep scan output, which CRM we use, or what our payment terms are. They review the answers we supply and own the genuinely legal calls, which are few. Handing the drafts over with the brackets empty produces an expensive round trip and a lawyer guessing at our operations.
+
+Work the three groups below in order. Group A and B before the attorney sees the documents; Group C is what we are actually paying them for.
+
+### Group A: ours, and only we know the answer
+
+Facts about how PrivKey operates. No legal judgment involved.
+
+| Where | Bracket | Answer needed |
+|---|---|---|
+| PP 5.1 | Hosting provider row, and the seven business-operations rows (email, CRM, accounting, payments, conferencing, file transfer, KYC) | Name the actual vendor, or strike the row if we do not use that category |
+| PP 8 | Every retention duration: `[24]` months inquiries, `[7]` years engagement records, `[3]` years reports, `[30]` days raw technical data, `[7]` years financial, `[5]` years KYC, `[3]` years training, `[12]` months marketing, `[12]` months logs, `[12]` months applicants | How long we actually keep each, today. A published schedule we do not follow is worse than no schedule |
+| PP 9 | `[30]` days destruction window, `[encrypted file transfer or PGP]` | Whether 30 days is achievable, and which encrypted channel we really use for deliverables |
+| PP 2 | AI tooling commitment, minimum-collection commitment | Whether our AI tool contracts actually prohibit training on our input |
+| PP 12 | The eleven security controls (not bracketed, but gated) | Per-control yes or no. Strike any that is not fully in place |
+| PP 3.2 | Hosting log fields and retention | Ask the host what they log and for how long |
+| PP 17, ToS 19.7 and 20 | `privacy@`, `legal@` aliases | Create and monitor them, or substitute `information@` |
+| PP 17 | Privacy Lead / DPO name and email | Pick the person who owns rights requests |
+| ToS 1 | `[Florida]` limited liability company | State of formation. One Sunbiz lookup, and it also gives us the registered agent |
+| ToS 3 | Service list | Strike every line we do not currently sell |
+| Both | `[DATE]` effective and last-updated | Set on the day we publish. Last step, not first |
+| Both | Street address, ZIP | **Answered: 8710 N Renfrew Pl, Tampa, FL 33604** |
+
+### Group B: ours to choose, attorney to sanity-check
+
+Commercial terms. We pick the number because it is our business; counsel confirms it is enforceable and market-standard.
+
+| Where | Bracket | What we are choosing |
+|---|---|---|
+| ToS 8.2 | `net [30] days` | Invoice payment window |
+| ToS 8.3 | `[1.5]%` per month, `[15]` days | Late interest, and how overdue before we suspend |
+| ToS 8.6 | refunds in `[USD]` | Refund currency for digital asset payments |
+| ToS 10 | `[five (5)]` years | Confidentiality survival period |
+| ToS 11.1 | `[30]` days | Warranty claim notice window |
+| ToS 12.2 | `[TWELVE (12)]` months, `[USD $100]` | Liability cap basis, and the free-use cap |
+| ToS 12.3 | `[three (3)]` times fees | The super-cap option, if we choose option (b). Insurer question, see item 21 |
+| ToS 12.5 | `[one (1)]` year | Claim time limit |
+| ToS 17.1, 17.2 | `[30]` days, `[15]` days | Termination notice, and breach cure period |
+| ToS 18.2, 18.3 | `[30]` days, `[one (1)]` arbitrator | Informal resolution period, arbitrator count |
+| ToS 19.3 | `[twelve (12)]` months | Non-solicitation period |
+| ToS 19.11, PP 16 | `[30]` days | Notice before terms or policy changes take effect |
+
+### Group C: genuinely the attorney's
+
+Legal judgment we should not make ourselves.
+
+| Where | Question |
+|---|---|
+| PP 11.6, 17 | Whether we need EU and UK Article 27 representatives, and if so appointing them |
+| PP 6, 9 | The SCC and DPA package: which transfer mechanism, and a standing Article 28 DPA |
+| ToS 12.3 | Enforceability of the uncapped exceptions, and whether our insurance responds to them (item 21, with the insurer) |
+| ToS 18.5, 18.7 | Whether the arbitration clause and class waiver hold up against individual or consumer training customers, and whether we need the 30-day opt-out |
+| ToS 12, 13 | Whether the caps, disclaimers, and indemnities are enforceable as drafted under Florida law |
+| Both | Final pass on everything, including whether our Group A and B answers create exposure we did not see |
+
 ## Blockers for both documents
 
 | # | Type | Item |
 |---|---|---|
 | 1 | counsel | Full attorney review of both documents, with every remaining `[bracketed]` item resolved or struck |
 | 2 | ops | Set the effective date and last-updated date on publication, and remove the DRAFT banner only at that point |
-| 3 | ops | Confirm state of formation and registered agent; add the full street address and ZIP to both contact blocks |
+| 3 | ops | Street address added to both contact blocks and ToS 19.7 as 8710 N Renfrew Pl, Tampa, FL 33604 (confirmed 2026-07-27). Still open: state of formation and registered agent, one Sunbiz lookup, which clears the `[Florida]` bracket in ToS 1 |
 | 4 | ops | Create and monitor `privacy@privkey.io` and `legal@privkey.io`, or substitute `information@privkey.io` throughout. A rights request landing in an unmonitored alias silently burns the statutory response clock for its jurisdiction (45 days under U.S. state laws, one month under GDPR; see the Section 11.3 table) |
 | 5 | ops | Convert both to HTML pages at `/privacy/` and `/terms/`, link them in the footer, and add both URLs to `sitemap.xml`. Markdown under `legal/` does not render as a page on a static host and must not be linked as though it does |
 | 6 | ops | Confirm the principal place of business is Tampa. Both documents and `index.html` JSON-LD now say Tampa, and arbitration is seated in Hillsborough County. If the real PPB is elsewhere, all three change together |

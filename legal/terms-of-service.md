@@ -249,7 +249,7 @@ These Terms apply while you use the Site and for the duration of any engagement.
 
 **19.6 Assignment.** You may not assign these Terms without our written consent. We may assign to an affiliate or in connection with a merger, reorganization, or sale of substantially all assets.
 
-**19.7 Notices.** Notices to PrivKey: [legal@privkey.io] and [MAILING ADDRESS]. Notices to you: the contact details in the SOW or your account record.
+**19.7 Notices.** Notices to PrivKey: [legal@privkey.io] and PrivKey LLC, 8710 N Renfrew Pl, Tampa, Florida 33604. Notices to you: the contact details in the SOW or your account record.
 
 **19.8 Severability.** If a provision is held unenforceable, it will be modified to the minimum extent necessary or severed, and the remainder stays in effect.
 
@@ -264,8 +264,8 @@ These Terms apply while you use the Site and for the duration of any engagement.
 ## 20. Contact
 
 **PrivKey LLC**
-[Street Address]
-Tampa, Florida [ZIP], United States
+8710 N Renfrew Pl
+Tampa, Florida 33604, United States
 
 General: information@privkey.io
 Legal: [legal@privkey.io: create and monitor this alias, or substitute information@privkey.io, before publishing]

@@ -252,8 +252,8 @@ We may update this Policy. Material changes will be posted here with a revised "
 ## 17. Contact
 
 **PrivKey LLC**
-[Street Address]
-Tampa, Florida [ZIP], United States
+8710 N Renfrew Pl
+Tampa, Florida 33604, United States
 
 Privacy inquiries and rights requests: **[privacy@privkey.io: create and monitor this alias, or substitute information@privkey.io, before publishing]**
 Security reports: **security@privkey.io**
