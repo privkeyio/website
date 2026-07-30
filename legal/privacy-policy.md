@@ -13,7 +13,7 @@
 
 PrivKey LLC ("PrivKey," "we," "us") provides cybersecurity, blockchain, and digital asset security services from Tampa, Florida. Privacy and operational security are the substance of our work, and we hold ourselves to the practices we recommend to clients.
 
-This Policy explains what personal information we collect, why, who we share it with, how long we keep it, and the rights you have. It covers privkey.io (the "Site"), our services, training programs, and our sales, marketing, and recruiting activities.
+This Policy explains what personal information we collect, why, who we share it with, how long we keep it, and the rights you have. It covers privkey.io (the "Site"), our services, and our sales, marketing, and recruiting activities.
 
 **Scope note.** When we perform services under contract for a business client, we typically act as a **processor** (or "service provider") for personal data in that client's systems. Our client's own privacy notice governs that data, and this Policy governs our direct relationship with you. Section 9 addresses what we do with data encountered during an engagement.
 
@@ -23,8 +23,8 @@ We commit to the following, and these are enforceable statements, not aspiration
 
 - **We never ask for and never want your private keys, seed phrases, key shares, wallet passphrases, or recovery material.** We do not collect them. If you send them to us, we will delete them and tell you to rotate.
 - **We do not sell personal information**, and we do not share it for cross-context behavioral advertising, as those terms are defined under U.S. state privacy laws.
-- **We do not use client engagement data to train third-party AI models**, and we do not input client confidential information into third-party AI tools except under a contract that prohibits training on that input. [Confirm against actual tooling and vendor terms before publication; soften or remove if not evidenced.]
-- We collect the minimum necessary and delete on a defined schedule. [Confirm the Section 8 schedule reflects real deletion practice before publication.]
+- **We do not use client engagement data to train third-party AI models.** We use AI-assisted tooling in delivering our services, and we do not knowingly input client confidential information into any third-party AI tool that trains on that input.
+- We collect the minimum necessary and delete on the schedule in Section 8.
 
 ## 3. Information We Collect
 
@@ -36,7 +36,6 @@ We commit to the following, and these are enforceable statements, not aspiration
 | **Engagement** | Scope discussions, technical requirements, architecture details, correspondence, meeting notes | Scope, perform, and document the engagement |
 | **Onboarding / KYC** | Identity documents, entity formation records, beneficial ownership, sanctions screening results — *collected only where required* | Legal compliance, sanctions screening, fraud prevention |
 | **Billing** | Billing contact, address, tax ID, bank details, invoice history, blockchain payment addresses | Invoicing, payment, accounting, tax |
-| **Training accounts** | Username, credentials, course progress, assessment results, certificates | Deliver training and issue certificates |
 | **Recruiting** | CV, work history, references, portfolio | Evaluate candidates |
 | **Communications** | Emails, support tickets, chat, call and meeting recordings *where you are notified and, where required, have consented* | Support, quality, record-keeping |
 
@@ -49,7 +48,7 @@ What is still collected as a technical consequence of serving the Site:
 - **Server access logs** kept by our hosting provider: IP address, timestamp, requested URL, referring URL, and user agent string. Used for security, abuse detection, and troubleshooting, and retained per Section 8.
 - **Third-party requests your browser makes to load the Site.** Certain assets are served by third parties, and your browser discloses your IP address and user agent to them when it fetches those assets. These providers are listed in Section 5.1. We do not control their logging.
 
-[Confirm the hosting provider's log fields and retention period, and update this list if any third-party asset is added or removed.]
+Hosting is GitHub Pages (GitHub, Inc.). GitHub holds server-side request logs under its own privacy statement and does not expose them to us, so we keep no separate copy. Update this list if any third-party asset is added or removed.
 
 ### 3.3 Information from third parties
 
@@ -64,7 +63,7 @@ We do not intentionally collect special category data (health, biometrics, race,
 | Purpose | Legal basis (GDPR/UK GDPR) |
 |---|---|
 | Respond to inquiries and provide proposals | Pre-contractual steps at your request; legitimate interests |
-| Deliver contracted services and training | Performance of a contract |
+| Deliver contracted services | Performance of a contract |
 | Invoicing, payment collection, accounting | Contract; legal obligation |
 | KYC, sanctions screening, AML compliance | Legal obligation; legitimate interests in preventing financial crime |
 | Site security, fraud prevention, abuse detection, logging | Legitimate interests in securing our systems |
@@ -90,19 +89,18 @@ The following providers receive data through the Site itself:
 | Content delivery network | Serving front-end libraries | IP address and user agent, disclosed by your browser | jsDelivr |
 | Web fonts | Typeface delivery | IP address and user agent, disclosed by your browser | Google Fonts |
 | Feed retrieval | Rendering our newsletter feed on the Site | IP address and user agent, disclosed by your browser | rss2json |
-| Site hosting | Serving privkey.io, access logs | IP address, request metadata | [ ] |
+| Site hosting | Serving privkey.io, access logs | IP address, request metadata | GitHub Pages (GitHub, Inc.) |
 
 The following support our business operations rather than the Site:
 
 | Category | Purpose | Provider |
 |---|---|---|
-| Email and productivity | Business communications | [ ] |
-| CRM | Sales pipeline and client records | [ ] |
-| Accounting and invoicing | Billing, bookkeeping | [ ] |
-| Payment processing | Card and bank payments | [ ] |
-| Video conferencing | Client meetings | [ ] |
-| Secure file transfer | Encrypted deliverable exchange | [ ] |
-| KYC / sanctions screening | Compliance | [ ] |
+| Email and productivity | Business communications | Proton (Proton for Business) |
+| CRM | Sales pipeline and client records | No dedicated CRM; records kept in our email and accounting systems |
+| Accounting and invoicing | Billing, bookkeeping | Xero |
+| Payment processing | Bank transfer and digital asset payments | No third-party card processor; we do not accept card payments |
+| Video conferencing | Client meetings | Proton (Proton Meet) |
+| Secure file transfer | Encrypted deliverable exchange | Proton (Proton Mail / Proton Drive) |
 
 **We use no web analytics provider.**
 
@@ -124,7 +122,7 @@ The following support our business operations rather than the Site:
 
 We are based in the United States and process information there. If you are in the European Economic Area, United Kingdom, or Switzerland, your information will be transferred to and processed in the U.S. and potentially other countries.
 
-For such transfers we rely on the European Commission's **Standard Contractual Clauses** (and the UK International Data Transfer Addendum where applicable), supplemented by technical and organizational measures including encryption in transit and at rest, access controls, and data minimization. A copy of the relevant transfer mechanism is available on request at [privacy@privkey.io].
+For such transfers we rely on the European Commission's **Standard Contractual Clauses** (and the UK International Data Transfer Addendum where applicable), supplemented by technical and organizational measures including encryption in transit and at rest, access controls, and data minimization. A copy of the relevant transfer mechanism is available on request at privacy@privkey.io.
 
 ## 7. Cookies and Tracking
 
@@ -146,16 +144,16 @@ We retain personal information only as long as necessary, then delete or irrever
 
 | Data | Retention |
 |---|---|
-| Inquiries that do not become engagements | [24] months from last contact |
-| Client engagement records and correspondence | Term of engagement + [7] years (professional liability and limitations periods) |
-| Assessment reports and security findings | [3] years post-delivery, then deleted unless the client requests earlier deletion or longer retention |
-| Client raw technical data, credentials, scan output, artifacts | **[30] days** after final deliverable acceptance, then securely destroyed — see Section 9 |
-| Financial and tax records | [7] years (legal obligation) |
-| KYC / sanctions records | [5] years after relationship ends (or as law requires) |
-| Training accounts and certification records | Duration of account + [3] years |
-| Marketing contacts | Until unsubscribe + [12] months suppression-list retention |
-| Site and security logs | [12] months |
-| Unsuccessful applicant records | [12] months, or longer with consent |
+| Inquiries that do not become engagements | 24 months from last contact |
+| Client engagement records and correspondence | Term of engagement + 7 years (professional liability and limitations periods) |
+| Assessment reports and security findings | 12 months post-delivery, then deleted unless the client requests earlier deletion or longer retention |
+| Client credentials and key material issued to us | Destroyed or rotated within 5 business days of engagement completion — see Section 9 |
+| Client raw technical data, scan output, artifacts | 30 days after final deliverable acceptance, then securely destroyed — see Section 9 |
+| Financial and tax records | 7 years (legal obligation) |
+| Sanctions-screening records | 5 years after relationship ends (or as law requires) |
+| Marketing contacts | Until unsubscribe + 12 months suppression-list retention |
+| Site and security logs | 12 months, or the hosting provider's retention period where the host holds the logs |
+| Unsuccessful applicant records | 12 months, or longer with consent |
 
 Retention may be extended where required by legal hold, ongoing dispute, or regulation.
 
@@ -165,12 +163,12 @@ Security assessments generate unusually sensitive material: credentials, network
 
 - **Isolation.** Client engagement data is segregated per client on encrypted storage with role-based access limited to assigned engagement personnel.
 - **Credentials.** Test credentials issued to us are used only within the agreed scope and testing window. We ask that you **rotate or revoke all credentials issued to us immediately upon engagement completion.**
-- **Encryption.** Data encrypted at rest and in transit. Reports and findings are delivered through encrypted channels — [encrypted file transfer or PGP], never as unencrypted email attachments.
+- **Encryption.** Data encrypted at rest and in transit. Reports and findings are delivered through encrypted channels — Proton Mail or Proton Drive, or PGP-encrypted files — never as unencrypted email attachments.
 - **Sanitization.** Where the assessment objective permits, we sample and redact rather than exfiltrate. We do not retain full copies of client production databases.
-- **Destruction.** Raw artifacts, tooling output, captured data, and credentials are securely destroyed within **[30] days** of deliverable acceptance. Certificates of destruction are available on request.
+- **Destruction.** Raw artifacts, tooling output, and captured data are securely destroyed within **30 days** of deliverable acceptance, and any credentials or key material issued to us are destroyed or rotated within **5 business days** of engagement completion. Backups containing this data are purged on their normal rotation cycle and remain isolated and encrypted until then. Certificates of destruction are available on request.
 - **Findings retention.** We retain the final report and remediation record for the period in Section 8 to support your remediation and re-testing, and to defend against claims. You may request earlier deletion, subject to legal hold.
 - **Incidental personal data.** Testing may surface personal data belonging to your employees or customers. We do not use it for any purpose beyond documenting the finding, minimize what appears in reports, and destroy it on the schedule above.
-- **Data processing terms.** For engagements involving personal data, we execute a Data Processing Agreement incorporating GDPR Article 28 terms. Request one at [privacy@privkey.io].
+- **Data processing terms.** For engagements involving personal data, we execute a Data Processing Agreement incorporating GDPR Article 28 terms. Request one at privacy@privkey.io.
 
 ## 10. Blockchain Data — Important Limitation
 
@@ -194,7 +192,7 @@ Consider this before choosing on-chain payment. We are happy to invoice conventi
 - **Opt out of sale or targeted advertising** — though we do neither
 - **Non-discrimination** — we will not deny services, charge different prices, or provide different quality because you exercised a privacy right
 
-**11.2 How to exercise.** Email **[privacy@privkey.io]** with your request and enough information to locate your records. We will verify your identity proportionately to the sensitivity of the request; we may ask you to confirm from the email address on file or provide additional verification for sensitive data. We do not require you to create an account to make a request.
+**11.2 How to exercise.** Email **privacy@privkey.io** with your request and enough information to locate your records. We will verify your identity proportionately to the sensitivity of the request; we may ask you to confirm from the email address on file or provide additional verification for sensitive data. We do not require you to create an account to make a request.
 
 **11.3 Timing.** Deadlines differ by jurisdiction, and we apply whichever governs your request:
 
@@ -219,9 +217,7 @@ If the appeal is denied you may also complain to a regulator: your **EU/EEA Data
 
 ## 12. Security Measures
 
-We apply controls proportionate to the sensitivity of what we hold, including: encryption in transit (TLS 1.2+) and at rest; multi-factor authentication on all internal systems; least-privilege and role-based access control; hardware security keys for privileged accounts; endpoint protection and full-disk encryption; centralized, monitored logging; segregated client data environments; background checks and confidentiality agreements for personnel; annual security awareness training; documented incident response with defined roles; and vendor security review before onboarding.
-
-> **[Publication gate. Every control named above is a representation, and Section 2 states these are enforceable rather than aspirational. Confirm each one individually against current practice and strike any that is not fully in place. An unmet control here is a deceptive-practices exposure under FTC Act Section 5 and, for a security firm, the first line opposing counsel will read back. Attest per control, not for the list as a whole.]**
+We apply controls proportionate to the sensitivity of what we hold, including: encryption in transit (TLS 1.2+) and at rest; multi-factor authentication on all internal systems; least-privilege and role-based access control; hardware security keys for privileged accounts; file-level encryption of stored client data; segregated client data environments; confidentiality agreements binding all personnel and subcontractors; incident response procedures; and vendor security review before onboarding.
 
 **No system is perfectly secure.** We do not guarantee absolute security, and you transmit information to us at your own risk. Use the encrypted channels we provide for sensitive material.
 
@@ -239,7 +235,7 @@ Our obligations depend on which role we hold over the affected data, and the two
 
 ## 14. Children's Privacy
 
-The Site and Services are intended for business users and adults. We do not knowingly collect personal information from anyone under 18. If we learn we have, we will delete it promptly. Contact [privacy@privkey.io] if you believe a minor has provided information.
+The Site and Services are intended for business users and adults. We do not knowingly collect personal information from anyone under 18. If we learn we have, we will delete it promptly. Contact privacy@privkey.io if you believe a minor has provided information.
 
 ## 15. Third-Party Sites
 
@@ -247,7 +243,7 @@ The Site may link to third-party websites, tools, and resources. This Policy doe
 
 ## 16. Changes to This Policy
 
-We may update this Policy. Material changes will be posted here with a revised "Last Updated" date, and, where we hold your contact details, communicated by email at least [30] days before taking effect. Where a change requires consent under applicable law, we will obtain it. Prior versions are available on request.
+We may update this Policy. Material changes will be posted here with a revised "Last Updated" date, and, where we hold your contact details, communicated by email at least 30 days before taking effect. Where a change requires consent under applicable law, we will obtain it. Prior versions are available on request.
 
 ## 17. Contact
 
@@ -255,11 +251,11 @@ We may update this Policy. Material changes will be posted here with a revised "
 8710 N Renfrew Pl
 Tampa, Florida 33604, United States
 
-Privacy inquiries and rights requests: **[privacy@privkey.io: create and monitor this alias, or substitute information@privkey.io, before publishing]**
+Privacy inquiries and rights requests: **privacy@privkey.io**
 Security reports: **security@privkey.io**
 General: information@privkey.io
 Web: https://privkey.io
 
-[Data Protection Officer / Privacy Lead: [NAME], [EMAIL]]
+Privacy Lead: William K. Santiago, privacy@privkey.io
 [EU Representative (GDPR Art. 27): [NAME AND ADDRESS]]
 [UK Representative (UK GDPR Art. 27): [NAME AND ADDRESS]]

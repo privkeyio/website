@@ -11,9 +11,9 @@
 
 ## 1. Agreement to Terms
 
-These Terms of Service ("Terms") are a binding agreement between you ("Client," "you") and PrivKey LLC, a [Florida] limited liability company with its principal place of business in Tampa, Florida ("PrivKey," "we," "us").
+These Terms of Service ("Terms") are a binding agreement between you ("Client," "you") and PrivKey LLC, a Florida limited liability company with its principal place of business in Tampa, Florida ("PrivKey," "we," "us").
 
-These Terms govern your access to and use of the website located at privkey.io (the "Site"), our educational and training materials, and any consulting, security, development, or advisory services we provide (collectively, the "Services").
+These Terms govern your access to and use of the website located at privkey.io (the "Site"), our educational materials, and any consulting, security, development, or advisory services we provide (collectively, the "Services").
 
 By accessing the Site, requesting a proposal, or engaging us for Services, you accept these Terms. If you do not agree, do not use the Site or the Services.
 
@@ -33,30 +33,26 @@ These Terms govern all matters not addressed in a signed agreement, and govern S
 
 PrivKey provides professional cybersecurity, blockchain, and digital asset security services, which may include:
 
-- **Cryptocurrency Security Standard (CCSS) auditing and certification advisory**
-- **Multisig Concierge Services** — advisory and configuration assistance for multi-signature wallet architectures, key generation ceremonies, key splitting and distribution, cold storage design, and recovery planning. **Advisory only: you generate, hold, split, and distribute your own key material, and we neither receive nor hold a key, a key share, or any credential capable of moving your assets, whether alone or in combination with others.** Where we assist at a key generation ceremony, we advise on procedure while you perform every operation that touches key material.
-- **Private key management advisory**, including MPC-based architectures and geographically decentralized key management design. **Design and advisory only: we do not operate, host, or hold a share in any MPC deployment or signing quorum for you.**
+- **Cryptocurrency Security Standard (CCSS) advisory** — guidance on the CCSS process and readiness; we recommend controls and help you prepare, but do not perform formal audits or issue certification (see Section 4.3)
+- **Multisig Concierge Services** — advisory and configuration assistance for multi-signature wallet architectures, key generation ceremonies, key splitting and distribution, cold storage design, and recovery planning. **We never hold your production keys or key shares and never take custody of any key material that controls your assets. In the multi-signature architectures we advise on, signing keys are held only by you and any third parties you approve — never by PrivKey. Any key material we handle is confined to testing or proof-of-concept environments and never controls your production assets. You generate, hold, split, and distribute your own key material.** Where we assist at a key generation ceremony, we advise on procedure while you perform every operation that touches key material.
+- **Private key management advisory**, including MPC-based architectures and geographically decentralized key management design. **Design and advisory only: we do not operate, host, or hold a controlling share in any MPC deployment for you.**
 - **Self-custody consulting** for individuals and institutions
 - **Penetration testing, threat intelligence, and incident response**
 - **Smart contract development and auditing** across EVM and non-EVM chains
 - **Bitcoin and Lightning Network infrastructure design and integration**
 - **AI-assisted security tooling development and systems integration**
-- **Compliance and regulatory support**, including AML/KYC program advisory and readiness work for SOC 2, ISO 27001, PCI-DSS, and similar frameworks
-- **Training programs and educational resources** at beginner through advanced levels
 
-Nothing in this Section is an offer to perform any service in a manner inconsistent with Section 4.1. Where a client requirement would place key material, a key share, or asset-moving authority in our hands, we decline the requirement or refer it to a licensed custodian.
+Nothing in this Section is an offer to perform any service in a manner inconsistent with Section 4.1. Where a client requirement would place asset-moving authority — the ability, alone or in any combination within our control, to move your assets — in our hands, we decline the requirement or refer it to a licensed custodian.
 
 The specific scope, deliverables, milestones, assumptions, and exclusions of any engagement are defined solely in the applicable SOW. **Any task not expressly described in a SOW is out of scope.**
-
-> **[Publication gate. Strike every line above that PrivKey does not currently offer. Each one carries obligations elsewhere: the training bullet commits the Privacy Policy to operating training accounts, credentials, and certification records; the compliance bullet commits it to KYC document collection and sanctions screening; and each retains data on the Section 8 schedule and answers rights requests. The Site currently markets software development, key management, auditing, and infrastructure, which is a narrower list than this one.]**
 
 ## 4. What PrivKey Is Not
 
 This section is material to the bargain between us. Read it carefully.
 
-**4.1 We are not a custodian.** PrivKey does not take custody, possession, or control of your digital assets, private keys, seed phrases, key shares, recovery material, or wallet credentials. We do not hold assets on your behalf, do not have unilateral or discretionary authority to move your assets, and are not a money transmitter, money services business, exchange, broker, or trust company. All keys and assets remain exclusively within your possession and control at all times.
+**4.1 We are not a custodian.** PrivKey does not take custody or control of your digital assets. We never hold your production keys and never take custody of any key that controls your assets, and we never hold key material sufficient to move your assets, alone or in any combination within our control. We do not hold assets on your behalf, do not have unilateral or discretionary authority to move your assets, and are not a money transmitter, money services business, exchange, broker, or trust company. You retain sole control of your assets at all times.
 
-**4.2 We do not provide investment, financial, tax, accounting, or legal advice.** Nothing on the Site, in our training materials, or in our deliverables constitutes a recommendation to buy, sell, or hold any digital asset, security, or financial instrument, nor an opinion on the legal or tax treatment of any transaction. Educational content is general in nature. Engage qualified counsel and licensed advisors for those matters.
+**4.2 We do not provide investment, financial, tax, accounting, or legal advice.** Nothing on the Site, in our educational materials, or in our deliverables constitutes a recommendation to buy, sell, or hold any digital asset, security, or financial instrument, nor an opinion on the legal or tax treatment of any transaction. Educational content is general in nature. Engage qualified counsel and licensed advisors for those matters.
 
 **4.3 We are not a certification body.** CCSS-related work is advisory. Where a formal certification or attestation is required, it must be issued by an accredited auditor or licensed CPA firm, and we will say so in the SOW.
 
@@ -103,21 +99,21 @@ We may publish anonymized, aggregated statistics and generalized threat research
 
 **8.1 Fees.** Fees, rates, and payment schedules are set out in the applicable SOW or proposal. Estimates are not fixed-price quotes unless expressly labeled as such.
 
-**8.2 Payment terms.** Unless the SOW states otherwise, invoices are due **net [30] days** from the invoice date. We may require a deposit or retainer before commencing work.
+**8.2 Payment terms.** Unless the SOW states otherwise, invoices are due **net 30 days** from the invoice date. We may require a deposit or retainer before commencing work.
 
-**8.3 Late payment.** Overdue amounts accrue interest at [1.5]% per month or the maximum rate permitted by law, whichever is lower. We may suspend Services and withhold deliverables on accounts more than [15] days past due, on written notice.
+**8.3 Late payment.** Overdue amounts accrue interest at the lower of 1.5% per month or the maximum rate permitted by law, without compounding or stacking. We may suspend Services and withhold deliverables on accounts more than 15 days past due, on written notice.
 
 **8.4 Expenses.** Pre-approved travel and out-of-pocket expenses, including third-party hardware purchased at your direction, are billed at cost.
 
 **8.5 Taxes.** Fees are exclusive of all sales, use, VAT, and similar taxes, which are your responsibility, excluding taxes on our net income.
 
-**8.6 Payment in digital assets.** Where we agree in writing to accept payment in Bitcoin or another digital asset, the invoice will specify the asset, network, the fiat-denominated amount owed, the reference exchange rate and source, and a settlement window. **You bear all network fees and price volatility risk within the settlement window.** Payment to an incorrect address, on the wrong network, or below the invoiced amount is your responsibility and generally cannot be reversed or recovered. Digital asset payments are non-refundable except as required by law; approved refunds will be issued in [USD].
+**8.6 Payment in digital assets.** Where we agree in writing to accept payment in Bitcoin or another digital asset, the invoice will specify the asset, network, the fiat-denominated amount owed, the reference exchange rate and source, and a settlement window. **You bear all network fees and price volatility risk within the settlement window.** Payment to an incorrect address, on the wrong network, or below the invoiced amount is your responsibility and generally cannot be reversed or recovered. Digital asset payments are non-refundable except as required by law; approved refunds will be issued in USD at the fiat value we received, not in digital assets.
 
 **8.7 Verify payment instructions.** Invoice and wire fraud is common in this industry. **Always verify payment addresses and banking details by voice with a known PrivKey contact using a number you already have. We will never send changed payment instructions by email alone.** We are not liable for funds sent to addresses or accounts you did not verify through this channel.
 
 ## 9. Intellectual Property
 
-**9.1 PrivKey background IP.** We retain all right, title, and interest in our pre-existing and independently developed materials — methodologies, frameworks, templates, checklists, tooling, scripts, know-how, training curricula, and the Site and its content. Nothing transfers ownership of these to you.
+**9.1 PrivKey background IP.** We retain all right, title, and interest in our pre-existing and independently developed materials — methodologies, frameworks, templates, checklists, tooling, scripts, know-how, educational materials, and the Site and its content. Nothing transfers ownership of these to you.
 
 **9.1.1 Open-source carve-out.** This Section does not revoke, narrow, or condition any license we have already granted publicly. The source code of privkey.io is published under the MIT license in our public website repository, and everything that license permits remains permitted, including copying, modification, redistribution, and commercial use, to the extent of our rights in the licensed material. The MIT license covers what we own in that repository; it does not extend to third-party components included in it (which carry their own licenses), to our trademarks, name, or logo (which no open-source license conveys), or to materials we publish outside the repository. Section 9.1 reserves our rights in everything the license does not reach.
 
@@ -129,7 +125,7 @@ We may publish anonymized, aggregated statistics and generalized threat research
 
 **9.5 Client materials.** You retain ownership of all data, code, and materials you provide, and grant us a limited license to use them solely to perform the Services.
 
-**9.6 Restrictions.** You may not resell, sublicense, publish, or distribute our reports, training materials, or methodologies to third parties without our written consent, except that you may share assessment reports with your auditors, regulators, insurers, and counsel under a duty of confidentiality.
+**9.6 Restrictions.** You may not resell, sublicense, publish, or distribute our reports, educational materials, or methodologies to third parties without our written consent, except that you may share assessment reports with your auditors, regulators, insurers, and counsel under a duty of confidentiality.
 
 ## 10. Confidentiality
 
@@ -141,11 +137,11 @@ Exclusions: information that is or becomes public without breach, was rightfully
 
 Compelled disclosure is permitted where legally required, with prompt notice to the other party where lawful.
 
-These obligations survive for [five (5)] years after termination, and indefinitely for trade secrets and for your key management architecture, security findings, and unremediated vulnerabilities.
+These obligations survive for five (5) years after termination, and indefinitely for trade secrets and for your key management architecture, security findings, and unremediated vulnerabilities.
 
 ## 11. Warranties and Disclaimers
 
-**11.1 Limited warranty.** We warrant that Services will be performed in a professional and workmanlike manner consistent with generally accepted industry standards by personnel with appropriate skill. Your exclusive remedy for breach of this warranty is re-performance of the deficient Services, provided you notify us in writing within [30] days of delivery.
+**11.1 Limited warranty.** We warrant that Services will be performed in a professional and workmanlike manner consistent with generally accepted industry standards by personnel with appropriate skill. Your exclusive remedy for breach of this warranty is re-performance of the deficient Services, provided you notify us in writing within 30 days of delivery.
 
 **11.2 Disclaimer.** EXCEPT AS EXPRESSLY STATED IN SECTION 11.1, THE SITE, SERVICES, AND ALL DELIVERABLES ARE PROVIDED "AS IS" AND "AS AVAILABLE." TO THE MAXIMUM EXTENT PERMITTED BY LAW, PRIVKEY DISCLAIMS ALL OTHER WARRANTIES, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, ACCURACY, AND NON-INFRINGEMENT.
 
@@ -157,7 +153,7 @@ These obligations survive for [five (5)] years after termination, and indefinite
 
 **12.1 Excluded damages.** TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEITHER PARTY IS LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR LOST PROFITS, LOST REVENUE, LOST BUSINESS, LOST DATA, LOSS OF GOODWILL, OR **LOSS OR DIMINUTION IN VALUE OF DIGITAL ASSETS**, REGARDLESS OF THE THEORY OF LIABILITY AND EVEN IF ADVISED OF THE POSSIBILITY.
 
-**12.2 Liability cap.** PRIVKEY'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THESE TERMS, THE SITE, OR THE SERVICES WILL NOT EXCEED THE TOTAL FEES PAID BY YOU TO PRIVKEY UNDER THE APPLICABLE SOW IN THE **[TWELVE (12)] MONTHS** PRECEDING THE EVENT GIVING RISE TO THE CLAIM. FOR FREE SITE USE OR FREE RESOURCES, OUR TOTAL LIABILITY WILL NOT EXCEED **[USD $100]**.
+**12.2 Liability cap.** PRIVKEY'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THESE TERMS, THE SITE, OR THE SERVICES WILL NOT EXCEED THE TOTAL FEES PAID BY YOU TO PRIVKEY UNDER THE APPLICABLE SOW IN THE **TWELVE (12) MONTHS** PRECEDING THE EVENT GIVING RISE TO THE CLAIM. FOR FREE SITE USE OR FREE RESOURCES, OUR TOTAL LIABILITY WILL NOT EXCEED **USD $100**.
 
 **12.3 Exceptions.** The cap does not apply to: your payment obligations; your indemnification obligations under Sections 6 and 13; either party's breach of confidentiality; or liability that cannot be limited by law, including fraud, willful misconduct, and gross negligence.
 
@@ -170,8 +166,6 @@ These obligations survive for [five (5)] years after termination, and indefinite
 > **Take this to the insurer, not only to counsel: the coverage question is not whether the policy limit matches the 12.2 cap, it is whether the policy responds at all to the uncapped exceptions.]**
 
 **12.4 Allocation of risk.** You acknowledge that these limitations are a material and bargained-for basis of our pricing, and that fees would be substantially higher absent them.
-
-**12.5 Time limit.** Any claim must be brought within **[one (1)] year** after the cause of action accrues, or it is permanently barred, except where a longer period is legally required.
 
 ## 13. Indemnification
 
@@ -209,9 +203,9 @@ The Site may link to third-party sites, tools, and resources. We do not control 
 
 These Terms apply while you use the Site and for the duration of any engagement.
 
-**17.1 Termination for convenience.** Either party may terminate an engagement on [30] days' written notice. You remain responsible for all fees for work performed and non-cancellable commitments incurred through the effective date of termination.
+**17.1 Termination for convenience.** Either party may terminate an engagement on 30 days' written notice. You remain responsible for all fees for work performed and non-cancellable commitments incurred through the effective date of termination.
 
-**17.2 Termination for cause.** Either party may terminate immediately upon the other's material breach uncured after [15] days' written notice, or upon insolvency or bankruptcy.
+**17.2 Termination for cause.** Either party may terminate immediately upon the other's material breach uncured after 30 days' written notice, or 10 days' written notice for a payment breach, or upon insolvency or bankruptcy.
 
 **17.3 Immediate termination by PrivKey.** We may terminate immediately, without refund, upon breach of Section 6 (testing authorization) or Section 14 (compliance and sanctions), or where continued performance would in our reasonable judgment violate law or professional ethics, or place us or a third party at risk.
 
@@ -223,9 +217,9 @@ These Terms apply while you use the Site and for the duration of any engagement.
 
 **18.1 Governing law.** These Terms are governed by the laws of the **State of Florida**, without regard to conflict-of-laws principles. The U.N. Convention on Contracts for the International Sale of Goods does not apply.
 
-**18.2 Informal resolution.** Before initiating formal proceedings, the parties will attempt in good faith to resolve the dispute through senior-level discussion for at least [30] days after written notice describing the dispute.
+**18.2 Informal resolution.** Before initiating formal proceedings, the parties will attempt in good faith to resolve the dispute through senior-level discussion for at least 30 days after written notice describing the dispute.
 
-**18.3 Binding arbitration.** Any dispute not resolved informally will be resolved by final and binding arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules, before [one (1)] arbitrator, seated in **Hillsborough County, Florida**, conducted in English. Judgment on the award may be entered in any court of competent jurisdiction. The arbitration and award are confidential.
+**18.3 Binding arbitration.** Any dispute not resolved informally will be resolved by final and binding arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules, before one (1) arbitrator, seated in **Hillsborough County, Florida**, conducted in English. Judgment on the award may be entered in any court of competent jurisdiction. The arbitration and award are confidential.
 
 **18.4 Exceptions.** Either party may seek injunctive or other equitable relief in a court of competent jurisdiction to protect its intellectual property or Confidential Information, and either party may bring a claim in small claims court.
 
@@ -241,7 +235,7 @@ These Terms apply while you use the Site and for the duration of any engagement.
 
 **19.2 Subcontractors.** We may engage qualified subcontractors, and remain responsible for their performance and for binding them to equivalent confidentiality obligations.
 
-**19.3 Non-solicitation.** During an engagement and for [twelve (12)] months after, neither party will knowingly solicit for employment any personnel of the other who were directly involved in the engagement. General advertising not targeted at such personnel is permitted.
+**19.3 Non-solicitation.** During an engagement and for twelve (12) months after, neither party will knowingly solicit for employment any personnel of the other who were directly involved in the engagement. General advertising not targeted at such personnel is permitted.
 
 **19.4 Publicity.** Neither party will use the other's name, logo, or marks in marketing without prior written consent, except that we may list your name and logo as a client where you have separately consented in writing.
 
@@ -249,7 +243,7 @@ These Terms apply while you use the Site and for the duration of any engagement.
 
 **19.6 Assignment.** You may not assign these Terms without our written consent. We may assign to an affiliate or in connection with a merger, reorganization, or sale of substantially all assets.
 
-**19.7 Notices.** Notices to PrivKey: [legal@privkey.io] and PrivKey LLC, 8710 N Renfrew Pl, Tampa, Florida 33604. Notices to you: the contact details in the SOW or your account record.
+**19.7 Notices.** Notices to PrivKey: legal@privkey.io and PrivKey LLC, 8710 N Renfrew Pl, Tampa, Florida 33604. Notices to you: the contact details in the SOW or your account record.
 
 **19.8 Severability.** If a provision is held unenforceable, it will be modified to the minimum extent necessary or severed, and the remainder stays in effect.
 
@@ -257,7 +251,7 @@ These Terms apply while you use the Site and for the duration of any engagement.
 
 **19.10 Entire agreement.** These Terms, together with any MSA, SOW, and the Privacy Policy, are the entire agreement and supersede all prior understandings on the subject matter.
 
-**19.11 Changes.** We may update these Terms. Material changes will be posted with an updated "Last Updated" date and, where we hold your contact details, communicated by email at least [30] days before taking effect. Continued use after the effective date constitutes acceptance. Changes do not retroactively alter a signed SOW.
+**19.11 Changes.** We may update these Terms. Material changes will be posted with an updated "Last Updated" date and, where we hold your contact details, communicated by email at least 30 days before taking effect. Continued use after the effective date constitutes acceptance. Changes do not retroactively alter a signed SOW.
 
 **19.12 Language.** These Terms are drafted in English, which controls in the event of translation conflict.
 
@@ -268,6 +262,6 @@ These Terms apply while you use the Site and for the duration of any engagement.
 Tampa, Florida 33604, United States
 
 General: information@privkey.io
-Legal: [legal@privkey.io: create and monitor this alias, or substitute information@privkey.io, before publishing]
+Legal: legal@privkey.io
 Security: security@privkey.io
 Web: https://privkey.io
