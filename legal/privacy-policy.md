@@ -250,6 +250,7 @@ We may update this Policy. Material changes will be posted here with a revised "
 **PrivKey LLC**
 8710 N Renfrew Pl
 Tampa, Florida 33604, United States
+Florida Division of Corporations: sunbiz.org (Document No. L18000284183)
 
 Privacy inquiries and rights requests: **privacy@privkey.io**
 Security reports: **security@privkey.io**

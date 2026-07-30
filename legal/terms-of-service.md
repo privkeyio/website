@@ -11,7 +11,7 @@
 
 ## 1. Agreement to Terms
 
-These Terms of Service ("Terms") are a binding agreement between you ("Client," "you") and PrivKey LLC, a Florida limited liability company with its principal place of business in Tampa, Florida ("PrivKey," "we," "us").
+These Terms of Service ("Terms") are a binding agreement between you ("Client," "you") and PrivKey LLC, a Florida limited liability company with its principal place of business in Tampa, Florida ("PrivKey," "we," "us"). PrivKey LLC is registered with the Florida Department of State, Division of Corporations (Document No. L18000284183); current registration status and registered-agent information are available at sunbiz.org.
 
 These Terms govern your access to and use of the website located at privkey.io (the "Site"), our educational materials, and any consulting, security, development, or advisory services we provide (collectively, the "Services").
 
@@ -260,6 +260,7 @@ These Terms apply while you use the Site and for the duration of any engagement.
 **PrivKey LLC**
 8710 N Renfrew Pl
 Tampa, Florida 33604, United States
+Florida Division of Corporations: sunbiz.org (Document No. L18000284183)
 
 General: information@privkey.io
 Legal: legal@privkey.io
