@@ -45,9 +45,7 @@
             "Apps & Tools": [
                 { name: "wisp", description: "Fast, lightweight self-hostable Nostr relay with spider mode that syncs notes from people you follow.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
                 { name: "Taproot Assets Gateway", description: "REST proxy that makes Lightning Labs' tapd usable from web apps with CORS and simplified macaroon auth.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
-                { name: "noz", description: "Small, fast Nostr command-line tool for signing, publishing, querying, and decoding NIP-19 entities.", language: "Zig", url: "https://github.com/privkeyio/noz" }
-            ],
-            "Developer Tools": [
+                { name: "noz", description: "Small, fast Nostr command-line tool for signing, publishing, querying, and decoding NIP-19 entities.", language: "Zig", url: "https://github.com/privkeyio/noz" },
                 { name: "bosun", description: "Tracks PR review and triage status across Bitcoin forks. Live at bosun.privkey.io.", language: "Python", url: "https://github.com/privkeyio/bosun" }
             ]
         },
@@ -83,20 +81,24 @@
             "Bitcoin Wallets": [
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
                 { name: "Bull Bitcoin - Hide Exchange Features for Restricted Regions", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" },
+                { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
                 { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" }
             ],
             "Lightning": [
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
-                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
-                { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" }
+                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" }
             ],
             "Nostr Apps": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
                 { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
                 { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" },
-                { name: "Sonar - Hostile-Peer Hardening for Mesh Identity", url: "https://github.com/hedwig-corp/bitchat-to-sonar", subTitle: "2 merged PRs in hedwig-corp/bitchat-to-sonar", subItems: [
+                { name: "Sonar - Hostile-Peer Hardening for Mesh Identity", url: "https://github.com/hedwig-corp/bitchat-to-sonar", subTitle: "6 merged PRs in hedwig-corp/bitchat-to-sonar", subItems: [
                     { name: "Bind Join Requests to the Gift-Wrap Seal Author", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/411" },
-                    { name: "Harden Mesh Identity & Broadcast Against Forgery and Flooding", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/422" }
+                    { name: "Harden Mesh Identity & Broadcast Against Forgery and Flooding", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/422" },
+                    { name: "Fix Desktop BLE Bridge Build on Linux", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/445" },
+                    { name: "Bind Noise Sessions to Claimed Peer Identities", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/462" },
+                    { name: "Reuse a Stable KeyPackage Slot per Install", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/472" },
+                    { name: "Stop Desktop Storing Account Secrets in Plaintext", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/537" }
                 ] }
             ],
             "Cryptography & Protocols": [
