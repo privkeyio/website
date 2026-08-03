@@ -4,21 +4,22 @@
   "description": "Open-source Bitcoin, Lightning, and Nostr infrastructure in Rust, Zig, and C. FROST threshold signing, self-custodial key management, and high-performance relays.",
   "icons": [
     {
-      "src": "favicon.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/images/LOGO_Green_new_transparent.png",
-      "type": "image/png",
+      "src": "assets/brand/icon/privkey-192.png",
       "sizes": "192x192",
-      "purpose": "any maskable"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "assets/images/LOGO_Green_new_transparent.png",
+      "src": "assets/brand/icon/privkey-256.png",
+      "sizes": "256x256",
       "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/brand/icon/privkey-512.png",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "start_url": "/",
