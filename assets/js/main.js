@@ -45,9 +45,7 @@
             "Apps & Tools": [
                 { name: "wisp", description: "Fast, lightweight self-hostable Nostr relay with spider mode that syncs notes from people you follow.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
                 { name: "Taproot Assets Gateway", description: "REST proxy that makes Lightning Labs' tapd usable from web apps with CORS and simplified macaroon auth.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
-                { name: "noz", description: "Small, fast Nostr command-line tool for signing, publishing, querying, and decoding NIP-19 entities.", language: "Zig", url: "https://github.com/privkeyio/noz" }
-            ],
-            "Developer Tools": [
+                { name: "noz", description: "Small, fast Nostr command-line tool for signing, publishing, querying, and decoding NIP-19 entities.", language: "Zig", url: "https://github.com/privkeyio/noz" },
                 { name: "bosun", description: "Tracks PR review and triage status across Bitcoin forks. Live at bosun.privkey.io.", language: "Python", url: "https://github.com/privkeyio/bosun" }
             ]
         },
@@ -68,21 +66,16 @@
                     { name: "wallet: fix null deref in AvailableCoins when segwit_inputs_only is set", url: "https://github.com/bitcoinknots/bitcoin/pull/293" },
                     { name: "init: clamp -lowmem to non-negative before assigning to size_t", url: "https://github.com/bitcoinknots/bitcoin/pull/295" }
                 ] },
-                { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
-                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
-                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" },
-                { name: "DTails - Add Bitcoin Knots Support", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52" }
+                { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" }
             ],
             "Bitcoin Libraries": [
+                { name: "Rust Bitcoin - Witness Item Size Limit on Every Element", url: "https://github.com/rust-bitcoin/rust-bitcoin/pull/6642" },
+                { name: "Rust Bitcoin - Relative Locktime Height Off-by-One Fix", url: "https://github.com/rust-bitcoin/rust-bitcoin/pull/6640" },
                 { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
                 { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" },
                 { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
                 { name: "BDK - RPC Emitter Documentation Examples", url: "https://github.com/bitcoindevkit/bdk/pull/2210" },
                 { name: "DLC Dev Kit - Remove Hardcoded Database Credentials", url: "https://github.com/bennyhodl/dlcdevkit/pull/143" }
-            ],
-            "Cryptography & Protocols": [
-                { name: "ZF FROST - ZeroizeOnDrop for Signing Nonces", url: "https://github.com/ZcashFoundation/frost/pull/987" },
-                { name: "Negentropy - Fix Off-by-One Heap Buffer Overflow", url: "https://github.com/hoytech/negentropy/pull/17" }
             ],
             "Bitcoin Wallets": [
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
@@ -90,14 +83,26 @@
                 { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
                 { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" }
             ],
+            "Lightning": [
+                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
+                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" }
+            ],
             "Nostr Apps": [
                 { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
                 { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
                 { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" },
-                { name: "Sonar - Hostile-Peer Hardening for Mesh Identity", url: "https://github.com/hedwig-corp/bitchat-to-sonar", subTitle: "2 merged PRs in hedwig-corp/bitchat-to-sonar", subItems: [
+                { name: "Sonar - Hostile-Peer Hardening for Mesh Identity", url: "https://github.com/hedwig-corp/bitchat-to-sonar", subTitle: "6 merged PRs in hedwig-corp/bitchat-to-sonar", subItems: [
                     { name: "Bind Join Requests to the Gift-Wrap Seal Author", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/411" },
-                    { name: "Harden Mesh Identity & Broadcast Against Forgery and Flooding", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/422" }
+                    { name: "Harden Mesh Identity & Broadcast Against Forgery and Flooding", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/422" },
+                    { name: "Fix Desktop BLE Bridge Build on Linux", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/445" },
+                    { name: "Bind Noise Sessions to Claimed Peer Identities", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/462" },
+                    { name: "Reuse a Stable KeyPackage Slot per Install", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/472" },
+                    { name: "Stop Desktop Storing Account Secrets in Plaintext", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/537" }
                 ] }
+            ],
+            "Cryptography & Protocols": [
+                { name: "ZF FROST - ZeroizeOnDrop for Signing Nonces", url: "https://github.com/ZcashFoundation/frost/pull/987" },
+                { name: "Negentropy - Fix Off-by-One Heap Buffer Overflow", url: "https://github.com/hoytech/negentropy/pull/17" }
             ],
             "Developer Tools": [
                 { name: "http.zig - Memory-Safety & Reliability Fixes", url: "https://github.com/karlseguin/http.zig", subTitle: "5 merged PRs in karlseguin/http.zig", subItems: [
@@ -113,7 +118,8 @@
                     { name: "Clamp Read Timeout to INT_MAX Before Passing to poll", url: "https://github.com/karlseguin/websocket.zig/pull/110" }
                 ] },
                 { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/aaif-goose/goose/pull/3635" },
-                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/aaif-goose/goose/pull/3378" }
+                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/aaif-goose/goose/pull/3378" },
+                { name: "DTails - Add Bitcoin Knots Support", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52" }
             ],
         },
         team: [
