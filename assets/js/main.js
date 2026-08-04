@@ -66,8 +66,7 @@
                     { name: "wallet: fix null deref in AvailableCoins when segwit_inputs_only is set", url: "https://github.com/bitcoinknots/bitcoin/pull/293" },
                     { name: "init: clamp -lowmem to non-negative before assigning to size_t", url: "https://github.com/bitcoinknots/bitcoin/pull/295" }
                 ] },
-                { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
-                { name: "DTails - Add Bitcoin Knots Support", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52" }
+                { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" }
             ],
             "Bitcoin Libraries": [
                 { name: "Rust Bitcoin - Witness Item Size Limit on Every Element", url: "https://github.com/rust-bitcoin/rust-bitcoin/pull/6642" },
@@ -119,7 +118,8 @@
                     { name: "Clamp Read Timeout to INT_MAX Before Passing to poll", url: "https://github.com/karlseguin/websocket.zig/pull/110" }
                 ] },
                 { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/aaif-goose/goose/pull/3635" },
-                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/aaif-goose/goose/pull/3378" }
+                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/aaif-goose/goose/pull/3378" },
+                { name: "DTails - Add Bitcoin Knots Support", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52" }
             ],
         },
         team: [
