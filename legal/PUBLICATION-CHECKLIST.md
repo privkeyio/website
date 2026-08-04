@@ -39,6 +39,7 @@ Applied to the drafts. Attorney still confirms these in the final Group C pass, 
 
 | Type | Item |
 |---|---|
+| decision | **PP 8 assessment-report retention: 12 months conflicts with the liability window.** The same pass that cut reports from 3 years to 12 months also deleted ToS 12.5, which restores Florida's 5-year written-contract SOL. Exposure got longer while the evidence retention got shorter, and PP 9 "Findings retention" still says we keep the report "to defend against claims." At 12 months the report is destroyed with roughly 4 years of claim window left. There is also a row overlap: a delivered report is arguably "engagement records and correspondence" at term + 7 years, so two rows cover the same PDF with a 6-year gap. Pick one: (a) raise report retention to match the SOL, 5 years or term + 7 to align with engagement records; (b) keep 12 months, delete the defend-against-claims rationale from PP 9, and accept destroying our own evidence; (c) split explicitly, short retention for raw findings data and long retention for the delivered report. |
 | decision → counsel + insurer | **ToS §12.3 confidentiality cap.** Deferred until counsel and insurer review. Left as drafted — option (a), uncapped confidentiality exposure — with the (a)-vs-(b) 3× super-cap decision box intact. The question for the insurer is whether the E&O/cyber policy responds to the uncapped exceptions at all, not whether its limit matches the 12.2 cap. Pick (a) or (b) after that review. |
 
 ### Blockers for both documents
@@ -60,6 +61,7 @@ Applied to the drafts. Attorney still confirms these in the final Group C pass, 
 | 8 | ops | Confirm the 30-day / 5-business-day destruction windows in Section 9 are operationally achievable, and build the certificate-of-destruction template |
 | 9 | ops | Publish and maintain `privkey.io/subprocessors` before the Section 5.1 reference goes live, or remove the reference |
 | 10 | ops | Re-verify Section 7 against the deployed Site on every publication — it asserts privkey.io sets no cookies and runs no analytics, true as built and false the moment a tag is added |
+| 10a | ops | **`_headers` is inert on GitHub Pages.** Confirming hosting surfaced this: `_headers` is a Netlify/Cloudflare Pages convention, and GitHub Pages ignores it. `curl -I https://privkey.io` returns `server: GitHub.com` and no HSTS, X-Frame-Options, X-Content-Type-Options, COOP, COEP, or Permissions-Policy. The CSP is a `<meta http-equiv>` tag, and per spec `frame-ancestors` is ignored in meta CSP, so both clickjacking defenses are absent. Not a legal-doc item; tracked separately |
 | 11 | ops | Consider self-hosting the web font. Serving Google Fonts discloses every visitor's IP to Google — the pattern EU regulators have penalized; self-hosting removes the disclosure and the Section 5.1 row |
 | 12 | ops | Build the rights-request intake workflow before publishing the address: named owner, logging, identity verification, Section 11.3 deadlines, Section 11.5 appeal path |
 | 13 | ops | Add a notice-at-collection link beside the contact form in `index.html`. A footer link alone does not satisfy CCPA or GDPR Art. 13 |

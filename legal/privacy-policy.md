@@ -21,7 +21,7 @@ This Policy explains what personal information we collect, why, who we share it 
 
 We commit to the following, and these are enforceable statements, not aspirations:
 
-- **We never ask for and never want your private keys, seed phrases, key shares, wallet passphrases, or recovery material.** We do not collect them. If you send them to us, we will delete them and tell you to rotate.
+- **We never ask for and never want your private keys, seed phrases, key shares, wallet passphrases, or recovery material.** We do not collect them. If you send them to us, we will delete them and tell you to rotate. The single exception is non-production test key material that a Statement of Work expressly provides for, which never controls production assets and is destroyed or rotated on the schedule in Section 8.
 - **We do not sell personal information**, and we do not share it for cross-context behavioral advertising, as those terms are defined under U.S. state privacy laws.
 - **We do not use client engagement data to train third-party AI models.** We use AI-assisted tooling in delivering our services, and we do not knowingly input client confidential information into any third-party AI tool that trains on that input.
 - We collect the minimum necessary and delete on the schedule in Section 8.
@@ -34,7 +34,7 @@ We commit to the following, and these are enforceable statements, not aspiration
 |---|---|---|
 | **Contact and professional** | Name, email, phone, company, job title, country | Respond to inquiries, deliver services, manage the relationship |
 | **Engagement** | Scope discussions, technical requirements, architecture details, correspondence, meeting notes | Scope, perform, and document the engagement |
-| **Onboarding / KYC** | Identity documents, entity formation records, beneficial ownership, sanctions screening results — *collected only where required* | Legal compliance, sanctions screening, fraud prevention |
+| **Onboarding / KYC** *(reserved, not current practice)* | Identity documents, entity formation records, beneficial ownership, sanctions screening results. **We do not perform KYC or sanctions screening today.** This category applies only if an engagement or applicable law requires it, as reserved in Section 14 of our Terms of Service | Legal compliance, sanctions screening, fraud prevention |
 | **Billing** | Billing contact, address, tax ID, bank details, invoice history, blockchain payment addresses | Invoicing, payment, accounting, tax |
 | **Recruiting** | CV, work history, references, portfolio | Evaluate candidates |
 | **Communications** | Emails, support tickets, chat, call and meeting recordings *where you are notified and, where required, have consented* | Support, quality, record-keeping |
@@ -45,14 +45,14 @@ We commit to the following, and these are enforceable statements, not aspiration
 
 What is still collected as a technical consequence of serving the Site:
 
-- **Server access logs** kept by our hosting provider: IP address, timestamp, requested URL, referring URL, and user agent string. Used for security, abuse detection, and troubleshooting, and retained per Section 8.
+- **Server access logs** kept by our hosting provider: IP address, timestamp, requested URL, referring URL, and user agent string. The provider holds and uses these for security, abuse detection, and delivery of the Site, and retains them under its own schedule.
 - **Third-party requests your browser makes to load the Site.** Certain assets are served by third parties, and your browser discloses your IP address and user agent to them when it fetches those assets. These providers are listed in Section 5.1. We do not control their logging.
 
 Hosting is GitHub Pages (GitHub, Inc.). GitHub holds server-side request logs under its own privacy statement and does not expose them to us, so we keep no separate copy. Update this list if any third-party asset is added or removed.
 
 ### 3.3 Information from third parties
 
-Business contact data from professional networks and vetted B2B sources; sanctions and adverse-media screening results; referral information; payment processor confirmations; and public blockchain data where relevant to an engagement.
+Business contact data from professional networks and vetted B2B sources; referral information; payment confirmations; and public blockchain data where relevant to an engagement. Sanctions and adverse-media screening results only if we conduct screening, which we do not do today (Section 3.1).
 
 ### 3.4 What we do not collect
 
@@ -65,7 +65,7 @@ We do not intentionally collect special category data (health, biometrics, race,
 | Respond to inquiries and provide proposals | Pre-contractual steps at your request; legitimate interests |
 | Deliver contracted services | Performance of a contract |
 | Invoicing, payment collection, accounting | Contract; legal obligation |
-| KYC, sanctions screening, AML compliance | Legal obligation; legitimate interests in preventing financial crime |
+| KYC, sanctions screening, AML compliance, if and when we conduct it (Section 3.1) | Legal obligation; legitimate interests in preventing financial crime |
 | Site security, fraud prevention, abuse detection, logging | Legitimate interests in securing our systems |
 | Improve the Site and our services | Legitimate interests (the Site uses no analytics; see Section 7) |
 | Marketing emails and newsletters | Consent, or legitimate interests for existing B2B clients on comparable services, always with opt-out |
@@ -147,10 +147,10 @@ We retain personal information only as long as necessary, then delete or irrever
 | Inquiries that do not become engagements | 24 months from last contact |
 | Client engagement records and correspondence | Term of engagement + 7 years (professional liability and limitations periods) |
 | Assessment reports and security findings | 12 months post-delivery, then deleted unless the client requests earlier deletion or longer retention |
-| Client credentials and key material issued to us | Destroyed or rotated within 5 business days of engagement completion — see Section 9 |
+| Client access credentials, and non-production test key material issued to us under a SOW | Destroyed or rotated within 5 business days of engagement completion — see Section 9 |
 | Client raw technical data, scan output, artifacts | 30 days after final deliverable acceptance, then securely destroyed — see Section 9 |
 | Financial and tax records | 7 years (legal obligation) |
-| Sanctions-screening records | 5 years after relationship ends (or as law requires) |
+| Sanctions-screening records, if any are ever created | 5 years after relationship ends (or as law requires) |
 | Marketing contacts | Until unsubscribe + 12 months suppression-list retention |
 | Site and security logs | 12 months, or the hosting provider's retention period where the host holds the logs |
 | Unsuccessful applicant records | 12 months, or longer with consent |
@@ -165,7 +165,7 @@ Security assessments generate unusually sensitive material: credentials, network
 - **Credentials.** Test credentials issued to us are used only within the agreed scope and testing window. We ask that you **rotate or revoke all credentials issued to us immediately upon engagement completion.**
 - **Encryption.** Data encrypted at rest and in transit. Reports and findings are delivered through encrypted channels — Proton Mail or Proton Drive, or PGP-encrypted files — never as unencrypted email attachments.
 - **Sanitization.** Where the assessment objective permits, we sample and redact rather than exfiltrate. We do not retain full copies of client production databases.
-- **Destruction.** Raw artifacts, tooling output, and captured data are securely destroyed within **30 days** of deliverable acceptance, and any credentials or key material issued to us are destroyed or rotated within **5 business days** of engagement completion. Backups containing this data are purged on their normal rotation cycle and remain isolated and encrypted until then. Certificates of destruction are available on request.
+- **Destruction.** Raw artifacts, tooling output, and captured data are securely destroyed within **30 days** of deliverable acceptance, and any access credentials, together with any non-production test key material issued to us under a SOW, are destroyed or rotated within **5 business days** of engagement completion. Backups containing this data are purged on their normal rotation cycle and remain isolated and encrypted until then. Certificates of destruction are available on request.
 - **Findings retention.** We retain the final report and remediation record for the period in Section 8 to support your remediation and re-testing, and to defend against claims. You may request earlier deletion, subject to legal hold.
 - **Incidental personal data.** Testing may surface personal data belonging to your employees or customers. We do not use it for any purpose beyond documenting the finding, minimize what appears in reports, and destroy it on the schedule above.
 - **Data processing terms.** For engagements involving personal data, we execute a Data Processing Agreement incorporating GDPR Article 28 terms. Request one at privacy@privkey.io.
