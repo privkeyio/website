@@ -233,7 +233,7 @@
         container.innerHTML = Object.entries(DATA.contributions).map(([category, items]) => `
             <div style="margin-bottom:1rem">
                 <div class="contribution-header" data-category="${category}">
-                    <div><h5 class="text-white mb-0">${category}</h5><small class="text-white-50">${items.length} contributions</small></div>
+                    <div><h5 class="text-white mb-0">${category}</h5><small class="text-white-50">${items.reduce((n, c) => n + (c.subItems ? c.subItems.length : 1), 0)} contributions</small></div>
                     <i class="mdi mdi-chevron-down" style="color:#27ae60;font-size:1.5rem"></i>
                 </div>
                 <div class="contribution-items" data-category="${category}" style="display:none">
