@@ -84,6 +84,7 @@
                 { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" }
             ],
             "Lightning": [
+                { name: "LDK (Rust Lightning) - Reported Security Fixes (v0.2.5)", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/releases/tag/v0.2.5" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
                 { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" }
             ],
