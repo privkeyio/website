@@ -51,6 +51,22 @@
         },
         contributions: {
             "Bitcoin Infrastructure": [
+                { name: "Bitcoin Knots - v29.4 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.knots20260508", subTitle: "14 contributions in Bitcoin Knots v29.4", subItems: [
+                    { name: "policy: don't let ignore_rejects relax reduced-data consensus flags", url: "https://github.com/bitcoinknots/bitcoin/commit/5d346e80cf992ac1114ee0fd1175b5a03df3e326" },
+                    { name: "validation: correct inherited RDTS-invalid blocks at startup", url: "https://github.com/bitcoinknots/bitcoin/pull/350" },
+                    { name: "GUI/NetWatch: fix heap corruption from off-thread model mutation", url: "https://github.com/bitcoinknots/bitcoin/pull/330" },
+                    { name: "descriptor: reject OP_IF/OP_NOTIF in Taproot miniscript under reduced-data", url: "https://github.com/bitcoinknots/bitcoin/pull/320" },
+                    { name: "net: tolerate stale BIP-110 outbound peers in connection accounting", url: "https://github.com/bitcoinknots/bitcoin/commit/1981a5761cb4204ee97af5dfba18fdffc87d8bd2" },
+                    { name: "validation: keep script cache enabled when RDTS deployment inactive", url: "https://github.com/bitcoinknots/bitcoin/pull/323" },
+                    { name: "depends: update libevent to 2.1.13-stable", url: "https://github.com/bitcoinknots/bitcoin/pull/345" },
+                    { name: "GUI: don't assert on translated field labels in ReceiveRequestDialog", url: "https://github.com/bitcoinknots/bitcoin/pull/332" },
+                    { name: "cmake: check PIE link support for C", url: "https://github.com/bitcoinknots/bitcoin/pull/339" },
+                    { name: "GUI: Show warnings on all tabs", url: "https://github.com/bitcoinknots/bitcoin/pull/301" },
+                    { name: "GUI: Keep the RPC console on the wallet it is set to", url: "https://github.com/bitcoinknots/bitcoin/pull/344" },
+                    { name: "GUI: locale-aware datetime formatting with GUIUtil::dateTimeStr", url: "https://github.com/bitcoinknots/bitcoin/pull/336" },
+                    { name: "ci: install librsvg2-bin and imagemagick for per-commit tests", url: "https://github.com/bitcoinknots/bitcoin/pull/328" },
+                    { name: "contrib: don't use the default datadir in gen-bitcoin-conf.sh", url: "https://github.com/bitcoinknots/bitcoin/pull/329" }
+                ] },
                 { name: "Bitcoin Knots - v29.3 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508", subItems: [
                     { name: "Policy: Penalize effective fee for sub-dust outputs", url: "https://github.com/bitcoinknots/bitcoin/pull/272" },
                     { name: "rpc: add segwit and taproot support to sweepprivkeys", url: "https://github.com/bitcoinknots/bitcoin/pull/296" },
