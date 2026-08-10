@@ -101,6 +101,7 @@
             ],
             "Lightning": [
                 { name: "LDK (Rust Lightning) - Reported Security Fixes (v0.2.5)", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/releases/tag/v0.2.5" },
+                { name: "LDK (Rust Lightning) - Fix Blinded Path Over-100% Proportional Fee Calculation", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/4836" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
                 { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" }
             ],
