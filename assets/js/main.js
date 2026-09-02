@@ -51,6 +51,13 @@
         },
         contributions: {
             "Bitcoin Infrastructure": [
+                { name: "Bitcoin Knots - v29.4.1 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508", subTitle: "5 contributions in Bitcoin Knots v29.4.1", subItems: [
+                    { name: "Consensus: unified opt-in signature hash for all transaction types", url: "https://github.com/bitcoinknots/bitcoin/pull/357" },
+                    { name: "validation: check the block index after InvalidateBlock repairs it", url: "https://github.com/bitcoinknots/bitcoin/pull/360" },
+                    { name: "policy: reject Counterparty messages under -rejecttokens", url: "https://github.com/bitcoinknots/bitcoin/pull/349" },
+                    { name: "net: find and prefer NODE_BLAKE2B peers at startup", url: "https://github.com/bitcoinknots/bitcoin/pull/386" },
+                    { name: "Remove the RDTS consent requirement", url: "https://github.com/bitcoinknots/bitcoin/pull/362" }
+                ] },
                 { name: "Bitcoin Knots - v29.4 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.knots20260508", subTitle: "14 contributions in Bitcoin Knots v29.4", subItems: [
                     { name: "policy: don't let ignore_rejects relax reduced-data consensus flags", url: "https://github.com/bitcoinknots/bitcoin/commit/5d346e80cf992ac1114ee0fd1175b5a03df3e326" },
                     { name: "validation: correct inherited RDTS-invalid blocks at startup", url: "https://github.com/bitcoinknots/bitcoin/pull/350" },
