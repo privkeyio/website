@@ -66,10 +66,6 @@
   border-radius: 50%;
 }
 
-.navbar-custom .navbar-nav li.active a:hover::after {
-  bottom: -25px;
-}
-
 .navbar-custom .navbar-nav li a {
   transition: all 0.3s ease;
   white-space: nowrap;
