@@ -90,7 +90,7 @@
                     { name: "init: clamp -lowmem to non-negative before assigning to size_t", url: "https://github.com/bitcoinknots/bitcoin/pull/295" }
                 ] },
                 { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
-                { name: "BLAKE2b PoW & Unified Sighash - Ecosystem Builds", url: "https://shrikewallet.com", subTitle: "9 unofficial ecosystem builds supporting Bitcoin's BLAKE2b proof-of-work change and unified opt-in signature hash", unit: "repos", subIcon: "mdi-github", subItems: [
+                { name: "BLAKE2b PoW & Unified Sighash - Ecosystem Builds", url: "https://shrikewallet.com", subTitle: "9 unofficial ecosystem builds supporting Bitcoin's BLAKE2b proof-of-work change and unified opt-in signature hash", unit: "repos", subIcon: "mdi-github", subItemsAreProjects: true, subItems: [
                     { name: "Shrike (Sparrow fork desktop wallet)", url: "https://github.com/privkeyio/shrike" },
                     { name: "drongo (BLAKE2b header & opt-in sighash library)", url: "https://github.com/privkeyio/drongo" },
                     { name: "embit (opt-in sighash library)", url: "https://github.com/privkeyio/embit" },
@@ -225,14 +225,14 @@
             <div class="col-lg-10">
                 ${DATA.ecosystems.map((e, i) => `
                     <div class="ecosystem-block">
-                        <div class="ecosystem-header ecosystem-toggle" data-eco="${i}" style="cursor:pointer">
+                        <div class="ecosystem-header ecosystem-toggle" data-eco="${i}" role="button" tabindex="0" aria-expanded="false" aria-controls="eco-panel-${i}" style="cursor:pointer">
                             <a href="${e.url}" target="_blank" rel="noopener noreferrer" class="ecosystem-title">${e.name}</a>
                             <span class="opensource-lang">${e.badge || 'Ecosystem'}</span>
                             <span class="sub-count">${e.components.length} projects</span>
                             <i class="mdi mdi-chevron-down eco-chevron" style="color:#27ae60;font-size:1.5rem;margin-left:.25rem"></i>
                         </div>
                         <p class="ecosystem-desc">${e.description}</p>
-                        <div class="ecosystem-components" data-eco="${i}" style="display:none">
+                        <div class="ecosystem-components" id="eco-panel-${i}" data-eco="${i}" style="display:none">
                             ${e.components.map(c => `
                                 <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="ecosystem-component">
                                     <div class="opensource-item-header">
@@ -260,22 +260,31 @@
                 </div>
             </div>`;
         const grid = document.getElementById('products-grid');
+        const toggleEco = header => {
+            const i = header.dataset.eco;
+            const panel = grid.querySelector(`.ecosystem-components[data-eco="${i}"]`);
+            const chevron = header.querySelector('.eco-chevron');
+            const isOpen = panel.style.display !== 'none';
+            panel.style.display = isOpen ? 'none' : 'grid';
+            header.setAttribute('aria-expanded', String(!isOpen));
+            chevron.className = isOpen ? 'mdi mdi-chevron-down eco-chevron' : 'mdi mdi-chevron-up eco-chevron';
+        };
         grid.querySelectorAll('.ecosystem-title').forEach(a => a.addEventListener('click', e => e.stopPropagation()));
         grid.querySelectorAll('.ecosystem-toggle').forEach(header => {
-            header.addEventListener('click', () => {
-                const i = header.dataset.eco;
-                const panel = grid.querySelector(`.ecosystem-components[data-eco="${i}"]`);
-                const chevron = header.querySelector('.eco-chevron');
-                const isOpen = panel.style.display !== 'none';
-                panel.style.display = isOpen ? 'none' : 'grid';
-                chevron.className = isOpen ? 'mdi mdi-chevron-down eco-chevron' : 'mdi mdi-chevron-up eco-chevron';
+            header.addEventListener('click', () => toggleEco(header));
+            header.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleEco(header); }
             });
         });
     }
 
     function renderContributions() {
         const all = Object.values(DATA.contributions).flat();
-        const projects = new Set(all.map(c => c.name.split(' - ')[0]));
+        const projects = new Set();
+        all.forEach(c => {
+            if (c.subItemsAreProjects && c.subItems) c.subItems.forEach(s => projects.add(s.url));
+            else projects.add(c.name.split(' - ')[0]);
+        });
         const total = all.reduce((n, c) => n + (c.subItems ? c.subItems.length : 1), 0);
         document.getElementById('contributions-stat').textContent =
             `${total} contributions shipped across ${projects.size} open-source projects`;
