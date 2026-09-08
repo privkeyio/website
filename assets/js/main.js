@@ -89,7 +89,18 @@
                     { name: "wallet: fix null deref in AvailableCoins when segwit_inputs_only is set", url: "https://github.com/bitcoinknots/bitcoin/pull/293" },
                     { name: "init: clamp -lowmem to non-negative before assigning to size_t", url: "https://github.com/bitcoinknots/bitcoin/pull/295" }
                 ] },
-                { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" }
+                { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
+                { name: "BLAKE2b PoW & Unified Sighash - Ecosystem Builds", url: "https://shrikewallet.com", subTitle: "9 unofficial ecosystem builds supporting Bitcoin's BLAKE2b proof-of-work change and unified opt-in signature hash", unit: "repos", subIcon: "mdi-github", subItems: [
+                    { name: "Shrike (Sparrow fork desktop wallet)", url: "https://github.com/privkeyio/shrike" },
+                    { name: "drongo (BLAKE2b header & opt-in sighash library)", url: "https://github.com/privkeyio/drongo" },
+                    { name: "embit (opt-in sighash library)", url: "https://github.com/privkeyio/embit" },
+                    { name: "lark (USB hardware-wallet interface)", url: "https://github.com/privkeyio/lark" },
+                    { name: "SeedSigner firmware", url: "https://github.com/privkeyio/seedsigner" },
+                    { name: "Trezor firmware", url: "https://github.com/privkeyio/trezor-firmware" },
+                    { name: "Coldcard firmware", url: "https://github.com/privkeyio/cc-firmware" },
+                    { name: "Fulcrum (Electrum server, BLAKE2b PoW)", url: "https://github.com/privkeyio/Fulcrum" },
+                    { name: "canary (watch-only monitor, BLAKE2b PoW)", url: "https://github.com/privkeyio/canary" }
+                ] }
             ],
             "Bitcoin Libraries": [
                 { name: "Rust Bitcoin - Witness Item Size Limit on Every Element", url: "https://github.com/rust-bitcoin/rust-bitcoin/pull/6642" },
@@ -104,7 +115,8 @@
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
                 { name: "Bull Bitcoin - Hide Exchange Features for Restricted Regions", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" },
                 { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
-                { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" }
+                { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
+                { name: "Coldcard - Fix Multisig Config Write Ordering in Tests", url: "https://github.com/Coldcard/firmware/pull/806" }
             ],
             "Lightning": [
                 { name: "LDK (Rust Lightning) - Reported Security Fixes (v0.2.5)", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/releases/tag/v0.2.5" },
@@ -211,14 +223,16 @@
     function renderProducts() {
         document.getElementById('products-grid').innerHTML = `
             <div class="col-lg-10">
-                ${DATA.ecosystems.map(e => `
+                ${DATA.ecosystems.map((e, i) => `
                     <div class="ecosystem-block">
-                        <div class="ecosystem-header">
+                        <div class="ecosystem-header ecosystem-toggle" data-eco="${i}" style="cursor:pointer">
                             <a href="${e.url}" target="_blank" rel="noopener noreferrer" class="ecosystem-title">${e.name}</a>
-                            <span class="opensource-lang">Ecosystem</span>
+                            <span class="opensource-lang">${e.badge || 'Ecosystem'}</span>
+                            <span class="sub-count">${e.components.length} projects</span>
+                            <i class="mdi mdi-chevron-down eco-chevron" style="color:#27ae60;font-size:1.5rem;margin-left:.25rem"></i>
                         </div>
                         <p class="ecosystem-desc">${e.description}</p>
-                        <div class="ecosystem-components">
+                        <div class="ecosystem-components" data-eco="${i}" style="display:none">
                             ${e.components.map(c => `
                                 <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="ecosystem-component">
                                     <div class="opensource-item-header">
@@ -245,6 +259,18 @@
                     <a href="https://github.com/privkeyio" target="_blank" rel="noopener noreferrer" class="products-cta">Explore all our open source work <i class="mdi mdi-arrow-right"></i></a>
                 </div>
             </div>`;
+        const grid = document.getElementById('products-grid');
+        grid.querySelectorAll('.ecosystem-title').forEach(a => a.addEventListener('click', e => e.stopPropagation()));
+        grid.querySelectorAll('.ecosystem-toggle').forEach(header => {
+            header.addEventListener('click', () => {
+                const i = header.dataset.eco;
+                const panel = grid.querySelector(`.ecosystem-components[data-eco="${i}"]`);
+                const chevron = header.querySelector('.eco-chevron');
+                const isOpen = panel.style.display !== 'none';
+                panel.style.display = isOpen ? 'none' : 'grid';
+                chevron.className = isOpen ? 'mdi mdi-chevron-down eco-chevron' : 'mdi mdi-chevron-up eco-chevron';
+            });
+        });
     }
 
     function renderContributions() {
@@ -264,13 +290,13 @@
                     ${items.map((c, i) => c.subItems ? `<div class="contribution-link contribution-subtoggle" data-sub="${category}::${i}">
                             <i class="mdi mdi-github" style="margin-right:0.5rem"></i>
                             <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-subname">${c.name}</a>
-                            <span class="sub-count">${c.subItems.length} PRs</span>
+                            <span class="sub-count">${c.subItems.length} ${c.unit || 'PRs'}</span>
                             <i class="mdi mdi-chevron-down sub-chevron"></i>
                         </div>
                         <div class="contribution-subpanel" data-sub="${category}::${i}" style="display:none">
                             <div class="contribution-subpanel-title">${c.subTitle || (c.subItems.length + ' PRs in Bitcoin Knots ' + c.url.split('/').pop())}</div>
                             <div class="contribution-subpanel-grid">
-                                ${c.subItems.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="contribution-link contribution-sublink"><i class="mdi mdi-source-pull" style="margin-right:0.5rem"></i><span>${s.name}</span></a>`).join('')}
+                                ${c.subItems.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="contribution-link contribution-sublink"><i class="mdi ${c.subIcon || 'mdi-source-pull'}" style="margin-right:0.5rem"></i><span>${s.name}</span></a>`).join('')}
                             </div>
                         </div>` : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`).join('')}
                 </div>
