@@ -51,14 +51,15 @@
         },
         contributions: {
             "Bitcoin Infrastructure": [
-                { name: "Bitcoin Knots - v29.4.1 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508", subTitle: "5 contributions in Bitcoin Knots v29.4.1", subItems: [
+                { name: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin", group: [
+                { name: "v29.4.1 Release", project: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508", subTitle: "5 contributions in Bitcoin Knots v29.4.1", subItems: [
                     { name: "Consensus: unified opt-in signature hash for all transaction types", url: "https://github.com/bitcoinknots/bitcoin/pull/357" },
                     { name: "validation: check the block index after InvalidateBlock repairs it", url: "https://github.com/bitcoinknots/bitcoin/pull/360" },
                     { name: "policy: reject Counterparty messages under -rejecttokens", url: "https://github.com/bitcoinknots/bitcoin/pull/349" },
                     { name: "net: find and prefer NODE_BLAKE2B peers at startup", url: "https://github.com/bitcoinknots/bitcoin/pull/386" },
                     { name: "Remove the RDTS consent requirement", url: "https://github.com/bitcoinknots/bitcoin/pull/362" }
                 ] },
-                { name: "Bitcoin Knots - v29.4 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.knots20260508", subTitle: "14 contributions in Bitcoin Knots v29.4", subItems: [
+                { name: "v29.4 Release", project: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.knots20260508", subTitle: "14 contributions in Bitcoin Knots v29.4", subItems: [
                     { name: "policy: don't let ignore_rejects relax reduced-data consensus flags", url: "https://github.com/bitcoinknots/bitcoin/commit/5d346e80cf992ac1114ee0fd1175b5a03df3e326" },
                     { name: "validation: correct inherited RDTS-invalid blocks at startup", url: "https://github.com/bitcoinknots/bitcoin/pull/350" },
                     { name: "GUI/NetWatch: fix heap corruption from off-thread model mutation", url: "https://github.com/bitcoinknots/bitcoin/pull/330" },
@@ -74,7 +75,7 @@
                     { name: "ci: install librsvg2-bin and imagemagick for per-commit tests", url: "https://github.com/bitcoinknots/bitcoin/pull/328" },
                     { name: "contrib: don't use the default datadir in gen-bitcoin-conf.sh", url: "https://github.com/bitcoinknots/bitcoin/pull/329" }
                 ] },
-                { name: "Bitcoin Knots - v29.3 Release", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508", subItems: [
+                { name: "v29.3 Release", project: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508", subItems: [
                     { name: "Policy: Penalize effective fee for sub-dust outputs", url: "https://github.com/bitcoinknots/bitcoin/pull/272" },
                     { name: "rpc: add segwit and taproot support to sweepprivkeys", url: "https://github.com/bitcoinknots/bitcoin/pull/296" },
                     { name: "qt: Add sweep private key dialog", url: "https://github.com/bitcoinknots/bitcoin/pull/297" },
@@ -89,7 +90,6 @@
                     { name: "wallet: fix null deref in AvailableCoins when segwit_inputs_only is set", url: "https://github.com/bitcoinknots/bitcoin/pull/293" },
                     { name: "init: clamp -lowmem to non-negative before assigning to size_t", url: "https://github.com/bitcoinknots/bitcoin/pull/295" }
                 ] },
-                { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
                 { name: "BLAKE2b PoW & Unified Sighash - Ecosystem Builds", url: "https://shrikewallet.com", subTitle: "9 unofficial ecosystem builds supporting Bitcoin's BLAKE2b proof-of-work change and unified opt-in signature hash", unit: "repos", subIcon: "mdi-github", subItemsAreProjects: true, subItems: [
                     { name: "Shrike (Sparrow fork desktop wallet)", url: "https://github.com/privkeyio/shrike" },
                     { name: "drongo (BLAKE2b header & opt-in sighash library)", url: "https://github.com/privkeyio/drongo" },
@@ -101,6 +101,8 @@
                     { name: "Fulcrum (Electrum server, BLAKE2b PoW)", url: "https://github.com/privkeyio/Fulcrum" },
                     { name: "canary (watch-only monitor, BLAKE2b PoW)", url: "https://github.com/privkeyio/canary" }
                 ] }
+                ]},
+                { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" }
             ],
             "Bitcoin Libraries": [
                 { name: "Rust Bitcoin - Witness Item Size Limit on Every Element", url: "https://github.com/rust-bitcoin/rust-bitcoin/pull/6642" },
@@ -279,35 +281,48 @@
     }
 
     function renderContributions() {
+        const countEntry = c => c.group ? c.group.reduce((n, g) => n + countEntry(g), 0) : (c.subItems ? c.subItems.length : 1);
+        const addProjects = (c, set) => {
+            if (c.group) c.group.forEach(g => addProjects(g, set));
+            else if (c.subItemsAreProjects && c.subItems) c.subItems.forEach(s => set.add(s.url));
+            else set.add(c.project || c.name.split(' - ')[0]);
+        };
         const all = Object.values(DATA.contributions).flat();
         const projects = new Set();
-        all.forEach(c => {
-            if (c.subItemsAreProjects && c.subItems) c.subItems.forEach(s => projects.add(s.url));
-            else projects.add(c.name.split(' - ')[0]);
-        });
-        const total = all.reduce((n, c) => n + (c.subItems ? c.subItems.length : 1), 0);
+        all.forEach(c => addProjects(c, projects));
+        const total = all.reduce((n, c) => n + countEntry(c), 0);
         document.getElementById('contributions-stat').textContent =
             `${total} contributions shipped across ${projects.size} open-source projects`;
         const container = document.getElementById('contributions-accordion');
-        container.innerHTML = Object.entries(DATA.contributions).map(([category, items]) => `
-            <div style="margin-bottom:1rem">
-                <div class="contribution-header" data-category="${category}">
-                    <div><h5 class="text-white mb-0">${category}</h5><small class="text-white-50">${items.reduce((n, c) => n + (c.subItems ? c.subItems.length : 1), 0)} contributions</small></div>
-                    <i class="mdi mdi-chevron-down" style="color:#27ae60;font-size:1.5rem"></i>
-                </div>
-                <div class="contribution-items" data-category="${category}" style="display:none">
-                    ${items.map((c, i) => c.subItems ? `<div class="contribution-link contribution-subtoggle" data-sub="${category}::${i}">
+        const expandable = (c, key) => `<div class="contribution-link contribution-subtoggle" data-sub="${key}">
                             <i class="mdi mdi-github" style="margin-right:0.5rem"></i>
                             <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-subname">${c.name}</a>
                             <span class="sub-count">${c.subItems.length} ${c.unit || 'PRs'}</span>
                             <i class="mdi mdi-chevron-down sub-chevron"></i>
                         </div>
-                        <div class="contribution-subpanel" data-sub="${category}::${i}" style="display:none">
+                        <div class="contribution-subpanel" data-sub="${key}" style="display:none">
                             <div class="contribution-subpanel-title">${c.subTitle || (c.subItems.length + ' PRs in Bitcoin Knots ' + c.url.split('/').pop())}</div>
                             <div class="contribution-subpanel-grid">
                                 ${c.subItems.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="contribution-link contribution-sublink"><i class="mdi ${c.subIcon || 'mdi-source-pull'}" style="margin-right:0.5rem"></i><span>${s.name}</span></a>`).join('')}
                             </div>
-                        </div>` : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`).join('')}
+                        </div>`;
+        const renderItem = (c, key) => c.group ? `<div class="contribution-link contribution-subtoggle" data-sub="${key}">
+                            <i class="mdi mdi-github" style="margin-right:0.5rem"></i>
+                            <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-subname">${c.name}</a>
+                            <span class="sub-count">${countEntry(c)} contributions</span>
+                            <i class="mdi mdi-chevron-down sub-chevron"></i>
+                        </div>
+                        <div class="contribution-subpanel" data-sub="${key}" style="display:none">
+                            <div class="contribution-grouprows">${c.group.map((g, gi) => renderItem(g, `${key}::${gi}`)).join('')}</div>
+                        </div>` : c.subItems ? expandable(c, key) : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`;
+        container.innerHTML = Object.entries(DATA.contributions).map(([category, items]) => `
+            <div style="margin-bottom:1rem">
+                <div class="contribution-header" data-category="${category}">
+                    <div><h5 class="text-white mb-0">${category}</h5><small class="text-white-50">${items.reduce((n, c) => n + countEntry(c), 0)} contributions</small></div>
+                    <i class="mdi mdi-chevron-down" style="color:#27ae60;font-size:1.5rem"></i>
+                </div>
+                <div class="contribution-items" data-category="${category}" style="display:none">
+                    ${items.map((c, i) => renderItem(c, `${category}::${i}`)).join('')}
                 </div>
             </div>`).join('');
         container.querySelectorAll('.contribution-header').forEach(header => {
@@ -316,7 +331,7 @@
                 const items = container.querySelector(`.contribution-items[data-category="${cat}"]`);
                 const icon = header.querySelector('i');
                 const isOpen = items.style.display !== 'none';
-                container.querySelectorAll('.contribution-items').forEach(el => el.style.display = 'none');
+                container.querySelectorAll('.contribution-items[data-category]').forEach(el => el.style.display = 'none');
                 container.querySelectorAll('.contribution-header i').forEach(el => el.className = 'mdi mdi-chevron-down');
                 if (!isOpen) { items.style.display = 'grid'; icon.className = 'mdi mdi-chevron-up'; }
             });
@@ -325,13 +340,15 @@
             link.addEventListener('click', e => e.stopPropagation());
         });
         container.querySelectorAll('.contribution-subtoggle').forEach(toggle => {
-            toggle.addEventListener('click', () => {
+            toggle.addEventListener('click', e => {
+                e.stopPropagation();
                 const key = toggle.dataset.sub;
                 const panel = container.querySelector(`.contribution-subpanel[data-sub="${key}"]`);
                 const chevron = toggle.querySelector('.sub-chevron');
                 const isOpen = panel.style.display !== 'none';
-                container.querySelectorAll('.contribution-subpanel').forEach(el => el.style.display = 'none');
-                container.querySelectorAll('.sub-chevron').forEach(el => el.className = 'mdi mdi-chevron-down sub-chevron');
+                const scope = panel.parentElement;
+                scope.querySelectorAll(':scope > .contribution-subpanel').forEach(el => el.style.display = 'none');
+                scope.querySelectorAll(':scope > .contribution-subtoggle .sub-chevron').forEach(el => el.className = 'mdi mdi-chevron-down sub-chevron');
                 if (!isOpen) { panel.style.display = 'block'; chevron.className = 'mdi mdi-chevron-up sub-chevron'; }
             });
         });

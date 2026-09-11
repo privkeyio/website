@@ -48,6 +48,7 @@
 .contribution-link span,.contribution-subname{min-width:0;overflow-wrap:break-word}
 .contribution-link:hover{background-color:rgba(39,174,96,.15)!important;border-color:rgba(39,174,96,.5)!important;transform:translateX(4px);color:#27ae60}
 .contribution-subtoggle{cursor:pointer}
+.contribution-grouprows{display:flex;flex-direction:column;gap:.75rem}
 .sub-count{flex-shrink:0;margin-left:auto;margin-right:.5rem;font-size:.7rem;font-weight:600;white-space:nowrap;color:#27ae60;background-color:rgba(39,174,96,.15);border:1px solid rgba(39,174,96,.35);border-radius:999px;padding:.15rem .55rem;line-height:1}
 .contribution-subtoggle>i,.sub-chevron{flex-shrink:0}
 .contribution-subname{color:#27ae60;text-decoration:none}
