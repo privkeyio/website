@@ -51,7 +51,7 @@
         },
         contributions: {
             "Bitcoin Infrastructure": [
-                { name: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin", group: [
+                { name: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin", subTitle: "Releases and BLAKE2b ecosystem builds", group: [
                 { name: "v29.4.1 Release", project: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508", subTitle: "5 contributions in Bitcoin Knots v29.4.1", subItems: [
                     { name: "Consensus: unified opt-in signature hash for all transaction types", url: "https://github.com/bitcoinknots/bitcoin/pull/357" },
                     { name: "validation: check the block index after InvalidateBlock repairs it", url: "https://github.com/bitcoinknots/bitcoin/pull/360" },
@@ -90,7 +90,7 @@
                     { name: "wallet: fix null deref in AvailableCoins when segwit_inputs_only is set", url: "https://github.com/bitcoinknots/bitcoin/pull/293" },
                     { name: "init: clamp -lowmem to non-negative before assigning to size_t", url: "https://github.com/bitcoinknots/bitcoin/pull/295" }
                 ] },
-                { name: "BLAKE2b PoW & Unified Sighash - Ecosystem Builds", url: "https://shrikewallet.com", subTitle: "9 unofficial ecosystem builds supporting Bitcoin's BLAKE2b proof-of-work change and unified opt-in signature hash", unit: "repos", subIcon: "mdi-github", subItemsAreProjects: true, subItems: [
+                { name: "Ecosystem Builds", url: "https://shrikewallet.com", subTitle: "9 unofficial ecosystem builds supporting Bitcoin's BLAKE2b proof-of-work change and unified opt-in signature hash", unit: "repos", subIcon: "mdi-github", subItemsAreProjects: true, subItems: [
                     { name: "Shrike (Sparrow fork desktop wallet)", url: "https://github.com/privkeyio/shrike" },
                     { name: "drongo (BLAKE2b header & opt-in sighash library)", url: "https://github.com/privkeyio/drongo" },
                     { name: "embit (opt-in sighash library)", url: "https://github.com/privkeyio/embit" },
@@ -102,7 +102,8 @@
                     { name: "canary (watch-only monitor, BLAKE2b PoW)", url: "https://github.com/privkeyio/canary" }
                 ] }
                 ]},
-                { name: "Bitcoin Core - Validate External Signer Fingerprint", url: "https://github.com/bitcoin/bitcoin/pull/35639" }
+                { name: "Bitcoin Core - external_signer: validate fingerprint from enumerate response", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
+                { name: "Bitcoin Core - init: don't suggest -reindex-chainstate for recovery on a pruned node", url: "https://github.com/bitcoin/bitcoin/pull/35849" }
             ],
             "Bitcoin Libraries": [
                 { name: "Rust Bitcoin - Witness Item Size Limit on Every Element", url: "https://github.com/rust-bitcoin/rust-bitcoin/pull/6642" },
@@ -313,7 +314,8 @@
                             <i class="mdi mdi-chevron-down sub-chevron"></i>
                         </div>
                         <div class="contribution-subpanel" data-sub="${key}" style="display:none">
-                            <div class="contribution-grouprows">${c.group.map((g, gi) => renderItem(g, `${key}::${gi}`)).join('')}</div>
+                            <div class="contribution-subpanel-title">${c.subTitle || ''}</div>
+                            <div class="contribution-subpanel-grid">${c.group.map((g, gi) => renderItem(g, `${key}::${gi}`)).join('')}</div>
                         </div>` : c.subItems ? expandable(c, key) : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`;
         container.innerHTML = Object.entries(DATA.contributions).map(([category, items]) => `
             <div style="margin-bottom:1rem">
