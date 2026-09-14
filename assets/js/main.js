@@ -90,7 +90,7 @@
                     { name: "wallet: fix null deref in AvailableCoins when segwit_inputs_only is set", url: "https://github.com/bitcoinknots/bitcoin/pull/293" },
                     { name: "init: clamp -lowmem to non-negative before assigning to size_t", url: "https://github.com/bitcoinknots/bitcoin/pull/295" }
                 ] },
-                { name: "BLAKE2b Ecosystem Builds", url: "https://shrikewallet.com", subTitle: "9 unofficial ecosystem builds supporting Bitcoin's BLAKE2b proof-of-work change and unified opt-in signature hash", unit: "repos", subIcon: "mdi-github", subItemsAreProjects: true, subItems: [
+                { name: "Ecosystem Builds", url: "https://shrikewallet.com", subTitle: "9 unofficial ecosystem builds supporting Bitcoin's BLAKE2b proof-of-work change and unified opt-in signature hash", unit: "repos", subIcon: "mdi-github", subItemsAreProjects: true, subItems: [
                     { name: "Shrike (Sparrow fork desktop wallet)", url: "https://github.com/privkeyio/shrike" },
                     { name: "drongo (BLAKE2b header & opt-in sighash library)", url: "https://github.com/privkeyio/drongo" },
                     { name: "embit (opt-in sighash library)", url: "https://github.com/privkeyio/embit" },
