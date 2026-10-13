@@ -125,6 +125,7 @@
                 { name: "LDK (Rust Lightning) - Reported Security Fixes (v0.2.5)", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/releases/tag/v0.2.5" },
                 { name: "Core Lightning - Fix NULL Transaction Deref on Truncated Block", url: "https://github.com/ElementsProject/lightning/pull/9485" },
                 { name: "LDK (Rust Lightning) - Fix Blinded Path Over-100% Proportional Fee Calculation", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/4836" },
+                { name: "LDK (Rust Lightning) - Apply One-Hop Blinded Path CLTV Expiry Delta", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5126" },
                 { name: "Core Lightning - Don't Hash an Elements Challenge Before Pulling It", url: "https://github.com/ElementsProject/lightning/pull/9535" },
                 { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
                 { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" }
