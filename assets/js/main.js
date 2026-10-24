@@ -116,8 +116,8 @@
             ],
             "Bitcoin Wallets": [
                 { name: "SeedSigner - Parse OP_RETURN Push Opcode in PSBT Outputs", url: "https://github.com/SeedSigner/seedsigner/pull/1042" },
-                { name: "Canary - Drop Compromised emSign CA Root from TLS Trust", url: "https://github.com/schjonhaug/canary/pull/616" },
                 { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
+                { name: "Canary - Drop Compromised emSign CA Root from TLS Trust", url: "https://github.com/schjonhaug/canary/pull/616" },
                 { name: "Bull Bitcoin - Hide Exchange Features for Restricted Regions", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" },
                 { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
                 { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
