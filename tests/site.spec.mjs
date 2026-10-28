@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.beforeEach(async ({ page }) => {
-    await page.route(/^https?:\/\/(?!127\.0\.0\.1)/, route => route.abort());
+test.beforeEach(async ({ context }) => {
+    await context.route(/^https?:\/\/(?!127\.0\.0\.1)/, route => route.request().isNavigationRequest() ? route.fulfill({ body: '' }) : route.abort());
 });
 
 test('renders without script errors or horizontal overflow', async ({ page }) => {
@@ -73,4 +73,25 @@ test('mobile menu closes after following the external Docs link', async ({ page,
     await menu.locator('a.mobile-nav-link', { hasText: 'Docs' }).click();
     await popup;
     await expect(menu).not.toHaveClass(/show/);
+});
+
+test('mobile menu reaches its consultation button on a short screen', async ({ page }) => {
+    test.skip(page.viewportSize().width >= 992, 'mobile menu only');
+    await page.setViewportSize({ width: page.viewportSize().width, height: 560 });
+    await page.goto('/index.html');
+    await page.locator('.navbar-toggler').click();
+    const cta = page.locator('#navbarCollapse .mobile-menu-consultation-btn');
+    await page.mouse.move(100, 300);
+    await page.mouse.wheel(0, 2000);
+    await expect(cta).toBeInViewport({ ratio: 1 });
+});
+
+test('desktop navbar links fit at narrow desktop widths', async ({ page }) => {
+    test.skip(page.viewportSize().width < 992, 'desktop navbar only');
+    for (const width of [992, 1024, 1199]) {
+        await page.setViewportSize({ width, height: 800 });
+        await page.goto('/index.html');
+        const right = await page.locator('#mySidenav .nav-link').last().evaluate(a => a.getBoundingClientRect().right);
+        expect(right).toBeLessThanOrEqual(width);
+    }
 });

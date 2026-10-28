@@ -249,10 +249,10 @@
         };
         const container = document.getElementById('contributions-accordion');
         container.innerHTML = Object.entries(DATA.contributions).map(([category, items], i) => `
-            <h4 class="product-group-label"><button type="button" class="contribution-toggle" aria-expanded="${i === 0}" aria-controls="contrib-panel-${i}">
+            <h4 class="product-group-label"><button type="button" class="contribution-toggle" aria-expanded="false" aria-controls="contrib-panel-${i}">
                 <span>${category}</span><span class="contribution-count">${sum(items, count)}</span><i class="mdi mdi-chevron-down"></i>
             </button></h4>
-            <div class="opensource-list" id="contrib-panel-${i}"${i === 0 ? '' : ' hidden'}>${items.map(card).join('')}</div>`).join('');
+            <div class="opensource-list" id="contrib-panel-${i}" hidden>${items.map(card).join('')}</div>`).join('');
         container.querySelectorAll('.contribution-toggle').forEach(button => {
             button.addEventListener('click', () => {
                 const open = button.getAttribute('aria-expanded') !== 'true';
