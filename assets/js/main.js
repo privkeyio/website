@@ -9,6 +9,7 @@
 
     const formState = { submissions: [], rateLimited: false, retryAfter: null };
 
+    const merged = repo => `https://github.com/${repo}/pulls?q=is%3Apr+is%3Amerged+author%3Akwsantiago`;
     const DATA = {
         services: [
             { icon: "pe-7s-rocket", title: "Software Development", desc: "Full-cycle development from design to production. Systems work in Rust, Zig, and C, plus the web and mobile layers on top of it.", features: ["Full-Stack Development", "Security-First Architecture", "Open Source Contributions", "API & Protocol Implementation"], expandedContent: "Building since 2018, from high-throughput systems to the apps in front of them.", useCases: ["Enterprise applications", "Bitcoin & Lightning tooling", "Web & mobile development", "Custom integrations"] },
@@ -51,122 +52,59 @@
         },
         contributions: {
             "Bitcoin Infrastructure": [
-                { name: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin", subTitle: "Releases and BLAKE2b ecosystem builds", group: [
-                { name: "v29.4.1 Release", project: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508", subTitle: "5 contributions in Bitcoin Knots v29.4.1", subItems: [
-                    { name: "Consensus: unified opt-in signature hash for all transaction types", url: "https://github.com/bitcoinknots/bitcoin/pull/357" },
-                    { name: "validation: check the block index after InvalidateBlock repairs it", url: "https://github.com/bitcoinknots/bitcoin/pull/360" },
-                    { name: "policy: reject Counterparty messages under -rejecttokens", url: "https://github.com/bitcoinknots/bitcoin/pull/349" },
-                    { name: "net: find and prefer NODE_BLAKE2B peers at startup", url: "https://github.com/bitcoinknots/bitcoin/pull/386" },
-                    { name: "Remove the RDTS consent requirement", url: "https://github.com/bitcoinknots/bitcoin/pull/362" }
+                { name: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases", count: 42, summary: "Consensus, mempool policy, P2P, and GUI fixes across four releases", links: [
+                    { name: "v29.4.3 (10)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.3.knots20260508" },
+                    { name: "v29.4.1 (5)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508" },
+                    { name: "v29.4 (14)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.knots20260508" },
+                    { name: "v29.3 (13)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" }
                 ] },
-                { name: "v29.4 Release", project: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.knots20260508", subTitle: "14 contributions in Bitcoin Knots v29.4", subItems: [
-                    { name: "policy: don't let ignore_rejects relax reduced-data consensus flags", url: "https://github.com/bitcoinknots/bitcoin/commit/5d346e80cf992ac1114ee0fd1175b5a03df3e326" },
-                    { name: "validation: correct inherited RDTS-invalid blocks at startup", url: "https://github.com/bitcoinknots/bitcoin/pull/350" },
-                    { name: "GUI/NetWatch: fix heap corruption from off-thread model mutation", url: "https://github.com/bitcoinknots/bitcoin/pull/330" },
-                    { name: "descriptor: reject OP_IF/OP_NOTIF in Taproot miniscript under reduced-data", url: "https://github.com/bitcoinknots/bitcoin/pull/320" },
-                    { name: "net: tolerate stale BIP-110 outbound peers in connection accounting", url: "https://github.com/bitcoinknots/bitcoin/commit/1981a5761cb4204ee97af5dfba18fdffc87d8bd2" },
-                    { name: "validation: keep script cache enabled when RDTS deployment inactive", url: "https://github.com/bitcoinknots/bitcoin/pull/323" },
-                    { name: "depends: update libevent to 2.1.13-stable", url: "https://github.com/bitcoinknots/bitcoin/pull/345" },
-                    { name: "GUI: don't assert on translated field labels in ReceiveRequestDialog", url: "https://github.com/bitcoinknots/bitcoin/pull/332" },
-                    { name: "cmake: check PIE link support for C", url: "https://github.com/bitcoinknots/bitcoin/pull/339" },
-                    { name: "GUI: Show warnings on all tabs", url: "https://github.com/bitcoinknots/bitcoin/pull/301" },
-                    { name: "GUI: Keep the RPC console on the wallet it is set to", url: "https://github.com/bitcoinknots/bitcoin/pull/344" },
-                    { name: "GUI: locale-aware datetime formatting with GUIUtil::dateTimeStr", url: "https://github.com/bitcoinknots/bitcoin/pull/336" },
-                    { name: "ci: install librsvg2-bin and imagemagick for per-commit tests", url: "https://github.com/bitcoinknots/bitcoin/pull/328" },
-                    { name: "contrib: don't use the default datadir in gen-bitcoin-conf.sh", url: "https://github.com/bitcoinknots/bitcoin/pull/329" }
-                ] },
-                { name: "v29.3 Release", project: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508", subItems: [
-                    { name: "Policy: Penalize effective fee for sub-dust outputs", url: "https://github.com/bitcoinknots/bitcoin/pull/272" },
-                    { name: "rpc: add segwit and taproot support to sweepprivkeys", url: "https://github.com/bitcoinknots/bitcoin/pull/296" },
-                    { name: "qt: Add sweep private key dialog", url: "https://github.com/bitcoinknots/bitcoin/pull/297" },
-                    { name: "codex32: early return on validation error to prevent OOB read", url: "https://github.com/bitcoinknots/bitcoin/pull/267" },
-                    { name: "blockstorage: fix unsigned underflow in GetBlockFileInfo bounds check", url: "https://github.com/bitcoinknots/bitcoin/pull/294" },
-                    { name: "Saturate CalculateExtraTxWeight and cap GUI datacarriercost to 1024", url: "https://github.com/bitcoinknots/bitcoin/pull/268" },
-                    { name: "external_signer: validate fingerprint is hex before shell command use", url: "https://github.com/bitcoinknots/bitcoin/pull/266" },
-                    { name: "feat(qt): add /clearhistory command", url: "https://github.com/bitcoinknots/bitcoin/pull/214" },
-                    { name: "qt: warn when script threads exceed CPU cores", url: "https://github.com/bitcoinknots/bitcoin/pull/287" },
-                    { name: "GUI: Port Windows taskbar progress to COM", url: "https://github.com/bitcoinknots/bitcoin/pull/215" },
-                    { name: "init: improve error message when index needs pruned block data", url: "https://github.com/bitcoinknots/bitcoin/pull/262" },
-                    { name: "wallet: fix null deref in AvailableCoins when segwit_inputs_only is set", url: "https://github.com/bitcoinknots/bitcoin/pull/293" },
-                    { name: "init: clamp -lowmem to non-negative before assigning to size_t", url: "https://github.com/bitcoinknots/bitcoin/pull/295" }
-                ] },
-                { name: "Ecosystem Builds", url: "https://shrikewallet.com", subTitle: "9 unofficial ecosystem builds supporting Bitcoin's BLAKE2b proof-of-work change and unified opt-in signature hash", unit: "repos", subIcon: "mdi-github", subItemsAreProjects: true, subItems: [
-                    { name: "Shrike (Sparrow fork desktop wallet)", url: "https://github.com/privkeyio/shrike" },
-                    { name: "drongo (BLAKE2b header & opt-in sighash library)", url: "https://github.com/privkeyio/drongo" },
-                    { name: "embit (opt-in sighash library)", url: "https://github.com/privkeyio/embit" },
-                    { name: "lark (USB hardware-wallet interface)", url: "https://github.com/privkeyio/lark" },
-                    { name: "SeedSigner firmware", url: "https://github.com/privkeyio/seedsigner" },
-                    { name: "Trezor firmware", url: "https://github.com/privkeyio/trezor-firmware" },
-                    { name: "Coldcard firmware", url: "https://github.com/privkeyio/cc-firmware" },
-                    { name: "Fulcrum (Electrum server, BLAKE2b PoW)", url: "https://github.com/privkeyio/Fulcrum" },
-                    { name: "canary (watch-only monitor, BLAKE2b PoW)", url: "https://github.com/privkeyio/canary" }
-                ] }
-                ]},
-                { name: "Bitcoin Core - external_signer: validate fingerprint from enumerate response", url: "https://github.com/bitcoin/bitcoin/pull/35639" },
-                { name: "Bitcoin Core - init: don't suggest -reindex-chainstate for recovery on a pruned node", url: "https://github.com/bitcoin/bitcoin/pull/35849" }
+                { name: "BLAKE2b Ecosystem Builds", url: "https://shrikewallet.com", summary: "Our unofficial wallet, firmware, and server builds for Bitcoin's BLAKE2b proof-of-work change" },
+                { name: "Bitcoin Core", url: merged("bitcoin/bitcoin"), count: 2, summary: "External signer fingerprint validation and pruned-node recovery guidance" }
             ],
             "Bitcoin Libraries": [
-                { name: "Rust Bitcoin - Witness Item Size Limit on Every Element", url: "https://github.com/rust-bitcoin/rust-bitcoin/pull/6642" },
-                { name: "Rust Bitcoin - Relative Locktime Height Off-by-One Fix", url: "https://github.com/rust-bitcoin/rust-bitcoin/pull/6640" },
-                { name: "Rust Miniscript - Taptree-Native Policy Compilation", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906" },
-                { name: "DLC Dev Kit - Oracle Announcement Creation", url: "https://github.com/bennyhodl/dlcdevkit/pull/104" },
-                { name: "BDK - Replace Examples with Rustdoc", url: "https://github.com/bitcoindevkit/bdk/pull/2006" },
-                { name: "BDK - RPC Emitter Documentation Examples", url: "https://github.com/bitcoindevkit/bdk/pull/2210" },
-                { name: "DLC Dev Kit - Remove Hardcoded Database Credentials", url: "https://github.com/bennyhodl/dlcdevkit/pull/143" }
+                { name: "Rust Bitcoin", url: merged("rust-bitcoin/rust-bitcoin"), count: 2, summary: "Witness item size limit and relative locktime off-by-one fix" },
+                { name: "Rust Miniscript", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906", summary: "Taptree-native policy compilation" },
+                { name: "BDK", url: merged("bitcoindevkit/bdk"), count: 2, summary: "Rustdoc examples and RPC emitter documentation" },
+                { name: "DLC Dev Kit", url: merged("bennyhodl/dlcdevkit"), count: 2, summary: "Oracle announcement creation and hardcoded credential removal" }
             ],
             "Bitcoin Wallets": [
-                { name: "SeedSigner - Parse OP_RETURN Push Opcode in PSBT Outputs", url: "https://github.com/SeedSigner/seedsigner/pull/1042" },
-                { name: "Sparrow - Hide Amounts (v2.3.1)", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
-                { name: "Canary - Drop Compromised emSign CA Root from TLS Trust", url: "https://github.com/schjonhaug/canary/pull/616" },
-                { name: "Bull Bitcoin - Hide Exchange Features for Restricted Regions", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345" },
-                { name: "Zeus - Reload Invoice on Restart", url: "https://github.com/ZeusLN/zeus/pull/3380" },
-                { name: "Liana - User-Agent Header Support", url: "https://github.com/wizardsardine/liana/pull/1902" },
-                { name: "Coldcard - Fix Multisig Config Write Ordering in Tests", url: "https://github.com/Coldcard/firmware/pull/806" }
+                { name: "SeedSigner", url: "https://github.com/SeedSigner/seedsigner/pull/1042", summary: "Parse OP_RETURN push opcode in PSBT outputs" },
+                { name: "Catcard", url: merged("TibaneLabs/catcard"), count: 9, summary: "Clean-room Coldcard firmware: PSBT, descriptor, USB, and PIN-handling hardening" },
+                { name: "Sparrow", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1", summary: "Hide amounts (v2.3.1)" },
+                { name: "Canary", url: "https://github.com/schjonhaug/canary/pull/616", summary: "Drop compromised emSign CA root from TLS trust" },
+                { name: "Bull Bitcoin", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345", summary: "Hide exchange features for restricted regions" },
+                { name: "Zeus", url: "https://github.com/ZeusLN/zeus/pull/3380", summary: "Reload invoice on restart" },
+                { name: "Liana", url: "https://github.com/wizardsardine/liana/pull/1902", summary: "User-Agent header support" },
+                { name: "Coldcard", url: "https://github.com/Coldcard/firmware/pull/806", summary: "Fix multisig config write ordering in tests" }
             ],
             "Lightning": [
-                { name: "LDK (Rust Lightning) - Reported Security Fixes (v0.2.5)", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/releases/tag/v0.2.5" },
-                { name: "Core Lightning - Fix NULL Transaction Deref on Truncated Block", url: "https://github.com/ElementsProject/lightning/pull/9485" },
-                { name: "LDK (Rust Lightning) - Fix Blinded Path Over-100% Proportional Fee Calculation", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/4836" },
-                { name: "LDK (Rust Lightning) - Apply One-Hop Blinded Path CLTV Expiry Delta", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5126" },
-                { name: "Core Lightning - Don't Hash an Elements Challenge Before Pulling It", url: "https://github.com/ElementsProject/lightning/pull/9535" },
-                { name: "Core Lightning - Don't Reap a bitcoind That Was Never Started", url: "https://github.com/ElementsProject/lightning/pull/9534" },
-                { name: "Lightning BOLTs - Add Security Policy", url: "https://github.com/lightning/bolts/pull/1278" },
-                { name: "Greenlight - Switch to uv Package Manager", url: "https://github.com/Blockstream/greenlight/pull/612" }
+                { name: "LDK (Rust Lightning)", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/releases/tag/v0.2.5", count: 3, summary: "Reported security fixes and blinded path fee and CLTV fixes", links: [
+                    { name: "v0.2.5 security fixes", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/releases/tag/v0.2.5" },
+                    { name: "Blinded path fee", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/4836" },
+                    { name: "One-hop CLTV delta", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5126" }
+                ] },
+                { name: "Core Lightning", url: merged("ElementsProject/lightning"), count: 3, summary: "NULL deref on truncated blocks, Elements challenge, and bitcoind reaping fixes" },
+                { name: "Lampo", url: merged("vincenzopalazzo/lampo.rs"), count: 3, summary: "Refuse to overwrite a wallet seed, header decoding, and channel reporting" },
+                { name: "Lightning BOLTs", url: "https://github.com/lightning/bolts/pull/1278", summary: "Add security policy" },
+                { name: "Greenlight", url: "https://github.com/Blockstream/greenlight/pull/612", summary: "Switch to uv package manager" }
             ],
             "Nostr Apps": [
-                { name: "Amber - Export All Accounts Feature", url: "https://github.com/greenart7c3/Amber/pull/255" },
-                { name: "Routstr Core - Fix USD Pricing Fees", url: "https://github.com/Routstr/routstr-core/pull/189" },
-                { name: "Routstr Chat - Invoice History & Persistence", url: "https://github.com/Routstr/routstr-chat/pull/67" },
-                { name: "Sonar - Hostile-Peer Hardening for Mesh Identity", url: "https://github.com/hedwig-corp/bitchat-to-sonar", subTitle: "6 merged PRs in hedwig-corp/bitchat-to-sonar", subItems: [
-                    { name: "Bind Join Requests to the Gift-Wrap Seal Author", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/411" },
-                    { name: "Harden Mesh Identity & Broadcast Against Forgery and Flooding", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/422" },
-                    { name: "Fix Desktop BLE Bridge Build on Linux", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/445" },
-                    { name: "Bind Noise Sessions to Claimed Peer Identities", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/462" },
-                    { name: "Reuse a Stable KeyPackage Slot per Install", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/472" },
-                    { name: "Stop Desktop Storing Account Secrets in Plaintext", url: "https://github.com/hedwig-corp/bitchat-to-sonar/pull/537" }
-                ] }
+                { name: "Sonar", url: merged("hedwig-corp/bitchat-to-sonar"), count: 8, summary: "Hostile-peer hardening for mesh identity, Noise sessions, and desktop secrets" },
+                { name: "Amber", url: "https://github.com/greenart7c3/Amber/pull/255", summary: "Export all accounts" },
+                { name: "Nostr-Feedz", url: "https://github.com/PlebOne/Nostr-Feedz/pull/2", summary: "Chrome browser extension" },
+                { name: "Routstr Core", url: "https://github.com/Routstr/routstr-core/pull/189", summary: "Fix USD pricing fees" },
+                { name: "Routstr Chat", url: "https://github.com/Routstr/routstr-chat/pull/67", summary: "Invoice history and persistence" }
             ],
             "Cryptography & Protocols": [
-                { name: "ZF FROST - ZeroizeOnDrop for Signing Nonces", url: "https://github.com/ZcashFoundation/frost/pull/987" },
-                { name: "Negentropy - Fix Off-by-One Heap Buffer Overflow", url: "https://github.com/hoytech/negentropy/pull/17" }
+                { name: "ZF FROST", url: "https://github.com/ZcashFoundation/frost/pull/987", summary: "ZeroizeOnDrop for signing nonces" },
+                { name: "Negentropy", url: "https://github.com/hoytech/negentropy/pull/17", summary: "Fix off-by-one heap buffer overflow" }
             ],
             "Developer Tools": [
-                { name: "http.zig - Memory-Safety & Reliability Fixes", url: "https://github.com/karlseguin/http.zig", subTitle: "5 merged PRs in karlseguin/http.zig", subItems: [
-                    { name: "Fix Event Loop Use-After-Free on Connection Close", url: "https://github.com/karlseguin/http.zig/pull/216" },
-                    { name: "Fix Recv/Disown Use-After-Free Race", url: "https://github.com/karlseguin/http.zig/pull/214" },
-                    { name: "Fix Lost Websocket Read on Re-arm", url: "https://github.com/karlseguin/http.zig/pull/212" },
-                    { name: "Stop Thread Pool Before Deinit to Fix Shutdown Use-After-Free", url: "https://github.com/karlseguin/http.zig/pull/215" },
-                    { name: "Join Thread Pool Before Freeing Connection Buffers", url: "https://github.com/karlseguin/http.zig/pull/217" }
-                ] },
-                { name: "websocket.zig - Client Timeout & Safety Fixes", url: "https://github.com/karlseguin/websocket.zig", subTitle: "3 merged PRs in karlseguin/websocket.zig", subItems: [
-                    { name: "Bounded Connect & TLS Handshake Timeout", url: "https://github.com/karlseguin/websocket.zig/pull/108" },
-                    { name: "Fix TLS Client Read-Timeout Panic", url: "https://github.com/karlseguin/websocket.zig/pull/103" },
-                    { name: "Clamp Read Timeout to INT_MAX Before Passing to poll", url: "https://github.com/karlseguin/websocket.zig/pull/110" }
-                ] },
-                { name: "Goose - Auto-Compact on Context Limit", url: "https://github.com/aaif-goose/goose/pull/3635" },
-                { name: "Goose - Enable Zero-Config Providers in GUI", url: "https://github.com/aaif-goose/goose/pull/3378" },
-                { name: "DTails - Add Bitcoin Knots Support", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52" }
-            ],
+                { name: "http.zig", url: merged("karlseguin/http.zig"), count: 8, summary: "Use-after-free, shutdown, and websocket read fixes" },
+                { name: "websocket.zig", url: merged("karlseguin/websocket.zig"), count: 3, summary: "Connect and TLS handshake timeouts and read-timeout safety" },
+                { name: "Goose", url: merged("aaif-goose/goose"), count: 2, summary: "Auto-compact on context limit and zero-config GUI providers" },
+                { name: "DTails", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52", summary: "Add Bitcoin Knots support" }
+            ]
         },
         team: [
             { image: "assets/images/william_profile.jpg", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30+ years in cybersecurity. Pioneered institutional Bitcoin infrastructure starting in 2011. Directed enterprise Bitcoin deployments for large corporations. BS in Management Information Systems, University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago", github: "https://github.com/wksantiago" },
@@ -288,76 +226,32 @@
     }
 
     function renderContributions() {
-        const countEntry = c => c.group ? c.group.reduce((n, g) => n + countEntry(g), 0) : (c.subItems ? c.subItems.length : 1);
-        const addProjects = (c, set) => {
-            if (c.group) c.group.forEach(g => addProjects(g, set));
-            else if (c.subItemsAreProjects && c.subItems) c.subItems.forEach(s => set.add(s.url));
-            else set.add(c.project || c.name.split(' - ')[0]);
-        };
+        const count = c => c.count || 1;
+        const sum = (items, f) => items.reduce((n, c) => n + f(c), 0);
         const all = Object.values(DATA.contributions).flat();
-        const projects = new Set();
-        all.forEach(c => addProjects(c, projects));
-        const total = all.reduce((n, c) => n + countEntry(c), 0);
         document.getElementById('contributions-stat').textContent =
-            `${total} contributions shipped across ${projects.size} open-source projects`;
+            `${sum(all, count)} contributions shipped across ${all.length} open-source projects`;
+        const card = c => {
+            const badge = c.count ? `<span class="opensource-lang">${c.count} ${c.links ? 'shipped' : 'PRs'}</span>` : '';
+            const name = c.links ? `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="opensource-name">${c.name}</a>` : `<span class="opensource-name">${c.name}</span>`;
+            const body = `<div class="opensource-item-header">${name}${badge}</div>
+                        <span class="opensource-desc">${c.summary}</span>`;
+            if (!c.links) return `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="opensource-item">${body}</a>`;
+            return `<div class="opensource-item">${body}
+                        <div class="contribution-links">${c.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.name}</a>`).join('')}</div>
+                    </div>`;
+        };
         const container = document.getElementById('contributions-accordion');
-        const expandable = (c, key) => `<div class="contribution-link contribution-subtoggle" data-sub="${key}">
-                            <i class="mdi mdi-github" style="margin-right:0.5rem"></i>
-                            <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-subname">${c.name}</a>
-                            <span class="sub-count">${c.subItems.length} ${c.unit || 'PRs'}</span>
-                            <i class="mdi mdi-chevron-down sub-chevron"></i>
-                        </div>
-                        <div class="contribution-subpanel" data-sub="${key}" style="display:none">
-                            <div class="contribution-subpanel-title">${c.subTitle || (c.subItems.length + ' PRs in Bitcoin Knots ' + c.url.split('/').pop())}</div>
-                            <div class="contribution-subpanel-grid">
-                                ${c.subItems.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="contribution-link contribution-sublink"><i class="mdi ${c.subIcon || 'mdi-source-pull'}" style="margin-right:0.5rem"></i><span>${s.name}</span></a>`).join('')}
-                            </div>
-                        </div>`;
-        const renderItem = (c, key) => c.group ? `<div class="contribution-link contribution-subtoggle" data-sub="${key}">
-                            <i class="mdi mdi-github" style="margin-right:0.5rem"></i>
-                            <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-subname">${c.name}</a>
-                            <span class="sub-count">${countEntry(c)} contributions</span>
-                            <i class="mdi mdi-chevron-down sub-chevron"></i>
-                        </div>
-                        <div class="contribution-subpanel" data-sub="${key}" style="display:none">
-                            <div class="contribution-subpanel-title">${c.subTitle || ''}</div>
-                            <div class="contribution-subpanel-grid">${c.group.map((g, gi) => renderItem(g, `${key}::${gi}`)).join('')}</div>
-                        </div>` : c.subItems ? expandable(c, key) : `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contribution-link"><i class="mdi mdi-github" style="margin-right:0.5rem"></i><span>${c.name}</span></a>`;
-        container.innerHTML = Object.entries(DATA.contributions).map(([category, items]) => `
-            <div style="margin-bottom:1rem">
-                <div class="contribution-header" data-category="${category}">
-                    <div><h5 class="text-white mb-0">${category}</h5><small class="text-white-50">${items.reduce((n, c) => n + countEntry(c), 0)} contributions</small></div>
-                    <i class="mdi mdi-chevron-down" style="color:#27ae60;font-size:1.5rem"></i>
-                </div>
-                <div class="contribution-items" data-category="${category}" style="display:none">
-                    ${items.map((c, i) => renderItem(c, `${category}::${i}`)).join('')}
-                </div>
-            </div>`).join('');
-        container.querySelectorAll('.contribution-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const cat = header.dataset.category;
-                const items = container.querySelector(`.contribution-items[data-category="${cat}"]`);
-                const icon = header.querySelector('i');
-                const isOpen = items.style.display !== 'none';
-                container.querySelectorAll('.contribution-items[data-category]').forEach(el => el.style.display = 'none');
-                container.querySelectorAll('.contribution-header i').forEach(el => el.className = 'mdi mdi-chevron-down');
-                if (!isOpen) { items.style.display = 'grid'; icon.className = 'mdi mdi-chevron-up'; }
-            });
-        });
-        container.querySelectorAll('.contribution-subname').forEach(link => {
-            link.addEventListener('click', e => e.stopPropagation());
-        });
-        container.querySelectorAll('.contribution-subtoggle').forEach(toggle => {
-            toggle.addEventListener('click', e => {
-                e.stopPropagation();
-                const key = toggle.dataset.sub;
-                const panel = container.querySelector(`.contribution-subpanel[data-sub="${key}"]`);
-                const chevron = toggle.querySelector('.sub-chevron');
-                const isOpen = panel.style.display !== 'none';
-                const scope = panel.parentElement;
-                scope.querySelectorAll(':scope > .contribution-subpanel').forEach(el => el.style.display = 'none');
-                scope.querySelectorAll(':scope > .contribution-subtoggle .sub-chevron').forEach(el => el.className = 'mdi mdi-chevron-down sub-chevron');
-                if (!isOpen) { panel.style.display = 'block'; chevron.className = 'mdi mdi-chevron-up sub-chevron'; }
+        container.innerHTML = Object.entries(DATA.contributions).map(([category, items], i) => `
+            <h4 class="product-group-label"><button type="button" class="contribution-toggle" aria-expanded="${i === 0}" aria-controls="contrib-panel-${i}">
+                <span>${category}</span><span class="contribution-count">${sum(items, count)}</span><i class="mdi mdi-chevron-down"></i>
+            </button></h4>
+            <div class="opensource-list" id="contrib-panel-${i}"${i === 0 ? '' : ' hidden'}>${items.map(card).join('')}</div>`).join('');
+        container.querySelectorAll('.contribution-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const open = button.getAttribute('aria-expanded') !== 'true';
+                button.setAttribute('aria-expanded', String(open));
+                document.getElementById(button.getAttribute('aria-controls')).hidden = !open;
             });
         });
     }
