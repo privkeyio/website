@@ -33,12 +33,15 @@
 .ecosystem-header{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.5rem}
 .ecosystem-title{color:#27ae60;font-weight:700;font-size:1.25rem;text-decoration:none}
 .ecosystem-title:hover{color:#2ecc71}
+.ecosystem-docs{color:#27ae60;font-size:.8rem;font-weight:600;text-decoration:none;border:1px solid rgba(39,174,96,.4);border-radius:999px;padding:.1rem .6rem}
+.ecosystem-docs:hover{color:#2ecc71;border-color:rgba(39,174,96,.7)}
 .ecosystem-desc{color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.5;margin-bottom:1.25rem}
 .ecosystem-components{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
 .ecosystem-component{display:flex;flex-direction:column;padding:1rem 1.25rem;background-color:rgba(255,255,255,.05);border:1px solid rgba(39,174,96,.2);border-radius:8px;text-decoration:none;transition:all .2s ease;gap:.5rem}
 .ecosystem-component:hover{background-color:rgba(39,174,96,.1);border-color:rgba(39,174,96,.4);transform:translateY(-2px);box-shadow:0 4px 12px rgba(39,174,96,.15)}
 @media(max-width:768px){.ecosystem-components{grid-template-columns:1fr}}
-.product-group-label{color:rgba(255,255,255,.85);font-size:1rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;margin:1.75rem 0 .9rem}
+@media(max-width:576px){.ecosystem-header{flex-wrap:wrap}.ecosystem-title{flex-basis:100%}}
+.product-group-label{color:rgba(255,255,255,.85);font-size:1rem!important;font-weight:600;letter-spacing:.03em;text-transform:uppercase;margin:1.75rem 0 .9rem}
 .products-cta{display:inline-flex;align-items:center;gap:.4rem;color:#27ae60;font-weight:600;text-decoration:none;padding:.6rem 1.25rem;border:1px solid rgba(39,174,96,.4);border-radius:8px;transition:all .2s ease}
 .products-cta:hover{background-color:rgba(39,174,96,.12);border-color:rgba(39,174,96,.6);color:#2ecc71;transform:translateY(-2px)}
 .contribution-toggle{display:flex;align-items:center;gap:.6rem;width:100%;padding:0 0 .6rem;background:none;border:0;border-bottom:1px solid rgba(39,174,96,.2);color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-align:left;cursor:pointer}
@@ -57,3 +60,5 @@ a.opensource-name:hover{color:#2ecc71;text-decoration:underline}
 .resource-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 20px 40px rgba(39,174,96,.3),0 0 20px rgba(39,174,96,.2);background-color:rgba(255,255,255,.15)!important;border-color:rgba(39,174,96,.5)!important}
 @media(max-width:768px){.hero-stats{flex-direction:column;gap:1rem}.hero-stats .stat-item{min-width:200px}.stats-bar{flex-direction:column;gap:1.5rem}}
 @media(max-width:576px){.hero-text-container{min-height:80px;height:auto;padding:10px 12px}}
+
+.team-profile-img{height:auto!important;aspect-ratio:1/1}

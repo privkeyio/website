@@ -9,6 +9,10 @@ Sitemap: https://privkey.io/sitemap.xml
 Disallow: /.git/
 Disallow: /node_modules/
 Disallow: *.map
+Disallow: /tests/
+Disallow: /playwright.config.mjs
+Disallow: /package.json
+Disallow: /package-lock.json
 
 # Allow all images
 Allow: /assets/images/

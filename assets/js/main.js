@@ -20,7 +20,7 @@
             { icon: "pe-7s-safe", title: "Consulting", desc: "Strategic guidance for Bitcoin adoption, self-custody implementation, and sovereign infrastructure planning.", features: ["Self-Custody Strategy", "Infrastructure Architecture", "Regulatory Guidance", "Technology Selection"], expandedContent: "We help you own your infrastructure, from treasury strategy to full-stack deployment.", useCases: ["Bitcoin treasury planning", "Self-custody roadmap", "Infrastructure architecture", "Vendor-free sovereignty"] }
         ],
         highlights: [
-            { icon: "pe-7s-medal", title: "Shipped Upstream", description: "Merged fixes in Bitcoin Core, Bitcoin Knots, BDK, and ZF FROST." },
+            { icon: "pe-7s-medal", title: "Shipped Upstream", description: "Merged fixes in Bitcoin Core, Bitcoin Knots, Core Lightning, LDK, and BDK." },
             { icon: "pe-7s-look", title: "Open Source First", description: "Trust through transparency. Audit and self-host our core tools." },
             { icon: "pe-7s-config", title: "AI + Policy", description: "AI agents need guardrails. We build signing with policy controls." },
             { icon: "pe-7s-key", title: "Self-Sovereign", description: "Own your data, identity, and money without third-party custody." }
@@ -30,11 +30,13 @@
                 name: "Keep Ecosystem",
                 description: "Self-custodial key management for Nostr and Bitcoin. An encrypted vault with FROST threshold signing and NIP-46 remote signing, spanning CLI, desktop, mobile, hardware, and cloud enclaves so no single device ever holds the whole key.",
                 url: "https://github.com/privkeyio/keep",
+                docs: "https://docs.privkey.io/keep/",
                 components: [
                     { name: "Keep", role: "Encrypted vault: CLI, desktop app & Nitro Enclave signing", language: "Rust", url: "https://github.com/privkeyio/keep" },
                     { name: "Keep Android", role: "FROST mobile signer with NIP-55 and NIP-46", language: "Kotlin", url: "https://github.com/privkeyio/keep-android" },
                     { name: "Keep ESP32", role: "Air-gapped ESP32-S3 hardware signer", language: "C", url: "https://github.com/privkeyio/keep-esp32" },
-                    { name: "Keep StartOS", role: "Always-on FROST co-signer node", language: "TypeScript", url: "https://github.com/start9-community/keep-startos" }
+                    { name: "Keep StartOS", role: "Always-on FROST co-signer node", language: "TypeScript", url: "https://github.com/start9-community/keep-startos" },
+                    { name: "Keep Node", role: "Threshold-unlocked appliance running Keep and Vaultwarden", language: "NixOS", url: "https://docs.privkey.io/keep-node/" }
                 ]
             }
         ],
@@ -45,6 +47,8 @@
             ],
             "Apps & Tools": [
                 { name: "wisp", description: "Fast, lightweight self-hostable Nostr relay with spider mode that syncs notes from people you follow.", language: "Zig", url: "https://github.com/privkeyio/wisp" },
+                { name: "Readstr", description: "Google Reader-style app combining RSS, Nostr long-form, and video feeds, with Nostr sync and a Chrome extension.", language: "TypeScript", url: "https://github.com/privkeyio/readstr" },
+                { name: "puck", description: "Nostr Wallet Connect (NIP-47) server so apps like Alby, Amethyst, and Damus can pay from your LNbits wallet.", language: "Zig", url: "https://github.com/privkeyio/puck" },
                 { name: "Taproot Assets Gateway", description: "REST proxy that makes Lightning Labs' tapd usable from web apps with CORS and simplified macaroon auth.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
                 { name: "noz", description: "Small, fast Nostr command-line tool for signing, publishing, querying, and decoding NIP-19 entities.", language: "Zig", url: "https://github.com/privkeyio/noz" },
                 { name: "bosun", description: "Tracks PR review and triage status across Bitcoin forks. Live at bosun.privkey.io.", language: "Python", url: "https://github.com/privkeyio/bosun" }
@@ -58,8 +62,8 @@
                     { name: "v29.4 (14)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.knots20260508" },
                     { name: "v29.3 (13)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" }
                 ] },
-                { name: "BLAKE2b Ecosystem Builds", url: "https://shrikewallet.com", summary: "Our unofficial wallet, firmware, and server builds for Bitcoin's BLAKE2b proof-of-work change" },
-                { name: "Bitcoin Core", url: merged("bitcoin/bitcoin"), count: 2, summary: "External signer fingerprint validation and pruned-node recovery guidance" }
+                { name: "Bitcoin Core", url: merged("bitcoin/bitcoin"), count: 2, summary: "External signer fingerprint validation and pruned-node recovery guidance" },
+                { name: "BLAKE2b Ecosystem Builds", url: "https://shrikewallet.com", summary: "Our unofficial wallet, firmware, and server builds for Bitcoin's BLAKE2b proof-of-work change" }
             ],
             "Bitcoin Libraries": [
                 { name: "Rust Bitcoin", url: merged("rust-bitcoin/rust-bitcoin"), count: 2, summary: "Witness item size limit and relative locktime off-by-one fix" },
@@ -69,13 +73,13 @@
             ],
             "Bitcoin Wallets": [
                 { name: "SeedSigner", url: "https://github.com/SeedSigner/seedsigner/pull/1042", summary: "Parse OP_RETURN push opcode in PSBT outputs" },
-                { name: "Catcard", url: merged("TibaneLabs/catcard"), count: 9, summary: "Clean-room Coldcard firmware: PSBT, descriptor, USB, and PIN-handling hardening" },
                 { name: "Sparrow", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1", summary: "Hide amounts (v2.3.1)" },
-                { name: "Canary", url: "https://github.com/schjonhaug/canary/pull/616", summary: "Drop compromised emSign CA root from TLS trust" },
-                { name: "Bull Bitcoin", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345", summary: "Hide exchange features for restricted regions" },
                 { name: "Zeus", url: "https://github.com/ZeusLN/zeus/pull/3380", summary: "Reload invoice on restart" },
+                { name: "Bull Bitcoin", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345", summary: "Hide exchange features for restricted regions" },
                 { name: "Liana", url: "https://github.com/wizardsardine/liana/pull/1902", summary: "User-Agent header support" },
-                { name: "Coldcard", url: "https://github.com/Coldcard/firmware/pull/806", summary: "Fix multisig config write ordering in tests" }
+                { name: "Coldcard", url: "https://github.com/Coldcard/firmware/pull/806", summary: "Fix multisig config write ordering in tests" },
+                { name: "Catcard", url: merged("TibaneLabs/catcard"), count: 9, summary: "Clean-room Coldcard firmware: PSBT, descriptor, USB, and PIN-handling hardening" },
+                { name: "Canary", url: "https://github.com/schjonhaug/canary/pull/616", summary: "Drop compromised emSign CA root from TLS trust" }
             ],
             "Lightning": [
                 { name: "LDK (Rust Lightning)", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/releases/tag/v0.2.5", count: 3, summary: "Reported security fixes and blinded path fee and CLTV fixes", links: [
@@ -84,31 +88,31 @@
                     { name: "One-hop CLTV delta", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5126" }
                 ] },
                 { name: "Core Lightning", url: merged("ElementsProject/lightning"), count: 3, summary: "NULL deref on truncated blocks, Elements challenge, and bitcoind reaping fixes" },
-                { name: "Lampo", url: merged("vincenzopalazzo/lampo.rs"), count: 3, summary: "Refuse to overwrite a wallet seed, header decoding, and channel reporting" },
                 { name: "Lightning BOLTs", url: "https://github.com/lightning/bolts/pull/1278", summary: "Add security policy" },
-                { name: "Greenlight", url: "https://github.com/Blockstream/greenlight/pull/612", summary: "Switch to uv package manager" }
+                { name: "Greenlight", url: "https://github.com/Blockstream/greenlight/pull/612", summary: "Switch to uv package manager" },
+                { name: "Lampo", url: merged("vincenzopalazzo/lampo.rs"), count: 3, summary: "Refuse to overwrite a wallet seed, header decoding, and channel reporting" }
             ],
             "Nostr Apps": [
-                { name: "Sonar", url: merged("hedwig-corp/bitchat-to-sonar"), count: 8, summary: "Hostile-peer hardening for mesh identity, Noise sessions, and desktop secrets" },
                 { name: "Amber", url: "https://github.com/greenart7c3/Amber/pull/255", summary: "Export all accounts" },
-                { name: "Nostr-Feedz", url: "https://github.com/PlebOne/Nostr-Feedz/pull/2", summary: "Chrome browser extension" },
+                { name: "Sonar", url: merged("hedwig-corp/bitchat-to-sonar"), count: 8, summary: "Hostile-peer hardening for mesh identity, Noise sessions, and desktop secrets" },
                 { name: "Routstr Core", url: "https://github.com/Routstr/routstr-core/pull/189", summary: "Fix USD pricing fees" },
-                { name: "Routstr Chat", url: "https://github.com/Routstr/routstr-chat/pull/67", summary: "Invoice history and persistence" }
+                { name: "Routstr Chat", url: "https://github.com/Routstr/routstr-chat/pull/67", summary: "Invoice history and persistence" },
+                { name: "Nostr-Feedz", url: "https://github.com/PlebOne/Nostr-Feedz/pull/2", summary: "Chrome browser extension" }
             ],
             "Cryptography & Protocols": [
                 { name: "ZF FROST", url: "https://github.com/ZcashFoundation/frost/pull/987", summary: "ZeroizeOnDrop for signing nonces" },
                 { name: "Negentropy", url: "https://github.com/hoytech/negentropy/pull/17", summary: "Fix off-by-one heap buffer overflow" }
             ],
             "Developer Tools": [
+                { name: "Goose", url: merged("aaif-goose/goose"), count: 2, summary: "Auto-compact on context limit and zero-config GUI providers" },
                 { name: "http.zig", url: merged("karlseguin/http.zig"), count: 8, summary: "Use-after-free, shutdown, and websocket read fixes" },
                 { name: "websocket.zig", url: merged("karlseguin/websocket.zig"), count: 3, summary: "Connect and TLS handshake timeouts and read-timeout safety" },
-                { name: "Goose", url: merged("aaif-goose/goose"), count: 2, summary: "Auto-compact on context limit and zero-config GUI providers" },
                 { name: "DTails", url: "https://github.com/DesobedienteTecnologico/dtails/pull/52", summary: "Add Bitcoin Knots support" }
             ]
         },
         team: [
             { image: "assets/images/william_profile.jpg", title: "William K. Santiago", desc: "FOUNDER & CEO", bio: "30+ years in cybersecurity. Pioneered institutional Bitcoin infrastructure starting in 2011. Directed enterprise Bitcoin deployments for large corporations. BS in Management Information Systems, University of South Florida.", mobileBio: ["30-year cybersecurity veteran", "Bitcoin infrastructure since 2011", "Fortune 500 enterprise security"], linkedIn: "https://linkedin.com/in/wksantiago", twitter: "https://x.com/williamsantiago", github: "https://github.com/wksantiago" },
-            { image: "assets/images/kyle_profile.jpg", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Open-source systems engineer building in Rust, C, and Zig. Contributor to Bitcoin Core, Bitcoin Knots, BDK, and rust-miniscript, and author of PrivKey's Keep signing stack, Wisp relay, and Nostr protocol libraries. BS & MS in Cybersecurity from the University of South Florida.", mobileBio: ["Bitcoin Core & Knots contributor", "Systems work in Rust, Zig, and C", "BS & MS in Cybersecurity, USF"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago", github: "https://github.com/kwsantiago" }
+            { image: "assets/images/kyle_profile.jpg", title: "Kyle W. Santiago", desc: "FOUNDER & CTO", bio: "Open-source systems engineer building in Rust, C, and Zig. Contributor to Bitcoin Core, Bitcoin Knots, Core Lightning, LDK, and BDK, and author of PrivKey's Keep signing stack, Wisp relay, and Nostr protocol libraries. BS & MS in Cybersecurity from the University of South Florida.", mobileBio: ["Bitcoin Core & Knots contributor", "Systems work in Rust, Zig, and C", "BS & MS in Cybersecurity, USF"], linkedIn: "https://linkedin.com/in/kwsantiago", twitter: "https://x.com/kwsantiago", github: "https://github.com/kwsantiago" }
         ],
         resources: []
     };
@@ -175,6 +179,7 @@
                         <div class="ecosystem-header ecosystem-toggle" data-eco="${i}" role="button" tabindex="0" aria-expanded="false" aria-controls="eco-panel-${i}" style="cursor:pointer">
                             <a href="${e.url}" target="_blank" rel="noopener noreferrer" class="ecosystem-title">${e.name}</a>
                             <span class="opensource-lang">${e.badge || 'Ecosystem'}</span>
+                            ${e.docs ? `<a href="${e.docs}" target="_blank" rel="noopener noreferrer" class="ecosystem-docs">Docs</a>` : ''}
                             <span class="sub-count">${e.components.length} projects</span>
                             <i class="mdi mdi-chevron-down eco-chevron" style="color:#27ae60;font-size:1.5rem;margin-left:.25rem"></i>
                         </div>
@@ -216,10 +221,11 @@
             header.setAttribute('aria-expanded', String(!isOpen));
             chevron.className = isOpen ? 'mdi mdi-chevron-down eco-chevron' : 'mdi mdi-chevron-up eco-chevron';
         };
-        grid.querySelectorAll('.ecosystem-title').forEach(a => a.addEventListener('click', e => e.stopPropagation()));
+        grid.querySelectorAll('.ecosystem-title, .ecosystem-docs').forEach(a => a.addEventListener('click', e => e.stopPropagation()));
         grid.querySelectorAll('.ecosystem-toggle').forEach(header => {
             header.addEventListener('click', () => toggleEco(header));
             header.addEventListener('keydown', e => {
+                if (e.target !== header) return;
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleEco(header); }
             });
         });
@@ -374,6 +380,7 @@
         const closeBtn = document.querySelector('.mobile-menu-close-btn');
         toggler.addEventListener('click', () => { state.mobileMenuOpen = !state.mobileMenuOpen; collapse.classList.toggle('show', state.mobileMenuOpen); toggler.setAttribute('aria-expanded', state.mobileMenuOpen); });
         closeBtn.addEventListener('click', closeMobileMenu);
+        collapse.querySelectorAll('a:not([href^="#"])').forEach(a => a.addEventListener('click', closeMobileMenu));
         document.addEventListener('click', e => { if (window.innerWidth < 992 && state.mobileMenuOpen && !document.querySelector('.navbar-custom').contains(e.target)) closeMobileMenu(); });
     }
 

@@ -15,7 +15,7 @@
     <meta property="og:title" content="PrivKey | Open-Source Bitcoin, Lightning &amp; Nostr Infrastructure">
     <meta property="og:description" content="Open-source Bitcoin, Lightning, and Nostr infrastructure in Rust, Zig, and C. FROST threshold signing, self-custodial key management, and high-performance relays.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://privkey.io">
+    <meta property="og:url" content="https://privkey.io/">
     <meta property="og:image" content="https://privkey.io/assets/images/privkey-og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -33,7 +33,7 @@
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="geo.region" content="US">
-    <link rel="canonical" href="https://privkey.io">
+    <link rel="canonical" href="https://privkey.io/">
     <link rel="icon" type="image/x-icon" href="assets/brand/icon/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/icon/privkey-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/brand/icon/privkey-16.png">
@@ -56,8 +56,8 @@
                 "email": "information@privkey.io",
                 "telephone": "+1-929-260-0738",
                 "founder": [
-                    {"@type": "Person", "name": "William Santiago"},
-                    {"@type": "Person", "name": "Kyle Santiago"}
+                    {"@type": "Person", "name": "William K. Santiago", "jobTitle": "Founder & CEO", "sameAs": ["https://linkedin.com/in/wksantiago", "https://x.com/williamsantiago", "https://github.com/wksantiago"]},
+                    {"@type": "Person", "name": "Kyle W. Santiago", "jobTitle": "Founder & CTO", "sameAs": ["https://linkedin.com/in/kwsantiago", "https://x.com/kwsantiago", "https://github.com/kwsantiago"]}
                 ],
                 "address": {"@type": "PostalAddress", "addressLocality": "Tampa", "addressRegion": "FL", "addressCountry": "US"},
                 "knowsAbout": ["Bitcoin", "Lightning Network", "Nostr", "FROST threshold signatures", "self-custody", "key management", "security auditing"],
@@ -108,6 +108,7 @@
                     <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="#technology">Products</a></li>
                     <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="#team">Team</a></li>
                     <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="#resources">Blog</a></li>
+                    <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="https://docs.privkey.io" target="_blank" rel="noopener noreferrer">Docs</a></li>
                     <li class="nav-item" role="menuitem"><a class="nav-link navbar-text-large-font" href="#contact">Contact</a></li>
                 </ul>
                 <div class="mobile-menu-nav d-lg-none">
@@ -124,6 +125,7 @@
                         <a href="#technology" class="mobile-nav-link">Products</a>
                         <a href="#team" class="mobile-nav-link">Team</a>
                         <a href="#resources" class="mobile-nav-link">Blog</a>
+                        <a href="https://docs.privkey.io" class="mobile-nav-link" target="_blank" rel="noopener noreferrer">Docs</a>
                         <a href="#contact" class="mobile-nav-link">Contact</a>
                         <div style="margin-top:2rem;width:100%;display:flex;justify-content:center">
                             <a href="https://privkey.setmore.com" target="_blank" rel="noopener noreferrer" class="mobile-menu-consultation-btn">Book a Consultation</a>
@@ -207,11 +209,14 @@
             <section class="section" id="contributions" style="background:linear-gradient(135deg,#1a1a1a 0%,#0d1117 50%,#161b22 100%);padding:60px 0">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <h3 class="text-white text-center mb-2">Community Contributions</h3>
-                            <p id="contributions-stat" class="text-center text-white-50"></p>
-                            <div id="contributions-accordion" style="margin-top:2rem"></div>
+                        <div class="col-lg-8 text-center">
+                            <h2 class="section-title text-white">Community Contributions</h2>
+                            <div class="section-title-border mt-3"></div>
+                            <p id="contributions-stat" class="section-subtitle text-muted mt-3"></p>
                         </div>
+                    </div>
+                    <div class="row mt-4 justify-content-center">
+                        <div class="col-lg-10" id="contributions-accordion"></div>
                     </div>
                 </div>
             </section>
