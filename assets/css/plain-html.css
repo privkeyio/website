@@ -64,7 +64,7 @@ a.opensource-name:hover{color:#2ecc71;text-decoration:underline}
 .team-profile-img{height:auto!important;aspect-ratio:1/1}
 @media(min-width:992px) and (max-width:1199px){.navbar-nav .nav-link.navbar-text-large-font{font-size:1.15rem!important;padding:.5rem .55rem!important}}
 @media(max-width:991px){
-.navbar-collapse.show{background:#0b0f14!important;overflow-y:auto!important;overscroll-behavior:contain;padding:0!important;margin:0!important;border-radius:0!important}
+.navbar-collapse.show{height:100dvh!important;background:#0b0f14!important;overflow-y:auto!important;overscroll-behavior:contain;padding:0!important;margin:0!important;border-radius:0!important}
 .navbar-collapse .mobile-menu-nav{display:flex;flex-direction:column;width:100%;min-height:100%}
 .navbar-collapse .mobile-menu-header{height:72px!important;padding:0 1.25rem!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
 .navbar-collapse .mobile-menu-close-btn{width:40px!important;height:40px!important;border:1px solid rgba(255,255,255,.2)!important;background:transparent!important;font-size:1.3rem!important}
@@ -72,7 +72,7 @@ a.opensource-name:hover{color:#2ecc71;text-decoration:underline}
 .navbar-collapse .mobile-menu-items{flex:0 0 auto!important;justify-content:flex-start!important;align-items:stretch!important;padding:.5rem 1.5rem 1.25rem!important;max-width:520px!important}
 .navbar-collapse .mobile-nav-link{height:auto!important;padding:.8rem .25rem!important;justify-content:space-between!important;font-size:1.25rem!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;color:rgba(255,255,255,.9)!important;background:none!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.08)!important;border-radius:0!important;transition:color .2s ease!important}
 .navbar-collapse .mobile-nav-link:hover,.navbar-collapse .mobile-nav-link:focus{color:#27ae60!important;background:none!important;border:0!important;border-bottom:1px solid rgba(39,174,96,.4)!important;box-shadow:none!important;transform:none!important}
-.navbar-collapse .mobile-nav-link[target="_blank"]::after{content:"\2197";font-size:1rem;line-height:1;align-self:center;color:rgba(255,255,255,.4)}
+.navbar-collapse .mobile-nav-link[target="_blank"]::after{content:"\2197" / "";font-size:1rem;line-height:1;align-self:center;color:rgba(255,255,255,.4)}
 .navbar-collapse .mobile-menu-cta{padding-top:1.75rem}
 .navbar-collapse .mobile-menu-consultation-btn{max-width:none!important;height:52px!important;border-radius:10px!important;text-transform:none!important;letter-spacing:0!important;font-size:1.05rem!important;margin-top:0!important}
 }

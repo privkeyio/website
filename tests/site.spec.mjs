@@ -91,7 +91,13 @@ test('desktop navbar links fit at narrow desktop widths', async ({ page }) => {
     for (const width of [992, 1024, 1199]) {
         await page.setViewportSize({ width, height: 800 });
         await page.goto('/index.html');
-        const right = await page.locator('#mySidenav .nav-link').last().evaluate(a => a.getBoundingClientRect().right);
-        expect(right).toBeLessThanOrEqual(width);
+        const { linksLeft, linksRight, logoRight, containerRight } = await page.evaluate(() => {
+            const links = [...document.querySelectorAll('#mySidenav .nav-link')].map(a => a.getBoundingClientRect());
+            const container = document.querySelector('#navbar .container').getBoundingClientRect();
+            const style = getComputedStyle(document.querySelector('#navbar .container'));
+            return { linksLeft: links[0].left, linksRight: links.at(-1).right, logoRight: document.querySelector('#navbar .navbar-brand').getBoundingClientRect().right, containerRight: container.right - parseFloat(style.paddingRight) };
+        });
+        expect(linksRight).toBeLessThanOrEqual(containerRight);
+        expect(linksLeft).toBeGreaterThanOrEqual(logoRight);
     }
 });
