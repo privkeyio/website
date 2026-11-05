@@ -87,7 +87,10 @@
                     { name: "Blinded path fee", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/4836" },
                     { name: "One-hop CLTV delta", url: "https://git.rust-bitcoin.org/lightningdevkit/rust-lightning/pulls/5126" }
                 ] },
-                { name: "Core Lightning", url: merged("ElementsProject/lightning"), count: 3, summary: "NULL deref on truncated blocks, Elements challenge, and bitcoind reaping fixes" },
+                { name: "Core Lightning", url: "https://github.com/ElementsProject/lightning/releases/tag/v26.06.10", count: 5, summary: "Reported security fixes, plus NULL deref, Elements challenge, and bitcoind reaping fixes", links: [
+                    { name: "v26.06.10 security fixes (2)", url: "https://github.com/ElementsProject/lightning/releases/tag/v26.06.10" },
+                    { name: "Merged PRs (3)", url: merged("ElementsProject/lightning") }
+                ] },
                 { name: "Lightning BOLTs", url: "https://github.com/lightning/bolts/pull/1278", summary: "Add security policy" },
                 { name: "Greenlight", url: "https://github.com/Blockstream/greenlight/pull/612", summary: "Switch to uv package manager" },
                 { name: "Lampo", url: merged("vincenzopalazzo/lampo.rs"), count: 3, summary: "Refuse to overwrite a wallet seed, header decoding, and channel reporting" }
