@@ -72,12 +72,12 @@
                 { name: "DLC Dev Kit", url: merged("bennyhodl/dlcdevkit"), count: 2, summary: "Oracle announcement creation and hardcoded credential removal" }
             ],
             "Bitcoin Wallets": [
+                { name: "Coldcard", url: merged("Coldcard/firmware"), count: 2, summary: "RNG self-test fault handling before VM init and multisig test ordering fix" },
                 { name: "SeedSigner", url: "https://github.com/SeedSigner/seedsigner/pull/1042", summary: "Parse OP_RETURN push opcode in PSBT outputs" },
                 { name: "Sparrow", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1", summary: "Hide amounts (v2.3.1)" },
                 { name: "Zeus", url: "https://github.com/ZeusLN/zeus/pull/3380", summary: "Reload invoice on restart" },
                 { name: "Bull Bitcoin", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345", summary: "Hide exchange features for restricted regions" },
                 { name: "Liana", url: "https://github.com/wizardsardine/liana/pull/1902", summary: "User-Agent header support" },
-                { name: "Coldcard", url: "https://github.com/Coldcard/firmware/pull/806", summary: "Fix multisig config write ordering in tests" },
                 { name: "Catcard", url: merged("TibaneLabs/catcard"), count: 9, summary: "Clean-room Coldcard firmware: PSBT, descriptor, USB, and PIN-handling hardening" },
                 { name: "Canary", url: "https://github.com/schjonhaug/canary/pull/616", summary: "Drop compromised emSign CA root from TLS trust" }
             ],
