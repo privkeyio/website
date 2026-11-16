@@ -51,30 +51,45 @@
                 { name: "puck", description: "Nostr Wallet Connect (NIP-47) server so apps like Alby, Amethyst, and Damus can pay from your LNbits wallet.", language: "Zig", url: "https://github.com/privkeyio/puck" },
                 { name: "Taproot Assets Gateway", description: "REST proxy that makes Lightning Labs' tapd usable from web apps with CORS and simplified macaroon auth.", language: "Rust", url: "https://github.com/privkeyio/taproot-assets-rest-gateway" },
                 { name: "noz", description: "Small, fast Nostr command-line tool for signing, publishing, querying, and decoding NIP-19 entities.", language: "Zig", url: "https://github.com/privkeyio/noz" },
-                { name: "bosun", description: "Tracks PR review and triage status across Bitcoin forks. Live at bosun.privkey.io.", language: "Python", url: "https://github.com/privkeyio/bosun" }
+                { name: "bosun", description: "Tracks PR review and triage status across Bitcoin forks.", language: "Python", url: "https://bosun.privkey.io" }
             ]
         },
         contributions: {
             "Bitcoin Infrastructure": [
-                { name: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases", count: 42, summary: "Consensus, mempool policy, P2P, and GUI fixes across four releases", links: [
+                { name: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases", count: 46, summary: "Consensus, mempool policy, P2P, and GUI fixes across five releases", links: [
+                    { name: "v29.5 (4)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.5.knots20260508" },
                     { name: "v29.4.3 (10)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.3.knots20260508" },
                     { name: "v29.4.1 (5)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508" },
                     { name: "v29.4 (14)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.knots20260508" },
                     { name: "v29.3 (13)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" }
                 ] },
                 { name: "Bitcoin Core", url: merged("bitcoin/bitcoin"), count: 2, summary: "External signer fingerprint validation and pruned-node recovery guidance" },
-                { name: "BLAKE2b Ecosystem Builds", url: "https://shrikewallet.com", summary: "Our unofficial wallet, firmware, and server builds for Bitcoin's BLAKE2b proof-of-work change" }
+                { name: "Fulcrum", maintained: true, url: "https://github.com/privkeyio/Fulcrum/releases", summary: "Electrum server releases we maintain, also packaged for StartOS", links: [
+                    { name: "Releases", url: "https://github.com/privkeyio/Fulcrum/releases" },
+                    { name: "StartOS package", url: "https://github.com/privkeyio/fulcrum-startos/releases" }
+                ] }
             ],
             "Bitcoin Libraries": [
                 { name: "Rust Bitcoin", url: merged("rust-bitcoin/rust-bitcoin"), count: 2, summary: "Witness item size limit and relative locktime off-by-one fix" },
                 { name: "Rust Miniscript", url: "https://github.com/rust-bitcoin/rust-miniscript/pull/906", summary: "Taptree-native policy compilation" },
                 { name: "BDK", url: merged("bitcoindevkit/bdk"), count: 2, summary: "Rustdoc examples and RPC emitter documentation" },
-                { name: "DLC Dev Kit", url: merged("bennyhodl/dlcdevkit"), count: 2, summary: "Oracle announcement creation and hardcoded credential removal" }
+                { name: "DLC Dev Kit", url: merged("bennyhodl/dlcdevkit"), count: 2, summary: "Oracle announcement creation and hardcoded credential removal" },
+                { name: "embit", maintained: true, url: "https://github.com/privkeyio/embit/releases", summary: "Python Bitcoin library releases we maintain for our SeedSigner builds" }
             ],
             "Bitcoin Wallets": [
-                { name: "Coldcard", url: merged("Coldcard/firmware"), count: 2, summary: "RNG self-test fault handling before VM init and multisig test ordering fix" },
-                { name: "SeedSigner", url: "https://github.com/SeedSigner/seedsigner/pull/1042", summary: "Parse OP_RETURN push opcode in PSBT outputs" },
-                { name: "Sparrow", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1", summary: "Hide amounts (v2.3.1)" },
+                { name: "Coldcard", url: merged("Coldcard/firmware"), count: 2, summary: "RNG self-test fault handling before VM init and multisig test ordering fix", links: [
+                    { name: "Merged PRs (2)", url: merged("Coldcard/firmware") },
+                    { name: "Our builds", url: "https://github.com/privkeyio/cc-firmware/releases" }
+                ] },
+                { name: "SeedSigner", url: "https://github.com/SeedSigner/seedsigner/pull/1042", summary: "Parse OP_RETURN push opcode in PSBT outputs", links: [
+                    { name: "Merged PR", url: "https://github.com/SeedSigner/seedsigner/pull/1042" },
+                    { name: "Our builds", url: "https://github.com/privkeyio/seedsigner/releases" }
+                ] },
+                { name: "Sparrow", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1", summary: "Hide amounts, and the base of our Shrike wallet", links: [
+                    { name: "v2.3.1", url: "https://github.com/sparrowwallet/sparrow/releases/tag/2.3.1" },
+                    { name: "Shrike", url: "https://shrikewallet.com" }
+                ] },
+                { name: "Trezor", maintained: true, url: "https://github.com/privkeyio/trezor-firmware/releases", summary: "Firmware releases we maintain" },
                 { name: "Zeus", url: "https://github.com/ZeusLN/zeus/pull/3380", summary: "Reload invoice on restart" },
                 { name: "Bull Bitcoin", url: "https://github.com/SatoshiPortal/bullbitcoin-mobile/pull/1345", summary: "Hide exchange features for restricted regions" },
                 { name: "Liana", url: "https://github.com/wizardsardine/liana/pull/1902", summary: "User-Agent header support" },
@@ -89,7 +104,9 @@
                 ] },
                 { name: "Core Lightning", url: "https://github.com/ElementsProject/lightning/releases/tag/v26.06.10", count: 5, summary: "Reported security fixes, plus NULL deref, Elements challenge, and bitcoind reaping fixes", links: [
                     { name: "v26.06.10 security fixes (2)", url: "https://github.com/ElementsProject/lightning/releases/tag/v26.06.10" },
-                    { name: "Merged PRs (3)", url: merged("ElementsProject/lightning") }
+                    { name: "Merged PRs (3)", url: merged("ElementsProject/lightning") },
+                    { name: "Our builds", url: "https://github.com/privkeyio/lightning/releases" },
+                    { name: "StartOS package", url: "https://github.com/privkeyio/cln-startos/releases" }
                 ] },
                 { name: "Lightning BOLTs", url: "https://github.com/lightning/bolts/pull/1278", summary: "Add security policy" },
                 { name: "Greenlight", url: "https://github.com/Blockstream/greenlight/pull/612", summary: "Switch to uv package manager" },
@@ -235,13 +252,13 @@
     }
 
     function renderContributions() {
-        const count = c => c.count || 1;
+        const count = c => c.maintained ? 0 : c.count || 1;
         const sum = (items, f) => items.reduce((n, c) => n + f(c), 0);
-        const all = Object.values(DATA.contributions).flat();
+        const all = Object.values(DATA.contributions).flat().filter(c => !c.maintained);
         document.getElementById('contributions-stat').textContent =
             `${sum(all, count)} contributions shipped across ${all.length} open-source projects`;
         const card = c => {
-            const badge = c.count ? `<span class="opensource-lang">${c.count} ${c.links ? 'shipped' : 'PRs'}</span>` : '';
+            const badge = c.maintained ? '<span class="opensource-lang">Maintained</span>' : c.count ? `<span class="opensource-lang">${c.count} ${c.links ? 'shipped' : 'PRs'}</span>` : '';
             const name = c.links ? `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="opensource-name">${c.name}</a>` : `<span class="opensource-name">${c.name}</span>`;
             const body = `<div class="opensource-item-header">${name}${badge}</div>
                         <span class="opensource-desc">${c.summary}</span>`;
