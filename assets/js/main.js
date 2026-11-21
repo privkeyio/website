@@ -56,7 +56,8 @@
         },
         contributions: {
             "Bitcoin Infrastructure": [
-                { name: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases", count: 46, summary: "Consensus, mempool policy, P2P, and GUI fixes across five releases", links: [
+                { name: "Bitcoin Knots", url: "https://github.com/bitcoinknots/bitcoin/releases", count: 51, summary: "Consensus, mempool policy, P2P, and GUI fixes across six releases", links: [
+                    { name: "v29.5.1 (5)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.5.1.knots20260508" },
                     { name: "v29.5 (4)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.5.knots20260508" },
                     { name: "v29.4.3 (10)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.3.knots20260508" },
                     { name: "v29.4.1 (5)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.1.knots20260508" },
