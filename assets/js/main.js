@@ -63,7 +63,10 @@
                     { name: "v29.4 (14)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.4.knots20260508" },
                     { name: "v29.3 (13)", url: "https://github.com/bitcoinknots/bitcoin/releases/tag/v29.3.knots20260508" }
                 ] },
-                { name: "Bitcoin Core", url: merged("bitcoin/bitcoin"), count: 2, summary: "External signer fingerprint validation and pruned-node recovery guidance" },
+                { name: "Bitcoin Core", url: merged("bitcoin/bitcoin"), count: 3, summary: "External signer fingerprint validation, pruned-node recovery guidance, and RPC console wallet sync", links: [
+                    { name: "Merged PRs (2)", url: merged("bitcoin/bitcoin") },
+                    { name: "GUI (1)", url: merged("bitcoin-core/gui") }
+                ] },
                 { name: "Fulcrum", maintained: true, url: "https://github.com/privkeyio/Fulcrum/releases", summary: "Electrum server releases we maintain, also packaged for StartOS", links: [
                     { name: "Releases", url: "https://github.com/privkeyio/Fulcrum/releases" },
                     { name: "StartOS package", url: "https://github.com/privkeyio/fulcrum-startos/releases" }
